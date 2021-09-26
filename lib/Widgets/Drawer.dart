@@ -83,7 +83,7 @@ class CustomDrawer extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CachedNetworkImage(
-                            imageUrl: 'https://i.ibb.co/H24z3fQ/blood.png'),
+                            imageUrl: 'https://i.ibb.co/H24z3fQ/blood-types.png'),
                         TextButton(
                           onPressed: () {
                             Navigator.pop(context);
