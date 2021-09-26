@@ -1,3 +1,4 @@
+import 'package:blood_donation/shared/Constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -33,7 +34,7 @@ ThemeData darktheme = ThemeData(
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
-  ), textSelectionTheme: TextSelectionThemeData(cursorColor: color),
+  ), textSelectionTheme: TextSelectionThemeData(cursorColor: Constants.redColor),
 );
 ThemeData lighttheme = ThemeData(
   floatingActionButtonTheme:
@@ -53,10 +54,10 @@ ThemeData lighttheme = ThemeData(
         titleTextStyle: TextStyle(
             color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
         elevation: 5,
-        iconTheme: IconThemeData(color: color)),
+        iconTheme: IconThemeData(color: Constants.redColor)),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: color,
+      selectedItemColor: Constants.redColor,
       unselectedItemColor: Colors.grey,
       backgroundColor: Colors.white,
       elevation: 30,
@@ -72,4 +73,4 @@ ThemeData lighttheme = ThemeData(
         fontWeight: FontWeight.w600,
         color: Colors.black,
       ),
-    ), textSelectionTheme: TextSelectionThemeData(cursorColor: color));
+    ), textSelectionTheme: TextSelectionThemeData(cursorColor: Constants.redColor));

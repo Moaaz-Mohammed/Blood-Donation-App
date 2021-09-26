@@ -10,5 +10,5 @@ class Constants {
   static const String  logoImage =  'images/logo.png';
 
   // Colors
-  static const Color color =  Color(0xec666d);
+  static const Color redColor =  Color(4293682797);
 }

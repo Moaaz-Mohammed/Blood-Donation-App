@@ -37,7 +37,7 @@ class CustomDrawer extends StatelessWidget {
           children: [
             DrawerHeader(child: Center(child: Text('معاً ننقذ حياة',style: TextStyle(fontSize: 26)))),
             ListTile(
-              leading: Icon(Icons.home,color: color),
+              leading: Icon(Icons.home,color: Constants.redColor),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -51,7 +51,7 @@ class CustomDrawer extends StatelessWidget {
             Divider(thickness: 1, color: Colors.black),
             //Patients
             ListTile(
-              leading: Icon(Icons.info,color: color),
+              leading: Icon(Icons.info,color: Constants.redColor),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -65,7 +65,7 @@ class CustomDrawer extends StatelessWidget {
             Divider(thickness: 1, color: Colors.black),
             //BloodType Info.
             ListTile(
-              leading: Icon(Icons.bloodtype,color: color,),
+              leading: Icon(Icons.bloodtype,color: Constants.redColor,),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -79,7 +79,7 @@ class CustomDrawer extends StatelessWidget {
             Divider(thickness: 1, color: Colors.black),
             //Info before donation
             ListTile(
-              leading: Icon(Icons.info,color: color),
+              leading: Icon(Icons.info,color: Constants.redColor),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -93,7 +93,7 @@ class CustomDrawer extends StatelessWidget {
             Divider(thickness: 1, color: Colors.black),
             //Mail
             ListTile(
-              leading: Icon(Icons.message,color: color),
+              leading: Icon(Icons.message,color: Constants.redColor),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -107,7 +107,7 @@ class CustomDrawer extends StatelessWidget {
             Divider(thickness: 1, color: Colors.black),
             //Exit App
             ListTile(
-              leading: Icon(Icons.logout,color: color),
+              leading: Icon(Icons.logout,color: Constants.redColor),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

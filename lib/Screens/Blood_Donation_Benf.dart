@@ -1,3 +1,4 @@
+import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Cubit/Cubit.dart';
 import 'package:blood_donation/shared/Cubit/States.dart';
 import 'package:blood_donation/shared/components.dart';
@@ -41,7 +42,7 @@ class _Blood_Donation_BenfState extends State<Blood_Donation_Benf> {
                       },
                       child: Icon(
                         Icons.arrow_back_ios,
-                        color: Colors.red,
+                        color: Constants.redColor,
                       ),
                     ),
                   ),

@@ -1,3 +1,4 @@
+import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class _Need_DonationState extends State<Need_Donation> {
               },
               child: const Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.red,
+                color: Constants.redColor,
               ),
             ),
           ],
@@ -66,7 +67,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     //Name
                                     Row(
                                       children: [
-                                        Icon(Icons.person,color:color),
+                                        Icon(Icons.person,color:Constants.redColor),
                                         SizedBox(width: 10,),
                                         DetailtsText(text: data['name']),
                                       ],
@@ -75,7 +76,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     //Address
                                     Row(
                                       children: [
-                                        Icon(Icons.location_on,color:color),
+                                        Icon(Icons.location_on,color:Constants.redColor),
                                         SizedBox(width: 10,),
                                         DetailtsText(text: data['hospital']),
                                       ],
@@ -84,7 +85,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     //Blood Type
                                     Row(
                                       children: [
-                                        Icon(Icons.bloodtype,color:color),
+                                        Icon(Icons.bloodtype,color:Constants.redColor),
                                         SizedBox(width: 10,),
                                         DetailtsText(text: data['blood_type']),
                                       ],
@@ -93,7 +94,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     //Contact
                                     Row(
                                       children: [
-                                        Icon(Icons.phone,color:color),
+                                        Icon(Icons.phone,color:Constants.redColor),
                                         SizedBox(width: 10,),
                                         DetailtsText(text: data['phone']),
                                       ],
@@ -102,7 +103,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     //Patient Age
                                     Row(
                                       children: [
-                                        Icon(Icons.person,color:color),
+                                        Icon(Icons.person,color:Constants.redColor),
                                         SizedBox(width: 10,),
                                         DetailtsText(text: data['age']),
                                       ],
@@ -111,7 +112,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     // Status of the patient
                                     Column(
                                       children: [
-                                        Text("الحالة",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:color),),
+                                        Text("الحالة",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Constants.redColor),),
                                         SizedBox(height: 10,),
                                         Container(
                                             width: 350,

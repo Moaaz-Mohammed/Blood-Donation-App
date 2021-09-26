@@ -1,3 +1,4 @@
+import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Controllers.dart';
 import 'package:blood_donation/shared/Cubit/Cubit.dart';
 import 'package:blood_donation/shared/Cubit/States.dart';
@@ -48,7 +49,7 @@ class _PatientState extends State<Patient> {
                           },
                           child: const Icon(
                             Icons.arrow_forward_ios,
-                            color: Colors.red,
+                            color: Constants.redColor,
                           ),
                         ),
                       ],
@@ -71,7 +72,7 @@ class _PatientState extends State<Patient> {
                                         fontSize: 18,
                                     ),
                                   ),
-                                  Divider(thickness: 1,color: color,),
+                                  Divider(thickness: 1,color: Constants.redColor,),
                                 ],
                               ),
                               SizedBox(
@@ -89,10 +90,10 @@ class _PatientState extends State<Patient> {
                                           }
                                           return null;
                                         },
-                                        cursorColor: color,
+                                        cursorColor: Constants.redColor,
                                         controller: nameController,
                                         keyboardType: TextInputType.text,
-                                        style: TextStyle(color: color),
+                                        style: TextStyle(color: Constants.redColor),
                                         decoration: InputDecoration(
                                           hintTextDirection: TextDirection.rtl,
                                           enabledBorder: UnderlineInputBorder(
@@ -106,7 +107,7 @@ class _PatientState extends State<Patient> {
                                           labelStyle: TextStyle(color: Colors.grey),
                                           prefixIcon: Icon(
                                             Icons.person,
-                                            color: color,
+                                            color: Constants.redColor,
                                           ),
                                           border: OutlineInputBorder(),
                                         ),
@@ -117,7 +118,7 @@ class _PatientState extends State<Patient> {
 
                                       // Status
                                       TextFormField(
-                                        cursorColor: color,
+                                        cursorColor: Constants.redColor,
                                         validator: (value) {
                                           if (value!.isEmpty) {
                                             return 'برجاء وصف حالة المريض';
@@ -126,7 +127,7 @@ class _PatientState extends State<Patient> {
                                         },
                                         controller: statusController,
                                         keyboardType: TextInputType.text,
-                                        style: TextStyle(color: color),
+                                        style: TextStyle(color: Constants.redColor),
                                         decoration: InputDecoration(
                                           hintTextDirection: TextDirection.rtl,
                                           enabledBorder: UnderlineInputBorder(
@@ -140,7 +141,7 @@ class _PatientState extends State<Patient> {
                                           labelStyle: TextStyle(color: Colors.grey),
                                           prefixIcon: Icon(
                                             Icons.info,
-                                            color: color,
+                                            color: Constants.redColor,
                                           ),
                                           border: OutlineInputBorder(),
                                         ),
@@ -150,7 +151,7 @@ class _PatientState extends State<Patient> {
                                       ),
                                       //Phone number
                                       TextFormField(
-                                        cursorColor: color,
+                                        cursorColor: Constants.redColor,
                                         validator: (value) {
                                           if (value!.isEmpty) {
                                             return 'برجاء إدخال رقم هاتف لسهولة التواصل معك';
@@ -159,7 +160,7 @@ class _PatientState extends State<Patient> {
                                         },
                                         controller: phoneController,
                                         keyboardType: TextInputType.phone,
-                                        style: TextStyle(color: color),
+                                        style: TextStyle(color: Constants.redColor),
                                         decoration: InputDecoration(
                                           hintTextDirection: TextDirection.rtl,
                                           enabledBorder: UnderlineInputBorder(
@@ -173,7 +174,7 @@ class _PatientState extends State<Patient> {
                                           labelStyle: TextStyle(color: Colors.grey),
                                           prefixIcon: Icon(
                                             Icons.phone,
-                                            color: color,
+                                            color: Constants.redColor,
                                           ),
                                           border: OutlineInputBorder(),
                                         ),
@@ -183,7 +184,7 @@ class _PatientState extends State<Patient> {
                                       ),
                                       //another phone number
                                       TextFormField(
-                                        cursorColor: color,
+                                        cursorColor: Constants.redColor,
                                         validator: (value) {
                                           if (value!.isEmpty) {
                                             return 'برجاء إدخال رقم هاتف آخر للإحتياط';
@@ -192,7 +193,7 @@ class _PatientState extends State<Patient> {
                                         },
                                         controller: anotherphoneController,
                                         keyboardType: TextInputType.phone,
-                                        style: TextStyle(color: color),
+                                        style: TextStyle(color: Constants.redColor),
                                         decoration: InputDecoration(
                                           hintTextDirection: TextDirection.rtl,
                                           enabledBorder: UnderlineInputBorder(
@@ -206,7 +207,7 @@ class _PatientState extends State<Patient> {
                                           labelStyle: TextStyle(color: Colors.grey),
                                           prefixIcon: Icon(
                                             Icons.phone,
-                                            color: color,
+                                            color: Constants.redColor,
                                           ),
                                           border: OutlineInputBorder(),
                                         ),
@@ -220,13 +221,13 @@ class _PatientState extends State<Patient> {
                                             horizontal: 14),
                                         child: Row(
                                           children: [
-                                            Icon(Icons.bloodtype, color: color),
+                                            Icon(Icons.bloodtype, color: Constants.redColor),
                                             SizedBox(width: 10),
                                             DropdownButton(
                                               dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                                               alignment: Alignment.center,
                                               iconSize: 30,
-                                              iconEnabledColor: color,
+                                              iconEnabledColor: Constants.redColor,
                                               value: BloodType,
                                               hint: Text(
                                                 'أختر فصيلة الدم',
@@ -292,7 +293,7 @@ class _PatientState extends State<Patient> {
                                       ),
                                       // Age
                                       TextFormField(
-                                        cursorColor: color,
+                                        cursorColor: Constants.redColor,
                                         validator: (value) {
                                           if (value!.isEmpty) {
                                             return 'برجاء إدخال سن المريض';
@@ -301,7 +302,7 @@ class _PatientState extends State<Patient> {
                                         },
                                         controller: ageController,
                                         keyboardType: TextInputType.number,
-                                        style: TextStyle(color: color),
+                                        style: TextStyle(color: Constants.redColor),
                                         decoration: InputDecoration(
                                           hintTextDirection: TextDirection.rtl,
                                           enabledBorder: UnderlineInputBorder(
@@ -315,7 +316,7 @@ class _PatientState extends State<Patient> {
                                           labelStyle: TextStyle(color: Colors.grey),
                                           prefixIcon: Icon(
                                             Icons.person,
-                                            color: color,
+                                            color: Constants.redColor,
                                           ),
                                           border: OutlineInputBorder(),
                                         ),
@@ -325,7 +326,7 @@ class _PatientState extends State<Patient> {
                                       ),
                                       //hospital address
                                       TextFormField(
-                                        cursorColor: color,
+                                        cursorColor: Constants.redColor,
                                         validator: (value) {
                                           if (value!.isEmpty) {
                                             return 'برجاء إدخال المستشفى أو المكان الذي سيتم فيه التبرع';
@@ -334,7 +335,7 @@ class _PatientState extends State<Patient> {
                                         },
                                         controller: hospitalController,
                                         keyboardType: TextInputType.text,
-                                        style: TextStyle(color: color),
+                                        style: TextStyle(color: Constants.redColor),
                                         decoration: InputDecoration(
                                           hintTextDirection: TextDirection.rtl,
                                           enabledBorder: UnderlineInputBorder(
@@ -348,7 +349,7 @@ class _PatientState extends State<Patient> {
                                           labelStyle: TextStyle(color: Colors.grey),
                                           prefixIcon: Icon(
                                             Icons.location_on,
-                                            color: color,
+                                            color: Constants.redColor,
                                           ),
                                           border: OutlineInputBorder(),
                                         ),
@@ -358,7 +359,7 @@ class _PatientState extends State<Patient> {
                                       ),
                                       //blood amount needed
                                       TextFormField(
-                                        cursorColor: color,
+                                        cursorColor: Constants.redColor,
                                         validator: (value) {
                                           if (value!.isEmpty) {
                                             return 'برجاء إدخال عدد أكياس الدم المطلوبة';
@@ -367,7 +368,7 @@ class _PatientState extends State<Patient> {
                                         },
                                         controller: bloodamountController,
                                         keyboardType: TextInputType.number,
-                                        style: TextStyle(color: color),
+                                        style: TextStyle(color: Constants.redColor),
                                         decoration: InputDecoration(
                                           hintTextDirection: TextDirection.rtl,
                                           enabledBorder: UnderlineInputBorder(
@@ -381,7 +382,7 @@ class _PatientState extends State<Patient> {
                                           labelStyle: TextStyle(color: Colors.grey),
                                           prefixIcon: Icon(
                                             Icons.person,
-                                            color: color,
+                                            color: Constants.redColor,
                                           ),
                                           border: OutlineInputBorder(),
                                         ),
@@ -396,7 +397,7 @@ class _PatientState extends State<Patient> {
                                 height: 60,
                                 width: 300,
                                 decoration: BoxDecoration(
-                                  color: color,
+                                  color: Constants.redColor,
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: TextButton(

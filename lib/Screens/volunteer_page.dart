@@ -1,3 +1,4 @@
+import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Controllers.dart';
 import 'package:blood_donation/shared/Cubit/Cubit.dart';
 import 'package:blood_donation/shared/Cubit/States.dart';
@@ -50,7 +51,7 @@ class _VolunteerState extends State<Volunteer> {
                           },
                           child: const Icon(
                             Icons.arrow_forward_ios,
-                            color: Colors.red,
+                            color: Constants.redColor,
                           ),
                         ),
                       ],
@@ -76,7 +77,7 @@ class _VolunteerState extends State<Volunteer> {
                                           fontSize: 18,
                                       ),
                                     ),
-                                    Divider(thickness: 1,color: color,),
+                                    Divider(thickness: 1,color: Constants.redColor,),
                                   ],
                                 ),
                                 const SizedBox(
@@ -84,7 +85,7 @@ class _VolunteerState extends State<Volunteer> {
                                 ),
                                 //name
                                 TextFormField(
-                                  cursorColor: color,
+                                  cursorColor: Constants.redColor,
                                   validator: (String? value) {
                                     if (value!.isEmpty) {
                                       return 'برجاء كتابة إسم المتبرع';
@@ -93,7 +94,7 @@ class _VolunteerState extends State<Volunteer> {
                                   },
                                   controller: namecontroller,
                                   keyboardType: TextInputType.text,
-                                  style: TextStyle(color: color),
+                                  style: TextStyle(color: Constants.redColor),
                                   decoration: InputDecoration(
                                     hintTextDirection: TextDirection.rtl,
                                     enabledBorder: const UnderlineInputBorder(
@@ -105,7 +106,7 @@ class _VolunteerState extends State<Volunteer> {
                                     labelStyle: const TextStyle(color: Colors.grey),
                                     prefixIcon: Icon(
                                       Icons.person,
-                                      color: color,
+                                      color: Constants.redColor,
                                     ),
                                     border: const OutlineInputBorder(),
                                   ),
@@ -120,14 +121,14 @@ class _VolunteerState extends State<Volunteer> {
                                     padding: const EdgeInsets.symmetric(horizontal: 14),
                                     child: Row(
                                       children: [
-                                        Icon(Icons.error, color: color),
+                                        Icon(Icons.error, color: Constants.redColor),
                                         const SizedBox(width: 10),
                                         Text("هل تعاني من أمراض؟",style: TextStyle(fontSize: 15,color:Colors.grey),),
                                         DropdownButton(
                                           alignment: Alignment.center,
                                           dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                                           iconSize: 30,
-                                          iconEnabledColor: color,
+                                          iconEnabledColor: Constants.redColor,
                                           value: Status,
                                           hint: const Text(
                                             'أختر',
@@ -188,7 +189,7 @@ class _VolunteerState extends State<Volunteer> {
                                   padding: const EdgeInsets.symmetric(horizontal: 14),
                                   child: Row(
                                     children: [
-                                      Icon(Icons.person, color: color),
+                                      Icon(Icons.person, color: Constants.redColor),
                                       const SizedBox(width: 10),
                                       const Text(
                                         'تاريخ الميلاد',
@@ -197,7 +198,7 @@ class _VolunteerState extends State<Volunteer> {
                                       SizedBox(width: 15,),
                                       Expanded(
                                         child:TextFormField(
-                                          cursorColor: color,
+                                          cursorColor: Constants.redColor,
                                           textAlignVertical: TextAlignVertical.center,
                                           validator: (String? value) {
                                             if (value!.isEmpty) {
@@ -207,7 +208,7 @@ class _VolunteerState extends State<Volunteer> {
                                           },
                                           controller: daycontroller,
                                           keyboardType: TextInputType.number,
-                                          style: TextStyle(color: color),
+                                          style: TextStyle(color: Constants.redColor),
                                           decoration: InputDecoration(
                                             border: InputBorder.none,
                                             focusedBorder: InputBorder.none,
@@ -222,7 +223,7 @@ class _VolunteerState extends State<Volunteer> {
                                       SizedBox(width: 10,),
                                       Expanded(
                                         child:TextFormField(
-                                          cursorColor: color,
+                                          cursorColor: Constants.redColor,
                                           textAlignVertical: TextAlignVertical.center,
                                           validator: (String? value) {
                                             if (value!.isEmpty) {
@@ -232,7 +233,7 @@ class _VolunteerState extends State<Volunteer> {
                                           },
                                           controller: monthcontroller,
                                           keyboardType: TextInputType.number,
-                                          style: TextStyle(color: color),
+                                          style: TextStyle(color: Constants.redColor),
                                           decoration: InputDecoration(
                                             border: InputBorder.none,
                                             focusedBorder: InputBorder.none,
@@ -247,7 +248,7 @@ class _VolunteerState extends State<Volunteer> {
                                       SizedBox(width: 10,),
                                       Expanded(
                                         child:TextFormField(
-                                          cursorColor: color,
+                                          cursorColor: Constants.redColor,
                                           textAlignVertical: TextAlignVertical.center,
                                           validator: (String? value) {
                                             if (value!.isEmpty) {
@@ -257,7 +258,7 @@ class _VolunteerState extends State<Volunteer> {
                                           },
                                           controller: yearcontroller,
                                           keyboardType: TextInputType.number,
-                                          style: TextStyle(color: color),
+                                          style: TextStyle(color: Constants.redColor),
                                           decoration: InputDecoration(
                                             border: InputBorder.none,
                                             focusedBorder: InputBorder.none,
@@ -285,13 +286,13 @@ class _VolunteerState extends State<Volunteer> {
                                   padding: const EdgeInsets.symmetric(horizontal: 14),
                                   child: Row(
                                     children: [
-                                      Icon(Icons.bloodtype, color: color),
+                                      Icon(Icons.bloodtype, color: Constants.redColor),
                                       const SizedBox(width: 10),
                                       DropdownButton(
                                         dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                                         alignment: Alignment.center,
                                         iconSize: 30,
-                                        iconEnabledColor: color,
+                                        iconEnabledColor: Constants.redColor,
                                         value: BloodType,
                                         hint: const Text(
                                           'أختر فصيلة الدم',
@@ -355,7 +356,7 @@ class _VolunteerState extends State<Volunteer> {
                                 ),
                                 //phone number
                                 TextFormField(
-                                  cursorColor: color,
+                                  cursorColor: Constants.redColor,
                                   validator: (String? value) {
                                     if (value!.isEmpty){
                                       return 'برجاء كتابة رقم هاتف';
@@ -367,7 +368,7 @@ class _VolunteerState extends State<Volunteer> {
                                   },
                                   controller: phonecontroller,
                                   keyboardType: TextInputType.number,
-                                  style: TextStyle(color: color),
+                                  style: TextStyle(color: Constants.redColor),
                                   decoration: InputDecoration(
                                     hintTextDirection: TextDirection.rtl,
                                     enabledBorder: const UnderlineInputBorder(
@@ -379,7 +380,7 @@ class _VolunteerState extends State<Volunteer> {
                                     labelStyle: const TextStyle(color: Colors.grey),
                                     prefixIcon: Icon(
                                       Icons.phone,
-                                      color: color,
+                                      color: Constants.redColor,
                                     ),
                                     border: const OutlineInputBorder(),
                                   ),
@@ -389,7 +390,7 @@ class _VolunteerState extends State<Volunteer> {
                                 ),
                                 //another phone number
                                 TextFormField(
-                                  cursorColor: color,
+                                  cursorColor: Constants.redColor,
                                   validator: (value) {
                                     if (value!.isEmpty) {
                                       return 'برجاء إدخال رقم هاتف آخر للإحتياط';
@@ -398,7 +399,7 @@ class _VolunteerState extends State<Volunteer> {
                                   },
                                   controller: anotherphonecontroller,
                                   keyboardType: TextInputType.number,
-                                  style: TextStyle(color: color),
+                                  style: TextStyle(color: Constants.redColor),
                                   decoration: InputDecoration(
                                     hintTextDirection: TextDirection.rtl,
                                     enabledBorder: const UnderlineInputBorder(
@@ -410,7 +411,7 @@ class _VolunteerState extends State<Volunteer> {
                                     labelStyle: const TextStyle(color: Colors.grey),
                                     prefixIcon: Icon(
                                       Icons.phone,
-                                      color: color,
+                                      color: Constants.redColor,
                                     ),
                                     border: const OutlineInputBorder(),
                                   ),
@@ -420,7 +421,7 @@ class _VolunteerState extends State<Volunteer> {
                                 ),
                                 //Facebook
                                 TextFormField(
-                                  cursorColor: color,
+                                  cursorColor: Constants.redColor,
                                   validator: (value) {
                                     if (value!.isEmpty) {
                                       return 'برجاء كتابة اسمك على Facebook';
@@ -429,7 +430,7 @@ class _VolunteerState extends State<Volunteer> {
                                   },
                                   controller: Facebookcontroller,
                                   keyboardType: TextInputType.text,
-                                  style: TextStyle(color: color),
+                                  style: TextStyle(color: Constants.redColor),
                                   decoration: InputDecoration(
                                     hintTextDirection: TextDirection.rtl,
                                     enabledBorder: const UnderlineInputBorder(
@@ -441,7 +442,7 @@ class _VolunteerState extends State<Volunteer> {
                                     labelStyle: const TextStyle(color: Colors.grey),
                                     prefixIcon: Icon(
                                       Icons.facebook_rounded,
-                                      color: color,
+                                      color: Constants.redColor,
                                     ),
                                     border: const OutlineInputBorder(),
                                   ),
@@ -451,7 +452,7 @@ class _VolunteerState extends State<Volunteer> {
                                 ),
                                 //Last Donation
                                 TextFormField(
-                                  cursorColor: color,
+                                  cursorColor: Constants.redColor,
                                   validator: (value) {
                                     if (value!.isEmpty) {
                                       return 'برجاء كتابة أخر مره قمت بالتبرع فيها';
@@ -460,7 +461,7 @@ class _VolunteerState extends State<Volunteer> {
                                   },
                                   controller: LastDonationcontroller,
                                   keyboardType: TextInputType.text,
-                                  style: TextStyle(color: color),
+                                  style: TextStyle(color: Constants.redColor),
                                   decoration: InputDecoration(
                                     hintTextDirection: TextDirection.rtl,
                                     enabledBorder: const UnderlineInputBorder(
@@ -472,7 +473,7 @@ class _VolunteerState extends State<Volunteer> {
                                     labelStyle: const TextStyle(color: Colors.grey),
                                     prefixIcon: Icon(
                                       Icons.access_time,
-                                      color: color,
+                                      color: Constants.redColor,
                                     ),
                                     border: const OutlineInputBorder(),
                                   ),
@@ -482,7 +483,7 @@ class _VolunteerState extends State<Volunteer> {
                                 ),
                                 //Address
                                 TextFormField(
-                                  cursorColor: color,
+                                  cursorColor: Constants.redColor,
                                   validator: (String? value) {
                                     if (value!.isEmpty) {
                                       return 'برجاء كتابة عنوانك';
@@ -491,7 +492,7 @@ class _VolunteerState extends State<Volunteer> {
                                   },
                                   controller: addresscontroller,
                                   keyboardType: TextInputType.text,
-                                  style: TextStyle(color: color),
+                                  style: TextStyle(color: Constants.redColor),
                                   decoration: InputDecoration(
                                     hintTextDirection: TextDirection.rtl,
                                     enabledBorder: const UnderlineInputBorder(
@@ -503,7 +504,7 @@ class _VolunteerState extends State<Volunteer> {
                                     labelStyle: const TextStyle(color: Colors.grey),
                                     prefixIcon: Icon(
                                       Icons.location_on,
-                                      color: color,
+                                      color: Constants.redColor,
                                     ),
                                     border: const OutlineInputBorder(),
                                   ),
@@ -513,7 +514,7 @@ class _VolunteerState extends State<Volunteer> {
                                   padding: const EdgeInsets.symmetric(horizontal: 14),
                                   child: Row(
                                     children: [
-                                      Icon(Icons.share, color: color),
+                                      Icon(Icons.share, color: Constants.redColor),
                                       const SizedBox(width: 10),
                                       Text("هل تسمح بنشر بياناتك؟",style: TextStyle(fontSize: 15,color:Colors.grey),),
                                       SizedBox(width:10),
@@ -521,7 +522,7 @@ class _VolunteerState extends State<Volunteer> {
                                         dropdownColor: Theme.of(context).scaffoldBackgroundColor,
                                         alignment: Alignment.center,
                                         iconSize: 30,
-                                        iconEnabledColor: color,
+                                        iconEnabledColor: Constants.redColor,
                                         value: ShareData,
                                         hint: const Text(
                                           'أختر',
@@ -555,7 +556,7 @@ class _VolunteerState extends State<Volunteer> {
                                   height: 60,
                                   width: 300,
                                   decoration: BoxDecoration(
-                                    color: color,
+                                    color: Constants.redColor,
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: TextButton(

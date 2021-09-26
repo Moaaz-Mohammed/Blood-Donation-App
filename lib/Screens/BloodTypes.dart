@@ -42,7 +42,7 @@ class _BloodTypesState extends State<BloodTypes> {
                       },
                       child: Icon(
                         Icons.arrow_back_ios,
-                        color: Colors.red,
+                        color: Constants.redColor,
                       ),
                     ),
                   ),

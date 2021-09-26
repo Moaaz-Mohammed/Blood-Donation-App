@@ -1,3 +1,4 @@
+import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/themes.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:blood_donation/shared/components.dart';
@@ -41,7 +42,7 @@ class _MailState extends State<Mail> {
                     },
                     child: const Icon(
                       Icons.arrow_forward_ios,
-                      color: Colors.red,
+                      color: Constants.redColor,
                     ),
                   ),
                 ],
@@ -67,7 +68,7 @@ class _MailState extends State<Mail> {
                                   fontSize: 18,
                                 ),
                               ),
-                              Divider(thickness: 1,color: color,),
+                              Divider(thickness: 1,color: Constants.redColor,),
                             ],
                           ),
                           SizedBox(
@@ -75,10 +76,10 @@ class _MailState extends State<Mail> {
                           ),
                           //Name
                           TextFormField(
-                            cursorColor: color,
+                            cursorColor: Constants.redColor,
                             controller: senderController,
                             keyboardType: TextInputType.text,
-                            style: TextStyle(color: color),
+                            style: TextStyle(color: Constants.redColor),
                             decoration: InputDecoration(
                               hintTextDirection: TextDirection.rtl,
                               enabledBorder: UnderlineInputBorder(
@@ -90,7 +91,7 @@ class _MailState extends State<Mail> {
                               labelStyle: TextStyle(color: Colors.grey),
                               prefixIcon: Icon(
                                 Icons.person,
-                                color: color,
+                                color: Constants.redColor,
                               ),
                               border: OutlineInputBorder(),
                             ),
@@ -100,10 +101,10 @@ class _MailState extends State<Mail> {
                           ),
                           // Status
                           TextFormField(
-                            cursorColor: color,
+                            cursorColor: Constants.redColor,
                             controller: phoneController,
                             keyboardType: TextInputType.phone,
-                            style: TextStyle(color: color),
+                            style: TextStyle(color: Constants.redColor),
                             decoration: InputDecoration(
                               hintTextDirection: TextDirection.rtl,
                               enabledBorder: UnderlineInputBorder(
@@ -115,7 +116,7 @@ class _MailState extends State<Mail> {
                               labelStyle: TextStyle(color: Colors.grey),
                               prefixIcon: Icon(
                                 Icons.phone,
-                                color: color,
+                                color: Constants.redColor,
                               ),
                               border: OutlineInputBorder(),
                             ),
@@ -125,10 +126,11 @@ class _MailState extends State<Mail> {
                           ),
                           // Status
                           TextFormField(
-                            cursorColor: color,
+                            cursorColor: Constants.redColor,
                             controller: messageController,
                             keyboardType: TextInputType.text,
-                            style: TextStyle(color: color),
+                            style: TextStyle(color: Constants.redColor),
+                            maxLines: 3,
                             decoration: InputDecoration(
                               hintTextDirection: TextDirection.rtl,
                               enabledBorder: UnderlineInputBorder(
@@ -140,7 +142,7 @@ class _MailState extends State<Mail> {
                               labelStyle: TextStyle(color: Colors.grey),
                               prefixIcon: Icon(
                                 Icons.message,
-                                color: color,
+                                color: Constants.redColor,
                               ),
                               border: OutlineInputBorder(),
                             ),
@@ -153,7 +155,7 @@ class _MailState extends State<Mail> {
                             height: 60,
                             width: 300,
                             decoration: BoxDecoration(
-                              color: color,
+                              color: Constants.redColor,
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: TextButton(
