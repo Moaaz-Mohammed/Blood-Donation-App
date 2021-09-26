@@ -1,15 +1,6 @@
-import 'dart:io';
-import 'package:blood_donation/Screens/Blood_Donation_Benf.dart';
-import 'package:blood_donation/Screens/Mail_Page.dart';
-import 'package:blood_donation/Screens/Need_Donation.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
-import '../Home.dart';
-import 'Cubit/Cubit.dart';
 
 Color? color = Colors.red[300];
-
 
 navigateTo(BuildContext context, Widget widget) {
   Navigator.push(context, MaterialPageRoute(builder: (context) => widget));
