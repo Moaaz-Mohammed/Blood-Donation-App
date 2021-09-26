@@ -1,4 +1,4 @@
-import 'package:blood_donation/Modules/volunteer_page.dart';
+import 'package:blood_donation/Screens/volunteer_page.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:flutter/material.dart';
 

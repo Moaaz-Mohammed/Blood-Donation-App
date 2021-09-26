@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'package:blood_donation/Modules/Blood_Donation_Benf.dart';
-import 'package:blood_donation/Modules/Mail_Page.dart';
-import 'package:blood_donation/Modules/Need_Donation.dart';
+import 'package:blood_donation/Screens/Blood_Donation_Benf.dart';
+import 'package:blood_donation/Screens/Mail_Page.dart';
+import 'package:blood_donation/Screens/Need_Donation.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';

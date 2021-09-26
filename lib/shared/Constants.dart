@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  static const String  facebooklinelogo =  'images/blood-types.png';
+
+  // Images
+  static const String  bloodtypes =  'images/blood-types.png';
+  static const String  logoImage =  'images/logo.png';
 }

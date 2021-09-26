@@ -1,9 +1,10 @@
 import 'dart:io';
 
 import 'package:blood_donation/Home.dart';
-import 'package:blood_donation/Modules/Blood_Donation_Benf.dart';
-import 'package:blood_donation/Modules/Mail_Page.dart';
-import 'package:blood_donation/Modules/Need_Donation.dart';
+import 'package:blood_donation/Screens/Blood_Donation_Benf.dart';
+import 'package:blood_donation/Screens/Mail_Page.dart';
+import 'package:blood_donation/Screens/Need_Donation.dart';
+import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Cubit/Cubit.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -74,16 +75,13 @@ class CustomDrawer extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (context) => Dialog(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
                     elevation: 2,
                     insetAnimationCurve: Curves.easeInOutQuart,
                     backgroundColor: Colors.transparent,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        CachedNetworkImage(
-                            imageUrl: 'https://i.ibb.co/H24z3fQ/blood-types.png'),
+                        Image.asset(Constants.bloodtypes),
                         TextButton(
                           onPressed: () {
                             Navigator.pop(context);
@@ -93,7 +91,7 @@ class CustomDrawer extends StatelessWidget {
                             style: TextStyle(
                                 color: Colors.red,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 18),
+                                fontSize: 20),
                           ),
                         )
                       ],
