@@ -1,11 +1,11 @@
-import 'package:blood_donation/shared/components.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import 'Components.dart';
+
 ThemeData darktheme = ThemeData(
-  cursorColor: color,
   scaffoldBackgroundColor: HexColor('333739'),
   primaryColor: HexColor('333739'),
   appBarTheme: AppBarTheme(
@@ -23,6 +23,7 @@ ThemeData darktheme = ThemeData(
       iconTheme: IconThemeData(color: Colors.white)),
   textTheme: TextTheme(
     bodyText1: TextStyle(
+
       fontSize: 18,
       fontWeight: FontWeight.w600,
       color: Colors.white,
@@ -32,11 +33,10 @@ ThemeData darktheme = ThemeData(
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
-  ),
+  ), textSelectionTheme: TextSelectionThemeData(cursorColor: color),
 );
 ThemeData lighttheme = ThemeData(
-  cursorColor: color,
-    floatingActionButtonTheme:
+  floatingActionButtonTheme:
     FloatingActionButtonThemeData(backgroundColor: Colors.teal),
     scaffoldBackgroundColor: Colors.white,
     primaryColor: Colors.white,
@@ -72,4 +72,4 @@ ThemeData lighttheme = ThemeData(
         fontWeight: FontWeight.w600,
         color: Colors.black,
       ),
-    ));
+    ), textSelectionTheme: TextSelectionThemeData(cursorColor: color));

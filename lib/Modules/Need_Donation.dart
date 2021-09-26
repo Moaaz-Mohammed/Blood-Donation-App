@@ -24,7 +24,7 @@ class _Need_DonationState extends State<Need_Donation> {
         appBar: AppBar(
           title: Text('محتاجون للتبرع'),
           centerTitle: true,
-          leading: const Text(''),
+          leading: null,
           actions: [
             TextButton(
               onPressed: () {

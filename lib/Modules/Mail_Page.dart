@@ -159,16 +159,16 @@ class _MailState extends State<Mail> {
                                   "phone": phoneController.text,
                                   "date": DateTime.now().toLocal(),
                                 }).then(
-                                  (value) => showDialog(
+                                      (value) => showDialog(
                                       context: context,
                                       builder: (context) => CustomDialog(
-                                            image: Image.network(
-                                                'https://media.tenor.com/images/2525ba72ea472c55bf8b2153e9ea9f11/tenor.gif'),
-                                            title: 'تم إرسال رسالتك',
-                                            description1:
-                                                'تم إرسال رسالتك بنجاح وسيتم التواصل معك بكل سرور',
-                                            description2: '',
-                                          )).then((value) =>
+                                        image: Image.network(
+                                            'https://media.tenor.com/images/2525ba72ea472c55bf8b2153e9ea9f11/tenor.gif'),
+                                        title: 'تم إرسال رسالتك',
+                                        description1:
+                                        'تم إرسال رسالتك بنجاح وسيتم التواصل معك بكل سرور',
+                                        description2: '',
+                                      )).then((value) =>
                                       navigateTo(context, home_page())),
                                 );
                               },

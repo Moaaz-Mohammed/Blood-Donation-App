@@ -10,8 +10,9 @@ import 'Cubit/Cubit.dart';
 
 Color? color = Colors.red[300];
 
+
 navigateTo(BuildContext context, Widget widget) {
-  Navigator.push(context, MaterialPageRoute(builder: (conext) => widget));
+  Navigator.push(context, MaterialPageRoute(builder: (context) => widget));
 }
 
 Widget TitleText({@required String? text}) => Text(
@@ -66,7 +67,6 @@ class CustomDialog extends StatelessWidget {
       child: dialogContent(context),
     );
   }
-
   dialogContent(BuildContext context) {
     return Stack(
       children: [
@@ -135,17 +135,6 @@ class CustomDialog extends StatelessWidget {
                 )
               ],
             )),
-        Positioned(
-            top: 0,
-            left: 16,
-            right: 16,
-            child: CircleAvatar(
-              backgroundColor: Colors.black,
-              backgroundImage: NetworkImage(
-                  'https://media1.tenor.com/images/6d6645008d8fb67cb7b3ed7fff5b1072/tenor.gif?itemid=19924321',
-                  scale: 0.5),
-              radius: 50,
-            ))
       ],
     );
   }
