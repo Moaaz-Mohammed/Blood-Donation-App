@@ -31,9 +31,10 @@ class CustomDrawer extends StatelessWidget {
             ]
         ),
 
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          padding: EdgeInsets.zero,
+        child: Column(
+          // scrollDirection: Axis.vertical,
+          // padding: EdgeInsets.zero,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             DrawerHeader(child: Center(child: Text('معاً ننقذ حياة',style: TextStyle(fontSize: 26)))),
             ListTile(
@@ -48,7 +49,6 @@ class CustomDrawer extends StatelessWidget {
                 navigateTo(context, home_page());
               },
             ),
-            Divider(thickness: 1, color: Colors.black),
             //Patients
             ListTile(
               leading: Icon(Icons.info,color: Constants.redColor),
@@ -62,7 +62,6 @@ class CustomDrawer extends StatelessWidget {
                 navigateTo(context,Need_Donation());
               },
             ),
-            Divider(thickness: 1, color: Colors.black),
             //BloodType Info.
             ListTile(
               leading: Icon(Icons.bloodtype,color: Constants.redColor,),
@@ -76,7 +75,6 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>BloodTypes()));
               },
             ),
-            Divider(thickness: 1, color: Colors.black),
             //Info before donation
             ListTile(
               leading: Icon(Icons.info,color: Constants.redColor),
@@ -90,7 +88,6 @@ class CustomDrawer extends StatelessWidget {
                 navigateTo(context, Blood_Donation_Benf());
               },
             ),
-            Divider(thickness: 1, color: Colors.black),
             //Mail
             ListTile(
               leading: Icon(Icons.message,color: Constants.redColor),
@@ -104,7 +101,6 @@ class CustomDrawer extends StatelessWidget {
                 navigateTo(context, Mail());
               },
             ),
-            Divider(thickness: 1, color: Colors.black),
             //Exit App
             ListTile(
               leading: Icon(Icons.logout,color: Constants.redColor),

@@ -15,7 +15,7 @@ Widget TitleText({@required String? text}) => Text(
 
 Widget defaultText({@required String? text,}) => Text(
       text!,
-      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: Constants.redColor),
+      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Constants.redColor),
     );
 
 Widget dText({@required String? text,}) => Text(text!,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),);
