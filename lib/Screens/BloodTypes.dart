@@ -49,7 +49,7 @@ class _BloodTypesState extends State<BloodTypes> {
                   body: SingleChildScrollView(
                     child: Padding(
                       padding: EdgeInsets.all(10.0),
-                      child: Center(child: Image.asset(Constants.bloodtypes)),
+                      child: Image.asset(Constants.bloodtypes),
                     ),
                   ),
                 ),
