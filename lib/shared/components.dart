@@ -53,11 +53,14 @@ class CustomDialog extends StatelessWidget {
   final Image? image;
 
   CustomDialog(
-      {this.title,
+      {
+      this.title,
       this.buttonText,
       this.description1,
       this.description2,
-      this.image});
+      this.image,
+      }
+      );
   @override
   Widget build(BuildContext context) {
     return Dialog(

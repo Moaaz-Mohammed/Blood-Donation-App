@@ -24,9 +24,8 @@ class _VolunteerState extends State<Volunteer> {
   {
     return BlocProvider(
         create: (context)=>AppCubit(),
-      child:BlocConsumer<AppCubit,AppStates>
+      child:BlocBuilder<AppCubit,AppStates>
         (
-        listener: (context,state){},
         builder: (context,state)
         {
           return MaterialApp(
