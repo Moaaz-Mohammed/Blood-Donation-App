@@ -53,20 +53,44 @@ class _home_pageState extends State<home_page> {
                         SizedBox(
                           height: 60,
                         ),
-                        DefaultButton(context,
-                          text: 'مريض',
-                          function: () {
-                            navigateTo(context, Patient());
-                          },
+                        Container(
+                          height: 60,
+                          width: 300,
+                          decoration: BoxDecoration(
+                            color: color,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: TextButton(
+                            onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>Patient()));
+                            },
+                            child: Text(
+                              'مـريـض',
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
+                            ),
+                          ),
                         ),
                         SizedBox(
                           height: 20,
                         ),
-                        DefaultButton(context,
-                          text: 'متبرع',
-                          function: () {
-                            navigateTo(context, Volunteer());
-                          },
+                        Container(
+                          height: 60,
+                          width: 300,
+                          decoration: BoxDecoration(
+                            color: color,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: TextButton(
+                            onPressed: (){
+                             Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>Volunteer()));
+                            },
+                            child: Text(
+                              'متـبـرع',
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
+                            ),
+                          ),
                         ),
 
                       ],

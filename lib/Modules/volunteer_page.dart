@@ -551,8 +551,15 @@ class _VolunteerState extends State<Volunteer> {
                                 const SizedBox(
                                   height: 40,
                                 ),
-                                DefaultButton(context,
-                                    function: () {
+                                Container(
+                                  height: 60,
+                                  width: 300,
+                                  decoration: BoxDecoration(
+                                    color: color,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: TextButton(
+                                    onPressed: (){
                                       if (formKey.currentState!.validate())
                                       {
                                         final firestoreInstance =
@@ -584,10 +591,15 @@ class _VolunteerState extends State<Volunteer> {
                                               description2: '',
                                             )).then((value) =>
                                             navigateTo(context, home_page())));
-                                      }
-                                      ;
+                                      };
                                     },
-                                    text: 'إرســال البيـانـات')
+                                    child: Text(
+                                      'إرسـال البيـانـات',
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),

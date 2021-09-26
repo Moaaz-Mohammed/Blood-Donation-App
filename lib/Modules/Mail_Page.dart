@@ -149,8 +149,15 @@ class _MailState extends State<Mail> {
                             height: 40,
                           ),
                           //Submit Button
-                          DefaultButton(context,
-                              function: () {
+                          Container(
+                            height: 60,
+                            width: 300,
+                            decoration: BoxDecoration(
+                              color: color,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: TextButton(
+                              onPressed: (){
                                 final firestoreInstance =
                                     FirebaseFirestore.instance;
                                 firestoreInstance.collection("Mail").add({
@@ -172,7 +179,13 @@ class _MailState extends State<Mail> {
                                       navigateTo(context, home_page())),
                                 );
                               },
-                              text: 'إرســال')
+                              child: Text(
+                                'إرســــال',
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),

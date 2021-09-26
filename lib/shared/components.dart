@@ -23,24 +23,6 @@ Widget TitleText({@required String? text}) => Text(
       ),
     );
 
-Widget DefaultButton(context,{required Function()? function,required String? text}) => Container(
-      height: 60,
-      width: 300,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: TextButton(
-        onPressed: function!,
-        child: Text(
-          text!,
-          style: const TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
-        ),
-      ),
-    );
-
-
 Widget defaultText({@required String? text,}) => Text(
       text!,
       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: color),

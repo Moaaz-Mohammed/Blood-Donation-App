@@ -392,8 +392,15 @@ class _PatientState extends State<Patient> {
                                 height: 40,
                               ),
                               //Submit Button
-                              DefaultButton(context,
-                                  function: () {
+                              Container(
+                                height: 60,
+                                width: 300,
+                                decoration: BoxDecoration(
+                                  color: color,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: TextButton(
+                                  onPressed: (){
                                     if (formKey.currentState!.validate()) {
                                       final firestoreInstance =
                                           FirebaseFirestore.instance;
@@ -419,10 +426,15 @@ class _PatientState extends State<Patient> {
                                             )).then((value) =>
                                             navigateTo(context, home_page())),
                                       );
-                                    }
-                                    ;
+                                    };
                                   },
-                                  text: 'إرســال البيـانـات')
+                                  child: Text(
+                                    'إرسـال البيـانـات',
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ),
