@@ -18,8 +18,6 @@ Widget defaultText({@required String? text,}) => Text(
       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Constants.redColor),
     );
 
-Widget dText({@required String? text,}) => Text(text!,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),);
-
 class CustomDialog extends StatelessWidget {
   final String? title, description1, description2, buttonText;
   final Image? image;
@@ -114,7 +112,6 @@ class CustomDialog extends StatelessWidget {
     );
   }
 }
-
 
 Widget ArticleHeadText({@required String? text,}) =>Text(
       text!,
