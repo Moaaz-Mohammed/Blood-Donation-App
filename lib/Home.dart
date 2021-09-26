@@ -1,5 +1,7 @@
 import 'package:blood_donation/Modules/patient_page.dart';
 import 'package:blood_donation/Modules/volunteer_page.dart';
+import 'package:blood_donation/Widgets/PatientButton.dart';
+import 'package:blood_donation/Widgets/VolunteerButton.dart';
 import 'package:blood_donation/shared/Cubit/Cubit.dart';
 import 'package:blood_donation/shared/Cubit/States.dart';
 import 'package:blood_donation/shared/components.dart';
@@ -20,10 +22,11 @@ class _home_pageState extends State<home_page> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return BlocProvider(
       create: (context)=>AppCubit(),
-      child: BlocConsumer<AppCubit,AppStates>(
-        listener: (context,state){},
+      child: BlocBuilder<AppCubit,AppStates>(
         builder: (context,state){
           return MaterialApp(
             debugShowCheckedModeBanner: false,
@@ -46,53 +49,17 @@ class _home_pageState extends State<home_page> {
                           imageUrl:
                           "https://i.ibb.co/6W2v8Sk/57382-love-transfusion-donation-vector-blood-donor-world.png",
                           progressIndicatorBuilder: (context, url, downloadProgress) =>
-                              CircularProgressIndicator(
-                                  value: downloadProgress.progress),
+                              CircularProgressIndicator(value: downloadProgress.progress),
                           errorWidget: (context, url, error) => Icon(Icons.error),
                         ),
                         SizedBox(
-                          height: 60,
+                          height: height * 0.1,
                         ),
-                        Container(
-                          height: 60,
-                          width: 300,
-                          decoration: BoxDecoration(
-                            color: color,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: TextButton(
-                            onPressed: (){
-                              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>Patient()));
-                            },
-                            child: Text(
-                              'مـريـض',
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
-                            ),
-                          ),
-                        ),
+                        PatientButton(),
                         SizedBox(
-                          height: 20,
+                          height: height * 0.02,
                         ),
-                        Container(
-                          height: 60,
-                          width: 300,
-                          decoration: BoxDecoration(
-                            color: color,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: TextButton(
-                            onPressed: (){
-                             Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>Volunteer()));
-                            },
-                            child: Text(
-                              'متـبـرع',
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
-                            ),
-                          ),
-                        ),
-
+                        VolunteerButton(),
                       ],
                     ),
                   ),
