@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:blood_donation/Home.dart';
+import 'package:blood_donation/Screens/BloodTypes.dart';
 import 'package:blood_donation/Screens/Blood_Donation_Benf.dart';
 import 'package:blood_donation/Screens/Mail_Page.dart';
 import 'package:blood_donation/Screens/Need_Donation.dart';
@@ -72,32 +73,7 @@ class CustomDrawer extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => Dialog(
-                    elevation: 2,
-                    insetAnimationCurve: Curves.easeInOutQuart,
-                    backgroundColor: Colors.transparent,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(Constants.bloodtypes),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: Text(
-                            'Close',
-                            style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                );
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>BloodTypes()));
               },
             ),
             Divider(thickness: 1, color: Colors.black),
