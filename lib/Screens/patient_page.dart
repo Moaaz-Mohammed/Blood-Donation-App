@@ -25,8 +25,7 @@ class _PatientState extends State<Patient> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context)=>AppCubit(),
-      child: BlocConsumer<AppCubit,AppStates>(
-        listener: (context,state){},
+      child: BlocBuilder<AppCubit,AppStates>(
         builder:(context,state){
          return MaterialApp(
            themeMode: ThemeMode.system,
@@ -59,25 +58,7 @@ class _PatientState extends State<Patient> {
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: Column(
-                            textDirection: TextDirection.rtl,
-                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Column(
-                                children: [
-                                  Divider(thickness: 1,),
-                                  Text(
-                                    'برجاء التأكد عند تسجيل بيانات المريض',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18,
-                                    ),
-                                  ),
-                                  Divider(thickness: 1,color: Constants.redColor,),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
                               Form(
                                   key: formKey,
                                   child: Column(
