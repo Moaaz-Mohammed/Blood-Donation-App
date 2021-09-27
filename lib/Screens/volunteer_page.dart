@@ -66,23 +66,6 @@ class _VolunteerState extends State<Volunteer> {
                               textDirection: TextDirection.rtl,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                //Head Title
-                                Column(
-                                  children: [
-                                    Divider(thickness: 1,),
-                                    Text(
-                                      'برجاء التأكد عند تسجيل بياناتك',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18,
-                                      ),
-                                    ),
-                                    Divider(thickness: 1,color: Constants.redColor,),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
                                 //name
                                 TextFormField(
                                   cursorColor: Constants.redColor,
