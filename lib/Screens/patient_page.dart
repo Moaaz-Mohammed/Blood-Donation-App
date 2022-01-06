@@ -2,13 +2,14 @@ import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Controllers.dart';
 import 'package:blood_donation/shared/Cubit/Cubit.dart';
 import 'package:blood_donation/shared/Cubit/States.dart';
-import 'package:blood_donation/shared/themes.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../Home.dart';
+import '../Styles/Themes/DarkTheme.dart';
+import '../Styles/Themes/LightTheme.dart';
 
 class Patient extends StatefulWidget {
   const Patient({Key? key}) : super(key: key);
@@ -29,8 +30,8 @@ class _PatientState extends State<Patient> {
         builder:(context,state){
          return MaterialApp(
            themeMode: ThemeMode.system,
-            theme:lighttheme,
-            darkTheme: darktheme,
+            theme:LightTheme,
+            darkTheme: DarkTheme,
             debugShowCheckedModeBanner: false,
             builder: (context, child) {
               return Directionality(

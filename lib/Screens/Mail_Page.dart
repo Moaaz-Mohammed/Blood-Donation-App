@@ -1,10 +1,10 @@
 import 'package:blood_donation/shared/Constants.dart';
-import 'package:blood_donation/shared/themes.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:flutter/material.dart';
-
 import '../Home.dart';
+import '../Styles/Themes/DarkTheme.dart';
+import '../Styles/Themes/LightTheme.dart';
 
 class Mail extends StatefulWidget {
   const Mail({Key? key}) : super(key: key);
@@ -22,8 +22,8 @@ class _MailState extends State<Mail> {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.system,
-      darkTheme: darktheme,
-      theme: lighttheme,
+      darkTheme: DarkTheme,
+      theme: LightTheme,
       debugShowCheckedModeBanner: false,
       builder: (context, child) {
         return SafeArea(

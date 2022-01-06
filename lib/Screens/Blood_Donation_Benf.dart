@@ -2,10 +2,12 @@ import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Cubit/Cubit.dart';
 import 'package:blood_donation/shared/Cubit/States.dart';
 import 'package:blood_donation/shared/components.dart';
-import 'package:blood_donation/shared/themes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../Styles/Themes/DarkTheme.dart';
+import '../Styles/Themes/LightTheme.dart';
 
 class Blood_Donation_Benf extends StatefulWidget {
   const Blood_Donation_Benf({Key? key}) : super(key: key);
@@ -28,8 +30,8 @@ class _Blood_Donation_BenfState extends State<Blood_Donation_Benf> {
             {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
-                theme: lighttheme,
-                darkTheme:darktheme,
+                theme: LightTheme,
+                darkTheme:DarkTheme,
                 themeMode: ThemeMode.system,
                 home: Scaffold(
                   appBar: AppBar(

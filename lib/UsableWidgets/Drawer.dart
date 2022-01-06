@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:blood_donation/Home.dart';
 import 'package:blood_donation/Screens/BloodTypes.dart';
 import 'package:blood_donation/Screens/Blood_Donation_Benf.dart';
@@ -8,9 +7,9 @@ import 'package:blood_donation/Screens/Need_Donation.dart';
 import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Cubit/Cubit.dart';
 import 'package:blood_donation/shared/components.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
+
+import '../Styles/CustomColors.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -25,7 +24,7 @@ class CustomDrawer extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(
-                  color: AppCubit.get(context).isDark? HexColor('333739') : Colors.white,
+                  color: AppCubit.get(context).isDark? CustomColors.primaryRedColor : CustomColors.primaryWhiteColor,
                   blurRadius: 10.0,
                   offset: Offset(0.0, 10.0))
             ]

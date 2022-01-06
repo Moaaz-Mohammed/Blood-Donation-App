@@ -1,13 +1,13 @@
-import 'package:blood_donation/Widgets/PatientButton.dart';
-import 'package:blood_donation/Widgets/VolunteerButton.dart';
 import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Cubit/Cubit.dart';
 import 'package:blood_donation/shared/Cubit/States.dart';
-import 'package:blood_donation/shared/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'Widgets/Drawer.dart';
+import 'Styles/Themes/DarkTheme.dart';
+import 'Styles/Themes/LightTheme.dart';
+import 'UsableWidgets/Drawer.dart';
+import 'UsableWidgets/PatientButton.dart';
+import 'UsableWidgets/VolunteerButton.dart';
 
 class home_page extends StatefulWidget
 {
@@ -26,8 +26,8 @@ class _home_pageState extends State<home_page> {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             themeMode: ThemeMode.system,
-            theme: lighttheme,
-            darkTheme: darktheme,
+            theme: LightTheme,
+            darkTheme: DarkTheme,
             home: Scaffold(
               appBar: AppBar(
                 title: Text('الرئيسية'),
@@ -40,7 +40,7 @@ class _home_pageState extends State<home_page> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(Constants.logoImage),
+                        Image.asset(Constants.LogoImage),
                         SizedBox(
                           height: height * 0.1,
                         ),

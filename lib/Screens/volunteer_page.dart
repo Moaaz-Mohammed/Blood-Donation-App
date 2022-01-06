@@ -3,11 +3,12 @@ import 'package:blood_donation/shared/Controllers.dart';
 import 'package:blood_donation/shared/Cubit/Cubit.dart';
 import 'package:blood_donation/shared/Cubit/States.dart';
 import 'package:blood_donation/shared/components.dart';
-import 'package:blood_donation/shared/themes.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../Home.dart';
+import '../Styles/Themes/DarkTheme.dart';
+import '../Styles/Themes/LightTheme.dart';
 
 class Volunteer extends StatefulWidget {
   @override
@@ -31,8 +32,8 @@ class _VolunteerState extends State<Volunteer> {
         {
           return MaterialApp(
             themeMode: ThemeMode.system,
-            theme:lighttheme,
-            darkTheme: darktheme,
+            theme:LightTheme,
+            darkTheme: DarkTheme,
             debugShowCheckedModeBanner: false,
             builder: (context, child)
             {

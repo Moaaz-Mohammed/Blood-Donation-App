@@ -1,11 +1,11 @@
 import 'package:blood_donation/shared/Cubit/Cubit.dart';
 import 'package:blood_donation/shared/Cubit/States.dart';
-import 'package:blood_donation/shared/themes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'Home.dart';
+import 'Styles/Themes/DarkTheme.dart';
+import 'Styles/Themes/LightTheme.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: lighttheme,
-            darkTheme: darktheme,
+            theme: LightTheme,
+            darkTheme: DarkTheme,
             themeMode: ThemeMode.system,
             home: home_page(),
           );
