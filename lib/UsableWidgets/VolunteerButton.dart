@@ -1,7 +1,6 @@
 import 'package:blood_donation/Screens/volunteer_page.dart';
-import 'package:blood_donation/shared/Constants.dart';
-import 'package:blood_donation/shared/components.dart';
 import 'package:flutter/material.dart';
+import '../Styles/CustomColors.dart';
 
 class VolunteerButton extends StatelessWidget {
   const VolunteerButton({Key? key}) : super(key: key);
@@ -14,7 +13,7 @@ class VolunteerButton extends StatelessWidget {
       height: height * 0.07,
       width: width * 0.7,
       decoration: BoxDecoration(
-        color: Constants.redColor,
+        color: CustomColors.primaryRedColor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextButton(
@@ -23,7 +22,7 @@ class VolunteerButton extends StatelessWidget {
         },
         child: Text(
           'متـبـرع',
-          style: const TextStyle(
+          style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
         ),
       ),

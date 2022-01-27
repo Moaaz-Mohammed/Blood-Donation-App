@@ -1,6 +1,8 @@
 import 'package:blood_donation/shared/Constants.dart';
 import 'package:flutter/material.dart';
 
+import '../Styles/CustomColors.dart';
+
 navigateTo(BuildContext context, Widget widget) {
   Navigator.push(context, MaterialPageRoute(builder: (context) => widget));
 }
@@ -15,7 +17,7 @@ Widget TitleText({@required String? text}) => Text(
 
 Widget defaultText({@required String? text,}) => Text(
       text!,
-      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Constants.redColor),
+      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: CustomColors.primaryRedColor),
     );
 
 class CustomDialog extends StatelessWidget {
@@ -51,7 +53,7 @@ class CustomDialog extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                      color: Constants.redColor,
+                      color: CustomColors.primaryRedColor,
                       blurRadius: 10.0,
                       offset: Offset(0.0, 10.0))
                 ]),
@@ -115,12 +117,12 @@ class CustomDialog extends StatelessWidget {
 
 Widget ArticleHeadText({@required String? text,}) =>Text(
       text!,
-      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Constants.redColor),
+      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.primaryRedColor),
     );
 
 Widget ArticleContentText({@required String? text,}) => Text(
       text!,
-      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Constants.redColor),
+      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: CustomColors.primaryRedColor),
     );
 
 Widget DetailtsText ({required String? text})=>Text(text!,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black),);

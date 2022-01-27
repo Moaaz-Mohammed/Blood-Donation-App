@@ -1,13 +1,5 @@
-import 'package:blood_donation/shared/Constants.dart';
-import 'package:blood_donation/shared/Cubit/Cubit.dart';
-import 'package:blood_donation/shared/Cubit/States.dart';
 import 'package:blood_donation/shared/components.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../Styles/Themes/DarkTheme.dart';
-import '../Styles/Themes/LightTheme.dart';
 
 class Blood_Donation_Benf extends StatefulWidget {
   const Blood_Donation_Benf({Key? key}) : super(key: key);
@@ -18,22 +10,7 @@ class Blood_Donation_Benf extends StatefulWidget {
 class _Blood_Donation_BenfState extends State<Blood_Donation_Benf> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      builder: (conext, child) {
-        return BlocProvider(
-            create: (context)=>AppCubit(),
-          child: BlocConsumer<AppCubit,AppStates>
-            (
-            listener: (context,state){},
-            builder: (context,state)
-            {
-              return MaterialApp(
-                debugShowCheckedModeBanner: false,
-                theme: LightTheme,
-                darkTheme:DarkTheme,
-                themeMode: ThemeMode.system,
-                home: Scaffold(
+    return Scaffold(
                   appBar: AppBar(
                     elevation: 0,
                     title: Text('معلومات تهمك'),
@@ -44,7 +21,6 @@ class _Blood_Donation_BenfState extends State<Blood_Donation_Benf> {
                       },
                       child: Icon(
                         Icons.arrow_back_ios,
-                        color: Constants.redColor,
                       ),
                     ),
                   ),
@@ -207,12 +183,6 @@ class _Blood_Donation_BenfState extends State<Blood_Donation_Benf> {
                       ),
                     ),
                   ),
-                ),
-              );
-            },
-          ),
-        );
-      },
     );
   }
 }

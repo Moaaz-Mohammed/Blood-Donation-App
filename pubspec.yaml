@@ -10,12 +10,26 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
   cached_network_image: ^3.0.0
-  cloud_firestore: ^2.3.0
-  firebase_core: ^1.3.0
+  shared_preferences:
   flutter_bloc: 7.0.1
-  bloc:
+  modal_progress_hud_nsn: ^0.1.0-nullsafety-1
+  fluttertoast:
   cupertino_icons: ^1.0.2
+  page_transition:
+  image_picker: ^0.8.4+4
+
+  #Localization
+  easy_localization: ^3.0.0
+
+  smooth_page_indicator: ^1.0.0+2
+
+  # firebase dependencies
+  firebase_core: ^1.11.0
+  cloud_firestore: ^3.1.6
+  firebase_storage: ^10.2.5
+  firebase_auth: ^3.3.5
 
 dev_dependencies:
   flutter_test:
@@ -28,4 +42,4 @@ flutter:
   uses-material-design: true
 
   assets:
-    - images/
+    - assets/images/

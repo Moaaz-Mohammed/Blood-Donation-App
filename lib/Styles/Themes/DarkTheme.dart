@@ -5,30 +5,105 @@ import '../CustomColors.dart';
 
 ThemeData DarkTheme = ThemeData(
   scaffoldBackgroundColor: CustomColors.primaryDarkColor,
-  primaryColor: CustomColors.primaryDarkColor,
-  appBarTheme: AppBarTheme(
-      toolbarHeight: 50,
-      titleSpacing: 20.0,
-      backgroundColor: CustomColors.primaryDarkColor,
-      backwardsCompatibility: false,
-      systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: CustomColors.primaryDarkColor,
-        statusBarIconBrightness: Brightness.light,
-      ),
-      titleTextStyle: TextStyle(
-          color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
-      elevation: 5,
-      iconTheme: IconThemeData(color: Colors.white)),
+  primaryColor: CustomColors.primaryRedColor,
+  appBarTheme: const AppBarTheme(
+    // ignore: deprecated_member_use
+    backwardsCompatibility: false,
+    systemOverlayStyle: SystemUiOverlayStyle(
+      statusBarColor: CustomColors.primaryDarkColor,
+      statusBarIconBrightness: Brightness.light,
+    ),
+    iconTheme: IconThemeData(
+      color: CustomColors.primaryGreyColor,
+    ),
+    titleTextStyle: TextStyle(
+      fontWeight: FontWeight.w900,
+      fontSize: 20.0,
+      color: CustomColors.primaryGreyColor,
+    ),
+    centerTitle: true,
+    backgroundColor: CustomColors.primaryDarkColor,
+    elevation: 0.0,
+    titleSpacing: 20.0,
+  ),
+  iconTheme: const IconThemeData(color: CustomColors.primaryGreyColor),
+  primaryIconTheme:
+      IconThemeData(color: CustomColors.primaryWhiteColor.withOpacity(0.7)),
+  splashColor: CustomColors.primaryRedColor,
   textTheme: TextTheme(
-    bodyText1: TextStyle(
+    headline1: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.primaryWhiteColor.withOpacity(0.7),
+    ),
+    headline2: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.primaryWhiteColor.withOpacity(0.7),
+    ),
+    headline3: TextStyle(
       fontSize: 18,
-      fontWeight: FontWeight.w600,
-      color: Colors.white,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.primaryWhiteColor.withOpacity(0.7),
     ),
-    bodyText2: TextStyle(
+    headline4: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.primaryWhiteColor.withOpacity(0.7),
+    ),
+    headline5: TextStyle(
       fontSize: 22,
-      fontWeight: FontWeight.w600,
-      color: Colors.white,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.primaryWhiteColor.withOpacity(0.7),
     ),
-  ), textSelectionTheme: TextSelectionThemeData(cursorColor: Constants.redColor),
+    headline6: TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.primaryWhiteColor.withOpacity(0.7),
+    ),
+    labelMedium: TextStyle(
+      fontSize: 14,
+      color: CustomColors.primaryWhiteColor.withOpacity(0.5),
+    ),
+  ),
+  dividerColor: CustomColors.primaryWhiteColor.withOpacity(0.5),
+  backgroundColor: CustomColors.primaryDarkColor,
+  hoverColor: CustomColors.primaryDarkColor,
+  focusColor: CustomColors.primaryDarkColor,
+  cardColor: CustomColors.primaryDarkColor,
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: CustomColors.primaryDarkColor,
+    elevation: 2,
+  ),
+  progressIndicatorTheme: ProgressIndicatorThemeData(
+    color: CustomColors.primaryWhiteColor,
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    suffixIconColor: CustomColors.primaryRedColor,
+    focusColor: CustomColors.primaryRedColor,
+    hintStyle: TextStyle(
+      color: CustomColors.primaryWhiteColor,
+      fontSize: 14,
+    ),
+    labelStyle: TextStyle(
+      color: CustomColors.primaryRedColor,
+      fontSize: 14,
+    ),
+    enabledBorder: UnderlineInputBorder(
+      borderRadius: Constants.primaryBorderRadius,
+      borderSide: BorderSide(
+        color: CustomColors.primaryGreyColor,
+      ),
+    ),
+    focusedBorder: UnderlineInputBorder(
+      borderRadius: Constants.primaryBorderRadius,
+      borderSide: BorderSide(
+        color: CustomColors.primaryRedColor,
+      ),
+    ),
+    filled: true,
+    fillColor: CustomColors.primaryDarkColor,
+    contentPadding:
+        const EdgeInsets.symmetric(vertical: 22.0, horizontal: 20.0),
+  ),
 );

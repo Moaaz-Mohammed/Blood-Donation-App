@@ -2,42 +2,98 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../shared/Constants.dart';
+import '../CustomColors.dart';
 
 ThemeData LightTheme = ThemeData(
-    floatingActionButtonTheme:
-    FloatingActionButtonThemeData(backgroundColor: Colors.teal),
-    scaffoldBackgroundColor: Colors.white,
-    primaryColor: Colors.white,
-    backgroundColor: Colors.white,
-    appBarTheme: AppBarTheme(
-        toolbarHeight: 50,
-        titleSpacing: 20.0,
-        backgroundColor: Colors.white,
-        backwardsCompatibility: false,
-        systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarColor: Colors.grey[100],
-          statusBarIconBrightness: Brightness.dark,
-        ),
-        titleTextStyle: TextStyle(
-            color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-        elevation: 5,
-        iconTheme: IconThemeData(color: Constants.redColor)),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      type: BottomNavigationBarType.fixed,
-      selectedItemColor: Constants.redColor,
-      unselectedItemColor: Colors.grey,
-      backgroundColor: Colors.white,
-      elevation: 30,
+  scaffoldBackgroundColor: CustomColors.primaryWhiteColor,
+  primaryColor: CustomColors.primaryRedColor,
+  appBarTheme: AppBarTheme(
+    // ignore: deprecated_member_use
+    backwardsCompatibility: false,
+    systemOverlayStyle: SystemUiOverlayStyle(
+      statusBarColor: CustomColors.primaryWhiteColor,
+      statusBarIconBrightness: Brightness.dark,
     ),
-    textTheme: TextTheme(
-      bodyText1: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w600,
-        color: Colors.black,
+    iconTheme: IconThemeData(
+      color: CustomColors.primaryRedColor,
+    ),
+    titleTextStyle: TextStyle(
+      fontWeight: FontWeight.w900,
+      fontSize: 20.0,
+      color: CustomColors.primaryRedColor,
+    ),
+    centerTitle: true,
+    backgroundColor: CustomColors.primaryWhiteColor,
+    elevation: 0.0,
+    titleSpacing: 20.0,
+  ),
+  iconTheme: IconThemeData(color: CustomColors.primaryDarkColor),
+  primaryIconTheme: IconThemeData(color: CustomColors.primaryDarkColor),
+  splashColor: CustomColors.primaryWhiteColor,
+  textTheme: TextTheme(
+    headline1: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.primaryDarkColor,
+    ),
+    headline2: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.primaryDarkColor,
+    ),
+    headline3: TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.primaryDarkColor,
+    ),
+    headline4: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.primaryDarkColor,
+    ),
+    headline5: TextStyle(
+      fontSize: 22,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.primaryDarkColor,
+    ),
+    labelMedium: TextStyle(fontSize: 14, color: CustomColors.primaryDarkColor),
+  ),
+  dividerColor: CustomColors.primaryDarkColor,
+  backgroundColor: CustomColors.primaryWhiteColor,
+  hoverColor: CustomColors.primaryWhiteColor,
+  focusColor: CustomColors.primaryWhiteColor,
+  cardColor: CustomColors.primaryWhiteColor,
+  floatingActionButtonTheme:
+  FloatingActionButtonThemeData(backgroundColor: CustomColors.primaryRedColor),
+  progressIndicatorTheme: ProgressIndicatorThemeData(
+    color: CustomColors.primaryRedColor,
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    suffixIconColor: CustomColors.primaryRedColor,
+    focusColor: CustomColors.primaryRedColor,
+    hintStyle: TextStyle(
+      color: CustomColors.primaryDarkColor,
+      fontSize: 14,
+    ),
+    labelStyle: TextStyle(
+      color: CustomColors.primaryRedColor,
+      fontSize: 14,
+    ),
+    enabledBorder: UnderlineInputBorder(
+      borderRadius: Constants.primaryBorderRadius,
+      borderSide: BorderSide(
+        color: CustomColors.primaryGreyColor,
       ),
-      bodyText2: TextStyle(
-        fontSize: 22,
-        fontWeight: FontWeight.w600,
-        color: Colors.black,
+    ),
+    focusedBorder: UnderlineInputBorder(
+      borderRadius: Constants.primaryBorderRadius,
+      borderSide: BorderSide(
+        color: CustomColors.primaryRedColor,
       ),
-    ), textSelectionTheme: TextSelectionThemeData(cursorColor: Constants.redColor));
+    ),
+    filled: true,
+    fillColor: CustomColors.primaryWhiteColor,
+    contentPadding:
+    const EdgeInsets.symmetric(vertical: 22.0, horizontal: 20.0),
+  ),
+);

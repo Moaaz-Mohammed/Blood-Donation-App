@@ -1,10 +1,8 @@
-import 'package:blood_donation/shared/Constants.dart';
+import 'package:blood_donation/Screens/home/home_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:flutter/material.dart';
-import '../Home.dart';
-import '../Styles/Themes/DarkTheme.dart';
-import '../Styles/Themes/LightTheme.dart';
+import '../Styles/CustomColors.dart';
 
 class Mail extends StatefulWidget {
   const Mail({Key? key}) : super(key: key);
@@ -20,17 +18,7 @@ class _MailState extends State<Mail> {
   TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      themeMode: ThemeMode.system,
-      darkTheme: DarkTheme,
-      theme: LightTheme,
-      debugShowCheckedModeBanner: false,
-      builder: (context, child) {
-        return SafeArea(
-          child: Directionality(
-            textDirection: TextDirection.rtl,
-            child:(
-            Scaffold(
+    return Scaffold(
               appBar: AppBar(
                 title: TitleText(text: 'إرسال رساله'),
                 centerTitle: true,
@@ -42,7 +30,6 @@ class _MailState extends State<Mail> {
                     },
                     child: const Icon(
                       Icons.arrow_forward_ios,
-                      color: Constants.redColor,
                     ),
                   ),
                 ],
@@ -68,7 +55,7 @@ class _MailState extends State<Mail> {
                                   fontSize: 18,
                                 ),
                               ),
-                              Divider(thickness: 1,color: Constants.redColor,),
+                              Divider(thickness: 1,color: CustomColors.primaryRedColor,),
                             ],
                           ),
                           SizedBox(
@@ -76,10 +63,10 @@ class _MailState extends State<Mail> {
                           ),
                           //Name
                           TextFormField(
-                            cursorColor: Constants.redColor,
+                            cursorColor: CustomColors.primaryRedColor,
                             controller: senderController,
                             keyboardType: TextInputType.text,
-                            style: TextStyle(color: Constants.redColor),
+                            style: TextStyle(color: CustomColors.primaryRedColor),
                             decoration: InputDecoration(
                               hintTextDirection: TextDirection.rtl,
                               enabledBorder: UnderlineInputBorder(
@@ -91,7 +78,7 @@ class _MailState extends State<Mail> {
                               labelStyle: TextStyle(color: Colors.grey),
                               prefixIcon: Icon(
                                 Icons.person,
-                                color: Constants.redColor,
+                                color: CustomColors.primaryRedColor,
                               ),
                               border: OutlineInputBorder(),
                             ),
@@ -101,10 +88,10 @@ class _MailState extends State<Mail> {
                           ),
                           // Status
                           TextFormField(
-                            cursorColor: Constants.redColor,
+                            cursorColor: CustomColors.primaryRedColor,
                             controller: phoneController,
                             keyboardType: TextInputType.phone,
-                            style: TextStyle(color: Constants.redColor),
+                            style: TextStyle(color: CustomColors.primaryRedColor),
                             decoration: InputDecoration(
                               hintTextDirection: TextDirection.rtl,
                               enabledBorder: UnderlineInputBorder(
@@ -116,7 +103,7 @@ class _MailState extends State<Mail> {
                               labelStyle: TextStyle(color: Colors.grey),
                               prefixIcon: Icon(
                                 Icons.phone,
-                                color: Constants.redColor,
+                                color: CustomColors.primaryRedColor,
                               ),
                               border: OutlineInputBorder(),
                             ),
@@ -126,10 +113,10 @@ class _MailState extends State<Mail> {
                           ),
                           // Status
                           TextFormField(
-                            cursorColor: Constants.redColor,
+                            cursorColor: CustomColors.primaryRedColor,
                             controller: messageController,
                             keyboardType: TextInputType.text,
-                            style: TextStyle(color: Constants.redColor),
+                            style: TextStyle(color: CustomColors.primaryRedColor),
                             maxLines: 3,
                             decoration: InputDecoration(
                               hintTextDirection: TextDirection.rtl,
@@ -142,7 +129,7 @@ class _MailState extends State<Mail> {
                               labelStyle: TextStyle(color: Colors.grey),
                               prefixIcon: Icon(
                                 Icons.message,
-                                color: Constants.redColor,
+                                color: CustomColors.primaryRedColor,
                               ),
                               border: OutlineInputBorder(),
                             ),
@@ -155,7 +142,7 @@ class _MailState extends State<Mail> {
                             height: 60,
                             width: 300,
                             decoration: BoxDecoration(
-                              color: Constants.redColor,
+                              color: CustomColors.primaryRedColor,
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: TextButton(
@@ -178,7 +165,7 @@ class _MailState extends State<Mail> {
                                         'تم إرسال رسالتك بنجاح وسيتم التواصل معك بكل سرور',
                                         description2: '',
                                       )).then((value) =>
-                                      navigateTo(context, home_page())),
+                                      navigateTo(context, HomeScreen())),
                                 );
                               },
                               child: Text(
@@ -194,11 +181,6 @@ class _MailState extends State<Mail> {
                   ),
                 ),
               ),
-            )
-          ),
-          ),
-        );
-      },
     );
   }
 }
