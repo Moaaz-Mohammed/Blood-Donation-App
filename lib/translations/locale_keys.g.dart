@@ -19,7 +19,6 @@ abstract class  LocaleKeys {
   static const edit_profile = 'edit_profile';
   static const ask_for_edit_profile = 'ask_for_edit_profile';
   static const name = 'name';
-  static const age = 'age';
   static const address = 'address';
   static const phone = 'phone';
   static const email = 'email';
@@ -40,5 +39,22 @@ abstract class  LocaleKeys {
   static const hru = 'hru';
   static const last_donation_date = 'last_donation_date';
   static const next_donation_date = 'next_donation_date';
+  static const blood_type = 'blood_type';
+  static const password = 'password';
+  static const login = 'login';
+  static const register = 'register';
+  static const do_u_suffer = 'do_u_suffer';
+  static const choose = 'choose';
+  static const no_chronic_diseases = 'no_chronic_diseases';
+  static const anemia_diseases = 'anemia_diseases';
+  static const genetic_blood_diseases = 'genetic_blood_diseases';
+  static const hepatitis = 'hepatitis';
+  static const aids = 'aids';
+  static const canser = 'canser';
+  static const choose_blood_type = 'choose_blood_type';
+  static const date_of_birth = 'date_of_birth';
+  static const registering = 'registering';
+  static const registered = 'registered';
+  static const choose_app_language = 'choose_app_language';
 
 }

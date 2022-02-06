@@ -137,7 +137,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 CustomSizedBoxHeight(),
             TextFormField(
               decoration: InputDecoration(
-                hintText: LocaleKeys.age.tr(),),
+                hintText: LocaleKeys.date_of_birth.tr(),),
                   controller: userAgeController,
                   keyboardType: TextInputType.number,
                 ),

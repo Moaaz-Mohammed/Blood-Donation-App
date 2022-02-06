@@ -1,3 +1,4 @@
+import 'package:blood_donation/Screens/on_boarding/choose_language.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../Styles/CustomColors.dart';
@@ -50,7 +51,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         if (value) {
           Functions.navigatorPushAndRemove(
             context: context,
-            screen: LogInScreen(),
+            screen: ChooseLanguageScreen(),
           );
         }
       },

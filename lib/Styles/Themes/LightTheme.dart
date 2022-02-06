@@ -73,11 +73,11 @@ ThemeData LightTheme = ThemeData(
     focusColor: CustomColors.primaryRedColor,
     hintStyle: TextStyle(
       color: CustomColors.primaryDarkColor,
-      fontSize: 14,
+      fontSize: 15,
     ),
     labelStyle: TextStyle(
       color: CustomColors.primaryRedColor,
-      fontSize: 14,
+      fontSize: 15,
     ),
     enabledBorder: UnderlineInputBorder(
       borderRadius: Constants.primaryBorderRadius,

@@ -1,3 +1,4 @@
+import 'package:blood_donation/Screens/settings/change_language_dialog.dart';
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -45,47 +46,34 @@ class SettingsScreen extends StatelessWidget {
                 SizedBox(
                   height: size.height * 0.03,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: size.width * 0.08,
-                          backgroundImage:
-                              NetworkImage(userData[Constants.userImageUrl]),
-                        ),
-                        CustomSizedBoxWidth(),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              userData[Constants.userName],
-                              style: Theme.of(context).textTheme.headline4,
-                            ),
-                            SizedBox(
-                              height: size.height * 0.005,
-                            ),
-                            Opacity(
-                              opacity: 0.5,
-                              child: Text(
-                                LocaleKeys.personal_info.tr(),
-                                style: Theme.of(context).textTheme.headline1,
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
+                ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    radius: size.width * 0.08,
+                    backgroundImage:
+                    userData[Constants.userImageUrl] == null
+                        ? AssetImage(
+                      Constants.addUserImage,
+                    ) as ImageProvider
+                        : NetworkImage(
+                      userData[Constants.userImageUrl],
                     ),
-                    ArrowBox(
-                        icon: Icons.chevron_right,
-                        onPressed: () {
-                          Functions.navigatorPush(
-                              context: context,
-                              screen: ProfileScreen(userData: userData));
-                        }),
-                  ],
+                  ),
+                  title: Text(
+                    userData[Constants.userName],
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                  subtitle: Text(
+                    LocaleKeys.personal_info.tr(),
+                    style: Theme.of(context).textTheme.headline1,
+                  ),
+                  trailing: ArrowBox(
+                      icon: Icons.chevron_right,
+                      onPressed: () {
+                        Functions.navigatorPush(
+                            context: context,
+                            screen: ProfileScreen(userData: userData));
+                      }),
                 ),
                 SizedBox(
                   height: size.height * 0.045,
@@ -108,85 +96,7 @@ class SettingsScreen extends StatelessWidget {
                     CustomSizedBoxWidth(),
                     InkWell(
                       onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                            backgroundColor:
-                                Theme.of(context).scaffoldBackgroundColor,
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Align(
-                                    alignment: Alignment.topCenter,
-                                    child: Column(
-                                      children: [
-                                        InkWell(
-                                          child: Icon(
-                                            Icons.close,
-                                            color: CustomColors.primaryRedColor,
-                                          ),
-                                          onTap: () {
-                                            Navigator.pop(context);
-                                          },
-                                        ),
-                                        Divider(),
-                                      ],
-                                    )),
-                                InkWell(
-                                  onTap: () async {
-                                    await context
-                                        .setLocale(Locale('en', 'US'))
-                                        .then((value) {
-                                      Navigator.pop(context);
-                                    });
-                                  },
-                                  child: Row(
-                                    children: [
-                                      Image.asset(
-                                        Constants.ukFlag,
-                                        width: 30,
-                                        height: 30,
-                                      ),
-                                      CustomSizedBoxWidth(),
-                                      Text(
-                                        'English - UK',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline2,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                CustomSizedBoxHeight(),
-                                InkWell(
-                                  onTap: () async {
-                                    await context
-                                        .setLocale(Locale('ar', 'EG'))
-                                        .then((value) {
-                                      Navigator.pop(context);
-                                    });
-                                  },
-                                  child: Row(
-                                    children: [
-                                      Image.asset(
-                                        Constants.egFlag,
-                                        width: 30,
-                                        height: 30,
-                                      ),
-                                      CustomSizedBoxWidth(),
-                                      Text(
-                                        'العربية - EG',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline2,
-                                      )
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        );
+                        change_language_dialog(context);
                       },
                       onDoubleTap: () async {},
                       child: Text(

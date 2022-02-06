@@ -6,19 +6,23 @@ class UserModel {
   var userId;
   var userName;
   var userDateofBirth;
+  var userBloodType;
   var userEmail;
-  var userLocation;
+  var userAddress;
   var userPhone;
   var userImageUrl;
+  var userStatus;
 
   UserModel({
     required this.userId,
     required this.userName,
     required this.userDateofBirth,
+    required this.userBloodType,
     required this.userEmail,
-    required this.userLocation,
+    required this.userAddress,
     required this.userPhone,
     required this.userImageUrl,
+    required this.userStatus,
   });
 
   UserModel.fromSnapshot(DocumentSnapshot snapshot)

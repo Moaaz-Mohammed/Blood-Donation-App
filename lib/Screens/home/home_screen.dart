@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import '../../UsableWidgets/Drawer.dart';
 import '../../UsableWidgets/VolunteerButton.dart';
+import '../../UsableWidgets/loading.dart';
 import '../../shared/Constants.dart';
 import '../../translations/locale_keys.g.dart';
 
@@ -58,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: CustomDrawer(
         userData: userData,
       ),
-      body: Padding(
+      body: userData == null ? Loading() : Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -124,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              userData![Constants.userLastDonation],
+                              '',
                               style: Theme.of(context).textTheme.headline5?.copyWith(
                                 color: CustomColors.primaryWhiteColor
                               ),

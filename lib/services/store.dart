@@ -19,8 +19,10 @@ class Store {
         Constants.userDateofBirth: userModel.userDateofBirth,
         Constants.userEmail: userModel.userEmail,
         Constants.userPhone: userModel.userPhone,
-        Constants.userAddress: userModel.userLocation,
+        Constants.userAddress: userModel.userAddress,
         Constants.userImageUrl: userModel.userImageUrl,
+        Constants.userBloodType: userModel.userBloodType,
+        Constants.userStatus: userModel.userStatus,
       },
     );
   }

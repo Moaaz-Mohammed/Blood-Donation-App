@@ -1,6 +1,8 @@
 import 'package:blood_donation/shared/Constants.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../translations/locale_keys.g.dart';
 
 class BloodTypes extends StatefulWidget {
   const BloodTypes({Key? key}) : super(key: key);
@@ -14,7 +16,7 @@ class _BloodTypesState extends State<BloodTypes> {
     return Scaffold(
                   appBar: AppBar(
                     elevation: 0,
-                    title: Text('فصائل الدم'),
+                    title: Text(LocaleKeys.blood_types.tr()),
                     centerTitle: true,
                     leading: TextButton(
                       onPressed: () {

@@ -1,7 +1,8 @@
 import 'package:blood_donation/Screens/auth/sign_up_screen.dart';
 import 'package:blood_donation/state_management/bloc/Cubit.dart';
+import 'package:blood_donation/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../Styles/CustomColors.dart';
 import '../../UsableWidgets/custom_button.dart';
 import '../../UsableWidgets/custom_sized_box_height.dart';
@@ -26,9 +27,7 @@ class _LogInScreenState extends State<LogInScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
+    return Scaffold(
         body: SafeArea(
           child: Center(
             child: SingleChildScrollView(
@@ -53,7 +52,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     TextFormField(
                       style: Theme.of(context).textTheme.headline3,
                       decoration: InputDecoration(
-                        hintText: 'البريد الإكتروني',
+                        labelText: LocaleKeys.email.tr(),
                       ),
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
@@ -62,7 +61,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     TextFormField(
                         style: Theme.of(context).textTheme.displayMedium,
                         decoration: InputDecoration(
-                          hintText: 'كلمة المرور',
+                          labelText: LocaleKeys.password.tr(),
                           suffixIcon: InkWell(
                             onTap: () {
                               setState(() {
@@ -83,7 +82,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     CustomSizedBoxHeight(),
                     CustomSizedBoxHeight(),
                     CustomButton(
-                      title: 'تسجيل الدخول',
+                      title: LocaleKeys.login.tr(),
                       onTap: () async {
                         if (_globalKey.currentState!.validate()) {
                           await _auth.signInWithEmailAndPassword(
@@ -96,7 +95,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                     CustomSizedBoxHeight(),
                     CustomButton(
-                      title: 'تسجيل حساب جديد',
+                      title:  LocaleKeys.register.tr(),
                       onTap: () {
                         Functions.navigatorPush(
                           context: context,
@@ -112,7 +111,6 @@ class _LogInScreenState extends State<LogInScreen> {
               ),
             ),
           ),
-        ),
       ),
     );
   }

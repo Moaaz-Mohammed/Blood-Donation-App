@@ -1,20 +1,23 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
 import '../../Styles/CustomColors.dart';
 import '../../UsableWidgets/custom_button.dart';
-import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../model/user_model.dart';
 import '../../services/auth.dart';
 import '../../services/store.dart';
 import '../../shared/Constants.dart';
 import '../../shared/Functions.dart';
+import '../../state_management/bloc/Cubit.dart';
 import '../../state_management/provider/model_hud.dart';
+import '../../translations/locale_keys.g.dart';
 import '../home/home_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -28,6 +31,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
   FirebaseFirestore Firebase = FirebaseFirestore.instance;
   final Auth _auth = Auth();
   final Store _store = Store();
+  var BloodType;
+  var Status;
+  var ShareData;
   File? _image;
   var userImageUrl;
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
@@ -72,30 +78,32 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: ModalProgressHUD(
-        inAsyncCall: Provider.of<ModelHud>(context).isLoading1,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('تسجيل حساب جديد'),
-          ),
-          body: Form(
-            key: _globalKey,
-            child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              padding: Constants.primaryPadding,
-              child: Column(
-                children: [
-                  CustomSizedBoxHeight(),
-                  Container(
-                    width: width * 0.35,
-                    height: width * 0.35,
+    DateTime _dateTime = DateTime.now();
+    double height = MediaQuery.of(context).size.height;
+    var dateController = '${DateFormat.yMMMd().format(_dateTime)}';
+    return ModalProgressHUD(
+      inAsyncCall: Provider.of<ModelHud>(context).isLoading1,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(LocaleKeys.register.tr()),
+        ),
+        body: Form(
+          key: _globalKey,
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            padding: Constants.primaryPadding,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Container(
+                    width: width * 0.25,
+                    height: width * 0.25,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
                         color: CustomColors.primaryRedColor,
-                        width: 2,
+                        width: 1,
                       ),
                     ),
                     child: Stack(
@@ -121,6 +129,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             },
                             borderRadius: BorderRadius.circular(50.0),
                             child: CircleAvatar(
+                              radius: width * 0.04,
                               backgroundColor: CustomColors.primaryWhiteColor,
                               child: Icon(
                                 Icons.add_a_photo_rounded,
@@ -132,101 +141,421 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ],
                     ),
                   ),
-                  CustomSizedBoxHeight(),
-                  CustomSizedBoxHeight(),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'الاسم'
-                    ),
-                    controller: userNameController,
-                    keyboardType: TextInputType.text,
+                ),
+                // Name
+                TextFormField(
+                  style: Theme.of(context).textTheme.headline2?.copyWith(
+                        color: CustomColors.primaryRedColor,
+                      ),
+                  decoration: InputDecoration(labelText: LocaleKeys.name.tr()),
+                  controller: userNameController,
+                  keyboardType: TextInputType.text,
+                ),
+                // E-Mail
+                TextFormField(
+                  style: Theme.of(context).textTheme.headline2?.copyWith(
+                        color: CustomColors.primaryRedColor,
+                      ),
+                  decoration: InputDecoration(
+                    labelText: LocaleKeys.email.tr(),
                   ),
-                  CustomSizedBoxHeight(),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'البريد الاكتروني',
+                  keyboardType: TextInputType.emailAddress,
+                  controller: userEmailController,
+                ),
+                // Password
+                TextFormField(
+                  style: Theme.of(context).textTheme.headline2?.copyWith(
+                        color: CustomColors.primaryRedColor,
+                      ),
+                  decoration: InputDecoration(
+                    labelText: LocaleKeys.password.tr(),
+                    suffixIcon: InkWell(
+                      onTap: () {
+                        setState(() {
+                          AppCubit.get(context).isVisible =
+                              !AppCubit.get(context).isVisible;
+                        });
+                      },
+                      child: Icon(AppCubit.get(context).isVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off),
                     ),
-                    keyboardType: TextInputType.emailAddress,
-                    controller: userEmailController,
                   ),
-                  CustomSizedBoxHeight(),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'كلمة المرور',
-                    ),
-                    controller: userPasswordController,
-                    obscureText: true,
-                    keyboardType: TextInputType.visiblePassword,
+                  controller: userPasswordController,
+                  keyboardType: TextInputType.text,
+                  obscureText: AppCubit.get(context).isVisible,
+                ),
+                // Do You Suffer any Diseases?
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        LocaleKeys.do_u_suffer.tr(),
+                        style: Theme.of(context).textTheme.headline1?.copyWith(
+                              color: CustomColors.primaryRedColor,
+                            ),
+                      ),
+                      DropdownButton(
+                        alignment: Alignment.center,
+                        dropdownColor:
+                            Theme.of(context).scaffoldBackgroundColor,
+                        iconSize: 25,
+                        iconEnabledColor: CustomColors.primaryRedColor,
+                        value: Status,
+                        hint: Text(
+                          LocaleKeys.choose.tr(),
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        items: [
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                LocaleKeys.no_chronic_diseases.tr(),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: LocaleKeys.no_chronic_diseases.tr(),
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                LocaleKeys.anemia_diseases.tr(),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: LocaleKeys.anemia_diseases.tr(),
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                LocaleKeys.genetic_blood_diseases.tr(),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: LocaleKeys.genetic_blood_diseases.tr(),
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                LocaleKeys.hepatitis.tr(),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: LocaleKeys.hepatitis.tr(),
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                LocaleKeys.aids.tr(),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: LocaleKeys.aids.tr(),
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                LocaleKeys.canser.tr(),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: LocaleKeys.canser.tr(),
+                          ),
+                        ],
+                        onChanged: (value) {
+                          setState(() {
+                            Status = value;
+                          });
+                        },
+                      )
+                    ],
                   ),
-                  CustomSizedBoxHeight(),
-
-                  CustomSizedBoxHeight(),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'رقم الهاتف',
-                    ),
-                    keyboardType: TextInputType.number,
-                    controller: userPhoneController,
+                ),
+                // Blood Types
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Row(
+                    children: [
+                      Text(
+                        LocaleKeys.blood_types.tr(),
+                        style: Theme.of(context).textTheme.headline1?.copyWith(
+                              color: CustomColors.primaryRedColor,
+                            ),
+                      ),
+                      SizedBox(width: width * 0.15),
+                      DropdownButton(
+                        dropdownColor:
+                            Theme.of(context).scaffoldBackgroundColor,
+                        alignment: Alignment.center,
+                        iconSize: 30,
+                        iconEnabledColor: CustomColors.primaryRedColor,
+                        value: BloodType,
+                        hint: Text(
+                          LocaleKeys.choose_blood_type.tr(),
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        items: [
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                "+O",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: '+O',
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                '-O',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: '-O',
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                "+A",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: '+A',
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                "-A",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: '-A',
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                "+B",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: '+B',
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                "-B",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: '-B',
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                "+AB",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: '+AB',
+                          ),
+                          DropdownMenuItem(
+                            child: Center(
+                              child: Text(
+                                "-AB",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline2
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
+                              ),
+                            ),
+                            value: '-AB',
+                          ),
+                        ],
+                        onChanged: (value) {
+                          setState(() {
+                            BloodType = value;
+                          });
+                        },
+                      ),
+                    ],
                   ),
-                  CustomSizedBoxHeight(),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'العنوان',
-                    ),
-                    controller: userLocationController,
+                ),
+                // Phone
+                TextFormField(
+                  style: Theme.of(context).textTheme.headline2?.copyWith(
+                        color: CustomColors.primaryRedColor,
+                      ),
+                  decoration: InputDecoration(
+                    labelText: LocaleKeys.phone.tr(),
                   ),
-                  CustomSizedBoxHeight(),
-                  CustomButton(
-                    title: 'التسجيل',
-                    onTap: () async {
-                      if (_globalKey.currentState!.validate()) {
-                        Functions.dialogLoading(
-                          context: context,
-                          title: 'جاري تسجيل حساب جديد',
-                        );
-                        await _auth
-                            .signUpWithEmailAndPassword(
-                          userEmailController.text,
-                          userPasswordController.text,
-                          context,
-                        )
-                            .then(
-                          (value) {
-                            User? userAuth = FirebaseAuth.instance.currentUser;
-                            uploadFile().then(
-                              (value) {
-                                _store
-                                    .addUser(
-                                  UserModel(
-                                    userId: userAuth!.uid,
-                                    userName: userNameController.text,
-                                    userPhone: userPhoneController.text,
-                                    userEmail: userEmailController.text,
-                                    userImageUrl: userImageUrl,
-                                    userLocation: userLocationController.text,
-                                    userDateofBirth: userDateofBirthController.text,
-                                  ),
-                                )
-                                    .then(
-                                  (value) {
-                                    Functions.navigatorPushAndRemove(
-                                      context: context,
-                                      screen: HomeScreen(),
-                                    );
-                                    Functions.showToastMsg(
-                                      title: 'تم انشاء الحساب',
-                                    );
-                                  },
-                                );
+                  keyboardType: TextInputType.number,
+                  controller: userPhoneController,
+                ),
+                // Date of Birth
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15,),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        LocaleKeys.date_of_birth.tr(),
+                        style: Theme.of(context).textTheme.headline1?.copyWith(
+                              color: CustomColors.primaryRedColor,
+                            ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SizedBox(
+                        width: width * 0.8,
+                        height: height * 0.1,
+                        child: CupertinoDatePicker(
+                          initialDateTime: _dateTime,
+                          mode: CupertinoDatePickerMode.date,
+                          onDateTimeChanged: (value) {
+                            var date = DateFormat.yMMMd().format(value);
+                            setState(
+                              () {
+                                dateController = date;
                               },
                             );
                           },
-                        );
-                      }
-                    },
+                        ),
+                      )
+                    ],
                   ),
-                ],
-              ),
+                ),
+                // Address
+                TextFormField(
+                  style: Theme.of(context).textTheme.headline2?.copyWith(
+                        color: CustomColors.primaryRedColor,
+                      ),
+                  decoration: InputDecoration(
+                    labelText: LocaleKeys.address.tr(),
+                  ),
+                  controller: userLocationController,
+                ),
+                CustomButton(
+                  title: LocaleKeys.register.tr(),
+                  onTap: () async {
+                    if (_globalKey.currentState!.validate()) {
+                      Functions.dialogLoading(
+                        context: context,
+                        title: LocaleKeys.registering.tr(),
+                      );
+                      await _auth
+                          .signUpWithEmailAndPassword(
+                        userEmailController.text,
+                        userPasswordController.text,
+                        context,
+                      )
+                          .then(
+                        (value) {
+                          User? userAuth = FirebaseAuth.instance.currentUser;
+                          uploadFile().then(
+                            (value) {
+                              _store
+                                  .addUser(
+                                UserModel(
+                                  userId: userAuth!.uid,
+                                  userName: userNameController.text,
+                                  userPhone: userPhoneController.text,
+                                  userEmail: userEmailController.text,
+                                  userImageUrl: userImageUrl,
+                                  userAddress: userLocationController.text,
+                                  userDateofBirth: dateController.toString(),
+                                  userBloodType: BloodType.toString(),
+                                  userStatus: Status.toString(),
+                                ),
+                              )
+                                  .then(
+                                (value) {
+                                  Functions.navigatorPushAndRemove(
+                                    context: context,
+                                    screen: HomeScreen(),
+                                  );
+                                  Functions.showToastMsg(
+                                    title: LocaleKeys.registered.tr(),
+                                  );
+                                },
+                              );
+                            },
+                          );
+                        },
+                      );
+                    }
+                  },
+                ),
+              ],
             ),
           ),
         ),

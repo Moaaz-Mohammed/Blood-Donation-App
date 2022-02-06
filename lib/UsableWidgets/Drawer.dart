@@ -43,8 +43,14 @@ class CustomDrawer extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: height * 0.04,
-                    backgroundImage:
-                        NetworkImage(userData[Constants.userImageUrl]),
+                    backgroundColor: Colors.transparent,
+                    backgroundImage: userData[Constants.userImageUrl] == null
+                        ? AssetImage(
+                            Constants.addUserImage,
+                          ) as ImageProvider
+                        : NetworkImage(
+                            userData[Constants.userImageUrl],
+                          ),
                   ),
                   SizedBox(
                     height: height * 0.01,
@@ -133,10 +139,11 @@ class CustomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 navigateTo(
-                    context,
-                    SettingsScreen(
-                      userData: userData,
-                    ));
+                  context,
+                  SettingsScreen(
+                    userData: userData,
+                  ),
+                );
               },
             ),
             //Exit App

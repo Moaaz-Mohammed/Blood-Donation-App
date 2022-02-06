@@ -13,8 +13,8 @@ class Constants {
   static const String userEmail = 'UserEmail';
   static const String userAddress = 'userAddress';
   static const String userImageUrl = 'UserImageUrl';
-  static const String userJob = 'UserJob';
-  static const String userJobCategory = 'UserJobCategory';
+  static const String userStatus = 'UserStatus';
+  static const String userBloodType = 'UserBloodType';
 
   /// constants app Border Radius
   static BorderRadius primaryBorderRadius = BorderRadius.circular(10.0);

@@ -21,10 +21,9 @@ class ProfileCardItem extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(
-              color: CustomColors.primaryRedColor,
-              fontSize: 15.0,
-            ),
+            style: Theme.of(context).textTheme.headline2?.copyWith(
+              color: CustomColors.primaryRedColor
+            )
           ),
           CustomSizedBoxWidth(),
           Expanded(

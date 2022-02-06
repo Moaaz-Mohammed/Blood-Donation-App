@@ -23,7 +23,7 @@ class ArrowBox extends StatelessWidget {
         height: size.height * 0.05,
         width: size.width * 0.11,
         child: Icon(icon,
-            size: 30, color: CustomColors.primaryWhiteColor),
+            size: 30, color: Theme.of(context).primaryColor),
       ),
     );
   }
