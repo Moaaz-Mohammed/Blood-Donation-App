@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -28,7 +27,6 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  FirebaseFirestore Firebase = FirebaseFirestore.instance;
   final Auth _auth = Auth();
   final Store _store = Store();
   var BloodType;
@@ -80,7 +78,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     double width = MediaQuery.of(context).size.width;
     DateTime _dateTime = DateTime.now();
     double height = MediaQuery.of(context).size.height;
-    var dateController = '${DateFormat.yMMMd().format(_dateTime)}';
+    var dateController = DateFormat.yMMMd().format(_dateTime);
     return ModalProgressHUD(
       inAsyncCall: Provider.of<ModelHud>(context).isLoading1,
       child: Scaffold(
@@ -187,7 +185,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 // Do You Suffer any Diseases?
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 19,vertical: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -305,7 +303,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 // Blood Types
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Row(
                     children: [
                       Text(
@@ -462,7 +460,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 // Date of Birth
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15,),
+                  padding: const EdgeInsets.symmetric(horizontal: 19,),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -485,6 +483,40 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             var date = DateFormat.yMMMd().format(value);
                             setState(
                               () {
+                                dateController = date;
+                              },
+                            );
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                // Last Donation Date
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 19,),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        LocaleKeys.last_donation_date.tr(),
+                        style: Theme.of(context).textTheme.headline1?.copyWith(
+                          color: CustomColors.primaryRedColor,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SizedBox(
+                        width: width * 0.8,
+                        height: height * 0.1,
+                        child: CupertinoDatePicker(
+                          initialDateTime: _dateTime,
+                          mode: CupertinoDatePickerMode.date,
+                          onDateTimeChanged: (value) {
+                            var date = DateFormat.yMMMd().format(value);
+                            setState(
+                                  () {
                                 dateController = date;
                               },
                             );

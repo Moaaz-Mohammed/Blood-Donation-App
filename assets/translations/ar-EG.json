@@ -53,5 +53,6 @@
   "date_of_birth": "تاريخ الميلاد",
   "registering": "جاري تسجيل الحساب",
   "registered": "تم انشاء الحساب",
-  "choose_app_language": "اختر لغة التطبيق"
+  "choose_app_language": "لغة التطبيق",
+  "skip": "تخطي"
 }

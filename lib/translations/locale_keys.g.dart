@@ -56,5 +56,6 @@ abstract class  LocaleKeys {
   static const registering = 'registering';
   static const registered = 'registered';
   static const choose_app_language = 'choose_app_language';
+  static const skip = 'skip';
 
 }

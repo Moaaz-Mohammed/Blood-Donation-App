@@ -1,8 +1,10 @@
 import 'dart:ui';
-import 'package:flutter/material.dart';
-import '../Styles/CustomColors.dart';
-class Constants {
 
+import 'package:flutter/material.dart';
+
+import '../Styles/CustomColors.dart';
+
+class Constants {
   /// Firebase user collection
   static const String usersCollection = 'usersCollection';
   static const String userId = 'UserId';
@@ -35,12 +37,12 @@ class Constants {
   );
 
   // Images
-  static const String  BloodTypesImage =  'assets/images/blood-types.png';
-  static const String  LogoImage =  'assets/images/logo.png';
+  static const String BloodTypesImage = 'assets/images/blood-types.png';
+  static const String LogoImage = 'assets/images/logo.png';
   static const String addUserImage = 'assets/images/add_user_photo.png';
   static const String egFlag = 'assets/images/eg-flag.png';
   static const String ukFlag = 'assets/images/uk-flag.png';
   static const String waveImage = 'assets/images/wave.png';
-
-
+  static const String helpImage = 'assets/images/help_others.png';
+  static const String friendsImage = 'assets/images/friends.png';
 }

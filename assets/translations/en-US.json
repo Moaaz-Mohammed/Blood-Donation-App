@@ -53,5 +53,6 @@
   "date_of_birth": "Date of Birth",
   "registering": "Registering account",
   "registered": "Registered Successfully",
-  "choose_app_language": "Choose app language"
+  "choose_app_language": "App language",
+  "skip": "Skip"
 }

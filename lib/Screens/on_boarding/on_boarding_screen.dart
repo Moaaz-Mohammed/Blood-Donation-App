@@ -1,13 +1,16 @@
 import 'package:blood_donation/Screens/on_boarding/choose_language.dart';
+import 'package:blood_donation/Screens/on_boarding/continue_button.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 import '../../Styles/CustomColors.dart';
+import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../services/cache_shared_preferences.dart';
 import '../../shared/Constants.dart';
 import '../../shared/Functions.dart';
-import '../auth/log_in_screen.dart';
+import '../../translations/locale_keys.g.dart';
 import 'boarding_model.dart';
-
 
 class OnBoardingScreen extends StatefulWidget {
   @override
@@ -20,27 +23,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   List<BoardingModel> boarding = [
     BoardingModel(
-      image: Constants.LogoImage,
-      title: 'هتشوف كل عروض صان الحجر',
-      body:'تقدر تعرف العروض الموجوده وتقدر تضيف عرض من عندك ونعرضهولك في التطبيق',
+      image: Constants.helpImage,
+      title: 'ساعد غيرك!',
+      body: 'تقدر تساعد غيرك سواء بتبرعك بالدم أو غيرها من المساعدات',
     ),
     BoardingModel(
-      image: Constants.LogoImage,
-      title: 'هتشوف كل مطاعم صان الحجر',
-      body: 'تقدر تعرف الوجبات الموجوده وتقدر تطلبها وتوصلك لعند بيتك',
-    ),
-    BoardingModel(
-      image: Constants.LogoImage,
-      title: 'هتشوف كل صيدليات صان الحجر',
-      body: 'بسهوله ومن بيتك تقدر تعرف علاجك موجود فين وتقدر تطلبه ويوصلك لعند بيتك',
-    ),
-    BoardingModel(
-      image: Constants.LogoImage,
-      title: 'هتشوف كل السوبر ماركت ',
-      body: 'تقدر تطلب اي طلب ويوصلك لعند بيتك ولو انت صاحب محل تقدر تضيفه وتقدر تضيف العروض الموجوده عندك',
+      image: Constants.friendsImage,
+      title: 'متشيلش هم!',
+      body:
+          '	إحنا مع بعض طول الوقت متشيلش هم حاجه كلنا جنبك . نزل مشكلتك و إن شاء الله محلوله 😁',
     ),
   ];
-
 
   void submit() {
     CacheSharedPreferences.saveData(
@@ -62,92 +55,103 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        appBar: AppBar(
-          actions: [
-            TextButton(
-              onPressed: () {
-                submit();
+    return Scaffold(
+      appBar: AppBar(
+        actions: [
+          TextButton(
+            onPressed: () {
+              submit();
+            },
+            child: Text(LocaleKeys.skip.tr(),
+                style: Theme.of(context).textTheme.headline2),
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: PageView.builder(
+              physics: BouncingScrollPhysics(),
+              controller: boardController,
+              onPageChanged: (int index) {
+                if (index == boarding.length - 1) {
+                  setState(() {
+                    isLast = true;
+                  });
+                } else {
+                  setState(() {
+                    isLast = false;
+                  });
+                }
               },
-              child: Text(
-                'تخطي',
-                style: TextStyle(
-                  color: CustomColors.primaryWhiteColor,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
+              itemBuilder: (context, index) {
+                return buildBoardingItem(
+                  model: boarding[index],
+                  height: height,
+                  width: width * 0.7,
+                );
+              },
+              itemCount: boarding.length,
             ),
-          ],
-        ),
-        body: Column(
-          children: [
-            Expanded(
-              child: PageView.builder(
-                physics: BouncingScrollPhysics(),
-                controller: boardController,
-                onPageChanged: (int index) {
-                  if (index == boarding.length - 1) {
-                    setState(() {
-                      isLast = true;
-                    });
-                  } else {
-                    setState(() {
-                      isLast = false;
-                    });
-                  }
-                },
-                itemBuilder: (context, index) {
-                  return buildBoardingItem(
-                    model: boarding[index],
-                    height: height,
-                    width: width,
-                  );
-                },
-                itemCount: boarding.length,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: SizedBox(
+              height: 30,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SmoothPageIndicator(
                     controller: boardController,
-                    effect: ExpandingDotsEffect(
-                      dotColor: Colors.grey,
-                      activeDotColor: CustomColors.primaryRedColor,
-                      dotHeight: 10,
-                      expansionFactor: 4,
-                      dotWidth: 10,
+                    effect: CustomizableEffect(
                       spacing: 5.0,
+                      dotDecoration: DotDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        verticalOffset: -5.0,
+                        color: CustomColors.primaryGreyColor,
+                        rotationAngle: 75.0,
+                        width: width * 0.05,
+                        height: 10,
+                      ),
+                      activeDotDecoration: DotDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: CustomColors.primaryRedColor,
+                        rotationAngle: 75.0,
+                        width: width * 0.05,
+                        height: 10,
+                      ),
                     ),
                     count: boarding.length,
                   ),
-                  Spacer(),
-                  FloatingActionButton(
-                    backgroundColor: CustomColors.primaryRedColor,
-                    onPressed: () {
-                      if (isLast) {
-                        submit();
-                      } else {
-                        boardController.nextPage(
-                          duration: Duration(
-                            milliseconds: 750,
-                          ),
-                          curve: Curves.fastLinearToSlowEaseIn,
-                        );
-                      }
-                    },
-                    child: Icon(
-                      Icons.arrow_forward_ios,
-                    ),
-                  ),
+                  isLast
+                      ? Row(
+                          children: [
+                            SizedBox(
+                              width: width * 0.57,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                if (isLast) {
+                                  submit();
+                                } else {
+                                  boardController.nextPage(
+                                    duration: Duration(
+                                      milliseconds: 1000,
+                                    ),
+                                    curve: Curves.fastLinearToSlowEaseIn,
+                                  );
+                                }
+                              },
+                              child: continue_button(),
+                            ),
+                          ],
+                        )
+                      : Text('')
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -161,33 +165,28 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: height * 0.35,
+            height: height * 0.31,
             width: double.infinity,
             child: ClipRRect(
               borderRadius: Constants.primaryBorderRadius,
               child: Image(
                 image: AssetImage('${model.image}'),
-                fit: BoxFit.cover,
+                fit: BoxFit.contain,
               ),
             ),
           ),
-          Text(
-            '${model.title}',
-            style: TextStyle(
-              fontSize: 24.0,
-              fontWeight: FontWeight.w900,
-              color: CustomColors.primaryRedColor,
-            ),
-          ),
+          CustomSizedBoxHeight(),
+          CustomSizedBoxHeight(),
+          Text('${model.title}', style: Theme.of(context).textTheme.headline5),
+          CustomSizedBoxHeight(),
           Text(
             '${model.body}',
-            style: TextStyle(
-              fontSize: 16.0,
-              color: Colors.grey,
-            ),
+            style: Theme.of(context).textTheme.headline2?.copyWith(
+                  color: CustomColors.primaryDarkColor.withOpacity(0.5),
+                ),
           ),
         ],
       ),

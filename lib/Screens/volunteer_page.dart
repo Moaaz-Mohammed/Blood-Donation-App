@@ -1,19 +1,24 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:blood_donation/Screens/home/home_screen.dart';
 import 'package:blood_donation/shared/Controllers.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
 import '../Styles/CustomColors.dart';
 
 class Volunteer extends StatefulWidget {
+  const Volunteer({Key? key}) : super(key: key);
+
   @override
   _VolunteerState createState() => _VolunteerState();
 }
 
 class _VolunteerState extends State<Volunteer> {
-  var BloodType;
-  var Status;
-  var ShareData;
+  var bloodType;
+  var status;
+  var shareData;
   var formKey = GlobalKey<FormState>();
 
   @override
@@ -56,21 +61,21 @@ class _VolunteerState extends State<Volunteer> {
                     },
                     controller: namecontroller,
                     keyboardType: TextInputType.text,
-                    style: TextStyle(color: CustomColors.primaryRedColor),
-                    decoration: InputDecoration(
+                    style: const TextStyle(color: CustomColors.primaryRedColor),
+                    decoration: const InputDecoration(
                       hintTextDirection: TextDirection.rtl,
-                      enabledBorder: const UnderlineInputBorder(
+                      enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black)),
-                      focusedBorder: const UnderlineInputBorder(
+                      focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                       ),
                       labelText: 'اسم المتبرع او ("فاعل خير")',
-                      labelStyle: const TextStyle(color: Colors.grey),
+                      labelStyle: TextStyle(color: Colors.grey),
                       prefixIcon: Icon(
                         Icons.person,
                         color: CustomColors.primaryRedColor,
                       ),
-                      border: const OutlineInputBorder(),
+                      border: OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(
@@ -83,10 +88,10 @@ class _VolunteerState extends State<Volunteer> {
                       padding: const EdgeInsets.symmetric(horizontal: 14),
                       child: Row(
                         children: [
-                          Icon(Icons.error,
+                          const Icon(Icons.error,
                               color: CustomColors.primaryRedColor),
                           const SizedBox(width: 10),
-                          Text(
+                          const Text(
                             "هل تعاني من أمراض؟",
                             style: TextStyle(fontSize: 15, color: Colors.grey),
                           ),
@@ -96,7 +101,7 @@ class _VolunteerState extends State<Volunteer> {
                                 Theme.of(context).scaffoldBackgroundColor,
                             iconSize: 30,
                             iconEnabledColor: CustomColors.primaryRedColor,
-                            value: Status,
+                            value: status,
                             hint: const Text(
                               'أختر',
                               style: TextStyle(color: Colors.grey),
@@ -139,7 +144,7 @@ class _VolunteerState extends State<Volunteer> {
                             ],
                             onChanged: (value) {
                               setState(() {
-                                Status = value;
+                                status = value;
                               });
                             },
                           ),
@@ -160,13 +165,14 @@ class _VolunteerState extends State<Volunteer> {
                     padding: const EdgeInsets.symmetric(horizontal: 14),
                     child: Row(
                       children: [
-                        Icon(Icons.person, color: CustomColors.primaryRedColor),
+                        const Icon(Icons.person,
+                            color: CustomColors.primaryRedColor),
                         const SizedBox(width: 10),
                         const Text(
                           'تاريخ الميلاد',
                           style: TextStyle(color: Colors.grey, fontSize: 16),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
                         Expanded(
@@ -181,20 +187,20 @@ class _VolunteerState extends State<Volunteer> {
                             },
                             controller: daycontroller,
                             keyboardType: TextInputType.number,
-                            style:
-                                TextStyle(color: CustomColors.primaryRedColor),
-                            decoration: InputDecoration(
+                            style: const TextStyle(
+                                color: CustomColors.primaryRedColor),
+                            decoration: const InputDecoration(
                               border: InputBorder.none,
                               focusedBorder: InputBorder.none,
                               enabledBorder: InputBorder.none,
                               errorBorder: InputBorder.none,
                               disabledBorder: InputBorder.none,
                               labelText: 'اليوم',
-                              labelStyle: const TextStyle(color: Colors.grey),
+                              labelStyle: TextStyle(color: Colors.grey),
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -209,20 +215,20 @@ class _VolunteerState extends State<Volunteer> {
                             },
                             controller: monthcontroller,
                             keyboardType: TextInputType.number,
-                            style:
-                                TextStyle(color: CustomColors.primaryRedColor),
-                            decoration: InputDecoration(
+                            style: const TextStyle(
+                                color: CustomColors.primaryRedColor),
+                            decoration: const InputDecoration(
                               border: InputBorder.none,
                               focusedBorder: InputBorder.none,
                               enabledBorder: InputBorder.none,
                               errorBorder: InputBorder.none,
                               disabledBorder: InputBorder.none,
                               labelText: 'الشهر',
-                              labelStyle: const TextStyle(color: Colors.grey),
+                              labelStyle: TextStyle(color: Colors.grey),
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -237,8 +243,8 @@ class _VolunteerState extends State<Volunteer> {
                             },
                             controller: yearcontroller,
                             keyboardType: TextInputType.number,
-                            style:
-                                TextStyle(color: CustomColors.primaryRedColor),
+                            style: const TextStyle(
+                                color: CustomColors.primaryRedColor),
                             decoration: const InputDecoration(
                               border: InputBorder.none,
                               focusedBorder: InputBorder.none,
@@ -246,7 +252,7 @@ class _VolunteerState extends State<Volunteer> {
                               errorBorder: InputBorder.none,
                               disabledBorder: InputBorder.none,
                               labelText: 'السنة',
-                              labelStyle: const TextStyle(color: Colors.grey),
+                              labelStyle: TextStyle(color: Colors.grey),
                             ),
                           ),
                         ),
@@ -266,7 +272,7 @@ class _VolunteerState extends State<Volunteer> {
                     padding: const EdgeInsets.symmetric(horizontal: 14),
                     child: Row(
                       children: [
-                        Icon(Icons.bloodtype,
+                        const Icon(Icons.bloodtype,
                             color: CustomColors.primaryRedColor),
                         const SizedBox(width: 10),
                         DropdownButton(
@@ -275,7 +281,7 @@ class _VolunteerState extends State<Volunteer> {
                           alignment: Alignment.center,
                           iconSize: 30,
                           iconEnabledColor: CustomColors.primaryRedColor,
-                          value: BloodType,
+                          value: bloodType,
                           hint: const Text(
                             'أختر فصيلة الدم',
                             style: TextStyle(color: Colors.grey),
@@ -316,7 +322,7 @@ class _VolunteerState extends State<Volunteer> {
                           ],
                           onChanged: (value) {
                             setState(() {
-                              BloodType = value;
+                              bloodType = value;
                             });
                           },
                         ),
@@ -340,21 +346,21 @@ class _VolunteerState extends State<Volunteer> {
                     },
                     controller: phonecontroller,
                     keyboardType: TextInputType.number,
-                    style: TextStyle(color: CustomColors.primaryRedColor),
-                    decoration: InputDecoration(
+                    style: const TextStyle(color: CustomColors.primaryRedColor),
+                    decoration: const InputDecoration(
                       hintTextDirection: TextDirection.rtl,
-                      enabledBorder: const UnderlineInputBorder(
+                      enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black)),
-                      focusedBorder: const UnderlineInputBorder(
+                      focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                       ),
                       labelText: 'رقم الهاتف',
-                      labelStyle: const TextStyle(color: Colors.grey),
+                      labelStyle: TextStyle(color: Colors.grey),
                       prefixIcon: Icon(
                         Icons.phone,
                         color: CustomColors.primaryRedColor,
                       ),
-                      border: const OutlineInputBorder(),
+                      border: OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(
@@ -371,21 +377,21 @@ class _VolunteerState extends State<Volunteer> {
                     },
                     controller: anotherphonecontroller,
                     keyboardType: TextInputType.number,
-                    style: TextStyle(color: CustomColors.primaryRedColor),
-                    decoration: InputDecoration(
+                    style: const TextStyle(color: CustomColors.primaryRedColor),
+                    decoration: const InputDecoration(
                       hintTextDirection: TextDirection.rtl,
-                      enabledBorder: const UnderlineInputBorder(
+                      enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black)),
-                      focusedBorder: const UnderlineInputBorder(
+                      focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                       ),
                       labelText: 'رقم هاتف أخر',
-                      labelStyle: const TextStyle(color: Colors.grey),
+                      labelStyle: TextStyle(color: Colors.grey),
                       prefixIcon: Icon(
                         Icons.phone,
                         color: CustomColors.primaryRedColor,
                       ),
-                      border: const OutlineInputBorder(),
+                      border: OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(
@@ -402,21 +408,21 @@ class _VolunteerState extends State<Volunteer> {
                     },
                     controller: Facebookcontroller,
                     keyboardType: TextInputType.text,
-                    style: TextStyle(color: CustomColors.primaryRedColor),
-                    decoration: InputDecoration(
+                    style: const TextStyle(color: CustomColors.primaryRedColor),
+                    decoration: const InputDecoration(
                       hintTextDirection: TextDirection.rtl,
-                      enabledBorder: const UnderlineInputBorder(
+                      enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black)),
-                      focusedBorder: const UnderlineInputBorder(
+                      focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                       ),
                       labelText: 'Facebook',
-                      labelStyle: const TextStyle(color: Colors.grey),
+                      labelStyle: TextStyle(color: Colors.grey),
                       prefixIcon: Icon(
                         Icons.facebook_rounded,
                         color: CustomColors.primaryRedColor,
                       ),
-                      border: const OutlineInputBorder(),
+                      border: OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(
@@ -433,21 +439,21 @@ class _VolunteerState extends State<Volunteer> {
                     },
                     controller: LastDonationcontroller,
                     keyboardType: TextInputType.text,
-                    style: TextStyle(color: CustomColors.primaryRedColor),
-                    decoration: InputDecoration(
+                    style: const TextStyle(color: CustomColors.primaryRedColor),
+                    decoration: const InputDecoration(
                       hintTextDirection: TextDirection.rtl,
-                      enabledBorder: const UnderlineInputBorder(
+                      enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black)),
-                      focusedBorder: const UnderlineInputBorder(
+                      focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                       ),
                       labelText: 'متى كان آخر تبرع لك؟',
-                      labelStyle: const TextStyle(color: Colors.grey),
+                      labelStyle: TextStyle(color: Colors.grey),
                       prefixIcon: Icon(
                         Icons.access_time,
                         color: CustomColors.primaryRedColor,
                       ),
-                      border: const OutlineInputBorder(),
+                      border: OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(
@@ -464,21 +470,21 @@ class _VolunteerState extends State<Volunteer> {
                     },
                     controller: addresscontroller,
                     keyboardType: TextInputType.text,
-                    style: TextStyle(color: CustomColors.primaryRedColor),
-                    decoration: InputDecoration(
+                    style: const TextStyle(color: CustomColors.primaryRedColor),
+                    decoration: const InputDecoration(
                       hintTextDirection: TextDirection.rtl,
-                      enabledBorder: const UnderlineInputBorder(
+                      enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black)),
-                      focusedBorder: const UnderlineInputBorder(
+                      focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                       ),
                       labelText: 'العـنـوان',
-                      labelStyle: const TextStyle(color: Colors.grey),
+                      labelStyle: TextStyle(color: Colors.grey),
                       prefixIcon: Icon(
                         Icons.location_on,
                         color: CustomColors.primaryRedColor,
                       ),
-                      border: const OutlineInputBorder(),
+                      border: OutlineInputBorder(),
                     ),
                   ),
                   //Share Data
@@ -486,20 +492,21 @@ class _VolunteerState extends State<Volunteer> {
                     padding: const EdgeInsets.symmetric(horizontal: 14),
                     child: Row(
                       children: [
-                        Icon(Icons.share, color: CustomColors.primaryRedColor),
+                        const Icon(Icons.share,
+                            color: CustomColors.primaryRedColor),
                         const SizedBox(width: 10),
-                        Text(
+                        const Text(
                           "هل تسمح بنشر بياناتك؟",
                           style: TextStyle(fontSize: 15, color: Colors.grey),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         DropdownButton(
                           dropdownColor:
                               Theme.of(context).scaffoldBackgroundColor,
                           alignment: Alignment.center,
                           iconSize: 30,
                           iconEnabledColor: CustomColors.primaryRedColor,
-                          value: ShareData,
+                          value: shareData,
                           hint: const Text(
                             'أختر',
                             style: TextStyle(color: Colors.grey),
@@ -516,7 +523,7 @@ class _VolunteerState extends State<Volunteer> {
                           ],
                           onChanged: (value) {
                             setState(() {
-                              ShareData = value;
+                              shareData = value;
                             });
                           },
                         ),
@@ -539,13 +546,13 @@ class _VolunteerState extends State<Volunteer> {
                           final firestoreInstance = FirebaseFirestore.instance;
                           firestoreInstance.collection("Volunteer").add({
                             "facebook": Facebookcontroller.text,
-                            "share_data": ShareData.toString(),
+                            "share_data": shareData.toString(),
                             "name": namecontroller.text,
-                            "status": Status.toString(),
+                            "status": status.toString(),
                             "day_of_birth": daycontroller.text,
                             "month_of_birth": monthcontroller.text,
                             "year_of_birth": yearcontroller.text,
-                            "blood_type": BloodType.toString(),
+                            "blood_type": bloodType.toString(),
                             "phone": phonecontroller.text,
                             "another_phone": anotherphonecontroller.text,
                             "last_donation": LastDonationcontroller.text,
@@ -560,14 +567,14 @@ class _VolunteerState extends State<Volunteer> {
                                     description1:
                                         'شكراً لمساهمتك في فعل الخير ♥',
                                     description2: '',
-                                  )).then(
-                              (value) => navigateTo(context, HomeScreen())));
+                                  )).then((value) =>
+                              navigateTo(context, const HomeScreen())));
                         }
                         ;
                       },
-                      child: Text(
+                      child: const Text(
                         'إرسـال البيـانـات',
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 22,
                             color: Colors.white),

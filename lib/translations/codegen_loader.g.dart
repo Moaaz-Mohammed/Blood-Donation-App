@@ -69,7 +69,8 @@ class CodegenLoader extends AssetLoader{
   "date_of_birth": "تاريخ الميلاد",
   "registering": "جاري تسجيل الحساب",
   "registered": "تم انشاء الحساب",
-  "choose_app_language": "اختر لغة التطبيق"
+  "choose_app_language": "لغة التطبيق",
+  "skip": "تخطي"
 };
 static const Map<String,dynamic> en_US = {
   "app_name": "Save a Soul!",
@@ -126,7 +127,8 @@ static const Map<String,dynamic> en_US = {
   "date_of_birth": "Date of Birth",
   "registering": "Registering account",
   "registered": "Registered Successfully",
-  "choose_app_language": "Choose app language"
+  "choose_app_language": "App language",
+  "skip": "Skip"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar_EG": ar_EG, "en_US": en_US};
 }
