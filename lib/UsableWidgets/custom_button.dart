@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../Styles/CustomColors.dart';
 import '../shared/Constants.dart';
 
@@ -43,8 +44,8 @@ class CustomButton extends StatelessWidget {
       child: Text(
         title,
         style: Theme.of(context).textTheme.headline4?.copyWith(
-          color: CustomColors.primaryDarkColor.withOpacity(0.5),
-        ),
+              color: titleColor,
+            ),
         textAlign: TextAlign.center,
       ),
     );

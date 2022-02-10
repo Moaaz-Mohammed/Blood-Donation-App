@@ -1,3 +1,4 @@
+import 'package:blood_donation/Screens/auth/signup/sign_up_screen.dart';
 import 'package:blood_donation/services/cache_shared_preferences.dart';
 import 'package:blood_donation/state_management/bloc/Cubit.dart';
 import 'package:blood_donation/state_management/bloc/States.dart';
@@ -10,14 +11,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+
 import 'Styles/CustomColors.dart';
 import 'Styles/Themes/DarkTheme.dart';
 import 'Styles/Themes/LightTheme.dart';
-import 'main_splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-   await EasyLocalization.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();
   await CacheSharedPreferences.init();
   SystemChrome.setSystemUIOverlayStyle(
@@ -46,7 +47,7 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-   MyApp({
+  MyApp({
     Key? key,
     required this.onBoarding,
     this.isDark,
@@ -74,9 +75,7 @@ class MyApp extends StatelessWidget {
               locale: context.locale,
               debugShowCheckedModeBanner: false,
               title: LocaleKeys.app_name.tr(),
-              home: MainSlashScreen(
-                onBoarding: onBoarding,
-              ),
+              home: SignUpScreen(),
               theme: LightTheme,
               darkTheme: DarkTheme,
               themeMode: AppCubit.get(context).isDark

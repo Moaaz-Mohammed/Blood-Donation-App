@@ -70,7 +70,11 @@ class CodegenLoader extends AssetLoader{
   "registering": "جاري تسجيل الحساب",
   "registered": "تم انشاء الحساب",
   "choose_app_language": "لغة التطبيق",
-  "skip": "تخطي"
+  "skip": "تخطي",
+  "step": "الخطوة",
+  "next": "التالي",
+  "previous": "السابق",
+  "continue": "متابعة"
 };
 static const Map<String,dynamic> en_US = {
   "app_name": "Save a Soul!",
@@ -128,7 +132,11 @@ static const Map<String,dynamic> en_US = {
   "registering": "Registering account",
   "registered": "Registered Successfully",
   "choose_app_language": "App language",
-  "skip": "Skip"
+  "skip": "Skip",
+  "step": "Step",
+  "next": "Next",
+  "previous": "Previous",
+  "continue": "Continue"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar_EG": ar_EG, "en_US": en_US};
 }

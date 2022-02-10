@@ -1,4 +1,6 @@
 import 'dart:io';
+
+import 'package:blood_donation/shared/Controllers.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -7,17 +9,18 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
-import '../../Styles/CustomColors.dart';
-import '../../UsableWidgets/custom_button.dart';
-import '../../model/user_model.dart';
-import '../../services/auth.dart';
-import '../../services/store.dart';
-import '../../shared/Constants.dart';
-import '../../shared/Functions.dart';
-import '../../state_management/bloc/Cubit.dart';
-import '../../state_management/provider/model_hud.dart';
-import '../../translations/locale_keys.g.dart';
-import '../home/home_screen.dart';
+
+import '../../../Styles/CustomColors.dart';
+import '../../../UsableWidgets/custom_button.dart';
+import '../../../model/user_model.dart';
+import '../../../services/auth.dart';
+import '../../../services/store.dart';
+import '../../../shared/Constants.dart';
+import '../../../shared/Functions.dart';
+import '../../../state_management/bloc/Cubit.dart';
+import '../../../state_management/provider/model_hud.dart';
+import '../../../translations/locale_keys.g.dart';
+import '../../home/home_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -93,6 +96,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Profile Image
                 Center(
                   child: Container(
                     width: width * 0.25,
@@ -145,7 +149,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   style: Theme.of(context).textTheme.headline2?.copyWith(
                         color: CustomColors.primaryRedColor,
                       ),
-                  decoration: InputDecoration(labelText: LocaleKeys.name.tr()),
+                  decoration: InputDecoration(
+                    labelText: LocaleKeys.name.tr(),
+                  ),
                   controller: userNameController,
                   keyboardType: TextInputType.text,
                 ),
@@ -185,9 +191,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 // Do You Suffer any Diseases?
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 19,vertical: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 19, vertical: 10),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         LocaleKeys.do_u_suffer.tr(),
@@ -460,7 +466,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 // Date of Birth
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 19,),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 19, vertical: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -494,15 +501,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 // Last Donation Date
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 19,),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 19, vertical: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         LocaleKeys.last_donation_date.tr(),
-                        style: Theme.of(context).textTheme.headline1?.copyWith(
-                          color: CustomColors.primaryRedColor,
-                        ),
+                        style: Theme.of(context).textTheme.headline2?.copyWith(
+                              color: CustomColors.primaryRedColor,
+                            ),
                       ),
                       const SizedBox(
                         height: 20,
@@ -516,7 +524,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           onDateTimeChanged: (value) {
                             var date = DateFormat.yMMMd().format(value);
                             setState(
-                                  () {
+                              () {
                                 dateController = date;
                               },
                             );
@@ -567,6 +575,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   userDateofBirth: dateController.toString(),
                                   userBloodType: BloodType.toString(),
                                   userStatus: Status.toString(),
+                                  userLastDonation:
+                                      LastDonationcontroller.toString(),
                                 ),
                               )
                                   .then(

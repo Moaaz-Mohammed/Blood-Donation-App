@@ -54,5 +54,9 @@
   "registering": "جاري تسجيل الحساب",
   "registered": "تم انشاء الحساب",
   "choose_app_language": "لغة التطبيق",
-  "skip": "تخطي"
+  "skip": "تخطي",
+  "step": "الخطوة",
+  "next": "التالي",
+  "previous": "السابق",
+  "continue": "متابعة"
 }

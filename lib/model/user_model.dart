@@ -6,6 +6,7 @@ class UserModel {
   var userId;
   var userName;
   var userDateofBirth;
+  var userLastDonation;
   var userBloodType;
   var userEmail;
   var userAddress;
@@ -17,6 +18,7 @@ class UserModel {
     required this.userId,
     required this.userName,
     required this.userDateofBirth,
+    required this.userLastDonation,
     required this.userBloodType,
     required this.userEmail,
     required this.userAddress,

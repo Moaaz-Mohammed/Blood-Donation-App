@@ -54,5 +54,9 @@
   "registering": "Registering account",
   "registered": "Registered Successfully",
   "choose_app_language": "App language",
-  "skip": "Skip"
+  "skip": "Skip",
+  "step": "Step",
+  "next": "Next",
+  "previous": "Previous",
+  "continue": "Continue"
 }

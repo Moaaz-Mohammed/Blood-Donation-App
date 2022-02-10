@@ -63,17 +63,24 @@ ThemeData LightTheme = ThemeData(
   hoverColor: CustomColors.primaryWhiteColor,
   focusColor: CustomColors.primaryWhiteColor,
   cardColor: CustomColors.primaryWhiteColor,
-  floatingActionButtonTheme:
-  FloatingActionButtonThemeData(backgroundColor: CustomColors.primaryRedColor),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: CustomColors.primaryRedColor),
   progressIndicatorTheme: ProgressIndicatorThemeData(
     color: CustomColors.primaryRedColor,
   ),
   inputDecorationTheme: InputDecorationTheme(
-    suffixIconColor: CustomColors.primaryRedColor,
+    prefixIconColor: CustomColors.primaryRedColor,
+    disabledBorder: UnderlineInputBorder(
+      borderRadius: Constants.primaryBorderRadius,
+      borderSide: BorderSide(
+        color: CustomColors.primaryGreyColor,
+      ),
+    ),
     focusColor: CustomColors.primaryRedColor,
+    suffixIconColor: CustomColors.primaryRedColor,
     hintStyle: TextStyle(
       color: CustomColors.primaryDarkColor,
-      fontSize: 15,
+      fontSize: 13,
     ),
     labelStyle: TextStyle(
       color: CustomColors.primaryRedColor,
@@ -94,6 +101,6 @@ ThemeData LightTheme = ThemeData(
     filled: true,
     fillColor: CustomColors.primaryWhiteColor,
     contentPadding:
-    const EdgeInsets.symmetric(vertical: 22.0, horizontal: 20.0),
+        const EdgeInsets.symmetric(vertical: 22.0, horizontal: 20.0),
   ),
 );

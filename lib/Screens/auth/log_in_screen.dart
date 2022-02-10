@@ -1,8 +1,9 @@
-import 'package:blood_donation/Screens/auth/sign_up_screen.dart';
+import 'package:blood_donation/Screens/auth/signup/sign_up_screen.dart';
 import 'package:blood_donation/state_management/bloc/Cubit.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 import '../../Styles/CustomColors.dart';
 import '../../UsableWidgets/custom_button.dart';
 import '../../UsableWidgets/custom_sized_box_height.dart';
@@ -28,89 +29,93 @@ class _LogInScreenState extends State<LogInScreen> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-        body: SafeArea(
-          child: Center(
-            child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              padding: Constants.primaryPadding,
-              child: Form(
-                key: _globalKey,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      width: width * 0.5,
-                      child: ClipRRect(
-                        borderRadius: Constants.primaryBorderRadius,
-                        child: Image.asset(
-                          Constants.LogoImage,
-                        ),
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            padding: Constants.primaryPadding,
+            child: Form(
+              key: _globalKey,
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: width * 0.5,
+                    child: ClipRRect(
+                      borderRadius: Constants.primaryBorderRadius,
+                      child: Image.asset(
+                        Constants.LogoImage,
                       ),
                     ),
-                    CustomSizedBoxHeight(),
-                    CustomSizedBoxHeight(),
-                    CustomSizedBoxHeight(),
-                    TextFormField(
-                      style: Theme.of(context).textTheme.headline3,
-                      decoration: InputDecoration(
-                        labelText: LocaleKeys.email.tr(),
+                  ),
+                  CustomSizedBoxHeight(),
+                  CustomSizedBoxHeight(),
+                  CustomSizedBoxHeight(),
+                  TextFormField(
+                    style: Theme.of(context).textTheme.headline3,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.mail),
+                      labelText: LocaleKeys.email.tr(),
+                    ),
+                    controller: emailController,
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                  CustomSizedBoxHeight(),
+                  TextFormField(
+                    style: Theme.of(context).textTheme.displayMedium,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.lock),
+                      labelText: LocaleKeys.password.tr(),
+                      suffixIcon: InkWell(
+                        onTap: () {
+                          setState(() {
+                            AppCubit.get(context).isVisible =
+                                !AppCubit.get(context).isVisible;
+                          });
+                        },
+                        child: Icon(AppCubit.get(context).isVisible
+                            ? Icons.visibility
+                            : Icons.visibility_off),
                       ),
-                      controller: emailController,
-                      keyboardType: TextInputType.emailAddress,
                     ),
-                    CustomSizedBoxHeight(),
-                    TextFormField(
-                        style: Theme.of(context).textTheme.displayMedium,
-                        decoration: InputDecoration(
-                          labelText: LocaleKeys.password.tr(),
-                          suffixIcon: InkWell(
-                            onTap: () {
-                              setState(() {
-                                AppCubit.get(context).isVisible = !AppCubit.get(context).isVisible;
-                              });
-                            },
-                            child: Icon(AppCubit.get(context).isVisible
-                                ? Icons.visibility
-                                : Icons.visibility_off),
-                          ),
-                        ),
-                        controller: passwordController,
-                        keyboardType: TextInputType.text,
-                        obscureText: AppCubit.get(context).isVisible,),
-                    CustomSizedBoxHeight(),
-                    CustomSizedBoxHeight(),
-                    CustomSizedBoxHeight(),
-                    CustomSizedBoxHeight(),
-                    CustomSizedBoxHeight(),
-                    CustomButton(
-                      title: LocaleKeys.login.tr(),
-                      onTap: () async {
-                        if (_globalKey.currentState!.validate()) {
-                          await _auth.signInWithEmailAndPassword(
-                            email: emailController.text.trim(),
-                            password: passwordController.text.trim(),
-                            context: context,
-                          );
-                        }
-                      },
-                    ),
-                    CustomSizedBoxHeight(),
-                    CustomButton(
-                      title:  LocaleKeys.register.tr(),
-                      onTap: () {
-                        Functions.navigatorPush(
+                    controller: passwordController,
+                    keyboardType: TextInputType.text,
+                    obscureText: AppCubit.get(context).isVisible,
+                  ),
+                  CustomSizedBoxHeight(),
+                  CustomSizedBoxHeight(),
+                  CustomSizedBoxHeight(),
+                  CustomSizedBoxHeight(),
+                  CustomSizedBoxHeight(),
+                  CustomButton(
+                    title: LocaleKeys.login.tr(),
+                    onTap: () async {
+                      if (_globalKey.currentState!.validate()) {
+                        await _auth.signInWithEmailAndPassword(
+                          email: emailController.text.trim(),
+                          password: passwordController.text.trim(),
                           context: context,
-                          screen: SignUpScreen(),
                         );
-                      },
-                      titleColor: CustomColors.primaryRedColor,
-                      backgroundColor: CustomColors.primaryWhiteColor,
-                      borderColor: CustomColors.primaryRedColor,
-                    ),
-                  ],
-                ),
+                      }
+                    },
+                  ),
+                  CustomSizedBoxHeight(),
+                  CustomButton(
+                    title: LocaleKeys.register.tr(),
+                    onTap: () {
+                      Functions.navigatorPush(
+                        context: context,
+                        screen: SignUpScreen(),
+                      );
+                    },
+                    titleColor: CustomColors.primaryRedColor,
+                    backgroundColor: CustomColors.primaryWhiteColor,
+                    borderColor: CustomColors.primaryRedColor,
+                  ),
+                ],
               ),
             ),
           ),
+        ),
       ),
     );
   }
