@@ -480,20 +480,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       const SizedBox(
                         height: 20,
                       ),
-                      SizedBox(
-                        width: width * 0.8,
-                        height: height * 0.1,
-                        child: CupertinoDatePicker(
-                          initialDateTime: _dateTime,
-                          mode: CupertinoDatePickerMode.date,
-                          onDateTimeChanged: (value) {
-                            var date = DateFormat.yMMMd().format(value);
-                            setState(
-                              () {
-                                dateController = date;
-                              },
-                            );
-                          },
+                      Center(
+                        child: SizedBox(
+                          width: width * 0.8,
+                          height: height * 0.1,
+                          child: CupertinoDatePicker(
+                            initialDateTime: _dateTime,
+                            mode: CupertinoDatePickerMode.date,
+                            onDateTimeChanged: (value) {
+                              var date = DateFormat.yMMMd().format(value);
+                              setState(
+                                () {
+                                  dateController = date;
+                                },
+                              );
+                            },
+                          ),
                         ),
                       )
                     ],
@@ -515,20 +517,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       const SizedBox(
                         height: 20,
                       ),
-                      SizedBox(
-                        width: width * 0.8,
-                        height: height * 0.1,
-                        child: CupertinoDatePicker(
-                          initialDateTime: _dateTime,
-                          mode: CupertinoDatePickerMode.date,
-                          onDateTimeChanged: (value) {
-                            var date = DateFormat.yMMMd().format(value);
-                            setState(
-                              () {
-                                dateController = date;
-                              },
-                            );
-                          },
+                      Center(
+                        child: SizedBox(
+                          width: width * 0.8,
+                          height: height * 0.1,
+                          child: CupertinoDatePicker(
+                            initialDateTime: _dateTime,
+                            mode: CupertinoDatePickerMode.date,
+                            onDateTimeChanged: (value) {
+                              var date = DateFormat.yMMMd().format(value);
+                              setState(
+                                () {
+                                  dateController = date;
+                                },
+                              );
+                            },
+                          ),
                         ),
                       )
                     ],

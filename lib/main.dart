@@ -1,4 +1,4 @@
-import 'package:blood_donation/Screens/auth/signup/sign_up_screen.dart';
+import 'package:blood_donation/main_splash_screen.dart';
 import 'package:blood_donation/services/cache_shared_preferences.dart';
 import 'package:blood_donation/state_management/bloc/Cubit.dart';
 import 'package:blood_donation/state_management/bloc/States.dart';
@@ -75,7 +75,9 @@ class MyApp extends StatelessWidget {
               locale: context.locale,
               debugShowCheckedModeBanner: false,
               title: LocaleKeys.app_name.tr(),
-              home: SignUpScreen(),
+              home: MainSlashScreen(
+                onBoarding: onBoarding,
+              ),
               theme: LightTheme,
               darkTheme: DarkTheme,
               themeMode: AppCubit.get(context).isDark
