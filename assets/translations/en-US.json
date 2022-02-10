@@ -48,7 +48,6 @@
   "genetic_blood_diseases": "Genetic blood diseases",
   "hepatitis": "Hepatitis C and B",
   "aids": "AIDS - Malaria - Syphilis",
-  "canser": "Canser Diseases",
   "choose_blood_type": "Choose blood type",
   "date_of_birth": "Date of Birth",
   "registering": "Registering account",
@@ -58,5 +57,6 @@
   "step": "Step",
   "next": "Next",
   "previous": "Previous",
-  "continue": "Continue"
+  "no_data": "No data right now!",
+  "cancer": "Canser Diseases"
 }

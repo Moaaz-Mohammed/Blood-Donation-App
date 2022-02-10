@@ -3,14 +3,17 @@ import 'package:blood_donation/Screens/Blood_Donation_Benf.dart';
 import 'package:blood_donation/Screens/Mail_Page.dart';
 import 'package:blood_donation/Screens/Need_Donation.dart';
 import 'package:blood_donation/Screens/home/home_screen.dart';
+import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
 import 'package:blood_donation/shared/Constants.dart';
+import 'package:blood_donation/shared/Functions.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../Screens/settings/settings.dart';
-import '../Styles/CustomColors.dart';
-import '../services/auth.dart';
-import '../translations/locale_keys.g.dart';
+
+import '../../Styles/CustomColors.dart';
+import '../../services/auth.dart';
+import '../../translations/locale_keys.g.dart';
+import '../settings/settings.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({
@@ -26,14 +29,15 @@ class CustomDrawer extends StatelessWidget {
       elevation: 10,
       child: Container(
         decoration: BoxDecoration(
-            color: Theme.of(context).scaffoldBackgroundColor,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                  color: CustomColors.primaryRedColor,
-                  blurRadius: 10.0,
-                  offset: const Offset(0.0, 10.0))
-            ]),
+          color: Theme.of(context).scaffoldBackgroundColor,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+                color: CustomColors.primaryRedColor,
+                blurRadius: 10.0,
+                offset: const Offset(0.0, 10.0))
+          ],
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -41,16 +45,24 @@ class CustomDrawer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  CircleAvatar(
-                    radius: height * 0.04,
-                    backgroundColor: Colors.transparent,
-                    backgroundImage: userData[Constants.userImageUrl] == null
-                        ? AssetImage(
-                            Constants.addUserImage,
-                          ) as ImageProvider
-                        : NetworkImage(
-                            userData[Constants.userImageUrl],
-                          ),
+                  InkWell(
+                    onTap: () {
+                      Functions.navigatorPush(
+                        context: context,
+                        screen: ProfileScreen(userData: userData),
+                      );
+                    },
+                    child: CircleAvatar(
+                      radius: height * 0.04,
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: userData[Constants.userImageUrl] == null
+                          ? AssetImage(
+                              Constants.addUserImage,
+                            ) as ImageProvider
+                          : NetworkImage(
+                              userData[Constants.userImageUrl],
+                            ),
+                    ),
                   ),
                   SizedBox(
                     height: height * 0.01,

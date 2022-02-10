@@ -286,7 +286,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           DropdownMenuItem(
                             child: Center(
                               child: Text(
-                                LocaleKeys.canser.tr(),
+                                LocaleKeys.cancer.tr(),
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline2
@@ -295,7 +295,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     ),
                               ),
                             ),
-                            value: LocaleKeys.canser.tr(),
+                            value: LocaleKeys.cancer.tr(),
                           ),
                         ],
                         onChanged: (value) {

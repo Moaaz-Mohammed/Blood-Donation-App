@@ -64,7 +64,6 @@ class CodegenLoader extends AssetLoader{
   "genetic_blood_diseases": "أمراض الدم الوراثية",
   "hepatitis": "إلتهاب الكبد الفيروسي ب - ج",
   "aids": "الإيدز - الملاريا - الزهري",
-  "canser": "أمراض السرطان",
   "choose_blood_type": "أختر فصيلة الدم",
   "date_of_birth": "تاريخ الميلاد",
   "registering": "جاري تسجيل الحساب",
@@ -74,7 +73,8 @@ class CodegenLoader extends AssetLoader{
   "step": "الخطوة",
   "next": "التالي",
   "previous": "السابق",
-  "continue": "متابعة"
+  "no_data": "لا توجد بيانات متوفرة!",
+  "cancer": "أمراض السرطان"
 };
 static const Map<String,dynamic> en_US = {
   "app_name": "Save a Soul!",
@@ -126,7 +126,6 @@ static const Map<String,dynamic> en_US = {
   "genetic_blood_diseases": "Genetic blood diseases",
   "hepatitis": "Hepatitis C and B",
   "aids": "AIDS - Malaria - Syphilis",
-  "canser": "Canser Diseases",
   "choose_blood_type": "Choose blood type",
   "date_of_birth": "Date of Birth",
   "registering": "Registering account",
@@ -136,7 +135,8 @@ static const Map<String,dynamic> en_US = {
   "step": "Step",
   "next": "Next",
   "previous": "Previous",
-  "continue": "Continue"
+  "no_data": "No data right now!",
+  "cancer": "Canser Diseases"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar_EG": ar_EG, "en_US": en_US};
 }

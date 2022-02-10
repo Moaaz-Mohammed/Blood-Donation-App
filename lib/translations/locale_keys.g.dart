@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class LocaleKeys {
+abstract class  LocaleKeys {
   static const app_name = 'app_name';
   static const home = 'home';
   static const settings = 'settings';
@@ -50,7 +50,6 @@ abstract class LocaleKeys {
   static const genetic_blood_diseases = 'genetic_blood_diseases';
   static const hepatitis = 'hepatitis';
   static const aids = 'aids';
-  static const canser = 'canser';
   static const choose_blood_type = 'choose_blood_type';
   static const date_of_birth = 'date_of_birth';
   static const registering = 'registering';
@@ -60,4 +59,7 @@ abstract class LocaleKeys {
   static const step = 'step';
   static const next = 'next';
   static const previous = 'previous';
+  static const no_data = 'no_data';
+  static const cancer = 'cancer';
+
 }
