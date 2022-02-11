@@ -20,7 +20,7 @@ import '../../../shared/Functions.dart';
 import '../../../state_management/bloc/Cubit.dart';
 import '../../../state_management/provider/model_hud.dart';
 import '../../../translations/locale_keys.g.dart';
-import '../../home/home_screen.dart';
+import '../../home/new_home_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -587,7 +587,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 (value) {
                                   Functions.navigatorPushAndRemove(
                                     context: context,
-                                    screen: HomeScreen(),
+                                    screen: NewHomeScreen(),
                                   );
                                   Functions.showToastMsg(
                                     title: LocaleKeys.registered.tr(),

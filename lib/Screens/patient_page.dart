@@ -1,9 +1,10 @@
-import 'package:blood_donation/Screens/home/home_screen.dart';
 import 'package:blood_donation/shared/Controllers.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:blood_donation/shared/components.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
 import '../Styles/CustomColors.dart';
+import 'home/new_home_screen.dart';
 
 class Patient extends StatefulWidget {
   const Patient({Key? key}) : super(key: key);
@@ -364,7 +365,7 @@ class _PatientState extends State<Patient> {
                                         'تم إرسال البيانات وسيتم التواصل معك في أقرب فرصة',
                                     description2: '',
                                   )).then(
-                              (value) => navigateTo(context, HomeScreen())),
+                              (value) => navigateTo(context, NewHomeScreen())),
                         );
                       }
                       ;

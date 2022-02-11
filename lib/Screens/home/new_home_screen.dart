@@ -8,6 +8,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../Styles/CustomColors.dart';
 import '../../shared/Constants.dart';
@@ -56,6 +57,8 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var mapUrl =
+        'https://www.google.com/maps/search/hospital/@30.7540542,30.3489529,8.29z';
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -136,11 +139,21 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                           ),
                           Column(
                             children: [
-                              HomeCategoryCard(
-                                image: Constants.hospitalImage,
-                                backgroundColor: CustomColors.primaryGreenColor,
-                                title: LocaleKeys.find_hospital.tr(),
-                                content: LocaleKeys.sub_find_hospital.tr(),
+                              InkWell(
+                                onTap: () async {
+                                  if (await canLaunch(mapUrl)) {
+                                    await launch(mapUrl);
+                                  } else {
+                                    print('could not open $mapUrl');
+                                  }
+                                },
+                                child: HomeCategoryCard(
+                                  image: Constants.hospitalImage,
+                                  backgroundColor:
+                                      CustomColors.primaryGreenColor,
+                                  title: LocaleKeys.find_hospital.tr(),
+                                  content: LocaleKeys.sub_find_hospital.tr(),
+                                ),
                               ),
                               InkWell(
                                 onTap: () {
@@ -168,4 +181,10 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
             ),
     );
   }
+}
+
+void launchMap() async {
+  var mapUrl =
+      'https://www.google.com/maps/search/blood+donation+center+near+Egypt/@27.6976022,28.2968825,5.83z';
+  if (!await launch(mapUrl)) throw 'Could not open the url';
 }

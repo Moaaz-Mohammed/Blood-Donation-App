@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../shared/Constants.dart';
+import '../translations/locale_keys.g.dart';
 import 'custom_button.dart';
 import 'custom_sized_box_width.dart';
 
@@ -29,7 +31,7 @@ class CustomDialogDoYouWant extends StatelessWidget {
           Expanded(
             child: CustomButton(
               height: 40.0,
-              title: 'نعم',
+              title: LocaleKeys.yes.tr(),
               onTap: () {
                 onTapYes();
               },
@@ -41,7 +43,7 @@ class CustomDialogDoYouWant extends StatelessWidget {
           Expanded(
             child: CustomButton(
               height: 40.0,
-              title: 'لا',
+              title: LocaleKeys.no.tr(),
               onTap: () {
                 Navigator.pop(context);
               },

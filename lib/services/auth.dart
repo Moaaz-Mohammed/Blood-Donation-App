@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import '../Screens/auth/log_in_screen.dart';
-import '../Screens/home/home_screen.dart';
-import '../shared/Constants.dart';
+import '../Screens/home/new_home_screen.dart';
 import '../shared/Functions.dart';
 
 class Auth {
@@ -53,7 +53,7 @@ class Auth {
         (value) {
           Functions.navigatorPushAndRemove(
             context: context,
-            screen: HomeScreen(),
+            screen: NewHomeScreen(),
           );
           Functions.showToastMsg(
             title: 'تم تسجيل الدخول',

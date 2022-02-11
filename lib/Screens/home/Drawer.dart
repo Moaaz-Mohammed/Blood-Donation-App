@@ -2,7 +2,6 @@ import 'package:blood_donation/Screens/BloodTypes.dart';
 import 'package:blood_donation/Screens/Blood_Donation_Benf.dart';
 import 'package:blood_donation/Screens/Mail_Page.dart';
 import 'package:blood_donation/Screens/Need_Donation.dart';
-import 'package:blood_donation/Screens/home/home_screen.dart';
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
 import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Functions.dart';
@@ -14,6 +13,7 @@ import '../../Styles/CustomColors.dart';
 import '../../services/auth.dart';
 import '../../translations/locale_keys.g.dart';
 import '../settings/settings.dart';
+import 'new_home_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({
@@ -82,7 +82,7 @@ class CustomDrawer extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               onTap: () {
-                navigateTo(context, HomeScreen());
+                navigateTo(context, NewHomeScreen());
               },
             ),
             //Patients
