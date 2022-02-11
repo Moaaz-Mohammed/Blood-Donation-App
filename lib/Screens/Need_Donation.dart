@@ -1,5 +1,4 @@
 import 'package:blood_donation/Screens/patient_page.dart';
-import 'package:blood_donation/shared/components.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +25,7 @@ class _Need_DonationState extends State<Need_Donation> {
           TextButton(
             onPressed: () {
               Functions.navigatorPush(
-                context: context,
+                context:context,
                 screen: Patient(),
               );
             },
@@ -66,7 +65,10 @@ class _Need_DonationState extends State<Need_Donation> {
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    DetailtsText(text: data['name']),
+                                    Text(data['name'],
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline2),
                                   ],
                                 ),
                                 SizedBox(
@@ -81,7 +83,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    DetailtsText(text: data['hospital']),
+                                    Text(data['hospital']),
                                   ],
                                 ),
                                 SizedBox(
@@ -96,7 +98,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    DetailtsText(text: data['blood_type']),
+                                    Text(data['blood_type']),
                                   ],
                                 ),
                                 SizedBox(
@@ -111,7 +113,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    DetailtsText(text: data['phone']),
+                                    Text(data['phone']),
                                   ],
                                 ),
                                 SizedBox(
@@ -126,7 +128,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    DetailtsText(text: data['age']),
+                                    Text(data['age']),
                                   ],
                                 ),
                                 SizedBox(
@@ -152,7 +154,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                       child: Padding(
                                         padding: const EdgeInsets.all(15.0),
                                         child:
-                                            DetailtsText(text: data['status']),
+                                            Text(data['status']),
                                       ),
                                     ),
                                   ],

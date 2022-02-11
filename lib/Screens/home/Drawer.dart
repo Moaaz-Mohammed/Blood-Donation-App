@@ -125,7 +125,7 @@ class CustomDrawer extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               onTap: () {
-                navigateTo(context, Blood_Donation_Benf());
+                navigateTo(context, DonationBenefitsScreen());
               },
             ),
             //Mail

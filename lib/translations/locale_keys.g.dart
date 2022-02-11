@@ -61,5 +61,24 @@ abstract class  LocaleKeys {
   static const previous = 'previous';
   static const no_data = 'no_data';
   static const cancer = 'cancer';
+  static const importance_of_donating = 'importance_of_donating';
+  static const every_three_seconds = 'every_three_seconds';
+  static const one_of_ten = 'one_of_ten';
+  static const your_blood = 'your_blood';
+  static const refresh_blood = 'refresh_blood';
+  static const donor_can_get_results = 'donor_can_get_results';
+  static const how_to_donate = 'how_to_donate';
+  static const process_of_donating = 'process_of_donating';
+  static const why_not_donating = 'why_not_donating';
+  static const reasons_prevent_donating = 'reasons_prevent_donating';
+  static const when_redonate = 'when_redonate';
+  static const when_can_redonate = 'when_can_redonate';
+  static const amount_of_blood_in_single_donate = 'amount_of_blood_in_single_donate';
+  static const amount_of_blood = 'amount_of_blood';
+  static const find_hospital = 'find_hospital';
+  static const sub_find_hospital = 'sub_find_hospital';
+  static const find_donors = 'find_donors';
+  static const sub_find_donors = 'sub_find_donors';
+  static const control_app = 'control_app';
 
 }

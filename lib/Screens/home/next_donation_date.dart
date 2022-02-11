@@ -33,7 +33,7 @@ class NextDonationDate extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        userData![Constants.userLastDonation] ??
+                        userData![Constants.userNextDonation] ??
                             LocaleKeys.no_data.tr(),
                         style: Theme.of(context)
                             .textTheme

@@ -1,4 +1,3 @@
-import 'package:blood_donation/shared/Constants.dart';
 import 'package:flutter/material.dart';
 
 import '../Styles/CustomColors.dart';
@@ -15,24 +14,28 @@ Widget TitleText({@required String? text}) => Text(
       ),
     );
 
-Widget defaultText({@required String? text,}) => Text(
+Widget defaultText({
+  @required String? text,
+}) =>
+    Text(
       text!,
-      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: CustomColors.primaryRedColor),
+      style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+          color: CustomColors.primaryRedColor),
     );
 
 class CustomDialog extends StatelessWidget {
   final String? title, description1, description2, buttonText;
   final Image? image;
 
-  CustomDialog(
-      {
-      this.title,
-      this.buttonText,
-      this.description1,
-      this.description2,
-      this.image,
-      }
-      );
+  CustomDialog({
+    this.title,
+    this.buttonText,
+    this.description1,
+    this.description2,
+    this.image,
+  });
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -42,6 +45,7 @@ class CustomDialog extends StatelessWidget {
       child: dialogContent(context),
     );
   }
+
   dialogContent(BuildContext context) {
     return Stack(
       children: [
@@ -102,8 +106,8 @@ class CustomDialog extends StatelessWidget {
                     child: Text(
                       'Close',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
                       ),
                     ),
                   ),
@@ -115,15 +119,24 @@ class CustomDialog extends StatelessWidget {
   }
 }
 
-Widget ArticleHeadText({@required String? text,}) =>Text(
+Widget ArticleHeadText({
+  @required String? text,
+}) =>
+    Text(
       text!,
-      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: CustomColors.primaryRedColor),
+      style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: CustomColors.primaryRedColor),
     );
 
-Widget ArticleContentText({@required String? text,}) => Text(
+Widget ArticleContentText({
+  @required String? text,
+}) =>
+    Text(
       text!,
-      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: CustomColors.primaryRedColor),
+      style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          color: CustomColors.primaryRedColor),
     );
-
-Widget DetailtsText ({required String? text})=>Text(text!,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black),);
-

@@ -7,7 +7,7 @@ import '../CustomColors.dart';
 ThemeData LightTheme = ThemeData(
   scaffoldBackgroundColor: CustomColors.primaryWhiteColor,
   primaryColor: CustomColors.primaryRedColor,
-  appBarTheme: AppBarTheme(
+  appBarTheme: const AppBarTheme(
     // ignore: deprecated_member_use
     backwardsCompatibility: false,
     systemOverlayStyle: SystemUiOverlayStyle(
@@ -27,10 +27,10 @@ ThemeData LightTheme = ThemeData(
     elevation: 0.0,
     titleSpacing: 20.0,
   ),
-  iconTheme: IconThemeData(color: CustomColors.primaryDarkColor),
-  primaryIconTheme: IconThemeData(color: CustomColors.primaryDarkColor),
+  iconTheme: const IconThemeData(color: CustomColors.primaryDarkColor),
+  primaryIconTheme: const IconThemeData(color: CustomColors.primaryDarkColor),
   splashColor: CustomColors.primaryWhiteColor,
-  textTheme: TextTheme(
+  textTheme: const TextTheme(
     headline1: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.bold,
@@ -63,38 +63,38 @@ ThemeData LightTheme = ThemeData(
   hoverColor: CustomColors.primaryWhiteColor,
   focusColor: CustomColors.primaryWhiteColor,
   cardColor: CustomColors.primaryWhiteColor,
-  floatingActionButtonTheme: FloatingActionButtonThemeData(
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: CustomColors.primaryRedColor),
-  progressIndicatorTheme: ProgressIndicatorThemeData(
+  progressIndicatorTheme: const ProgressIndicatorThemeData(
     color: CustomColors.primaryRedColor,
   ),
   inputDecorationTheme: InputDecorationTheme(
     prefixIconColor: CustomColors.primaryRedColor,
     disabledBorder: UnderlineInputBorder(
       borderRadius: Constants.primaryBorderRadius,
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         color: CustomColors.primaryGreyColor,
       ),
     ),
     focusColor: CustomColors.primaryRedColor,
     suffixIconColor: CustomColors.primaryRedColor,
-    hintStyle: TextStyle(
+    hintStyle: const TextStyle(
       color: CustomColors.primaryDarkColor,
       fontSize: 13,
     ),
-    labelStyle: TextStyle(
+    labelStyle: const TextStyle(
       color: CustomColors.primaryRedColor,
       fontSize: 15,
     ),
     enabledBorder: UnderlineInputBorder(
       borderRadius: Constants.primaryBorderRadius,
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         color: CustomColors.primaryGreyColor,
       ),
     ),
     focusedBorder: UnderlineInputBorder(
       borderRadius: Constants.primaryBorderRadius,
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         color: CustomColors.primaryRedColor,
       ),
     ),

@@ -1,8 +1,9 @@
+import 'package:blood_donation/UsableWidgets/loading.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../shared/components.dart';
+import '../../Styles/CustomColors.dart';
 
 class NeedDonationBody extends StatelessWidget {
   const NeedDonationBody({Key? key}) : super(key: key);
@@ -18,121 +19,122 @@ class NeedDonationBody extends StatelessWidget {
             return Text('Something went wrong');
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return Loading();
           }
           return ListView(
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
               Map<String, dynamic> data =
                   document.data() as Map<String, dynamic>;
-              return Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Center(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              return ExpansionTile(
+                title: Center(
+                  child: Text(
+                    data['name'],
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                ),
+                leading: Text(
+                  data['blood_type'],
+                  style: Theme.of(context).textTheme.headline2,
+                ),
+                trailing: Text(
+                  data['phone'],
+                  style: Theme.of(context).textTheme.headline2,
+                ),
+                children: [
+                  //Address
+                  Row(
                     children: [
-                      //Name
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.person,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          DetailtsText(text: data['name']),
-                        ],
+                      Icon(Icons.location_on,
+                          color: CustomColors.primaryRedColor),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(data['hospital'],
+                          style: Theme.of(context).textTheme.headline2),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  //Blood Type
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.bloodtype,
+                        color: CustomColors.primaryRedColor,
                       ),
                       SizedBox(
-                        height: 7,
+                        width: 10,
                       ),
-                      //Address
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.location_on,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Container(
-                              child: DetailtsText(text: data['hospital'])),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 7,
-                      ),
-                      //Blood Type
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.bloodtype,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          DetailtsText(text: data['blood_type']),
-                        ],
+                      Text(data['blood_type'],
+                          style: Theme.of(context).textTheme.headline2),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  //Contact
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.phone,
+                        color: CustomColors.primaryRedColor,
                       ),
                       SizedBox(
-                        height: 7,
+                        width: 10,
                       ),
-                      //Contact
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.phone,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          DetailtsText(text: data['phone']),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 7,
-                      ),
-                      //Patient Age
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.person,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          DetailtsText(text: data['age']),
-                        ],
+                      Text('${data['phone']} - ${data['another_phone']}',
+                          style: Theme.of(context).textTheme.headline2),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  //Patient Age
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.cake,
+                        color: CustomColors.primaryRedColor,
                       ),
                       SizedBox(
-                        height: 7,
+                        width: 10,
                       ),
-                      // Status of the patient
-                      Column(
-                        children: [
-                          Text("الحالة",
-                              style: Theme.of(context).textTheme.headline5),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            width: 350,
-                            height: 60,
-                            decoration: BoxDecoration(
-                                color: Colors.grey[100],
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(15.0),
-                              child: DetailtsText(text: data['status']),
-                            ),
-                          ),
-                        ],
-                      ),
+                      Text(data['age'],
+                          style: Theme.of(context).textTheme.headline2),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  // Status of the patient
+                  Column(
+                    children: [
+                      Text("الحالة",
+                          style: Theme.of(context).textTheme.headline3),
                       SizedBox(
-                        height: 5,
+                        height: 10,
+                      ),
+                      Container(
+                        width: 350,
+                        height: 60,
+                        decoration: BoxDecoration(
+                            color: Colors.grey[100],
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text(
+                            data['status'],
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline2
+                                ?.copyWith(color: CustomColors.primaryRedColor),
+                          ),
+                        ),
                       ),
                     ],
                   ),
-                ),
+                ],
               );
             }).toList(),
           );

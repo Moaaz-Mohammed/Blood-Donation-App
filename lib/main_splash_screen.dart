@@ -1,11 +1,13 @@
 import 'dart:async';
+
+import 'package:blood_donation/Screens/home/new_home_screen.dart';
 import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Functions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+
 import 'Screens/auth/log_in_screen.dart';
-import 'Screens/home/home_screen.dart';
 import 'Screens/on_boarding/on_boarding_screen.dart';
 import 'Styles/CustomColors.dart';
 
@@ -39,7 +41,7 @@ class _MainSlashScreenState extends State<MainSlashScreen> {
                   ? widget.onBoarding
                       ? LogInScreen()
                       : OnBoardingScreen()
-                  : HomeScreen(),
+                  : NewHomeScreen(),
             );
           },
         );

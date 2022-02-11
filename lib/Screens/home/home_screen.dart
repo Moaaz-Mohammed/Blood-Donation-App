@@ -56,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(LocaleKeys.home.tr()),
@@ -65,66 +66,78 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: userData == null
           ? Loading()
-          : Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
+          : SafeArea(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Image.asset(
-                        Constants.waveImage,
-                        height: 50,
-                      ),
-                      SizedBox(width: 15),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      Row(
                         children: [
-                          Row(
-                            children: [
-                              Text(
-                                '${LocaleKeys.hello.tr()} ',
-                                style: Theme.of(context).textTheme.headline4,
-                              ),
-                              Text(
-                                userData![Constants.userName],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline4
-                                    ?.copyWith(
-                                        color: CustomColors.primaryRedColor),
-                              ),
-                            ],
+                          Image.asset(
+                            Constants.waveImage,
+                            height: 50,
                           ),
-                          SizedBox(height: 10),
-                          Text(
-                            LocaleKeys.hru.tr(),
-                            style: Theme.of(context).textTheme.headline2,
+                          SizedBox(width: 15),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    '${LocaleKeys.hello.tr()} ',
+                                    style:
+                                        Theme.of(context).textTheme.headline4,
+                                  ),
+                                  Text(
+                                    userData![Constants.userName],
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline4
+                                        ?.copyWith(
+                                            color:
+                                                CustomColors.primaryRedColor),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                LocaleKeys.hru.tr(),
+                                style: Theme.of(context).textTheme.headline2,
+                              )
+                            ],
                           )
                         ],
+                      ),
+                      SizedBox(
+                        height: height * 0.03,
+                      ),
+                      Text(
+                        LocaleKeys.next_donation_date.tr(),
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                      SizedBox(
+                        height: height * 0.02,
+                      ),
+                      NextDonationDate(
+                        userData: userData,
+                      ),
+                      SizedBox(height: height * 0.02),
+                      Divider(),
+                      Text(
+                        LocaleKeys.need_donation.tr(),
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                      SizedBox(
+                        height: height * 0.5,
+                        width: width * 0.9,
+                        child: NeedDonationBody(),
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: height * 0.03,
-                  ),
-                  Text(
-                    LocaleKeys.next_donation_date.tr(),
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
-                  SizedBox(
-                    height: height * 0.02,
-                  ),
-                  NextDonationDate(
-                    userData: userData,
-                  ),
-                  SizedBox(height: height * 0.02),
-                  SizedBox(
-                    height: height * 0.5,
-                    child: NeedDonationBody(),
-                  )
-                ],
+                ),
               ),
             ),
     );

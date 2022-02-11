@@ -11,6 +11,7 @@ class Constants {
   static const String userName = 'UserName';
   static const String userDateofBirth = 'userDateofBirth';
   static const String userLastDonation = 'userLastDonation';
+  static const String userNextDonation = 'userNextDonation';
   static const String userPhone = 'UserPhone';
   static const String userEmail = 'UserEmail';
   static const String userAddress = 'userAddress';
@@ -45,4 +46,8 @@ class Constants {
   static const String waveImage = 'assets/images/wave.png';
   static const String helpImage = 'assets/images/help_others.png';
   static const String friendsImage = 'assets/images/friends.png';
+  static const String bloodDropImage = 'assets/images/blood_drop.png';
+  static const String hospitalImage = 'assets/images/hospital.png';
+  static const String settingsImage = 'assets/images/settings.png';
+  static const String profileImage = 'assets/images/avatar.png';
 }
