@@ -36,7 +36,7 @@
   "contact_us": "Contact Us",
   "hru": "How are you today?",
   "last_donation_date": "Last donation was at",
-  "next_donation_date": "Next donation at",
+  "next_donation_date": "Your Next Donation",
   "blood_type": "Blood type",
   "password": "Password",
   "login": "Login",
@@ -78,5 +78,14 @@
   "find_donors": "Find Donors",
   "sub_find_donors": "Find donors matching the blood type you need.",
   "control_app": "Control app settings.",
-  "status": "Status"
+  "status": "Status",
+  "sent": "Sent Successfully!",
+  "patient_name": "Patient name",
+  "status_of_patient": "Status of the patient",
+  "another_phone": "Another phone",
+  "register_new_patient": "Register patient data",
+  "age": "Age",
+  "hospital": "Hospital name and address",
+  "needed_blood": "Number of required blood bags",
+  "submit": "Submit"
 }

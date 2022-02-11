@@ -36,7 +36,7 @@
   "contact_us": "تواصل معنا",
   "hru": "كيف حالك اليوم؟",
   "last_donation_date": "أخر تبرع لك كان بتاريخ",
-  "next_donation_date": "موعد التبرع القادم",
+  "next_donation_date": "موعد تبرعك القادم",
   "blood_type": "فصيلة الدم",
   "password": "كلمة المرور",
   "login": "تسجيل الدخول",
@@ -78,5 +78,14 @@
   "find_donors": "أعثر على متبرعين",
   "sub_find_donors": "أعثر على متبرعين مطابقين لفصيلة الدم التي تحتاجها.",
   "control_app": "تحكم في إعدادات التطبيق.",
-  "status": "الحالة"
+  "status": "الحالة",
+  "sent": "تم الإرسال بنجاح!",
+  "patient_name": "اسم المريض",
+  "status_of_patient": "حالة المريض",
+  "another_phone": "رقم آخر",
+  "register_new_patient": "تسجيل بيانات المريض",
+  "age": "السن",
+  "hospital": "اسم المستشفى و عنوانها",
+  "needed_blood": "عدد أكياس الدم المطلوبة",
+  "submit": "تسجيل"
 }

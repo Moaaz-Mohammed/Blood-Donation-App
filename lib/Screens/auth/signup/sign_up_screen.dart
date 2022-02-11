@@ -1,12 +1,9 @@
-import 'dart:io';
-
+import 'package:blood_donation/UsableWidgets/custom_sized_box_height.dart';
 import 'package:blood_donation/shared/Controllers.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
 
@@ -35,46 +32,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
   var BloodType;
   var Status;
   var ShareData;
-  File? _image;
-  var userImageUrl;
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
   TextEditingController userNameController = TextEditingController();
-  TextEditingController userDateofBirthController = TextEditingController();
   TextEditingController userPhoneController = TextEditingController();
   TextEditingController userEmailController = TextEditingController();
   TextEditingController userLocationController = TextEditingController();
   TextEditingController userPasswordController = TextEditingController();
-
-  _imgFromGallery() async {
-    var image = await ImagePicker().pickImage(
-      source: ImageSource.gallery,
-    );
-    setState(
-      () {
-        _image = File(image!.path);
-      },
-    );
-  }
-
-  Future uploadFile() async {
-    if (_image != null) {
-      final feedStorage = FirebaseStorage.instanceFor();
-      Reference refFeedBucket = feedStorage
-          .ref()
-          .child('UsersProfile')
-          .child('${userNameController.text}.png');
-      String downloadUrl = '';
-      TaskSnapshot uploadedFile = await refFeedBucket.putFile(_image!);
-      if (uploadedFile.state == TaskState.success) {
-        downloadUrl = await refFeedBucket.getDownloadURL();
-        setState(
-          () {
-            userImageUrl = downloadUrl;
-          },
-        );
-      }
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -96,54 +59,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Profile Image
-                Center(
-                  child: Container(
-                    width: width * 0.25,
-                    height: width * 0.25,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: CustomColors.primaryRedColor,
-                        width: 1,
-                      ),
-                    ),
-                    child: Stack(
-                      children: [
-                        Center(
-                          child: CircleAvatar(
-                            backgroundColor: CustomColors.primaryWhiteColor,
-                            radius: double.infinity,
-                            backgroundImage: _image == null
-                                ? AssetImage(
-                                    Constants.addUserImage,
-                                  ) as ImageProvider
-                                : FileImage(
-                                    _image!,
-                                  ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.bottomRight,
-                          child: InkWell(
-                            onTap: () {
-                              _imgFromGallery();
-                            },
-                            borderRadius: BorderRadius.circular(50.0),
-                            child: CircleAvatar(
-                              radius: width * 0.04,
-                              backgroundColor: CustomColors.primaryWhiteColor,
-                              child: Icon(
-                                Icons.add_a_photo_rounded,
-                                color: CustomColors.primaryRedColor,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
                 // Name
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
@@ -155,6 +70,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   controller: userNameController,
                   keyboardType: TextInputType.text,
                 ),
+                CustomSizedBoxHeight(),
                 // E-Mail
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
@@ -166,6 +82,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.emailAddress,
                   controller: userEmailController,
                 ),
+                CustomSizedBoxHeight(),
                 // Password
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
@@ -189,6 +106,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.text,
                   obscureText: AppCubit.get(context).isVisible,
                 ),
+                CustomSizedBoxHeight(),
                 // Do You Suffer any Diseases?
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 19, vertical: 10),
@@ -307,6 +225,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ],
                   ),
                 ),
+                CustomSizedBoxHeight(),
                 // Blood Types
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 19),
@@ -453,6 +372,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ],
                   ),
                 ),
+                CustomSizedBoxHeight(),
                 // Phone
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
@@ -464,6 +384,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.number,
                   controller: userPhoneController,
                 ),
+                CustomSizedBoxHeight(),
                 // Date of Birth
                 Padding(
                   padding:
@@ -501,6 +422,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ],
                   ),
                 ),
+                CustomSizedBoxHeight(),
                 // Last Donation Date
                 Padding(
                   padding:
@@ -538,6 +460,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ],
                   ),
                 ),
+                CustomSizedBoxHeight(),
                 // Address
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
@@ -548,6 +471,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   controller: userLocationController,
                 ),
+                CustomSizedBoxHeight(),
                 CustomButton(
                   title: LocaleKeys.register.tr(),
                   onTap: () async {
@@ -565,33 +489,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           .then(
                         (value) {
                           User? userAuth = FirebaseAuth.instance.currentUser;
-                          uploadFile().then(
+                          _store
+                              .addUser(
+                            UserModel(
+                              userId: userAuth!.uid,
+                              userName: userNameController.text,
+                              userPhone: userPhoneController.text,
+                              userEmail: userEmailController.text,
+                              userAddress: userLocationController.text,
+                              userDateofBirth: dateController.toString(),
+                              userBloodType: BloodType.toString(),
+                              userStatus: Status.toString(),
+                              userLastDonation:
+                                  LastDonationcontroller.toString(),
+                            ),
+                          )
+                              .then(
                             (value) {
-                              _store
-                                  .addUser(
-                                UserModel(
-                                  userId: userAuth!.uid,
-                                  userName: userNameController.text,
-                                  userPhone: userPhoneController.text,
-                                  userEmail: userEmailController.text,
-                                  userAddress: userLocationController.text,
-                                  userDateofBirth: dateController.toString(),
-                                  userBloodType: BloodType.toString(),
-                                  userStatus: Status.toString(),
-                                  userLastDonation:
-                                      LastDonationcontroller.toString(),
-                                ),
-                              )
-                                  .then(
-                                (value) {
-                                  Functions.navigatorPushAndRemove(
-                                    context: context,
-                                    screen: NewHomeScreen(),
-                                  );
-                                  Functions.showToastMsg(
-                                    title: LocaleKeys.registered.tr(),
-                                  );
-                                },
+                              Functions.navigatorPushAndRemove(
+                                context: context,
+                                screen: NewHomeScreen(),
+                              );
+                              Functions.showToastMsg(
+                                title: LocaleKeys.registered.tr(),
                               );
                             },
                           );

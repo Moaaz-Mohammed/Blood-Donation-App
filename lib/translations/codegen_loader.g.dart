@@ -52,7 +52,7 @@ class CodegenLoader extends AssetLoader{
   "contact_us": "تواصل معنا",
   "hru": "كيف حالك اليوم؟",
   "last_donation_date": "أخر تبرع لك كان بتاريخ",
-  "next_donation_date": "موعد التبرع القادم",
+  "next_donation_date": "موعد تبرعك القادم",
   "blood_type": "فصيلة الدم",
   "password": "كلمة المرور",
   "login": "تسجيل الدخول",
@@ -94,7 +94,16 @@ class CodegenLoader extends AssetLoader{
   "find_donors": "أعثر على متبرعين",
   "sub_find_donors": "أعثر على متبرعين مطابقين لفصيلة الدم التي تحتاجها.",
   "control_app": "تحكم في إعدادات التطبيق.",
-  "status": "الحالة"
+  "status": "الحالة",
+  "sent": "تم الإرسال بنجاح!",
+  "patient_name": "اسم المريض",
+  "status_of_patient": "حالة المريض",
+  "another_phone": "رقم آخر",
+  "register_new_patient": "تسجيل بيانات المريض",
+  "age": "السن",
+  "hospital": "اسم المستشفى و عنوانها",
+  "needed_blood": "عدد أكياس الدم المطلوبة",
+  "submit": "تسجيل"
 };
 static const Map<String,dynamic> en_US = {
   "app_name": "Save a Soul!",
@@ -134,7 +143,7 @@ static const Map<String,dynamic> en_US = {
   "contact_us": "Contact Us",
   "hru": "How are you today?",
   "last_donation_date": "Last donation was at",
-  "next_donation_date": "Next donation at",
+  "next_donation_date": "Your Next Donation",
   "blood_type": "Blood type",
   "password": "Password",
   "login": "Login",
@@ -176,7 +185,16 @@ static const Map<String,dynamic> en_US = {
   "find_donors": "Find Donors",
   "sub_find_donors": "Find donors matching the blood type you need.",
   "control_app": "Control app settings.",
-  "status": "Status"
+  "status": "Status",
+  "sent": "Sent Successfully!",
+  "patient_name": "Patient name",
+  "status_of_patient": "Status of the patient",
+  "another_phone": "Another phone",
+  "register_new_patient": "Register patient data",
+  "age": "Age",
+  "hospital": "Hospital name and address",
+  "needed_blood": "Number of required blood bags",
+  "submit": "Submit"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar_EG": ar_EG, "en_US": en_US};
 }

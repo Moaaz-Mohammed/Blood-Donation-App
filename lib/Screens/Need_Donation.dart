@@ -1,8 +1,10 @@
 import 'package:blood_donation/Screens/patient_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../shared/Functions.dart';
+import '../translations/locale_keys.g.dart';
 
 class Need_Donation extends StatefulWidget {
   const Need_Donation({Key? key}) : super(key: key);
@@ -16,23 +18,15 @@ class _Need_DonationState extends State<Need_Donation> {
       FirebaseFirestore.instance.collection('Patient').snapshots();
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text('محتاجون للتبرع'),
+        title: Text(LocaleKeys.need_donation.tr()),
       ),
-      body: Column(
-        children: [
-          TextButton(
-            onPressed: () {
-              Functions.navigatorPush(
-                context:context,
-                screen: Patient(),
-              );
-            },
-            child: Text('إضافة مريض'),
-          ),
-          SizedBox(
-            height: 500,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: SizedBox(
+            height: height * 0.9,
             child: StreamBuilder<QuerySnapshot>(
               stream: _usersStream,
               builder: (BuildContext context,
@@ -49,7 +43,7 @@ class _Need_DonationState extends State<Need_Donation> {
                     Map<String, dynamic> data =
                         document.data() as Map<String, dynamic>;
                     return Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: Card(
                         child: ListTile(
                           title: Center(
@@ -137,7 +131,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                 // Status of the patient
                                 Column(
                                   children: [
-                                    Text("الحالة",
+                                    Text(LocaleKeys.status.tr(),
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline5),
@@ -153,8 +147,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                               BorderRadius.circular(10)),
                                       child: Padding(
                                         padding: const EdgeInsets.all(15.0),
-                                        child:
-                                            Text(data['status']),
+                                        child: Text(data['status']),
                                       ),
                                     ),
                                   ],
@@ -173,8 +166,18 @@ class _Need_DonationState extends State<Need_Donation> {
               },
             ),
           ),
-        ],
+        ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Functions.navigatorPush(
+            context: context,
+            screen: Patient(),
+          );
+        },
+        child: Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
     );
   }
 }

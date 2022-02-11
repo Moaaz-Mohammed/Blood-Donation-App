@@ -80,5 +80,15 @@ abstract class  LocaleKeys {
   static const find_donors = 'find_donors';
   static const sub_find_donors = 'sub_find_donors';
   static const control_app = 'control_app';
+  static const status = 'status';
+  static const sent = 'sent';
+  static const patient_name = 'patient_name';
+  static const status_of_patient = 'status_of_patient';
+  static const another_phone = 'another_phone';
+  static const register_new_patient = 'register_new_patient';
+  static const age = 'age';
+  static const hospital = 'hospital';
+  static const needed_blood = 'needed_blood';
+  static const submit = 'submit';
 
 }
