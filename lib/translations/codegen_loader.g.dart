@@ -93,7 +93,8 @@ class CodegenLoader extends AssetLoader{
   "sub_find_hospital": "أعثر على المستشفيات القريبة منك",
   "find_donors": "أعثر على متبرعين",
   "sub_find_donors": "أعثر على متبرعين مطابقين لفصيلة الدم التي تحتاجها.",
-  "control_app": "تحكم في إعدادات التطبيق."
+  "control_app": "تحكم في إعدادات التطبيق.",
+  "status": "الحالة"
 };
 static const Map<String,dynamic> en_US = {
   "app_name": "Save a Soul!",
@@ -174,7 +175,8 @@ static const Map<String,dynamic> en_US = {
   "sub_find_hospital": "Find near hospitals to you",
   "find_donors": "Find Donors",
   "sub_find_donors": "Find donors matching the blood type you need.",
-  "control_app": "Control app settings."
+  "control_app": "Control app settings.",
+  "status": "Status"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar_EG": ar_EG, "en_US": en_US};
 }

@@ -6,12 +6,11 @@ import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../UsableWidgets/custom_sized_box_width.dart';
 import '../../shared/Constants.dart';
 
-void change_language_dialog (context){
+void change_language_dialog(context) {
   showDialog(
-    context: context ,
+    context: context,
     builder: (BuildContext context) => AlertDialog(
-      backgroundColor:
-      Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -33,9 +32,7 @@ void change_language_dialog (context){
               )),
           InkWell(
             onTap: () async {
-              await context
-                  .setLocale(Locale('en', 'US'))
-                  .then((value) {
+              await context.setLocale(Locale('en', 'US')).then((value) {
                 Navigator.pop(context);
               });
             },
@@ -49,9 +46,7 @@ void change_language_dialog (context){
                 CustomSizedBoxWidth(),
                 Text(
                   'English - UK',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline2,
+                  style: Theme.of(context).textTheme.headline2,
                 )
               ],
             ),
@@ -59,9 +54,7 @@ void change_language_dialog (context){
           CustomSizedBoxHeight(),
           InkWell(
             onTap: () async {
-              await context
-                  .setLocale(Locale('ar', 'EG'))
-                  .then((value) {
+              await context.setLocale(Locale('ar', 'EG')).then((value) {
                 Navigator.pop(context);
               });
             },
@@ -75,9 +68,7 @@ void change_language_dialog (context){
                 CustomSizedBoxWidth(),
                 Text(
                   'العربية - EG',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline2,
+                  style: Theme.of(context).textTheme.headline2,
                 )
               ],
             ),

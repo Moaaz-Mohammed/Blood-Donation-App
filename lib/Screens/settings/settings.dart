@@ -2,9 +2,9 @@ import 'package:blood_donation/Screens/settings/change_language_dialog.dart';
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 import '../../Styles/CustomColors.dart';
 import '../../UsableWidgets/ArrowBox.dart';
-import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../UsableWidgets/custom_sized_box_width.dart';
 import '../../shared/Constants.dart';
 import '../../shared/Functions.dart';
@@ -47,18 +47,6 @@ class SettingsScreen extends StatelessWidget {
                   height: size.height * 0.03,
                 ),
                 ListTile(
-                  leading: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: size.width * 0.08,
-                    backgroundImage:
-                    userData[Constants.userImageUrl] == null
-                        ? AssetImage(
-                      Constants.addUserImage,
-                    ) as ImageProvider
-                        : NetworkImage(
-                      userData[Constants.userImageUrl],
-                    ),
-                  ),
                   title: Text(
                     userData[Constants.userName],
                     style: Theme.of(context).textTheme.headline4,

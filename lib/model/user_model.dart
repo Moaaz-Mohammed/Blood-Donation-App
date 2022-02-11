@@ -11,7 +11,6 @@ class UserModel {
   var userEmail;
   var userAddress;
   var userPhone;
-  var userImageUrl;
   var userStatus;
 
   UserModel({
@@ -23,7 +22,6 @@ class UserModel {
     required this.userEmail,
     required this.userAddress,
     required this.userPhone,
-    required this.userImageUrl,
     required this.userStatus,
   });
 

@@ -20,7 +20,6 @@ class Store {
         Constants.userEmail: userModel.userEmail,
         Constants.userPhone: userModel.userPhone,
         Constants.userAddress: userModel.userAddress,
-        Constants.userImageUrl: userModel.userImageUrl,
         Constants.userBloodType: userModel.userBloodType,
         Constants.userStatus: userModel.userStatus,
       },
@@ -34,7 +33,6 @@ class Store {
     required userLocation,
     required userDateofBirth,
     required userPhone,
-    required userImageUrl,
     required context,
   }) async {
     fireStore.collection(Constants.usersCollection).doc(userId).update(
@@ -43,7 +41,6 @@ class Store {
         Constants.userDateofBirth: userDateofBirth,
         Constants.userPhone: userPhone,
         Constants.userAddress: userLocation,
-        Constants.userImageUrl: userImageUrl,
       },
     ).then(
       (value) {

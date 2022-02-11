@@ -27,6 +27,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
 
   Map<String, dynamic>? userData;
 
+  @override
   void initState() {
     super.initState();
 
@@ -69,7 +70,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
         userData: userData,
       ),
       body: userData == null
-          ? Loading()
+          ? const Loading()
           : SafeArea(
               child: SingleChildScrollView(
                 child: Padding(
@@ -86,7 +87,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                                 '${LocaleKeys.hello.tr()}${userData![Constants.userName]}',
                                 style: Theme.of(context).textTheme.headline4,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
                               Text(
@@ -105,14 +106,14 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
                           Column(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 30,
                               ),
                               HomeCategoryCard(
@@ -144,7 +145,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                                   if (await canLaunch(mapUrl)) {
                                     await launch(mapUrl);
                                   } else {
-                                    print('could not open $mapUrl');
+                                    throw 'could not open $mapUrl';
                                   }
                                 },
                                 child: HomeCategoryCard(
@@ -181,10 +182,4 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
             ),
     );
   }
-}
-
-void launchMap() async {
-  var mapUrl =
-      'https://www.google.com/maps/search/blood+donation+center+near+Egypt/@27.6976022,28.2968825,5.83z';
-  if (!await launch(mapUrl)) throw 'Could not open the url';
 }

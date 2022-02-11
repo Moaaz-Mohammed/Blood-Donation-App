@@ -1,8 +1,10 @@
 import 'dart:io';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+
 import '../../../Styles/CustomColors.dart';
 import '../../../UsableWidgets/custom_button.dart';
 import '../../../UsableWidgets/custom_sized_box_height.dart';
@@ -54,164 +56,164 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            LocaleKeys.edit_profile.tr(),
-          ),
+      appBar: AppBar(
+        title: Text(
+          LocaleKeys.edit_profile.tr(),
         ),
-        body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          padding: Constants.primaryPadding,
-          child: Form(
-            key: _globalKey,
-            child: Column(
-              children: [
-                CustomSizedBoxHeight(),
-                Container(
-                  width: width * 0.5,
-                  height: width * 0.5,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: CustomColors.primaryRedColor,
-                      width: 2,
-                    ),
+      ),
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        padding: Constants.primaryPadding,
+        child: Form(
+          key: _globalKey,
+          child: Column(
+            children: [
+              CustomSizedBoxHeight(),
+              Container(
+                width: width * 0.5,
+                height: width * 0.5,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: CustomColors.primaryRedColor,
+                    width: 2,
                   ),
-                  child: Stack(
-                    children: [
-                      Center(
-                        child: CircleAvatar(
-                          backgroundColor: CustomColors.primaryWhiteColor,
-                          radius: double.infinity,
-                          backgroundImage: widget
-                                          .userData[Constants.userImageUrl] !=
-                                      null &&
-                                  _image == null
-                              ? NetworkImage(
-                                  widget.userData[Constants.userImageUrl],
-                                )
-                              : widget.userData[Constants.userImageUrl] !=
-                                          null &&
-                                      _image != null
-                                  ? FileImage(
-                                      _image,
-                                    )
-                                  : widget.userData[Constants.userImageUrl] ==
-                                              null &&
-                                          _image != null
-                                      ? FileImage(
-                                          _image,
-                                        )
-                                      : AssetImage(
-                                          Constants.addUserImage,
-                                        ) as ImageProvider,
-                        ),
+                ),
+                child: Stack(
+                  children: [
+                    Center(
+                      child: CircleAvatar(
+                        backgroundColor: CustomColors.primaryWhiteColor,
+                        radius: double.infinity,
+                        backgroundImage:
+                            widget.userData[Constants.userImageUrl] != null &&
+                                    _image == null
+                                ? NetworkImage(
+                                    widget.userData[Constants.userImageUrl],
+                                  )
+                                : widget.userData[Constants.userImageUrl] !=
+                                            null &&
+                                        _image != null
+                                    ? FileImage(
+                                        _image,
+                                      )
+                                    : widget.userData[Constants.userImageUrl] ==
+                                                null &&
+                                            _image != null
+                                        ? FileImage(
+                                            _image,
+                                          )
+                                        : AssetImage(
+                                            Constants.addUserImage,
+                                          ) as ImageProvider,
                       ),
-                      Container(
-                        alignment: Alignment.bottomRight,
-                        child: InkWell(
-                          onTap: () {
-                             _imgFromGallery();
-                          },
-                          borderRadius: BorderRadius.circular(50.0),
-                          child: CircleAvatar(
-                            backgroundColor:
-                            CustomColors.primaryRedColor.withOpacity(0.7),
-                            child: Icon(
-                              Icons.edit,
-                              color: CustomColors.primaryWhiteColor,
-                            ),
+                    ),
+                    Container(
+                      alignment: Alignment.bottomRight,
+                      child: InkWell(
+                        onTap: () {
+                          _imgFromGallery();
+                        },
+                        borderRadius: BorderRadius.circular(50.0),
+                        child: CircleAvatar(
+                          backgroundColor:
+                              CustomColors.primaryRedColor.withOpacity(0.7),
+                          child: Icon(
+                            Icons.edit,
+                            color: CustomColors.primaryWhiteColor,
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                CustomSizedBoxHeight(),
-                CustomSizedBoxHeight(),
-                TextFormField(
-                  decoration: InputDecoration(
-                  hintText: LocaleKeys.name.tr(),),
-                  controller: userNameController,
+              ),
+              CustomSizedBoxHeight(),
+              CustomSizedBoxHeight(),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: LocaleKeys.name.tr(),
                 ),
-                CustomSizedBoxHeight(),
-            TextFormField(
-              decoration: InputDecoration(
-                hintText: LocaleKeys.date_of_birth.tr(),),
-                  controller: userAgeController,
-                  keyboardType: TextInputType.number,
+                controller: userNameController,
+              ),
+              CustomSizedBoxHeight(),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: LocaleKeys.date_of_birth.tr(),
                 ),
-                CustomSizedBoxHeight(),
-            TextFormField(
-              decoration: InputDecoration(
-                hintText: LocaleKeys.phone.tr(),),
-                  controller: userPhoneController,
-                  keyboardType: TextInputType.number,
+                controller: userAgeController,
+                keyboardType: TextInputType.number,
+              ),
+              CustomSizedBoxHeight(),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: LocaleKeys.phone.tr(),
                 ),
-                CustomSizedBoxHeight(),
-            TextFormField(
-              decoration: InputDecoration(
-                hintText: LocaleKeys.address.tr(),),
-                  controller: userLocationController,
+                controller: userPhoneController,
+                keyboardType: TextInputType.number,
+              ),
+              CustomSizedBoxHeight(),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: LocaleKeys.address.tr(),
                 ),
-                CustomSizedBoxHeight(),
-                CustomSizedBoxHeight(),
-                CustomButton(
-                  title: LocaleKeys.save_changes.tr(),
-                  onTap: () async {
-                    if (_globalKey.currentState!.validate()) {
-                      if (userNameController.text ==
-                              widget.userData[Constants.userName] &&
-                          userPhoneController.text ==
-                              widget.userData[Constants.userPhone] &&
-                          userAgeController.text ==
-                              widget.userData[Constants.userDateofBirth] &&
-                          userLocationController.text ==
-                              widget.userData[Constants.userAddress] &&
-                          _image == null) {
-                        Functions.navigatorPushAndRemove(
-                          context: context,
-                          screen: HomeScreen(),
+                controller: userLocationController,
+              ),
+              CustomSizedBoxHeight(),
+              CustomSizedBoxHeight(),
+              CustomButton(
+                title: LocaleKeys.save_changes.tr(),
+                onTap: () async {
+                  if (_globalKey.currentState!.validate()) {
+                    if (userNameController.text ==
+                            widget.userData[Constants.userName] &&
+                        userPhoneController.text ==
+                            widget.userData[Constants.userPhone] &&
+                        userAgeController.text ==
+                            widget.userData[Constants.userDateofBirth] &&
+                        userLocationController.text ==
+                            widget.userData[Constants.userAddress] &&
+                        _image == null) {
+                      Functions.navigatorPushAndRemove(
+                        context: context,
+                        screen: HomeScreen(),
+                      );
+                    } else {
+                      Functions.dialogLoading(
+                        context: context,
+                        title: LocaleKeys.saving_changes.tr(),
+                      );
+                      if (_image != null) {
+                        uploadFile().then(
+                          (value) {
+                            _store.editUserProfile(
+                              context: context,
+                              userId: widget.userData[Constants.userId],
+                              userName: userNameController.text,
+                              userLocation: userLocationController.text,
+                              userDateofBirth: userAgeController.text,
+                              userPhone: userPhoneController.text,
+                            );
+                          },
                         );
                       } else {
-                        Functions.dialogLoading(
+                        _store.editUserProfile(
                           context: context,
-                          title: LocaleKeys.saving_changes.tr(),
+                          userPhone: userPhoneController.text,
+                          userId: widget.userData[Constants.userId],
+                          userName: userNameController.text,
+                          userLocation: userLocationController.text,
+                          userDateofBirth: userAgeController.text,
                         );
-                        if (_image != null) {
-                          uploadFile().then(
-                                (value) {
-                              _store.editUserProfile(
-                                context: context,
-                                userId: widget.userData[Constants.userId],
-                                userName: userNameController.text,
-                                userLocation: userLocationController.text,
-                                userDateofBirth: userAgeController.text,
-                                userImageUrl: userImageUrl,
-                                userPhone: userPhoneController.text,
-                              );
-                            },
-                          );
-                        } else  {
-                          _store.editUserProfile(
-                            context: context,
-                            userPhone: userPhoneController.text,
-                            userId: widget.userData[Constants.userId],
-                            userName: userNameController.text,
-                            userLocation: userLocationController.text,
-                            userDateofBirth: userAgeController.text,
-                            userImageUrl:
-                            widget.userData[Constants.userImageUrl],
-                          );
-                        }
                       }
                     }
-                  },
-                ),
-              ],
-            ),
+                  }
+                },
+              ),
+            ],
           ),
         ),
+      ),
     );
   }
 

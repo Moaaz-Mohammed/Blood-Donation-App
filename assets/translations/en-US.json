@@ -77,5 +77,6 @@
   "sub_find_hospital": "Find near hospitals to you",
   "find_donors": "Find Donors",
   "sub_find_donors": "Find donors matching the blood type you need.",
-  "control_app": "Control app settings."
+  "control_app": "Control app settings.",
+  "status": "Status"
 }

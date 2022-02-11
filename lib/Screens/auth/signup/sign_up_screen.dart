@@ -574,7 +574,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   userName: userNameController.text,
                                   userPhone: userPhoneController.text,
                                   userEmail: userEmailController.text,
-                                  userImageUrl: userImageUrl,
                                   userAddress: userLocationController.text,
                                   userDateofBirth: dateController.toString(),
                                   userBloodType: BloodType.toString(),

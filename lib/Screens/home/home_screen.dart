@@ -1,4 +1,5 @@
 import 'package:blood_donation/Styles/CustomColors.dart';
+import 'package:blood_donation/state_management/bloc/Cubit.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/scheduler.dart';
 import '../../UsableWidgets/loading.dart';
 import '../../shared/Constants.dart';
 import '../../translations/locale_keys.g.dart';
+import '../settings/change_language_dialog.dart';
 import 'Drawer.dart';
 import 'need_donation_body.dart';
 import 'next_donation_date.dart';
@@ -20,8 +22,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final Stream<QuerySnapshot> _usersStream =
-      FirebaseFirestore.instance.collection('Patient').snapshots();
   String uid = '';
   Map<String, dynamic>? userData;
 
@@ -60,6 +60,21 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(LocaleKeys.home.tr()),
+        actions: [
+          IconButton(
+            onPressed: () {
+              change_language_dialog(context);
+            },
+            icon: Icon(Icons.language),
+          ),
+          IconButton(
+              onPressed: () {
+                AppCubit.get(context).changeAppMode();
+              },
+              icon: Icon(AppCubit.get(context).isDark
+                  ? Icons.light_mode
+                  : Icons.dark_mode))
+        ],
       ),
       drawer: CustomDrawer(
         userData: userData,

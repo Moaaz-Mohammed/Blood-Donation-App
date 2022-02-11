@@ -1,9 +1,11 @@
 import 'package:blood_donation/UsableWidgets/loading.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../Styles/CustomColors.dart';
+import '../../translations/locale_keys.g.dart';
 
 class NeedDonationBody extends StatelessWidget {
   const NeedDonationBody({Key? key}) : super(key: key);
@@ -26,14 +28,9 @@ class NeedDonationBody extends StatelessWidget {
               Map<String, dynamic> data =
                   document.data() as Map<String, dynamic>;
               return ExpansionTile(
-                title: Center(
-                  child: Text(
-                    data['name'],
-                    style: Theme.of(context).textTheme.headline2,
-                  ),
-                ),
-                leading: Text(
-                  data['blood_type'],
+                backgroundColor: CustomColors.primaryGreyColor,
+                title: Text(
+                  data['name'],
                   style: Theme.of(context).textTheme.headline2,
                 ),
                 trailing: Text(
@@ -110,7 +107,7 @@ class NeedDonationBody extends StatelessWidget {
                   // Status of the patient
                   Column(
                     children: [
-                      Text("الحالة",
+                      Text(LocaleKeys.status.tr(),
                           style: Theme.of(context).textTheme.headline3),
                       SizedBox(
                         height: 10,

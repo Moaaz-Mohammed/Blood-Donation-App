@@ -99,7 +99,7 @@ ThemeData LightTheme = ThemeData(
       ),
     ),
     filled: true,
-    fillColor: CustomColors.primaryWhiteColor,
+    fillColor: CustomColors.primaryGreyColor,
     contentPadding:
         const EdgeInsets.symmetric(vertical: 22.0, horizontal: 20.0),
   ),

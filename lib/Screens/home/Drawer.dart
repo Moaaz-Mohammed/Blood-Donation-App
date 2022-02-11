@@ -52,24 +52,10 @@ class CustomDrawer extends StatelessWidget {
                         screen: ProfileScreen(userData: userData),
                       );
                     },
-                    child: CircleAvatar(
-                      radius: height * 0.04,
-                      backgroundColor: Colors.transparent,
-                      backgroundImage: userData[Constants.userImageUrl] == null
-                          ? AssetImage(
-                              Constants.addUserImage,
-                            ) as ImageProvider
-                          : NetworkImage(
-                              userData[Constants.userImageUrl],
-                            ),
+                    child: Text(
+                      userData[Constants.userName],
+                      style: Theme.of(context).textTheme.headline4,
                     ),
-                  ),
-                  SizedBox(
-                    height: height * 0.01,
-                  ),
-                  Text(
-                    userData[Constants.userName],
-                    style: Theme.of(context).textTheme.headline4,
                   ),
                 ],
               ),
