@@ -108,9 +108,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 CustomSizedBoxHeight(),
                 // Do You Suffer any Diseases?
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 19, vertical: 10),
+                Container(
+                  height: 80,
+                  width: double.infinity,
+                  decoration: Constants.primaryBoxDecorationContainer,
+                  padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -227,7 +231,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 CustomSizedBoxHeight(),
                 // Blood Types
-                Padding(
+                Container(
+                  height: 80,
+                  decoration: Constants.primaryBoxDecorationContainer,
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Row(
                     children: [
@@ -386,11 +392,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 CustomSizedBoxHeight(),
                 // Date of Birth
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 19, vertical: 10),
+                Container(
+                  height: 150,
+                  width: double.infinity,
+                  decoration: Constants.primaryBoxDecorationContainer,
+                  padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         LocaleKeys.date_of_birth.tr(),
@@ -424,11 +433,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 CustomSizedBoxHeight(),
                 // Last Donation Date
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 19, vertical: 10),
+                Container(
+                  height: 150,
+                  width: double.infinity,
+                  decoration: Constants.primaryBoxDecorationContainer,
+                  padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         LocaleKeys.last_donation_date.tr(),

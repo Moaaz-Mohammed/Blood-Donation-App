@@ -29,7 +29,7 @@ class Constants {
 
   static BoxDecoration primaryBoxDecorationContainer = BoxDecoration(
     borderRadius: primaryBorderRadius,
-    color: CustomColors.primaryGreyColor.withOpacity(0.3),
+    color: CustomColors.primaryGreyColor,
   );
 
   static BoxDecoration primaryBoxDecorationProfile = BoxDecoration(
