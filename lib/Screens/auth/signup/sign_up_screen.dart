@@ -1,5 +1,5 @@
+import 'package:blood_donation/Screens/home/home_screen.dart';
 import 'package:blood_donation/UsableWidgets/custom_sized_box_height.dart';
-import 'package:blood_donation/shared/Controllers.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,7 +17,6 @@ import '../../../shared/Functions.dart';
 import '../../../state_management/bloc/Cubit.dart';
 import '../../../state_management/provider/model_hud.dart';
 import '../../../translations/locale_keys.g.dart';
-import '../../home/new_home_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -44,7 +43,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     double width = MediaQuery.of(context).size.width;
     DateTime _dateTime = DateTime.now();
     double height = MediaQuery.of(context).size.height;
-    var dateController = DateFormat.yMMMd().format(_dateTime);
+    var DateofBirthController = DateTime;
+    var LastDonationDateController = DateFormat.yMMMd().format(_dateTime);
     return ModalProgressHUD(
       inAsyncCall: Provider.of<ModelHud>(context).isLoading1,
       child: Scaffold(
@@ -421,7 +421,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               var date = DateFormat.yMMMd().format(value);
                               setState(
                                 () {
-                                  dateController = date;
+                                  DateofBirthController = date as Type;
                                 },
                               );
                             },
@@ -462,7 +462,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               var date = DateFormat.yMMMd().format(value);
                               setState(
                                 () {
-                                  dateController = date;
+                                  LastDonationDateController = date;
                                 },
                               );
                             },
@@ -509,18 +509,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               userPhone: userPhoneController.text,
                               userEmail: userEmailController.text,
                               userAddress: userLocationController.text,
-                              userDateofBirth: dateController.toString(),
+                              userDateofBirth: DateofBirthController.toString(),
                               userBloodType: BloodType.toString(),
                               userStatus: Status.toString(),
                               userLastDonation:
-                                  LastDonationcontroller.toString(),
+                                  LastDonationDateController.toString(),
                             ),
                           )
                               .then(
                             (value) {
                               Functions.navigatorPushAndRemove(
                                 context: context,
-                                screen: NewHomeScreen(),
+                                screen: HomeScreen(),
                               );
                               Functions.showToastMsg(
                                 title: LocaleKeys.registered.tr(),

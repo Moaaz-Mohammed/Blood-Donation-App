@@ -99,11 +99,6 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                               ),
                             ],
                           ),
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundImage:
-                                NetworkImage(userData![Constants.userImageUrl]),
-                          )
                         ],
                       ),
                       const SizedBox(

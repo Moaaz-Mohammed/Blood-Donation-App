@@ -1,11 +1,13 @@
 import 'package:blood_donation/shared/Controllers.dart';
 import 'package:blood_donation/shared/components.dart';
+import 'package:blood_donation/state_management/bloc/Cubit.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../Styles/CustomColors.dart';
 import '../UsableWidgets/custom_button.dart';
+import '../shared/Constants.dart';
 import '../translations/locale_keys.g.dart';
 import 'home/new_home_screen.dart';
 
@@ -107,10 +109,19 @@ class _PatientState extends State<Patient> {
                           height: 10,
                         ),
                         //Blood type
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 14),
+                        Container(
+                          height: 80,
+                          width: double.infinity,
+                          decoration: AppCubit.get(context).isDark
+                              ? Constants.primaryDarkBoxDecorationContainer
+                              : Constants.primaryBoxDecorationContainer,
+                          padding: const EdgeInsets.symmetric(horizontal: 19),
                           child: Row(
                             children: [
+                              Text(
+                                LocaleKeys.blood_types.tr(),
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
                               DropdownButton(
                                 dropdownColor:
                                     Theme.of(context).scaffoldBackgroundColor,
@@ -172,6 +183,9 @@ class _PatientState extends State<Patient> {
                               ),
                             ],
                           ),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         // Age
                         TextFormField(

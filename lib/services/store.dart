@@ -17,6 +17,7 @@ class Store {
         Constants.userId: userModel.userId,
         Constants.userName: userModel.userName,
         Constants.userDateofBirth: userModel.userDateofBirth,
+        Constants.userLastDonation: userModel.userLastDonation,
         Constants.userEmail: userModel.userEmail,
         Constants.userPhone: userModel.userPhone,
         Constants.userAddress: userModel.userAddress,
