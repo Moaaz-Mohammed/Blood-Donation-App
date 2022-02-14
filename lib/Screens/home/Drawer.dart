@@ -13,7 +13,7 @@ import '../../Styles/CustomColors.dart';
 import '../../services/auth.dart';
 import '../../translations/locale_keys.g.dart';
 import '../settings/settings.dart';
-import 'new_home_screen.dart';
+import 'home_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({
@@ -68,7 +68,7 @@ class CustomDrawer extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               onTap: () {
-                navigateTo(context, NewHomeScreen());
+                navigateTo(context, HomeScreen());
               },
             ),
             //Patients

@@ -1,4 +1,5 @@
 import 'package:blood_donation/UsableWidgets/loading.dart';
+import 'package:blood_donation/shared/Constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,8 +13,10 @@ class NeedDonationBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Stream<QuerySnapshot> _usersStream =
-        FirebaseFirestore.instance.collection('Patient').snapshots();
+    final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
+        .collection('Patient')
+        .where(Constants.userBloodType)
+        .snapshots();
     return StreamBuilder<QuerySnapshot>(
         stream: _usersStream,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {

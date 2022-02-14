@@ -43,8 +43,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     double width = MediaQuery.of(context).size.width;
     DateTime _dateTime = DateTime.now();
     double height = MediaQuery.of(context).size.height;
-    var DateofBirthController = DateTime;
     var LastDonationDateController = DateFormat.yMMMd().format(_dateTime);
+    var DateofBirthController = DateFormat.yMMMd().format(_dateTime);
     return ModalProgressHUD(
       inAsyncCall: Provider.of<ModelHud>(context).isLoading1,
       child: Scaffold(
@@ -421,7 +421,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               var date = DateFormat.yMMMd().format(value);
                               setState(
                                 () {
-                                  DateofBirthController = date as Type;
+                                  DateofBirthController = date;
                                 },
                               );
                             },
@@ -463,6 +463,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               setState(
                                 () {
                                   LastDonationDateController = date;
+                                  print(LastDonationDateController.toString());
                                 },
                               );
                             },
@@ -509,11 +510,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               userPhone: userPhoneController.text,
                               userEmail: userEmailController.text,
                               userAddress: userLocationController.text,
-                              userDateofBirth: DateofBirthController.toString(),
+                              userDateofBirth: DateofBirthController,
                               userBloodType: BloodType.toString(),
                               userStatus: Status.toString(),
-                              userLastDonation:
-                                  LastDonationDateController.toString(),
+                              userLastDonation: LastDonationDateController,
                             ),
                           )
                               .then(

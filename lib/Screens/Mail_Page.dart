@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../Styles/CustomColors.dart';
-import 'home/new_home_screen.dart';
+import 'home/home_screen.dart';
 
 class Mail extends StatefulWidget {
   const Mail({Key? key}) : super(key: key);
@@ -169,7 +169,7 @@ class _MailState extends State<Mail> {
                                         'تم إرسال رسالتك بنجاح وسيتم التواصل معك بكل سرور',
                                     description2: '',
                                   )).then(
-                              (value) => navigateTo(context, NewHomeScreen())),
+                              (value) => navigateTo(context, HomeScreen())),
                         );
                       },
                       child: Text(

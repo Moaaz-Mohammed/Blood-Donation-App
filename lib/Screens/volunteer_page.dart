@@ -1,12 +1,10 @@
-// ignore_for_file: prefer_typing_uninitialized_variables
-
 import 'package:blood_donation/shared/Controllers.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../Styles/CustomColors.dart';
-import 'home/new_home_screen.dart';
+import 'home/home_screen.dart';
 
 class Volunteer extends StatefulWidget {
   const Volunteer({Key? key}) : super(key: key);
@@ -568,7 +566,7 @@ class _VolunteerState extends State<Volunteer> {
                                         'شكراً لمساهمتك في فعل الخير ♥',
                                     description2: '',
                                   )).then((value) =>
-                              navigateTo(context, const NewHomeScreen())));
+                              navigateTo(context, const HomeScreen())));
                         }
                         ;
                       },
