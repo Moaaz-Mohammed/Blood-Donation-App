@@ -10,6 +10,7 @@ import 'Screens/auth/log_in_screen.dart';
 import 'Screens/home/home_screen.dart';
 import 'Screens/on_boarding/on_boarding_screen.dart';
 import 'Styles/CustomColors.dart';
+import 'Styles/Images.dart';
 
 class MainSlashScreen extends StatefulWidget {
   const MainSlashScreen({
@@ -56,7 +57,7 @@ class _MainSlashScreenState extends State<MainSlashScreen> {
       backgroundColor: CustomColors.primaryRedColor,
       body: Center(
         child: Image.asset(
-          Constants.LogoImage,
+          Images.LogoImage,
           width: width * 0.5,
         ),
       ),

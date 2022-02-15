@@ -2,6 +2,7 @@ import 'package:blood_donation/shared/Constants.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
+import '../Styles/Images.dart';
 import '../translations/locale_keys.g.dart';
 
 class BloodTypes extends StatefulWidget {
@@ -30,7 +31,7 @@ class _BloodTypesState extends State<BloodTypes> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Image.asset(Constants.BloodTypesImage),
+          child: Image.asset(Images.BloodTypesImage),
         ),
       ),
     );

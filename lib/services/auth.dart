@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../Screens/auth/log_in_screen.dart';
 import '../Screens/home/home_screen.dart';
 import '../shared/Functions.dart';
+import '../translations/locale_keys.g.dart';
 
 class Auth {
   final _auth = FirebaseAuth.instance;
@@ -83,7 +85,7 @@ class Auth {
           screen: LogInScreen(),
         );
         Functions.showToastMsg(
-          title: 'تم تسجيل الخروج',
+          title: LocaleKeys.logged_out.tr(),
         );
       });
     } catch (e) {

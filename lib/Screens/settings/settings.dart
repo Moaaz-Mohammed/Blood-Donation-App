@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../Styles/CustomColors.dart';
+import '../../Styles/Strings.dart';
 import '../../UsableWidgets/ArrowBox.dart';
 import '../../UsableWidgets/custom_sized_box_width.dart';
 import '../../shared/Constants.dart';
@@ -48,7 +49,7 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text(
-                    userData[Constants.userName],
+                    userData[Strings.userName],
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   subtitle: Text(

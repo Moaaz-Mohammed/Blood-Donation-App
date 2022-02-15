@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../Styles/CustomColors.dart';
+import '../../Styles/Images.dart';
 import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../services/cache_shared_preferences.dart';
 import '../../shared/Constants.dart';
@@ -25,12 +26,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   List<BoardingModel> boarding = [
     BoardingModel(
-      image: Constants.helpImage,
+      image: Images.helpImage,
       title: 'ساعد غيرك!',
       body: 'تقدر تساعد غيرك سواء بتبرعك بالدم أو غيرها من المساعدات',
     ),
     BoardingModel(
-      image: Constants.friendsImage,
+      image: Images.friendsImage,
       title: 'متشيلش هم!',
       body:
           '	إحنا مع بعض طول الوقت متشيلش هم حاجه كلنا جنبك . نزل مشكلتك و إن شاء الله محلوله 😁',
@@ -184,12 +185,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           CustomSizedBoxHeight(),
           Text(model.title, style: Theme.of(context).textTheme.headline5),
           CustomSizedBoxHeight(),
-          Text(
-            model.body,
-            style: Theme.of(context).textTheme.headline2?.copyWith(
-                  color: CustomColors.primaryDarkColor.withOpacity(0.5),
-                ),
-          ),
+          Text(model.body, style: Theme.of(context).textTheme.headline2),
         ],
       ),
     );

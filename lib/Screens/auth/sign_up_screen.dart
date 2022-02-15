@@ -2,7 +2,6 @@ import 'package:blood_donation/Screens/home/home_screen.dart';
 import 'package:blood_donation/UsableWidgets/custom_sized_box_height.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
@@ -37,14 +36,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController userEmailController = TextEditingController();
   TextEditingController userLocationController = TextEditingController();
   TextEditingController userPasswordController = TextEditingController();
+  TextEditingController userDayofBirthController = TextEditingController();
+  TextEditingController userMonthofBirthController = TextEditingController();
+  TextEditingController userYearofBirthController = TextEditingController();
+  TextEditingController userDayofLastDonationController =
+      TextEditingController();
+  TextEditingController userMonthofLastDonationController =
+      TextEditingController();
+  TextEditingController userYearofLastDonationController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    DateTime _dateTime = DateTime.now();
     double height = MediaQuery.of(context).size.height;
-    var LastDonationDateController = DateFormat.yMMMd().format(_dateTime);
-    var DateofBirthController = DateFormat.yMMMd().format(_dateTime);
     return ModalProgressHUD(
       inAsyncCall: Provider.of<ModelHud>(context).isLoading1,
       child: Scaffold(
@@ -62,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // Name
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryRedColor,
+                        color: CustomColors.primaryDarkColor,
                       ),
                   decoration: InputDecoration(
                     labelText: LocaleKeys.name.tr(),
@@ -74,7 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // E-Mail
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryRedColor,
+                        color: CustomColors.primaryDarkColor,
                       ),
                   decoration: InputDecoration(
                     labelText: LocaleKeys.email.tr(),
@@ -86,7 +91,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // Password
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryRedColor,
+                        color: CustomColors.primaryDarkColor,
                       ),
                   decoration: InputDecoration(
                     labelText: LocaleKeys.password.tr(),
@@ -128,7 +133,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         dropdownColor:
                             Theme.of(context).scaffoldBackgroundColor,
                         iconSize: 25,
-                        iconEnabledColor: CustomColors.primaryRedColor,
+                        iconEnabledColor: CustomColors.primaryDarkColor,
                         value: Status,
                         hint: Text(
                           LocaleKeys.choose.tr(),
@@ -143,7 +148,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -157,7 +162,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -171,7 +176,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -185,7 +190,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -199,7 +204,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -213,7 +218,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -249,7 +254,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             Theme.of(context).scaffoldBackgroundColor,
                         alignment: Alignment.center,
                         iconSize: 30,
-                        iconEnabledColor: CustomColors.primaryRedColor,
+                        iconEnabledColor: CustomColors.primaryDarkColor,
                         value: BloodType,
                         hint: Text(
                           LocaleKeys.choose_blood_type.tr(),
@@ -264,7 +269,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -278,7 +283,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -292,7 +297,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -306,7 +311,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -320,7 +325,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -334,7 +339,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -348,7 +353,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -362,7 +367,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
+                                      color: CustomColors.primaryDarkColor,
                                     ),
                               ),
                             ),
@@ -382,7 +387,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // Phone
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryRedColor,
+                        color: CustomColors.primaryDarkColor,
                       ),
                   decoration: InputDecoration(
                     labelText: LocaleKeys.phone.tr(),
@@ -393,7 +398,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 CustomSizedBoxHeight(),
                 // Date of Birth
                 Container(
-                  height: 150,
+                  height: 120,
                   width: double.infinity,
                   decoration: Constants.primaryBoxDecorationContainer,
                   padding: const EdgeInsets.symmetric(horizontal: 19),
@@ -407,26 +412,40 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               color: CustomColors.primaryRedColor,
                             ),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Center(
-                        child: SizedBox(
-                          width: width * 0.8,
-                          height: height * 0.1,
-                          child: CupertinoDatePicker(
-                            initialDateTime: _dateTime,
-                            mode: CupertinoDatePickerMode.date,
-                            onDateTimeChanged: (value) {
-                              var date = DateFormat.yMMMd().format(value);
-                              setState(
-                                () {
-                                  DateofBirthController = date;
-                                },
-                              );
-                            },
+                      CustomSizedBoxHeight(),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: TextFormField(
+                              style: Theme.of(context).textTheme.headline2,
+                              controller: userDayofBirthController,
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                hintText: LocaleKeys.day.tr(),
+                              ),
+                            ),
                           ),
-                        ),
+                          Expanded(
+                            child: TextFormField(
+                              style: Theme.of(context).textTheme.headline2,
+                              controller: userMonthofBirthController,
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                hintText: LocaleKeys.month.tr(),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: TextFormField(
+                              style: Theme.of(context).textTheme.headline2,
+                              controller: userYearofBirthController,
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                hintText: LocaleKeys.year.tr(),
+                              ),
+                            ),
+                          ),
+                        ],
                       )
                     ],
                   ),
@@ -434,7 +453,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 CustomSizedBoxHeight(),
                 // Last Donation Date
                 Container(
-                  height: 150,
+                  height: 120,
                   width: double.infinity,
                   decoration: Constants.primaryBoxDecorationContainer,
                   padding: const EdgeInsets.symmetric(horizontal: 19),
@@ -448,25 +467,41 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               color: CustomColors.primaryRedColor,
                             ),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
+                      CustomSizedBoxHeight(),
                       Center(
-                        child: SizedBox(
-                          width: width * 0.8,
-                          height: height * 0.1,
-                          child: CupertinoDatePicker(
-                            initialDateTime: _dateTime,
-                            mode: CupertinoDatePickerMode.date,
-                            onDateTimeChanged: (value) {
-                              var date = DateFormat.yMMMd().format(value);
-                              setState(
-                                () {
-                                  LastDonationDateController = date;
-                                },
-                              );
-                            },
-                          ),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: TextFormField(
+                                style: Theme.of(context).textTheme.headline2,
+                                controller: userDayofLastDonationController,
+                                keyboardType: TextInputType.number,
+                                decoration: InputDecoration(
+                                  hintText: LocaleKeys.day.tr(),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: TextFormField(
+                                style: Theme.of(context).textTheme.headline2,
+                                controller: userMonthofLastDonationController,
+                                keyboardType: TextInputType.number,
+                                decoration: InputDecoration(
+                                  hintText: LocaleKeys.month.tr(),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: TextFormField(
+                                style: Theme.of(context).textTheme.headline2,
+                                controller: userYearofLastDonationController,
+                                keyboardType: TextInputType.number,
+                                decoration: InputDecoration(
+                                  hintText: LocaleKeys.year.tr(),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       )
                     ],
@@ -476,7 +511,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // Address
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryRedColor,
+                        color: CustomColors.primaryDarkColor,
                       ),
                   decoration: InputDecoration(
                     labelText: LocaleKeys.address.tr(),
@@ -509,10 +544,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               userPhone: userPhoneController.text,
                               userEmail: userEmailController.text,
                               userAddress: userLocationController.text,
-                              userDateofBirth: DateofBirthController,
+                              userDateofBirth:
+                                  '${userDayofBirthController.text}, ${userMonthofBirthController.text}, ${userYearofBirthController.text}',
+                              userLastDonation:
+                                  '${userDayofLastDonationController.text}, ${userMonthofLastDonationController.text}, ${userYearofLastDonationController.text}',
                               userBloodType: BloodType.toString(),
                               userStatus: Status.toString(),
-                              userLastDonation: LastDonationDateController,
                             ),
                           )
                               .then(

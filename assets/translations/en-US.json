@@ -1,5 +1,5 @@
 {
-  "app_name": "Save a Soul!",
+  "app_name": "Save Life!",
   "home": "Home",
   "settings": "Settings",
   "profile": "Profile",
@@ -87,5 +87,12 @@
   "age": "Age",
   "hospital": "Hospital name and address",
   "needed_blood": "Number of required blood bags",
-  "submit": "Submit"
+  "submit": "Submit",
+  "day": "Day",
+  "month": "Month",
+  "year": "Year",
+  "logged_out": "Logged out!",
+  "send_message": "Send Message",
+  "sender": "Sender",
+  "your_message": "Write your message here!"
 }

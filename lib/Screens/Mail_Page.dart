@@ -1,8 +1,10 @@
 import 'package:blood_donation/shared/components.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../Styles/CustomColors.dart';
+import '../translations/locale_keys.g.dart';
 import 'home/home_screen.dart';
 
 class Mail extends StatefulWidget {
@@ -21,19 +23,7 @@ class _MailState extends State<Mail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TitleText(text: 'إرسال رساله'),
-        centerTitle: true,
-        leading: const Text(''),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: const Icon(
-              Icons.arrow_forward_ios,
-            ),
-          ),
-        ],
+        title: Text(LocaleKeys.send_message.tr()),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -42,44 +32,15 @@ class _MailState extends State<Mail> {
             child: Form(
               key: formKey,
               child: Column(
-                textDirection: TextDirection.rtl,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Column(
-                    children: [
-                      const Divider(
-                        thickness: 1,
-                      ),
-                      const Text(
-                        'يسعدنا إستفسارك وتواصلك معنا 😍',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                      const Divider(
-                        thickness: 1,
-                        color: CustomColors.primaryRedColor,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
                   //Name
                   TextFormField(
-                    cursorColor: CustomColors.primaryRedColor,
                     controller: senderController,
                     keyboardType: TextInputType.text,
                     style: const TextStyle(color: CustomColors.primaryRedColor),
-                    decoration: const InputDecoration(
-                      hintTextDirection: TextDirection.rtl,
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black)),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      labelText: 'الراسـل',
+                    decoration: InputDecoration(
+                      labelText: LocaleKeys.sender.tr(),
                       labelStyle: TextStyle(color: Colors.grey),
                       prefixIcon: Icon(
                         Icons.person,
@@ -97,14 +58,8 @@ class _MailState extends State<Mail> {
                     controller: phoneController,
                     keyboardType: TextInputType.phone,
                     style: const TextStyle(color: CustomColors.primaryRedColor),
-                    decoration: const InputDecoration(
-                      hintTextDirection: TextDirection.rtl,
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black)),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      labelText: 'رقم الهاتف',
+                    decoration: InputDecoration(
+                      labelText: LocaleKeys.phone.tr(),
                       labelStyle: TextStyle(color: Colors.grey),
                       prefixIcon: Icon(
                         Icons.phone,
@@ -122,15 +77,9 @@ class _MailState extends State<Mail> {
                     controller: messageController,
                     keyboardType: TextInputType.text,
                     style: const TextStyle(color: CustomColors.primaryRedColor),
-                    maxLines: 3,
-                    decoration: const InputDecoration(
-                      hintTextDirection: TextDirection.rtl,
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black)),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      labelText: 'رسـالتك',
+                    maxLines: 4,
+                    decoration: InputDecoration(
+                      labelText: LocaleKeys.your_message.tr(),
                       labelStyle: TextStyle(color: Colors.grey),
                       prefixIcon: Icon(
                         Icons.message,
@@ -167,7 +116,6 @@ class _MailState extends State<Mail> {
                                     title: 'تم إرسال رسالتك',
                                     description1:
                                         'تم إرسال رسالتك بنجاح وسيتم التواصل معك بكل سرور',
-                                    description2: '',
                                   )).then((value) =>
                               navigateTo(context, const HomeScreen())),
                         );

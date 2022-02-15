@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../Styles/Strings.dart';
 import '../shared/Constants.dart';
 
 class UserModel {
@@ -26,5 +27,5 @@ class UserModel {
   });
 
   UserModel.fromSnapshot(DocumentSnapshot snapshot)
-      : userName = snapshot[Constants.userName];
+      : userName = snapshot[Strings.userName];
 }

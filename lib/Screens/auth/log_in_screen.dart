@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../Styles/CustomColors.dart';
+import '../../Styles/Images.dart';
 import '../../UsableWidgets/custom_button.dart';
 import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../services/auth.dart';
@@ -43,7 +44,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     child: ClipRRect(
                       borderRadius: Constants.primaryBorderRadius,
                       child: Image.asset(
-                        Constants.LogoImage,
+                        Images.LogoImage,
                       ),
                     ),
                   ),

@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../Styles/CustomColors.dart';
+import '../../Styles/Images.dart';
 import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../UsableWidgets/custom_sized_box_width.dart';
 import '../../shared/Constants.dart';
@@ -39,7 +40,7 @@ void change_language_dialog(context) {
             child: Row(
               children: [
                 Image.asset(
-                  Constants.ukFlag,
+                  Images.ukFlag,
                   width: 30,
                   height: 30,
                 ),
@@ -61,7 +62,7 @@ void change_language_dialog(context) {
             child: Row(
               children: [
                 Image.asset(
-                  Constants.egFlag,
+                  Images.egFlag,
                   width: 30,
                   height: 30,
                 ),

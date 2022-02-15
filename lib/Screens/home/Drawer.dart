@@ -3,13 +3,12 @@ import 'package:blood_donation/Screens/Blood_Donation_Benf.dart';
 import 'package:blood_donation/Screens/Mail_Page.dart';
 import 'package:blood_donation/Screens/Need_Donation.dart';
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
-import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Functions.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
 import '../../Styles/CustomColors.dart';
+import '../../Styles/Strings.dart';
 import '../../services/auth.dart';
 import '../../translations/locale_keys.g.dart';
 import '../settings/settings.dart';
@@ -24,7 +23,6 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
     return Drawer(
       elevation: 10,
       child: Container(
@@ -53,7 +51,7 @@ class CustomDrawer extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      userData[Constants.userName],
+                      userData[Strings.userName],
                       style: Theme.of(context).textTheme.headline4,
                     ),
                   ),
@@ -148,6 +146,7 @@ class CustomDrawer extends StatelessWidget {
                 );
               },
             ),
+
             //Exit App
             ListTile(
                 leading: const Icon(Icons.logout,

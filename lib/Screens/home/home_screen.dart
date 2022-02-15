@@ -6,6 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
+import '../../Styles/Images.dart';
+import '../../Styles/Strings.dart';
 import '../../UsableWidgets/loading.dart';
 import '../../shared/Constants.dart';
 import '../../translations/locale_keys.g.dart';
@@ -36,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
         if (userAuth != null) {
           /// get user data from firebase by user id
           FirebaseFirestore.instance
-              .collection(Constants.usersCollection)
+              .collection(Strings.usersCollection)
               .doc(userAuth.uid)
               .get()
               .then(
@@ -92,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         children: [
                           Image.asset(
-                            Constants.waveImage,
+                            Images.waveImage,
                             height: 50,
                           ),
                           const SizedBox(width: 15),
@@ -102,12 +104,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               Row(
                                 children: [
                                   Text(
-                                    '${LocaleKeys.hello.tr()} ',
+                                    LocaleKeys.hello.tr(),
                                     style:
                                         Theme.of(context).textTheme.headline4,
                                   ),
                                   Text(
-                                    userData![Constants.userName],
+                                    userData![Strings.userName],
                                     style: Theme.of(context)
                                         .textTheme
                                         .headline4

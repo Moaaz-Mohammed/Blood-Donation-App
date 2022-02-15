@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../Styles/CustomColors.dart';
+import '../../../Styles/Images.dart';
+import '../../../Styles/Strings.dart';
 import '../../../UsableWidgets/custom_button.dart';
 import '../../../UsableWidgets/custom_sized_box_height.dart';
 import '../../../services/store.dart';
@@ -43,10 +45,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   }
 
   void data() {
-    userNameController.text = widget.userData[Constants.userName];
-    userAgeController.text = widget.userData[Constants.userDateofBirth];
-    userPhoneController.text = widget.userData[Constants.userPhone];
-    userLocationController.text = widget.userData[Constants.userAddress];
+    userNameController.text = widget.userData[Strings.userName];
+    userAgeController.text = widget.userData[Strings.userDateofBirth];
+    userPhoneController.text = widget.userData[Strings.userPhone];
+    userLocationController.text = widget.userData[Strings.userAddress];
   }
 
   final Store _store = Store();
@@ -86,25 +88,25 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         backgroundColor: CustomColors.primaryWhiteColor,
                         radius: double.infinity,
                         backgroundImage:
-                            widget.userData[Constants.userImageUrl] != null &&
+                            widget.userData[Strings.userImageUrl] != null &&
                                     _image == null
                                 ? NetworkImage(
-                                    widget.userData[Constants.userImageUrl],
+                                    widget.userData[Strings.userImageUrl],
                                   )
-                                : widget.userData[Constants.userImageUrl] !=
+                                : widget.userData[Strings.userImageUrl] !=
                                             null &&
                                         _image != null
                                     ? FileImage(
                                         _image,
                                       )
-                                    : widget.userData[Constants.userImageUrl] ==
+                                    : widget.userData[Strings.userImageUrl] ==
                                                 null &&
                                             _image != null
                                         ? FileImage(
                                             _image,
                                           )
                                         : const AssetImage(
-                                            Constants.addUserImage,
+                                            Images.addUserImage,
                                           ) as ImageProvider,
                       ),
                     ),
@@ -166,13 +168,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 onTap: () async {
                   if (_globalKey.currentState!.validate()) {
                     if (userNameController.text ==
-                            widget.userData[Constants.userName] &&
+                            widget.userData[Strings.userName] &&
                         userPhoneController.text ==
-                            widget.userData[Constants.userPhone] &&
+                            widget.userData[Strings.userPhone] &&
                         userAgeController.text ==
-                            widget.userData[Constants.userDateofBirth] &&
+                            widget.userData[Strings.userDateofBirth] &&
                         userLocationController.text ==
-                            widget.userData[Constants.userAddress] &&
+                            widget.userData[Strings.userAddress] &&
                         _image == null) {
                       Functions.navigatorPushAndRemove(
                         context: context,
@@ -188,7 +190,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           (value) {
                             _store.editUserProfile(
                               context: context,
-                              userId: widget.userData[Constants.userId],
+                              userId: widget.userData[Strings.userId],
                               userName: userNameController.text,
                               userLocation: userLocationController.text,
                               userDateofBirth: userAgeController.text,
@@ -200,7 +202,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         _store.editUserProfile(
                           context: context,
                           userPhone: userPhoneController.text,
-                          userId: widget.userData[Constants.userId],
+                          userId: widget.userData[Strings.userId],
                           userName: userNameController.text,
                           userLocation: userLocationController.text,
                           userDateofBirth: userAgeController.text,

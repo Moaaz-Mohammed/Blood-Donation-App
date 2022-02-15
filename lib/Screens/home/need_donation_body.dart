@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../Styles/CustomColors.dart';
+import '../../Styles/Strings.dart';
 import '../../translations/locale_keys.g.dart';
 
 class NeedDonationBody extends StatelessWidget {
@@ -15,7 +16,7 @@ class NeedDonationBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
         .collection('Patient')
-        .where(Constants.userBloodType)
+        .where(Strings.userBloodType)
         .snapshots();
     return StreamBuilder<QuerySnapshot>(
         stream: _usersStream,

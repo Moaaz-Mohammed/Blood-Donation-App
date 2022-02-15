@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../Styles/CustomColors.dart';
+import '../../Styles/Strings.dart';
 import '../../shared/Constants.dart';
 import '../../translations/locale_keys.g.dart';
 
@@ -32,7 +33,7 @@ class NextDonationDate extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        userData![Constants.userDateofBirth] ??
+                        userData![Strings.userLastDonation] ??
                             LocaleKeys.no_data.tr(),
                         style: Theme.of(context)
                             .textTheme

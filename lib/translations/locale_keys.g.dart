@@ -90,5 +90,12 @@ abstract class  LocaleKeys {
   static const hospital = 'hospital';
   static const needed_blood = 'needed_blood';
   static const submit = 'submit';
+  static const day = 'day';
+  static const month = 'month';
+  static const year = 'year';
+  static const logged_out = 'logged_out';
+  static const send_message = 'send_message';
+  static const sender = 'sender';
+  static const your_message = 'your_message';
 
 }

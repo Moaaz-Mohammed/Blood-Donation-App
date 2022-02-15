@@ -2,6 +2,7 @@ import 'package:blood_donation/Screens/settings/profile/profile_card_item.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
+import '../../../Styles/Strings.dart';
 import '../../../UsableWidgets/custom_sized_box_height.dart';
 import '../../../UsableWidgets/loading.dart';
 import '../../../shared/Constants.dart';
@@ -29,7 +30,7 @@ class ProfileBodyWidget extends StatelessWidget {
                   children: [
                     ProfileCardItem(
                       title: LocaleKeys.name.tr(),
-                      subTitle: userData[Constants.userName],
+                      subTitle: userData[Strings.userName],
                     ),
                     Divider(
                       indent: 10.0,
@@ -37,7 +38,7 @@ class ProfileBodyWidget extends StatelessWidget {
                     ),
                     ProfileCardItem(
                       title: LocaleKeys.date_of_birth.tr(),
-                      subTitle: userData[Constants.userDateofBirth],
+                      subTitle: userData[Strings.userDateofBirth],
                     ),
                     Divider(
                       indent: 10.0,
@@ -45,7 +46,7 @@ class ProfileBodyWidget extends StatelessWidget {
                     ),
                     ProfileCardItem(
                       title: LocaleKeys.address.tr(),
-                      subTitle: userData[Constants.userAddress],
+                      subTitle: userData[Strings.userAddress],
                     ),
                     Divider(
                       indent: 10.0,
@@ -53,7 +54,7 @@ class ProfileBodyWidget extends StatelessWidget {
                     ),
                     ProfileCardItem(
                       title: LocaleKeys.phone.tr(),
-                      subTitle: userData[Constants.userPhone],
+                      subTitle: userData[Strings.userPhone],
                     ),
                     Divider(
                       indent: 10.0,
@@ -61,7 +62,7 @@ class ProfileBodyWidget extends StatelessWidget {
                     ),
                     ProfileCardItem(
                       title: LocaleKeys.email.tr(),
-                      subTitle: userData[Constants.userEmail],
+                      subTitle: userData[Strings.userEmail],
                     ),
                     Divider(
                       indent: 10.0,
@@ -69,7 +70,7 @@ class ProfileBodyWidget extends StatelessWidget {
                     ),
                     ProfileCardItem(
                       title: LocaleKeys.blood_type.tr(),
-                      subTitle: userData[Constants.userBloodType],
+                      subTitle: userData[Strings.userBloodType],
                     ),
                   ],
                 ),
