@@ -20,7 +20,7 @@ class _DonationBenefitsScreenState extends State<DonationBenefitsScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
                 ExpansionTile(
@@ -40,35 +40,35 @@ class _DonationBenefitsScreenState extends State<DonationBenefitsScreen> {
                         style: Theme.of(context).textTheme.headline2,
                       ),
                     ),
-                    Divider(
+                    const Divider(
                       height: 15,
                     ),
                     Text(
                       LocaleKeys.one_of_ten.tr(),
                       style: Theme.of(context).textTheme.headline2,
                     ),
-                    Divider(
+                    const Divider(
                       height: 15,
                     ),
                     Text(
                       LocaleKeys.your_blood.tr(),
                       style: Theme.of(context).textTheme.headline2,
                     ),
-                    Divider(
+                    const Divider(
                       height: 15,
                     ),
                     Text(
                       LocaleKeys.refresh_blood.tr(),
                       style: Theme.of(context).textTheme.headline2,
                     ),
-                    Divider(
+                    const Divider(
                       height: 15,
                     ),
                     Text(
                       LocaleKeys.donor_can_get_results.tr(),
                       style: Theme.of(context).textTheme.headline2,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                   ],
@@ -87,7 +87,7 @@ class _DonationBenefitsScreenState extends State<DonationBenefitsScreen> {
                       LocaleKeys.process_of_donating.tr(),
                       style: Theme.of(context).textTheme.headline2,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                   ],
@@ -106,7 +106,7 @@ class _DonationBenefitsScreenState extends State<DonationBenefitsScreen> {
                       LocaleKeys.reasons_prevent_donating.tr(),
                       style: Theme.of(context).textTheme.headline2,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                   ],
@@ -125,7 +125,7 @@ class _DonationBenefitsScreenState extends State<DonationBenefitsScreen> {
                       LocaleKeys.when_can_redonate.tr(),
                       style: Theme.of(context).textTheme.headline2,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                   ],
@@ -144,7 +144,7 @@ class _DonationBenefitsScreenState extends State<DonationBenefitsScreen> {
                       LocaleKeys.amount_of_blood.tr(),
                       style: Theme.of(context).textTheme.headline2,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                   ],

@@ -13,6 +13,8 @@ import '../../translations/locale_keys.g.dart';
 import 'boarding_model.dart';
 
 class OnBoardingScreen extends StatefulWidget {
+  const OnBoardingScreen({Key? key}) : super(key: key);
+
   @override
   _OnBoardingScreenState createState() => _OnBoardingScreenState();
 }
@@ -44,7 +46,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         if (value) {
           Functions.navigatorPushAndRemove(
             context: context,
-            screen: ChooseLanguageScreen(),
+            screen: const ChooseLanguageScreen(),
           );
         }
       },
@@ -71,7 +73,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         children: [
           Expanded(
             child: PageView.builder(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               controller: boardController,
               onPageChanged: (int index) {
                 if (index == boarding.length - 1) {
@@ -135,18 +137,18 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   submit();
                                 } else {
                                   boardController.nextPage(
-                                    duration: Duration(
+                                    duration: const Duration(
                                       milliseconds: 1000,
                                     ),
                                     curve: Curves.fastLinearToSlowEaseIn,
                                   );
                                 }
                               },
-                              child: continue_button(),
+                              child: const continue_button(),
                             ),
                           ],
                         )
-                      : Text('')
+                      : const Text('')
                 ],
               ),
             ),
@@ -167,23 +169,23 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             height: height * 0.31,
             width: double.infinity,
             child: ClipRRect(
               borderRadius: Constants.primaryBorderRadius,
               child: Image(
-                image: AssetImage('${model.image}'),
+                image: AssetImage(model.image),
                 fit: BoxFit.contain,
               ),
             ),
           ),
           CustomSizedBoxHeight(),
           CustomSizedBoxHeight(),
-          Text('${model.title}', style: Theme.of(context).textTheme.headline5),
+          Text(model.title, style: Theme.of(context).textTheme.headline5),
           CustomSizedBoxHeight(),
           Text(
-            '${model.body}',
+            model.body,
             style: Theme.of(context).textTheme.headline2?.copyWith(
                   color: CustomColors.primaryDarkColor.withOpacity(0.5),
                 ),

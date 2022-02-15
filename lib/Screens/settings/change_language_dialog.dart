@@ -19,7 +19,7 @@ void change_language_dialog(context) {
               child: Column(
                 children: [
                   InkWell(
-                    child: Icon(
+                    child: const Icon(
                       Icons.close,
                       color: CustomColors.primaryRedColor,
                     ),
@@ -27,12 +27,12 @@ void change_language_dialog(context) {
                       Navigator.pop(context);
                     },
                   ),
-                  Divider(),
+                  const Divider(),
                 ],
               )),
           InkWell(
             onTap: () async {
-              await context.setLocale(Locale('en', 'US')).then((value) {
+              await context.setLocale(const Locale('en', 'US')).then((value) {
                 Navigator.pop(context);
               });
             },
@@ -54,7 +54,7 @@ void change_language_dialog(context) {
           CustomSizedBoxHeight(),
           InkWell(
             onTap: () async {
-              await context.setLocale(Locale('ar', 'EG')).then((value) {
+              await context.setLocale(const Locale('ar', 'EG')).then((value) {
                 Navigator.pop(context);
               });
             },

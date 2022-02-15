@@ -32,10 +32,10 @@ class _Need_DonationState extends State<Need_Donation> {
               builder: (BuildContext context,
                   AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (snapshot.hasError) {
-                  return Text('Something went wrong');
+                  return const Text('Something went wrong');
                 }
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
                 return ListView(
                     children: snapshot.data!.docs.map(
@@ -53,10 +53,10 @@ class _Need_DonationState extends State<Need_Donation> {
                                 //Name
                                 Row(
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.person,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     Text(data['name'],
@@ -65,67 +65,67 @@ class _Need_DonationState extends State<Need_Donation> {
                                             .headline2),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 7,
                                 ),
                                 //Address
                                 Row(
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.location_on,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     Text(data['hospital']),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 7,
                                 ),
                                 //Blood Type
                                 Row(
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.bloodtype,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     Text(data['blood_type']),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 7,
                                 ),
                                 //Contact
                                 Row(
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.phone,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     Text(data['phone']),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 7,
                                 ),
                                 //Patient Age
                                 Row(
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.person,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     Text(data['age']),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 7,
                                 ),
                                 // Status of the patient
@@ -135,7 +135,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline5),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     ),
                                     Container(
@@ -152,7 +152,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
                               ],
@@ -172,10 +172,10 @@ class _Need_DonationState extends State<Need_Donation> {
         onPressed: () {
           Functions.navigatorPush(
             context: context,
-            screen: Patient(),
+            screen: const Patient(),
           );
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
     );

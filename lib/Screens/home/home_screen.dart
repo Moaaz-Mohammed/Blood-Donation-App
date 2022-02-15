@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               change_language_dialog(context);
             },
-            icon: Icon(Icons.language),
+            icon: const Icon(Icons.language),
           ),
           IconButton(
               onPressed: () {
@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
         userData: userData,
       ),
       body: userData == null
-          ? Loading()
+          ? const Loading()
           : SafeArea(
               child: SingleChildScrollView(
                 child: Padding(
@@ -95,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Constants.waveImage,
                             height: 50,
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -117,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               Text(
                                 LocaleKeys.hru.tr(),
                                 style: Theme.of(context).textTheme.headline2,
@@ -140,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         userData: userData,
                       ),
                       SizedBox(height: height * 0.02),
-                      Divider(),
+                      const Divider(),
                       Text(
                         LocaleKeys.need_donation.tr(),
                         style: Theme.of(context).textTheme.headline4,
@@ -148,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         height: height * 0.5,
                         width: width * 0.9,
-                        child: NeedDonationBody(),
+                        child: const NeedDonationBody(),
                       )
                     ],
                   ),

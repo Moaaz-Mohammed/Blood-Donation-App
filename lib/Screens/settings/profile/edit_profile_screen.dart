@@ -49,7 +49,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     userLocationController.text = widget.userData[Constants.userAddress];
   }
 
-  Store _store = Store();
+  final Store _store = Store();
   var _image;
 
   @override
@@ -62,7 +62,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         ),
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         padding: Constants.primaryPadding,
         child: Form(
           key: _globalKey,
@@ -103,7 +103,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                         ? FileImage(
                                             _image,
                                           )
-                                        : AssetImage(
+                                        : const AssetImage(
                                             Constants.addUserImage,
                                           ) as ImageProvider,
                       ),
@@ -118,7 +118,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         child: CircleAvatar(
                           backgroundColor:
                               CustomColors.primaryRedColor.withOpacity(0.7),
-                          child: Icon(
+                          child: const Icon(
                             Icons.edit,
                             color: CustomColors.primaryWhiteColor,
                           ),
@@ -176,7 +176,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         _image == null) {
                       Functions.navigatorPushAndRemove(
                         context: context,
-                        screen: HomeScreen(),
+                        screen: const HomeScreen(),
                       );
                     } else {
                       Functions.dialogLoading(

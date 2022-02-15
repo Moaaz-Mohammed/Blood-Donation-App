@@ -52,7 +52,7 @@ class _PatientState extends State<Patient> {
                             labelText: LocaleKeys.patient_name.tr(),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
 
@@ -70,7 +70,7 @@ class _PatientState extends State<Patient> {
                             labelText: LocaleKeys.status_of_patient.tr(),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         //Phone number
@@ -88,7 +88,7 @@ class _PatientState extends State<Patient> {
                             labelText: LocaleKeys.phone.tr(),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         //another phone number
@@ -105,7 +105,7 @@ class _PatientState extends State<Patient> {
                             labelText: LocaleKeys.another_phone.tr(),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         //Blood type
@@ -131,7 +131,7 @@ class _PatientState extends State<Patient> {
                                 value: BloodType,
                                 hint: Text(
                                   LocaleKeys.choose_blood_type.tr(),
-                                  style: TextStyle(color: Colors.grey),
+                                  style: const TextStyle(color: Colors.grey),
                                 ),
                                 items: [
                                   DropdownMenuItem(
@@ -184,7 +184,7 @@ class _PatientState extends State<Patient> {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         // Age
@@ -201,7 +201,7 @@ class _PatientState extends State<Patient> {
                             labelText: LocaleKeys.age.tr(),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         //hospital address
@@ -218,7 +218,7 @@ class _PatientState extends State<Patient> {
                             labelText: LocaleKeys.hospital.tr(),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         //blood amount needed
@@ -237,7 +237,7 @@ class _PatientState extends State<Patient> {
                         ),
                       ],
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 //Submit Button
@@ -264,10 +264,10 @@ class _PatientState extends State<Patient> {
                             title: LocaleKeys.sent.tr(),
                             description1: LocaleKeys.sent.tr(),
                           ),
-                        ).then((value) => navigateTo(context, HomeScreen())),
+                        ).then(
+                            (value) => navigateTo(context, const HomeScreen())),
                       );
                     }
-                    ;
                   },
                   title: LocaleKeys.submit.tr(),
                 ),

@@ -19,7 +19,7 @@ Widget defaultText({
 }) =>
     Text(
       text!,
-      style: TextStyle(
+      style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
           color: CustomColors.primaryRedColor),
@@ -29,7 +29,7 @@ class CustomDialog extends StatelessWidget {
   final String? title, description1, description2, buttonText;
   final Image? image;
 
-  CustomDialog({
+  const CustomDialog({
     this.title,
     this.buttonText,
     this.description1,
@@ -50,12 +50,13 @@ class CustomDialog extends StatelessWidget {
     return Stack(
       children: [
         Container(
-            padding: EdgeInsets.only(top: 80, bottom: 5, left: 16, right: 16),
-            margin: EdgeInsets.only(top: 16),
+            padding:
+                const EdgeInsets.only(top: 80, bottom: 5, left: 16, right: 16),
+            margin: const EdgeInsets.only(top: 16),
             decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(20),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                       color: CustomColors.primaryRedColor,
                       blurRadius: 10.0,
@@ -64,23 +65,23 @@ class CustomDialog extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
                   title!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Divider(
+                const Divider(
                   height: 16,
                 ),
                 Text(
                   description1!,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                   ),
@@ -88,13 +89,13 @@ class CustomDialog extends StatelessWidget {
                 ),
                 Text(
                   description2!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                   ),
                   textDirection: TextDirection.rtl,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Align(
@@ -103,7 +104,7 @@ class CustomDialog extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: Text(
+                    child: const Text(
                       'Close',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -124,7 +125,7 @@ Widget ArticleHeadText({
 }) =>
     Text(
       text!,
-      style: TextStyle(
+      style: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
           color: CustomColors.primaryRedColor),
@@ -135,7 +136,7 @@ Widget ArticleContentText({
 }) =>
     Text(
       text!,
-      style: TextStyle(
+      style: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
           color: CustomColors.primaryRedColor),

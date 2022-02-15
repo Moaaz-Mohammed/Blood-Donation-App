@@ -21,10 +21,10 @@ class NeedDonationBody extends StatelessWidget {
         stream: _usersStream,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
-            return Text('Something went wrong');
+            return const Text('Something went wrong');
           }
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Loading();
+            return const Loading();
           }
           return ListView(
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
@@ -44,67 +44,67 @@ class NeedDonationBody extends StatelessWidget {
                   //Address
                   Row(
                     children: [
-                      Icon(Icons.location_on,
+                      const Icon(Icons.location_on,
                           color: CustomColors.primaryRedColor),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Text(data['hospital'],
                           style: Theme.of(context).textTheme.headline2),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 7,
                   ),
                   //Blood Type
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.bloodtype,
                         color: CustomColors.primaryRedColor,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Text(data['blood_type'],
                           style: Theme.of(context).textTheme.headline2),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 7,
                   ),
                   //Contact
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.phone,
                         color: CustomColors.primaryRedColor,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Text('${data['phone']} - ${data['another_phone']}',
                           style: Theme.of(context).textTheme.headline2),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 7,
                   ),
                   //Patient Age
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.cake,
                         color: CustomColors.primaryRedColor,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Text(data['age'],
                           style: Theme.of(context).textTheme.headline2),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 7,
                   ),
                   // Status of the patient
@@ -112,7 +112,7 @@ class NeedDonationBody extends StatelessWidget {
                     children: [
                       Text(LocaleKeys.status.tr(),
                           style: Theme.of(context).textTheme.headline3),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import '../../shared/Constants.dart';
 import '../CustomColors.dart';
 
@@ -71,33 +72,33 @@ ThemeData DarkTheme = ThemeData(
   hoverColor: CustomColors.primaryDarkColor,
   focusColor: CustomColors.primaryDarkColor,
   cardColor: CustomColors.primaryDarkColor,
-  floatingActionButtonTheme: FloatingActionButtonThemeData(
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
     backgroundColor: CustomColors.primaryDarkColor,
     elevation: 2,
   ),
-  progressIndicatorTheme: ProgressIndicatorThemeData(
+  progressIndicatorTheme: const ProgressIndicatorThemeData(
     color: CustomColors.primaryWhiteColor,
   ),
   inputDecorationTheme: InputDecorationTheme(
     suffixIconColor: CustomColors.primaryRedColor,
     focusColor: CustomColors.primaryRedColor,
-    hintStyle: TextStyle(
+    hintStyle: const TextStyle(
       color: CustomColors.primaryWhiteColor,
       fontSize: 14,
     ),
-    labelStyle: TextStyle(
+    labelStyle: const TextStyle(
       color: CustomColors.primaryRedColor,
       fontSize: 14,
     ),
     enabledBorder: UnderlineInputBorder(
       borderRadius: Constants.primaryBorderRadius,
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         color: CustomColors.primaryGreyColor,
       ),
     ),
     focusedBorder: UnderlineInputBorder(
       borderRadius: Constants.primaryBorderRadius,
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         color: CustomColors.primaryRedColor,
       ),
     ),

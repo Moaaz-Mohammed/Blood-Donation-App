@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 import '../Styles/CustomColors.dart';
 import '../shared/Constants.dart';
 import '../translations/locale_keys.g.dart';
@@ -41,19 +42,20 @@ class CustomTextFormField extends StatelessWidget {
         controller: controller,
         keyboardType: keyboardType,
         cursorColor: Colors.grey[600],
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.red,
         ),
         maxLines: maxLine,
         decoration: InputDecoration(
           suffixIcon: icon != null
               ? Icon(
-                  icon,color: CustomColors.primaryRedColor,
+                  icon,
+                  color: CustomColors.primaryRedColor,
                 )
               : null,
           enabledBorder: OutlineInputBorder(
             borderRadius: Constants.primaryBorderRadius,
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: CustomColors.primaryGreyColor,
             ),
           ),
@@ -61,7 +63,7 @@ class CustomTextFormField extends StatelessWidget {
               const EdgeInsets.symmetric(vertical: 22.0, horizontal: 20.0),
           focusedBorder: OutlineInputBorder(
             borderRadius: Constants.primaryBorderRadius,
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: CustomColors.primaryGreyColor,
             ),
           ),

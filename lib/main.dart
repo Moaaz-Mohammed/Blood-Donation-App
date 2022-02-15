@@ -22,7 +22,7 @@ Future<void> main() async {
   await Firebase.initializeApp();
   await CacheSharedPreferences.init();
   SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
+    const SystemUiOverlayStyle(
       statusBarColor: CustomColors.primaryRedColor,
     ),
   );

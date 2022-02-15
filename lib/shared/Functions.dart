@@ -26,7 +26,7 @@ class Functions {
         type: PageTransitionType.fade,
         child: screen,
       ),
-          (route) => false,
+      (route) => false,
     );
   }
 
@@ -58,7 +58,7 @@ class Functions {
           content: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CircularProgressIndicator(
+              const CircularProgressIndicator(
                 color: CustomColors.primaryRedColor,
               ),
               Text(
@@ -110,9 +110,9 @@ class Functions {
               child: ClipRRect(
                 borderRadius: Constants.primaryBorderRadius,
                 child: Image.network(
-                    image,
-                    height: height * 0.5,
-                    width: double.infinity,
+                  image,
+                  height: height * 0.5,
+                  width: double.infinity,
                 ),
               ),
             ),

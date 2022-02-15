@@ -54,7 +54,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         body: Form(
           key: _globalKey,
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             padding: Constants.primaryPadding,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,7 +132,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         value: Status,
                         hint: Text(
                           LocaleKeys.choose.tr(),
-                          style: TextStyle(color: Colors.grey),
+                          style: const TextStyle(color: Colors.grey),
                         ),
                         items: [
                           DropdownMenuItem(
@@ -253,7 +253,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         value: BloodType,
                         hint: Text(
                           LocaleKeys.choose_blood_type.tr(),
-                          style: TextStyle(color: Colors.grey),
+                          style: const TextStyle(color: Colors.grey),
                         ),
                         items: [
                           DropdownMenuItem(
@@ -463,7 +463,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               setState(
                                 () {
                                   LastDonationDateController = date;
-                                  print(LastDonationDateController.toString());
                                 },
                               );
                             },
@@ -520,7 +519,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             (value) {
                               Functions.navigatorPushAndRemove(
                                 context: context,
-                                screen: HomeScreen(),
+                                screen: const HomeScreen(),
                               );
                               Functions.showToastMsg(
                                 title: LocaleKeys.registered.tr(),

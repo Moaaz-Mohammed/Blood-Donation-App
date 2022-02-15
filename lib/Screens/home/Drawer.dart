@@ -32,10 +32,10 @@ class CustomDrawer extends StatelessWidget {
           color: Theme.of(context).scaffoldBackgroundColor,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
-            BoxShadow(
+            const BoxShadow(
                 color: CustomColors.primaryRedColor,
                 blurRadius: 10.0,
-                offset: const Offset(0.0, 10.0))
+                offset: Offset(0.0, 10.0))
           ],
         ),
         child: Column(
@@ -61,31 +61,33 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.home, color: CustomColors.primaryRedColor),
+              leading:
+                  const Icon(Icons.home, color: CustomColors.primaryRedColor),
               title: Text(
                 LocaleKeys.home.tr(),
                 style: Theme.of(context).textTheme.headline3,
                 textAlign: TextAlign.center,
               ),
               onTap: () {
-                navigateTo(context, HomeScreen());
+                navigateTo(context, const HomeScreen());
               },
             ),
             //Patients
             ListTile(
-              leading: Icon(Icons.info, color: CustomColors.primaryRedColor),
+              leading:
+                  const Icon(Icons.info, color: CustomColors.primaryRedColor),
               title: Text(
                 LocaleKeys.need_donation.tr(),
                 style: Theme.of(context).textTheme.headline3,
                 textAlign: TextAlign.center,
               ),
               onTap: () {
-                navigateTo(context, Need_Donation());
+                navigateTo(context, const Need_Donation());
               },
             ),
             //BloodType Info.
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.bloodtype,
                 color: CustomColors.primaryRedColor,
               ),
@@ -97,39 +99,41 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (BuildContext context) => BloodTypes(),
+                    builder: (BuildContext context) => const BloodTypes(),
                   ),
                 );
               },
             ),
             //Info before donation
             ListTile(
-              leading: Icon(Icons.info, color: CustomColors.primaryRedColor),
+              leading:
+                  const Icon(Icons.info, color: CustomColors.primaryRedColor),
               title: Text(
                 LocaleKeys.important_info.tr(),
                 style: Theme.of(context).textTheme.headline3,
                 textAlign: TextAlign.center,
               ),
               onTap: () {
-                navigateTo(context, DonationBenefitsScreen());
+                navigateTo(context, const DonationBenefitsScreen());
               },
             ),
             //Mail
             ListTile(
-              leading: Icon(Icons.message, color: CustomColors.primaryRedColor),
+              leading: const Icon(Icons.message,
+                  color: CustomColors.primaryRedColor),
               title: Text(
                 LocaleKeys.contact_us.tr(),
                 style: Theme.of(context).textTheme.headline3,
                 textAlign: TextAlign.center,
               ),
               onTap: () {
-                navigateTo(context, Mail());
+                navigateTo(context, const Mail());
               },
             ),
             //Settings
             ListTile(
-              leading:
-                  Icon(Icons.settings, color: CustomColors.primaryRedColor),
+              leading: const Icon(Icons.settings,
+                  color: CustomColors.primaryRedColor),
               title: Text(
                 LocaleKeys.settings.tr(),
                 style: Theme.of(context).textTheme.headline3,
@@ -146,8 +150,8 @@ class CustomDrawer extends StatelessWidget {
             ),
             //Exit App
             ListTile(
-                leading:
-                    Icon(Icons.logout, color: CustomColors.primaryRedColor),
+                leading: const Icon(Icons.logout,
+                    color: CustomColors.primaryRedColor),
                 title: Text(
                   LocaleKeys.logout.tr(),
                   style: Theme.of(context).textTheme.headline3,

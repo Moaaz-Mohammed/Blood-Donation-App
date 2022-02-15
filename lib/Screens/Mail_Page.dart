@@ -47,23 +47,23 @@ class _MailState extends State<Mail> {
                 children: [
                   Column(
                     children: [
-                      Divider(
+                      const Divider(
                         thickness: 1,
                       ),
-                      Text(
+                      const Text(
                         'يسعدنا إستفسارك وتواصلك معنا 😍',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
                       ),
-                      Divider(
+                      const Divider(
                         thickness: 1,
                         color: CustomColors.primaryRedColor,
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   //Name
@@ -71,8 +71,8 @@ class _MailState extends State<Mail> {
                     cursorColor: CustomColors.primaryRedColor,
                     controller: senderController,
                     keyboardType: TextInputType.text,
-                    style: TextStyle(color: CustomColors.primaryRedColor),
-                    decoration: InputDecoration(
+                    style: const TextStyle(color: CustomColors.primaryRedColor),
+                    decoration: const InputDecoration(
                       hintTextDirection: TextDirection.rtl,
                       enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black)),
@@ -88,7 +88,7 @@ class _MailState extends State<Mail> {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   // Status
@@ -96,8 +96,8 @@ class _MailState extends State<Mail> {
                     cursorColor: CustomColors.primaryRedColor,
                     controller: phoneController,
                     keyboardType: TextInputType.phone,
-                    style: TextStyle(color: CustomColors.primaryRedColor),
-                    decoration: InputDecoration(
+                    style: const TextStyle(color: CustomColors.primaryRedColor),
+                    decoration: const InputDecoration(
                       hintTextDirection: TextDirection.rtl,
                       enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black)),
@@ -113,7 +113,7 @@ class _MailState extends State<Mail> {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   // Status
@@ -121,9 +121,9 @@ class _MailState extends State<Mail> {
                     cursorColor: CustomColors.primaryRedColor,
                     controller: messageController,
                     keyboardType: TextInputType.text,
-                    style: TextStyle(color: CustomColors.primaryRedColor),
+                    style: const TextStyle(color: CustomColors.primaryRedColor),
                     maxLines: 3,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintTextDirection: TextDirection.rtl,
                       enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black)),
@@ -139,7 +139,7 @@ class _MailState extends State<Mail> {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   //Submit Button
@@ -168,13 +168,13 @@ class _MailState extends State<Mail> {
                                     description1:
                                         'تم إرسال رسالتك بنجاح وسيتم التواصل معك بكل سرور',
                                     description2: '',
-                                  )).then(
-                              (value) => navigateTo(context, HomeScreen())),
+                                  )).then((value) =>
+                              navigateTo(context, const HomeScreen())),
                         );
                       },
-                      child: Text(
+                      child: const Text(
                         'إرســــال',
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 22,
                             color: Colors.white),

@@ -1,9 +1,8 @@
 import 'package:blood_donation/Screens/auth/log_in_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../Styles/CustomColors.dart';
+
 import '../../UsableWidgets/custom_sized_box_height.dart';
-import '../../UsableWidgets/custom_sized_box_width.dart';
 import '../../shared/Constants.dart';
 import '../../shared/Functions.dart';
 import '../../translations/locale_keys.g.dart';
@@ -21,27 +20,31 @@ class ChooseLanguageScreen extends StatelessWidget {
             Text(
               LocaleKeys.choose_app_language.tr(),
               style: Theme.of(context).textTheme.headline6,
-            ),Text(
-              'اختر اللغة التي تفضلها',
-              style: Theme.of(context).textTheme.headline2?.copyWith(
-                color: Colors.grey
-              ),
-            ),Text(
-              'يمكنك تغييرها فيما بعد في الإعدادات',
-              style: Theme.of(context).textTheme.headline2?.copyWith(
-                color: Colors.red
-              ),
             ),
-            SizedBox(
+            Text(
+              'اختر اللغة التي تفضلها',
+              style: Theme.of(context)
+                  .textTheme
+                  .headline2
+                  ?.copyWith(color: Colors.grey),
+            ),
+            Text(
+              'يمكنك تغييرها فيما بعد في الإعدادات',
+              style: Theme.of(context)
+                  .textTheme
+                  .headline2
+                  ?.copyWith(color: Colors.red),
+            ),
+            const SizedBox(
               height: 30,
             ),
             InkWell(
               onTap: () async {
-                await context.setLocale(Locale('ar', 'EG')).then(
+                await context.setLocale(const Locale('ar', 'EG')).then(
                   (value) {
                     Functions.navigatorPushAndRemove(
                       context: context,
-                      screen: LogInScreen(),
+                      screen: const LogInScreen(),
                     );
                   },
                 );
@@ -66,11 +69,11 @@ class ChooseLanguageScreen extends StatelessWidget {
             CustomSizedBoxHeight(),
             InkWell(
               onTap: () async {
-                await context.setLocale(Locale('en', 'US')).then(
+                await context.setLocale(const Locale('en', 'US')).then(
                   (value) {
                     Functions.navigatorPushAndRemove(
                       context: context,
-                      screen: LogInScreen(),
+                      screen: const LogInScreen(),
                     );
                   },
                 );

@@ -14,25 +14,25 @@ class _BloodTypesState extends State<BloodTypes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-                  appBar: AppBar(
-                    elevation: 0,
-                    title: Text(LocaleKeys.blood_types.tr()),
-                    centerTitle: true,
-                    leading: TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                      ),
-                    ),
-                  ),
-                  body: SingleChildScrollView(
-                    child: Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Image.asset(Constants.BloodTypesImage),
-                    ),
-                  ),
+      appBar: AppBar(
+        elevation: 0,
+        title: Text(LocaleKeys.blood_types.tr()),
+        centerTitle: true,
+        leading: TextButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: const Icon(
+            Icons.arrow_back_ios,
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Image.asset(Constants.BloodTypesImage),
+        ),
+      ),
     );
   }
 }

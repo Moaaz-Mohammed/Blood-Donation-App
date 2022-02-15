@@ -17,7 +17,6 @@ class ProfileBodyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return userData != null
         ? ListView(
             padding: Constants.primaryPadding,

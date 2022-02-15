@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,7 +18,7 @@ class AppCubit extends Cubit<AppStates> {
     } else {
       isDark = !isDark;
       CacheSharedPreferences.saveData(key: 'isDark', value: isDark).then(
-            (value) {
+        (value) {
           emit(AppChangeModeState());
         },
       );
@@ -27,7 +26,7 @@ class AppCubit extends Cubit<AppStates> {
   }
 
   bool isVisible = true;
-  void showPassword(){
+  void showPassword() {
     isVisible = !isVisible;
     emit(ShowPasswordState());
   }

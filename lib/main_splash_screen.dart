@@ -33,15 +33,15 @@ class _MainSlashScreenState extends State<MainSlashScreen> {
       (_) {
         User? userAuth = FirebaseAuth.instance.currentUser;
         Timer(
-          Duration(seconds: 3),
+          const Duration(seconds: 3),
           () {
             Functions.navigatorPushAndRemove(
               context: context,
               screen: userAuth == null
                   ? widget.onBoarding
-                      ? LogInScreen()
-                      : OnBoardingScreen()
-                  : HomeScreen(),
+                      ? const LogInScreen()
+                      : const OnBoardingScreen()
+                  : const HomeScreen(),
             );
           },
         );
