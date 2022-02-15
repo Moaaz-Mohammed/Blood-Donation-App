@@ -7,16 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
 
-import '../../../Styles/CustomColors.dart';
-import '../../../UsableWidgets/custom_button.dart';
-import '../../../model/user_model.dart';
-import '../../../services/auth.dart';
-import '../../../services/store.dart';
-import '../../../shared/Constants.dart';
-import '../../../shared/Functions.dart';
-import '../../../state_management/bloc/Cubit.dart';
-import '../../../state_management/provider/model_hud.dart';
-import '../../../translations/locale_keys.g.dart';
+import '../../Styles/CustomColors.dart';
+import '../../UsableWidgets/custom_button.dart';
+import '../../model/user_model.dart';
+import '../../services/auth.dart';
+import '../../services/store.dart';
+import '../../shared/Constants.dart';
+import '../../shared/Functions.dart';
+import '../../state_management/bloc/Cubit.dart';
+import '../../state_management/provider/model_hud.dart';
+import '../../translations/locale_keys.g.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);

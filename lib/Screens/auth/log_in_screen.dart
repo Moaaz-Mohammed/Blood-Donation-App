@@ -1,4 +1,4 @@
-import 'package:blood_donation/Screens/auth/signup/sign_up_screen.dart';
+import 'package:blood_donation/Screens/auth/sign_up_screen.dart';
 import 'package:blood_donation/state_management/bloc/Cubit.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
