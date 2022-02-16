@@ -1,5 +1,5 @@
-import 'package:blood_donation/Screens/settings/change_language_dialog.dart';
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
+import 'package:blood_donation/UsableWidgets/change_language_dialog.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +7,6 @@ import '../../Styles/CustomColors.dart';
 import '../../Styles/Strings.dart';
 import '../../UsableWidgets/ArrowBox.dart';
 import '../../UsableWidgets/custom_sized_box_width.dart';
-import '../../shared/Constants.dart';
 import '../../shared/Functions.dart';
 import '../../state_management/bloc/Cubit.dart';
 import '../../translations/locale_keys.g.dart';
