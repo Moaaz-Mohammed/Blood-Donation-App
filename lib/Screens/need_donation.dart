@@ -7,14 +7,14 @@ import '../Styles/Strings.dart';
 import '../shared/Functions.dart';
 import '../translations/locale_keys.g.dart';
 
-class Need_Donation extends StatefulWidget {
-  const Need_Donation({Key? key}) : super(key: key);
+class NeedDonation extends StatefulWidget {
+  const NeedDonation({Key? key}) : super(key: key);
 
   @override
-  _Need_DonationState createState() => _Need_DonationState();
+  _NeedDonationState createState() => _NeedDonationState();
 }
 
-class _Need_DonationState extends State<Need_Donation> {
+class _NeedDonationState extends State<NeedDonation> {
   final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
       .collection(Strings.patientsCollection)
       .snapshots();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../shared/Constants.dart';
+import '../../shared/constants.dart';
 import '../CustomColors.dart';
 
 ThemeData DarkTheme = ThemeData(

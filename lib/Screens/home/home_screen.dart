@@ -11,7 +11,7 @@ import '../../Styles/Strings.dart';
 import '../../UsableWidgets/change_language_dialog.dart';
 import '../../UsableWidgets/loading.dart';
 import '../../translations/locale_keys.g.dart';
-import 'Drawer.dart';
+import 'drawer.dart';
 import 'need_donation_body.dart';
 import 'next_donation_date.dart';
 

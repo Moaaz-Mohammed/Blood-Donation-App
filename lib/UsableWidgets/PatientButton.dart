@@ -1,6 +1,4 @@
 import 'package:blood_donation/Screens/patient_page.dart';
-import 'package:blood_donation/shared/Constants.dart';
-import 'package:blood_donation/shared/components.dart';
 import 'package:flutter/material.dart';
 
 import '../Styles/CustomColors.dart';
@@ -20,8 +18,9 @@ class PatientButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextButton(
-        onPressed: (){
-          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>Patient()));
+        onPressed: () {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (BuildContext context) => Patient()));
         },
         child: Text(
           'مـريـض',

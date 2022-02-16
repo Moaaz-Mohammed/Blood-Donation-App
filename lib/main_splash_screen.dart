@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:blood_donation/shared/Constants.dart';
 import 'package:blood_donation/shared/Functions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

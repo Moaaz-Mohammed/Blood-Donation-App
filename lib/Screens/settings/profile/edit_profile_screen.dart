@@ -6,8 +6,8 @@ import '../../../Styles/Strings.dart';
 import '../../../UsableWidgets/custom_button.dart';
 import '../../../UsableWidgets/custom_sized_box_height.dart';
 import '../../../services/store.dart';
-import '../../../shared/Constants.dart';
 import '../../../shared/Functions.dart';
+import '../../../shared/constants.dart';
 import '../../../translations/locale_keys.g.dart';
 import '../../home/home_screen.dart';
 

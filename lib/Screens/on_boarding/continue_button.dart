@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../Styles/CustomColors.dart';
-import '../../shared/Constants.dart';
+import '../../shared/constants.dart';
 
-class continue_button extends StatelessWidget {
-  const continue_button({Key? key}) : super(key: key);
+class ContinueButton extends StatelessWidget {
+  const ContinueButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class continue_button extends StatelessWidget {
         color: CustomColors.primaryRedColor,
         borderRadius: Constants.primaryBorderRadius,
       ),
-      child: Icon(
+      child: const Icon(
         Icons.arrow_forward_ios,
         color: CustomColors.primaryWhiteColor,
       ),

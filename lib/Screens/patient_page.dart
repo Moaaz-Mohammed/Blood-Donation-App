@@ -1,6 +1,6 @@
 import 'package:blood_donation/UsableWidgets/custom_sized_box_width.dart';
-import 'package:blood_donation/shared/Controllers.dart';
 import 'package:blood_donation/shared/components.dart';
+import 'package:blood_donation/shared/controllers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import '../Styles/CustomColors.dart';
 import '../Styles/Strings.dart';
 import '../UsableWidgets/custom_button.dart';
-import '../shared/Constants.dart';
+import '../shared/constants.dart';
 import '../translations/locale_keys.g.dart';
 import 'home/home_screen.dart';
 

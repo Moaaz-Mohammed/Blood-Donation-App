@@ -4,7 +4,7 @@ import 'package:page_transition/page_transition.dart';
 
 import '../Styles/CustomColors.dart';
 import '../UsableWidgets/custom_dialog_do_you_want.dart';
-import 'Constants.dart';
+import 'constants.dart';
 
 class Functions {
   /// method navigate page

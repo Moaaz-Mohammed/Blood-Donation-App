@@ -11,8 +11,8 @@ import '../../UsableWidgets/custom_button.dart';
 import '../../model/user_model.dart';
 import '../../services/auth.dart';
 import '../../services/store.dart';
-import '../../shared/Constants.dart';
 import '../../shared/Functions.dart';
+import '../../shared/constants.dart';
 import '../../state_management/bloc/Cubit.dart';
 import '../../state_management/provider/model_hud.dart';
 import '../../translations/locale_keys.g.dart';
@@ -27,7 +27,7 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final Auth _auth = Auth();
   final Store _store = Store();
-  var BloodType;
+  var bloodType;
   var Status;
   var ShareData;
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
@@ -254,7 +254,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         alignment: Alignment.center,
                         iconSize: 30,
                         iconEnabledColor: CustomColors.primaryDarkColor,
-                        value: BloodType,
+                        value: bloodType,
                         hint: Text(
                           LocaleKeys.choose_blood_type.tr(),
                           style: const TextStyle(color: Colors.grey),
@@ -375,7 +375,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ],
                         onChanged: (value) {
                           setState(() {
-                            BloodType = value;
+                            bloodType = value;
                           });
                         },
                       ),
@@ -547,7 +547,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   '${userDayofBirthController.text}/${userMonthofBirthController.text}/${userYearofBirthController.text}',
                               userLastDonation:
                                   '${userDayofLastDonationController.text}/${userMonthofLastDonationController.text}/${userYearofLastDonationController.text}',
-                              userBloodType: BloodType.toString(),
+                              userBloodType: bloodType.toString(),
                               userStatus: Status.toString(),
                             ),
                           )

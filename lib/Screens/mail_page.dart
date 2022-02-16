@@ -41,12 +41,12 @@ class _MailState extends State<Mail> {
                     style: const TextStyle(color: CustomColors.primaryRedColor),
                     decoration: InputDecoration(
                       labelText: LocaleKeys.sender.tr(),
-                      labelStyle: TextStyle(color: Colors.grey),
-                      prefixIcon: Icon(
+                      labelStyle: const TextStyle(color: Colors.grey),
+                      prefixIcon: const Icon(
                         Icons.person,
                         color: CustomColors.primaryRedColor,
                       ),
-                      border: OutlineInputBorder(),
+                      border: const OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(
@@ -60,12 +60,12 @@ class _MailState extends State<Mail> {
                     style: const TextStyle(color: CustomColors.primaryRedColor),
                     decoration: InputDecoration(
                       labelText: LocaleKeys.phone.tr(),
-                      labelStyle: TextStyle(color: Colors.grey),
-                      prefixIcon: Icon(
+                      labelStyle: const TextStyle(color: Colors.grey),
+                      prefixIcon: const Icon(
                         Icons.phone,
                         color: CustomColors.primaryRedColor,
                       ),
-                      border: OutlineInputBorder(),
+                      border: const OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(
@@ -80,12 +80,12 @@ class _MailState extends State<Mail> {
                     maxLines: 4,
                     decoration: InputDecoration(
                       labelText: LocaleKeys.your_message.tr(),
-                      labelStyle: TextStyle(color: Colors.grey),
-                      prefixIcon: Icon(
+                      labelStyle: const TextStyle(color: Colors.grey),
+                      prefixIcon: const Icon(
                         Icons.message,
                         color: CustomColors.primaryRedColor,
                       ),
-                      border: OutlineInputBorder(),
+                      border: const OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(
@@ -111,7 +111,7 @@ class _MailState extends State<Mail> {
                           (value) => showDialog(
                             context: context,
                             builder: (context) => CustomDialog(
-                              title: 'تم إرسال رسالتك',
+                              title: LocaleKeys.sent.tr(),
                               description1:
                                   'تم إرسال رسالتك بنجاح وسيتم التواصل معك بكل سرور',
                             ),

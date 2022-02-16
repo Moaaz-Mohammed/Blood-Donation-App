@@ -1,7 +1,7 @@
-import 'package:blood_donation/Screens/BloodTypes.dart';
-import 'package:blood_donation/Screens/Blood_Donation_Benf.dart';
-import 'package:blood_donation/Screens/Mail_Page.dart';
-import 'package:blood_donation/Screens/Need_Donation.dart';
+import 'package:blood_donation/Screens/blood_donation_benefits.dart';
+import 'package:blood_donation/Screens/blood_types.dart';
+import 'package:blood_donation/Screens/mail_page.dart';
+import 'package:blood_donation/Screens/need_donation.dart';
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
 import 'package:blood_donation/UsableWidgets/custom_sized_box_height.dart';
 import 'package:blood_donation/shared/Functions.dart';
@@ -45,7 +45,7 @@ class CustomDrawer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.account_circle,
                     size: 75,
                     color: CustomColors.primaryRedColor,
@@ -88,7 +88,7 @@ class CustomDrawer extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               onTap: () {
-                navigateTo(context, const Need_Donation());
+                navigateTo(context, const NeedDonation());
               },
             ),
             //BloodType Info.

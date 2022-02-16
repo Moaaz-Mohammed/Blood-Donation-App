@@ -9,8 +9,8 @@ import '../../Styles/Images.dart';
 import '../../UsableWidgets/custom_button.dart';
 import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../services/auth.dart';
-import '../../shared/Constants.dart';
 import '../../shared/Functions.dart';
+import '../../shared/constants.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({Key? key}) : super(key: key);

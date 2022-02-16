@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../Styles/CustomColors.dart';
-import '../shared/Constants.dart';
+import '../shared/constants.dart';
 import '../translations/locale_keys.g.dart';
 
 class CustomTextFormField extends StatelessWidget {

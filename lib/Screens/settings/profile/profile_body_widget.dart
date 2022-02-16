@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import '../../../Styles/CustomColors.dart';
 import '../../../Styles/Strings.dart';
 import '../../../UsableWidgets/loading.dart';
-import '../../../shared/Constants.dart';
+import '../../../shared/constants.dart';
 import '../../../translations/locale_keys.g.dart';
 
 class ProfileBodyWidget extends StatelessWidget {

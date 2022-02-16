@@ -22,7 +22,7 @@ class HomeCategoryCard extends StatelessWidget {
     return Card(
       elevation: 2,
       color: backgroundColor,
-      child: Container(
+      child: SizedBox(
         height: height * 0.35,
         width: width * 0.4282,
         child: Column(

@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../shared/Constants.dart';
+import '../shared/constants.dart';
 import '../translations/locale_keys.g.dart';
 import 'custom_button.dart';
 import 'custom_sized_box_width.dart';
