@@ -3,10 +3,12 @@ import 'package:blood_donation/Screens/Blood_Donation_Benf.dart';
 import 'package:blood_donation/Screens/Mail_Page.dart';
 import 'package:blood_donation/Screens/Need_Donation.dart';
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
+import 'package:blood_donation/UsableWidgets/custom_sized_box_height.dart';
 import 'package:blood_donation/shared/Functions.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 import '../../Styles/CustomColors.dart';
 import '../../Styles/Strings.dart';
 import '../../services/auth.dart';
@@ -29,8 +31,8 @@ class CustomDrawer extends StatelessWidget {
         decoration: BoxDecoration(
           color: Theme.of(context).scaffoldBackgroundColor,
           borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            const BoxShadow(
+          boxShadow: const [
+            BoxShadow(
                 color: CustomColors.primaryRedColor,
                 blurRadius: 10.0,
                 offset: Offset(0.0, 10.0))
@@ -43,6 +45,12 @@ class CustomDrawer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Icon(
+                    Icons.account_circle,
+                    size: 75,
+                    color: CustomColors.primaryRedColor,
+                  ),
+                  CustomSizedBoxHeight(),
                   InkWell(
                     onTap: () {
                       Functions.navigatorPush(

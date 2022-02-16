@@ -33,7 +33,7 @@ class _LogInScreenState extends State<LogInScreen> {
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             padding: Constants.primaryPadding,
             child: Form(
               key: _globalKey,
@@ -54,7 +54,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   TextFormField(
                     style: Theme.of(context).textTheme.headline3,
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.mail),
+                      prefixIcon: const Icon(Icons.mail),
                       labelText: LocaleKeys.email.tr(),
                     ),
                     controller: emailController,
@@ -64,7 +64,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   TextFormField(
                     style: Theme.of(context).textTheme.displayMedium,
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.lock),
+                      prefixIcon: const Icon(Icons.lock),
                       labelText: LocaleKeys.password.tr(),
                       suffixIcon: InkWell(
                         onTap: () {
@@ -105,7 +105,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     onTap: () {
                       Functions.navigatorPush(
                         context: context,
-                        screen: SignUpScreen(),
+                        screen: const SignUpScreen(),
                       );
                     },
                     titleColor: CustomColors.primaryRedColor,

@@ -9,7 +9,6 @@ import 'package:flutter/scheduler.dart';
 import '../../Styles/Images.dart';
 import '../../Styles/Strings.dart';
 import '../../UsableWidgets/loading.dart';
-import '../../shared/Constants.dart';
 import '../../translations/locale_keys.g.dart';
 import '../settings/change_language_dialog.dart';
 import 'Drawer.dart';

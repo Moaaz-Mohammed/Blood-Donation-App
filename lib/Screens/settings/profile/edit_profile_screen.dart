@@ -1,12 +1,7 @@
-import 'dart:io';
-
 import 'package:easy_localization/easy_localization.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 import '../../../Styles/CustomColors.dart';
-import '../../../Styles/Images.dart';
 import '../../../Styles/Strings.dart';
 import '../../../UsableWidgets/custom_button.dart';
 import '../../../UsableWidgets/custom_sized_box_height.dart';
@@ -72,8 +67,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             children: [
               CustomSizedBoxHeight(),
               Container(
-                width: width * 0.5,
-                height: width * 0.5,
+                width: width * 0.30,
+                height: width * 0.30,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
@@ -81,53 +76,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     width: 2,
                   ),
                 ),
-                child: Stack(
-                  children: [
-                    Center(
-                      child: CircleAvatar(
-                        backgroundColor: CustomColors.primaryWhiteColor,
-                        radius: double.infinity,
-                        backgroundImage:
-                            widget.userData[Strings.userImageUrl] != null &&
-                                    _image == null
-                                ? NetworkImage(
-                                    widget.userData[Strings.userImageUrl],
-                                  )
-                                : widget.userData[Strings.userImageUrl] !=
-                                            null &&
-                                        _image != null
-                                    ? FileImage(
-                                        _image,
-                                      )
-                                    : widget.userData[Strings.userImageUrl] ==
-                                                null &&
-                                            _image != null
-                                        ? FileImage(
-                                            _image,
-                                          )
-                                        : const AssetImage(
-                                            Images.addUserImage,
-                                          ) as ImageProvider,
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.bottomRight,
-                      child: InkWell(
-                        onTap: () {
-                          _imgFromGallery();
-                        },
-                        borderRadius: BorderRadius.circular(50.0),
-                        child: CircleAvatar(
-                          backgroundColor:
-                              CustomColors.primaryRedColor.withOpacity(0.7),
-                          child: const Icon(
-                            Icons.edit,
-                            color: CustomColors.primaryWhiteColor,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                child: CircleAvatar(
+                  backgroundColor: CustomColors.primaryWhiteColor,
+                  radius: double.infinity,
+                  child: Icon(
+                    Icons.account_circle,
+                    size: 100,
+                    color: CustomColors.primaryRedColor,
+                  ),
                 ),
               ),
               CustomSizedBoxHeight(),
@@ -185,30 +141,25 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         context: context,
                         title: LocaleKeys.saving_changes.tr(),
                       );
-                      if (_image != null) {
-                        uploadFile().then(
-                          (value) {
-                            _store.editUserProfile(
-                              context: context,
-                              userId: widget.userData[Strings.userId],
-                              userName: userNameController.text,
-                              userLocation: userLocationController.text,
-                              userDateofBirth: userAgeController.text,
-                              userPhone: userPhoneController.text,
-                            );
-                          },
-                        );
-                      } else {
-                        _store.editUserProfile(
-                          context: context,
-                          userPhone: userPhoneController.text,
-                          userId: widget.userData[Strings.userId],
-                          userName: userNameController.text,
-                          userLocation: userLocationController.text,
-                          userDateofBirth: userAgeController.text,
-                        );
-                      }
+
+                      _store.editUserProfile(
+                        context: context,
+                        userId: widget.userData[Strings.userId],
+                        userName: userNameController.text,
+                        userLocation: userLocationController.text,
+                        userDateofBirth: userAgeController.text,
+                        userPhone: userPhoneController.text,
+                      );
                     }
+                  } else {
+                    _store.editUserProfile(
+                      context: context,
+                      userPhone: userPhoneController.text,
+                      userId: widget.userData[Strings.userId],
+                      userName: userNameController.text,
+                      userLocation: userLocationController.text,
+                      userDateofBirth: userAgeController.text,
+                    );
                   }
                 },
               ),
@@ -217,37 +168,5 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         ),
       ),
     );
-  }
-
-  _imgFromGallery() async {
-    var image = await ImagePicker().pickImage(
-      source: ImageSource.gallery,
-    );
-    setState(
-      () {
-        _image = File(image!.path);
-      },
-    );
-  }
-
-  /// method upload photo to firebase
-  Future uploadFile() async {
-    if (_image != null) {
-      final feedStorage = FirebaseStorage.instanceFor();
-      Reference refFeedBucket = feedStorage
-          .ref()
-          .child('UsersProfile')
-          .child('${userNameController.text}.png');
-      String downloadUrl = '';
-      TaskSnapshot uploadedFile = await refFeedBucket.putFile(_image);
-      if (uploadedFile.state == TaskState.success) {
-        downloadUrl = await refFeedBucket.getDownloadURL();
-        setState(
-          () {
-            userImageUrl = downloadUrl;
-          },
-        );
-      }
-    }
   }
 }

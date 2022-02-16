@@ -1,5 +1,4 @@
 import 'package:blood_donation/UsableWidgets/loading.dart';
-import 'package:blood_donation/shared/Constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,7 +14,7 @@ class NeedDonationBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
-        .collection('Patient')
+        .collection(Strings.patientsCollection)
         .where(Strings.userBloodType)
         .snapshots();
     return StreamBuilder<QuerySnapshot>(
@@ -34,11 +33,11 @@ class NeedDonationBody extends StatelessWidget {
               return ExpansionTile(
                 backgroundColor: CustomColors.primaryGreyColor,
                 title: Text(
-                  data['name'],
+                  data[Strings.patientName],
                   style: Theme.of(context).textTheme.headline2,
                 ),
                 trailing: Text(
-                  data['phone'],
+                  data[Strings.patientPhone],
                   style: Theme.of(context).textTheme.headline2,
                 ),
                 children: [
@@ -50,7 +49,7 @@ class NeedDonationBody extends StatelessWidget {
                       const SizedBox(
                         width: 10,
                       ),
-                      Text(data['hospital'],
+                      Text(data[Strings.patientAddress],
                           style: Theme.of(context).textTheme.headline2),
                     ],
                   ),
@@ -67,7 +66,7 @@ class NeedDonationBody extends StatelessWidget {
                       const SizedBox(
                         width: 10,
                       ),
-                      Text(data['blood_type'],
+                      Text(data[Strings.patientBloodType],
                           style: Theme.of(context).textTheme.headline2),
                     ],
                   ),
@@ -84,7 +83,8 @@ class NeedDonationBody extends StatelessWidget {
                       const SizedBox(
                         width: 10,
                       ),
-                      Text('${data['phone']} - ${data['another_phone']}',
+                      Text(
+                          '${data[Strings.patientPhone]} - ${data[Strings.patientAnotherPhone]}',
                           style: Theme.of(context).textTheme.headline2),
                     ],
                   ),
@@ -101,7 +101,7 @@ class NeedDonationBody extends StatelessWidget {
                       const SizedBox(
                         width: 10,
                       ),
-                      Text(data['age'],
+                      Text(data[Strings.patientAge],
                           style: Theme.of(context).textTheme.headline2),
                     ],
                   ),
@@ -125,7 +125,7 @@ class NeedDonationBody extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Text(
-                            data['status'],
+                            data[Strings.patientStatus],
                             style: Theme.of(context)
                                 .textTheme
                                 .headline2

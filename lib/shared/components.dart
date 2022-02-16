@@ -6,14 +6,6 @@ navigateTo(BuildContext context, Widget widget) {
   Navigator.push(context, MaterialPageRoute(builder: (context) => widget));
 }
 
-Widget TitleText({@required String? text}) => Text(
-      text!,
-      style: const TextStyle(
-        fontSize: 22,
-        fontWeight: FontWeight.bold,
-      ),
-    );
-
 Widget defaultText({
   @required String? text,
 }) =>
@@ -27,14 +19,12 @@ Widget defaultText({
 
 class CustomDialog extends StatelessWidget {
   final String? title, description1, description2, buttonText;
-  final Image? image;
 
   const CustomDialog({
     this.title,
     this.buttonText,
     this.description1,
     this.description2,
-    this.image,
   });
   @override
   Widget build(BuildContext context) {
@@ -87,14 +77,6 @@ class CustomDialog extends StatelessWidget {
                   ),
                   textDirection: TextDirection.rtl,
                 ),
-                Text(
-                  description2!,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textDirection: TextDirection.rtl,
-                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -127,17 +109,6 @@ Widget ArticleHeadText({
       text!,
       style: const TextStyle(
           fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: CustomColors.primaryRedColor),
-    );
-
-Widget ArticleContentText({
-  @required String? text,
-}) =>
-    Text(
-      text!,
-      style: const TextStyle(
-          fontSize: 16,
           fontWeight: FontWeight.bold,
           color: CustomColors.primaryRedColor),
     );

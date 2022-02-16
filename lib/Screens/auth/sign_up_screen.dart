@@ -49,7 +49,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return ModalProgressHUD(
       inAsyncCall: Provider.of<ModelHud>(context).isLoading1,
       child: Scaffold(
@@ -545,9 +544,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               userEmail: userEmailController.text,
                               userAddress: userLocationController.text,
                               userDateofBirth:
-                                  '${userDayofBirthController.text}, ${userMonthofBirthController.text}, ${userYearofBirthController.text}',
+                                  '${userDayofBirthController.text}/${userMonthofBirthController.text}/${userYearofBirthController.text}',
                               userLastDonation:
-                                  '${userDayofLastDonationController.text}, ${userMonthofLastDonationController.text}, ${userYearofLastDonationController.text}',
+                                  '${userDayofLastDonationController.text}/${userMonthofLastDonationController.text}/${userYearofLastDonationController.text}',
                               userBloodType: BloodType.toString(),
                               userStatus: Status.toString(),
                             ),

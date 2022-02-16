@@ -1,11 +1,12 @@
+import 'package:blood_donation/UsableWidgets/custom_sized_box_width.dart';
 import 'package:blood_donation/shared/Controllers.dart';
 import 'package:blood_donation/shared/components.dart';
-import 'package:blood_donation/state_management/bloc/Cubit.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../Styles/CustomColors.dart';
+import '../Styles/Strings.dart';
 import '../UsableWidgets/custom_button.dart';
 import '../shared/Constants.dart';
 import '../translations/locale_keys.g.dart';
@@ -111,23 +112,26 @@ class _PatientState extends State<Patient> {
                         //Blood type
                         Container(
                           height: 80,
-                          width: double.infinity,
-                          decoration: AppCubit.get(context).isDark
-                              ? Constants.primaryDarkBoxDecorationContainer
-                              : Constants.primaryBoxDecorationContainer,
+                          decoration: Constants.primaryBoxDecorationContainer,
                           padding: const EdgeInsets.symmetric(horizontal: 19),
                           child: Row(
                             children: [
                               Text(
                                 LocaleKeys.blood_types.tr(),
-                                style: Theme.of(context).textTheme.headline2,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline1
+                                    ?.copyWith(
+                                      color: CustomColors.primaryRedColor,
+                                    ),
                               ),
+                              CustomSizedBoxWidth(),
                               DropdownButton(
                                 dropdownColor:
                                     Theme.of(context).scaffoldBackgroundColor,
                                 alignment: Alignment.center,
                                 iconSize: 30,
-                                iconEnabledColor: CustomColors.primaryRedColor,
+                                iconEnabledColor: CustomColors.primaryDarkColor,
                                 value: BloodType,
                                 hint: Text(
                                   LocaleKeys.choose_blood_type.tr(),
@@ -135,43 +139,123 @@ class _PatientState extends State<Patient> {
                                 ),
                                 items: [
                                   DropdownMenuItem(
-                                    child:
-                                        Center(child: defaultText(text: '+O')),
+                                    child: Center(
+                                      child: Text(
+                                        "+O",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline2
+                                            ?.copyWith(
+                                              color:
+                                                  CustomColors.primaryDarkColor,
+                                            ),
+                                      ),
+                                    ),
                                     value: '+O',
                                   ),
                                   DropdownMenuItem(
-                                    child:
-                                        Center(child: defaultText(text: '-O')),
+                                    child: Center(
+                                      child: Text(
+                                        '-O',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline2
+                                            ?.copyWith(
+                                              color:
+                                                  CustomColors.primaryDarkColor,
+                                            ),
+                                      ),
+                                    ),
                                     value: '-O',
                                   ),
                                   DropdownMenuItem(
-                                    child:
-                                        Center(child: defaultText(text: '+A')),
+                                    child: Center(
+                                      child: Text(
+                                        "+A",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline2
+                                            ?.copyWith(
+                                              color:
+                                                  CustomColors.primaryDarkColor,
+                                            ),
+                                      ),
+                                    ),
                                     value: '+A',
                                   ),
                                   DropdownMenuItem(
-                                    child:
-                                        Center(child: defaultText(text: '-A')),
+                                    child: Center(
+                                      child: Text(
+                                        "-A",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline2
+                                            ?.copyWith(
+                                              color:
+                                                  CustomColors.primaryDarkColor,
+                                            ),
+                                      ),
+                                    ),
                                     value: '-A',
                                   ),
                                   DropdownMenuItem(
-                                    child:
-                                        Center(child: defaultText(text: '+B')),
+                                    child: Center(
+                                      child: Text(
+                                        "+B",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline2
+                                            ?.copyWith(
+                                              color:
+                                                  CustomColors.primaryDarkColor,
+                                            ),
+                                      ),
+                                    ),
                                     value: '+B',
                                   ),
                                   DropdownMenuItem(
-                                    child:
-                                        Center(child: defaultText(text: '-B')),
+                                    child: Center(
+                                      child: Text(
+                                        "-B",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline2
+                                            ?.copyWith(
+                                              color:
+                                                  CustomColors.primaryDarkColor,
+                                            ),
+                                      ),
+                                    ),
                                     value: '-B',
                                   ),
                                   DropdownMenuItem(
-                                    child:
-                                        Center(child: defaultText(text: '+AB')),
+                                    child: Center(
+                                      child: Text(
+                                        "+AB",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline2
+                                            ?.copyWith(
+                                              color:
+                                                  CustomColors.primaryDarkColor,
+                                            ),
+                                      ),
+                                    ),
                                     value: '+AB',
                                   ),
                                   DropdownMenuItem(
-                                    child:
-                                        Center(child: defaultText(text: '-AB')),
+                                    child: Center(
+                                      child: Text(
+                                        "-AB",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline2
+                                            ?.copyWith(
+                                              color:
+                                                  CustomColors.primaryDarkColor,
+                                            ),
+                                      ),
+                                    ),
                                     value: '-AB',
                                   ),
                                 ],
@@ -245,22 +329,23 @@ class _PatientState extends State<Patient> {
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       final firestoreInstance = FirebaseFirestore.instance;
-                      firestoreInstance.collection("Patient").add({
-                        "name": nameController.text,
-                        "status": statusController.text,
-                        "phone": phoneController.text,
-                        "another_phone": anotherphoneController.text,
-                        "blood_type": BloodType.toString(),
-                        "age": ageController.text,
-                        "hospital": hospitalController.text,
-                        "blood_needed": bloodamountController.text,
-                        "registered_time": DateTime.now().toLocal(),
+                      firestoreInstance
+                          .collection(Strings.patientsCollection)
+                          .add({
+                        Strings.patientName: nameController.text,
+                        Strings.patientStatus: statusController.text,
+                        Strings.patientPhone: phoneController.text,
+                        Strings.patientAnotherPhone:
+                            anotherphoneController.text,
+                        Strings.patientBloodType: BloodType.toString(),
+                        Strings.patientAge: ageController.text,
+                        Strings.patientAddress: hospitalController.text,
+                        Strings.patientNeededBlood: bloodamountController.text,
+                        Strings.patientRegisteredTime: DateTime.now().toLocal(),
                       }).then(
                         (value) => showDialog(
                           context: context,
                           builder: (context) => CustomDialog(
-                            image: Image.network(
-                                'https://media.tenor.com/images/2525ba72ea472c55bf8b2153e9ea9f11/tenor.gif'),
                             title: LocaleKeys.sent.tr(),
                             description1: LocaleKeys.sent.tr(),
                           ),

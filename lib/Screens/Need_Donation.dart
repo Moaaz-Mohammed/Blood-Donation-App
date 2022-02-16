@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
+import '../Styles/Strings.dart';
 import '../shared/Functions.dart';
 import '../translations/locale_keys.g.dart';
 
@@ -14,8 +15,9 @@ class Need_Donation extends StatefulWidget {
 }
 
 class _Need_DonationState extends State<Need_Donation> {
-  final Stream<QuerySnapshot> _usersStream =
-      FirebaseFirestore.instance.collection('Patient').snapshots();
+  final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
+      .collection(Strings.patientsCollection)
+      .snapshots();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -59,7 +61,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Text(data['name'],
+                                    Text(data[Strings.patientName],
                                         style: Theme.of(context)
                                             .textTheme
                                             .headline2),
@@ -77,7 +79,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Text(data['hospital']),
+                                    Text(data[Strings.patientAddress]),
                                   ],
                                 ),
                                 const SizedBox(
@@ -92,7 +94,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Text(data['blood_type']),
+                                    Text(data[Strings.patientBloodType]),
                                   ],
                                 ),
                                 const SizedBox(
@@ -107,7 +109,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Text(data['phone']),
+                                    Text(data[Strings.patientPhone]),
                                   ],
                                 ),
                                 const SizedBox(
@@ -122,7 +124,7 @@ class _Need_DonationState extends State<Need_Donation> {
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Text(data['age']),
+                                    Text(data[Strings.patientAge]),
                                   ],
                                 ),
                                 const SizedBox(
@@ -147,7 +149,8 @@ class _Need_DonationState extends State<Need_Donation> {
                                               BorderRadius.circular(10)),
                                       child: Padding(
                                         padding: const EdgeInsets.all(15.0),
-                                        child: Text(data['status']),
+                                        child:
+                                            Text(data[Strings.patientStatus]),
                                       ),
                                     ),
                                   ],

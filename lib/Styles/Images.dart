@@ -12,5 +12,5 @@ class Images {
   static const String hospitalImage = 'assets/images/hospital.png';
   static const String settingsImage = 'assets/images/settings.png';
   static const String profileImage = 'assets/images/avatar.png';
-
+  static const String successImage = 'assets/images/success.gif';
 }
