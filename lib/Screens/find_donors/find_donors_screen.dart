@@ -1,3 +1,4 @@
+import 'package:blood_donation/UsableWidgets/custom_sized_box_height.dart';
 import 'package:blood_donation/shared/constants.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -31,6 +32,7 @@ class _FindDonorsScreenState extends State<FindDonorsScreen> {
                   ),
                 ),
               ),
+              CustomSizedBoxHeight(),
             ],
           ),
         ),

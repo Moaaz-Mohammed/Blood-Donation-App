@@ -1,5 +1,4 @@
 import 'package:blood_donation/Screens/find_donors/find_donors_screen.dart';
-import 'package:blood_donation/Screens/home/Drawer.dart';
 import 'package:blood_donation/Screens/home/home_category_card.dart';
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
 import 'package:blood_donation/Screens/settings/settings.dart';
@@ -16,6 +15,7 @@ import '../../Styles/Images.dart';
 import '../../Styles/Strings.dart';
 import '../../shared/Functions.dart';
 import '../../translations/locale_keys.g.dart';
+import 'drawer/drawer.dart';
 
 class NewHomeScreen extends StatefulWidget {
   const NewHomeScreen({Key? key}) : super(key: key);
@@ -117,7 +117,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                                 onTap: () {
                                   Functions.navigatorPush(
                                     context: context,
-                                    screen: FindDonorsScreen(),
+                                    screen: const FindDonorsScreen(),
                                   );
                                 },
                                 child: HomeCategoryCard(

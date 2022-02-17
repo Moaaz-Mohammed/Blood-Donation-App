@@ -349,8 +349,12 @@ class _PatientState extends State<Patient> {
                             title: LocaleKeys.sent.tr(),
                             description1: LocaleKeys.sent.tr(),
                           ),
-                        ).then((value) =>
-                            navigateTo(context, const NewHomeScreen())),
+                        ).then(
+                          (value) => navigateTo(
+                            context,
+                            const NewHomeScreen(),
+                          ),
+                        ),
                       );
                     }
                   },

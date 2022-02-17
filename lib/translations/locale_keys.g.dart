@@ -99,5 +99,6 @@ abstract class  LocaleKeys {
   static const your_message = 'your_message';
   static const logged_in = 'logged_in';
   static const search_for_donor = 'search_for_donor';
+  static const history = 'history';
 
 }

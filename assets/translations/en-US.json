@@ -30,7 +30,7 @@
   "call_this_number": "Do you want call this number?",
   "required": "Required",
   "need_donation": "Need Donation",
-  "hello": "Hello, ",
+  "hello": "Hi,",
   "blood_types": "Blood Types",
   "important_info": "Important Info.!",
   "contact_us": "Contact Us",
@@ -96,5 +96,6 @@
   "sender": "Sender",
   "your_message": "Write your message here!",
   "logged_in": "Logged In Successfully!",
-  "search_for_donor": "Search for donor"
+  "search_for_donor": "Search for donor",
+  "history": "Your donations history"
 }

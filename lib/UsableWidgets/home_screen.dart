@@ -11,9 +11,9 @@ import '../../Styles/Strings.dart';
 import '../../UsableWidgets/change_language_dialog.dart';
 import '../../UsableWidgets/loading.dart';
 import '../../translations/locale_keys.g.dart';
-import 'drawer.dart';
-import 'need_donation_body.dart';
-import 'next_donation_date.dart';
+import '../Screens/home/drawer/drawer.dart';
+import '../Screens/home/need_donation_body.dart';
+import '../Screens/home/next_donation_date.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -76,9 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ? Icons.light_mode
                   : Icons.dark_mode))
         ],
-      ),
-      drawer: CustomDrawer(
-        userData: userData,
       ),
       body: userData == null
           ? const Loading()
@@ -155,6 +152,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+      drawer: CustomDrawer(
+        userData: userData,
+      ),
     );
   }
 }

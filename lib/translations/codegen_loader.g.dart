@@ -46,7 +46,7 @@ class CodegenLoader extends AssetLoader{
   "call_this_number": "هل تريد الاتصال بهذا الرقم؟",
   "required": "مطلوب",
   "need_donation": "بحاجة للتبرع",
-  "hello": "مرحباً بك، ",
+  "hello": "مرحباً,",
   "blood_types": "فصائل الدم",
   "important_info": "معلومات تهمك!",
   "contact_us": "تواصل معنا",
@@ -112,7 +112,8 @@ class CodegenLoader extends AssetLoader{
   "sender": "الراسل",
   "your_message": "اكتب رسالتك هنا!",
   "logged_in": "تم تسجيل الدخول!",
-  "search_for_donor": "ابحث عن متبرع"
+  "search_for_donor": "ابحث عن متبرع",
+  "history": "تاريخ تبرعاتك"
 };
 static const Map<String,dynamic> en_US = {
   "app_name": "Save Life!",
@@ -146,7 +147,7 @@ static const Map<String,dynamic> en_US = {
   "call_this_number": "Do you want call this number?",
   "required": "Required",
   "need_donation": "Need Donation",
-  "hello": "Hello, ",
+  "hello": "Hi,",
   "blood_types": "Blood Types",
   "important_info": "Important Info.!",
   "contact_us": "Contact Us",
@@ -212,7 +213,8 @@ static const Map<String,dynamic> en_US = {
   "sender": "Sender",
   "your_message": "Write your message here!",
   "logged_in": "Logged In Successfully!",
-  "search_for_donor": "Search for donor"
+  "search_for_donor": "Search for donor",
+  "history": "Your donations history"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar_EG": ar_EG, "en_US": en_US};
 }
