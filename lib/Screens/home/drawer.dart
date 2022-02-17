@@ -3,7 +3,6 @@ import 'package:blood_donation/Screens/blood_types.dart';
 import 'package:blood_donation/Screens/mail_page.dart';
 import 'package:blood_donation/Screens/need_donation.dart';
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
-import 'package:blood_donation/UsableWidgets/custom_sized_box_height.dart';
 import 'package:blood_donation/shared/Functions.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -14,7 +13,7 @@ import '../../Styles/Strings.dart';
 import '../../services/auth.dart';
 import '../../translations/locale_keys.g.dart';
 import '../settings/settings.dart';
-import 'home_screen.dart';
+import 'new_home_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({
@@ -42,28 +41,34 @@ class CustomDrawer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             DrawerHeader(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Icon(
-                    Icons.account_circle,
-                    size: 75,
-                    color: CustomColors.primaryRedColor,
-                  ),
-                  CustomSizedBoxHeight(),
-                  InkWell(
-                    onTap: () {
-                      Functions.navigatorPush(
-                        context: context,
-                        screen: ProfileScreen(userData: userData),
-                      );
-                    },
-                    child: Text(
+              child: InkWell(
+                onTap: () {
+                  Functions.navigatorPush(
+                    context: context,
+                    screen: ProfileScreen(userData: userData),
+                  );
+                },
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.account_circle,
+                      size: 75,
+                      color: CustomColors.primaryRedColor,
+                    ),
+                    Text(
                       userData[Strings.userName],
                       style: Theme.of(context).textTheme.headline4,
                     ),
-                  ),
-                ],
+                    Text(
+                      userData[Strings.userBloodType],
+                      style: Theme.of(context).textTheme.headline1?.copyWith(
+                            color:
+                                CustomColors.primaryDarkColor.withOpacity(0.5),
+                          ),
+                    ),
+                  ],
+                ),
               ),
             ),
             ListTile(
@@ -75,7 +80,7 @@ class CustomDrawer extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               onTap: () {
-                navigateTo(context, const HomeScreen());
+                navigateTo(context, const NewHomeScreen());
               },
             ),
             //Patients
@@ -88,7 +93,10 @@ class CustomDrawer extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               onTap: () {
-                navigateTo(context, const NeedDonation());
+                navigateTo(
+                  context,
+                  const NeedDonation(),
+                );
               },
             ),
             //BloodType Info.

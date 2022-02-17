@@ -10,7 +10,7 @@ import '../Styles/Strings.dart';
 import '../UsableWidgets/custom_button.dart';
 import '../shared/constants.dart';
 import '../translations/locale_keys.g.dart';
-import 'home/home_screen.dart';
+import 'home/new_home_screen.dart';
 
 class Patient extends StatefulWidget {
   const Patient({Key? key}) : super(key: key);
@@ -349,8 +349,8 @@ class _PatientState extends State<Patient> {
                             title: LocaleKeys.sent.tr(),
                             description1: LocaleKeys.sent.tr(),
                           ),
-                        ).then(
-                            (value) => navigateTo(context, const HomeScreen())),
+                        ).then((value) =>
+                            navigateTo(context, const NewHomeScreen())),
                       );
                     }
                   },

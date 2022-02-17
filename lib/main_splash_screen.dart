@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
 import 'Screens/auth/log_in_screen.dart';
-import 'Screens/home/home_screen.dart';
+import 'Screens/home/new_home_screen.dart';
 import 'Screens/on_boarding/on_boarding_screen.dart';
 import 'Styles/CustomColors.dart';
 import 'Styles/Images.dart';
@@ -41,7 +41,7 @@ class _MainSlashScreenState extends State<MainSlashScreen> {
                   ? widget.onBoarding
                       ? const LogInScreen()
                       : const OnBoardingScreen()
-                  : const HomeScreen(),
+                  : const NewHomeScreen(),
             );
           },
         );

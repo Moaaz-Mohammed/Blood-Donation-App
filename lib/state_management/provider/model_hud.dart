@@ -9,18 +9,4 @@ class ModelHud extends ChangeNotifier {
     isLoading1 = isLoading;
     notifyListeners();
   }
-
-  int numberOfMeals = 0;
-
-  incrementCounter() {
-    numberOfMeals++;
-    notifyListeners();
-  }
-
-  decrementCounter() {
-    if (numberOfMeals > 1) {
-      numberOfMeals--;
-      notifyListeners();
-    }
-  }
 }

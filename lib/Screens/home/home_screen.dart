@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Image.asset(
                             Images.waveImage,
-                            height: 50,
+                            height: height * 0.055,
                           ),
                           const SizedBox(width: 15),
                           Column(
@@ -141,7 +141,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         userData: userData,
                       ),
                       SizedBox(height: height * 0.02),
-                      const Divider(),
                       Text(
                         LocaleKeys.need_donation.tr(),
                         style: Theme.of(context).textTheme.headline4,

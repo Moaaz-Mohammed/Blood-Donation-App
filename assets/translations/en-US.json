@@ -94,5 +94,6 @@
   "logged_out": "Logged out!",
   "send_message": "Send Message",
   "sender": "Sender",
-  "your_message": "Write your message here!"
+  "your_message": "Write your message here!",
+  "logged_in": "Logged In Successfully!"
 }

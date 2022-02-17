@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../Screens/home/home_screen.dart';
+
+import '../Screens/home/new_home_screen.dart';
 import '../Styles/Strings.dart';
 import '../model/user_model.dart';
 import '../shared/Functions.dart';
@@ -46,7 +47,7 @@ class Store {
       (value) {
         Functions.navigatorPushAndRemove(
           context: context,
-          screen: HomeScreen(),
+          screen: NewHomeScreen(),
         );
         Functions.showToastMsg(
           title: 'تم تعديل بياناتك بنجاح',

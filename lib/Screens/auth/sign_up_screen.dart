@@ -1,4 +1,3 @@
-import 'package:blood_donation/Screens/home/home_screen.dart';
 import 'package:blood_donation/UsableWidgets/custom_sized_box_height.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,6 +15,7 @@ import '../../shared/constants.dart';
 import '../../state_management/bloc/Cubit.dart';
 import '../../state_management/provider/model_hud.dart';
 import '../../translations/locale_keys.g.dart';
+import '../home/new_home_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -555,7 +555,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             (value) {
                               Functions.navigatorPushAndRemove(
                                 context: context,
-                                screen: const HomeScreen(),
+                                screen: const NewHomeScreen(),
                               );
                               Functions.showToastMsg(
                                 title: LocaleKeys.registered.tr(),

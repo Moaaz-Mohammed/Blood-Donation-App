@@ -94,5 +94,6 @@
   "logged_out": "تم تسجيل الخروج!",
   "send_message": "إرسال رسالة",
   "sender": "الراسل",
-  "your_message": "اكتب رسالتك هنا!"
+  "your_message": "اكتب رسالتك هنا!",
+  "logged_in": "تم تسجيل الدخول!"
 }

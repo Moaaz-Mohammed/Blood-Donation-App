@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../Styles/CustomColors.dart';
 import '../translations/locale_keys.g.dart';
-import 'home/home_screen.dart';
+import 'home/new_home_screen.dart';
 
 class Mail extends StatefulWidget {
   const Mail({Key? key}) : super(key: key);
@@ -116,7 +116,7 @@ class _MailState extends State<Mail> {
                                   'تم إرسال رسالتك بنجاح وسيتم التواصل معك بكل سرور',
                             ),
                           ).then((value) =>
-                              navigateTo(context, const HomeScreen())),
+                              navigateTo(context, const NewHomeScreen())),
                         );
                       },
                       child: const Text(

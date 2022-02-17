@@ -9,7 +9,7 @@ import '../../../services/store.dart';
 import '../../../shared/Functions.dart';
 import '../../../shared/constants.dart';
 import '../../../translations/locale_keys.g.dart';
-import '../../home/home_screen.dart';
+import '../../home/new_home_screen.dart';
 
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({
@@ -134,7 +134,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         _image == null) {
                       Functions.navigatorPushAndRemove(
                         context: context,
-                        screen: const HomeScreen(),
+                        screen: const NewHomeScreen(),
                       );
                     } else {
                       Functions.dialogLoading(
