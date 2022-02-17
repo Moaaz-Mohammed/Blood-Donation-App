@@ -23,8 +23,8 @@ class HomeCategoryCard extends StatelessWidget {
       elevation: 2,
       color: backgroundColor,
       child: SizedBox(
-        height: height * 0.35,
-        width: width * 0.4282,
+        height: height * 0.36,
+        width: width * 0.42,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,20 +38,20 @@ class HomeCategoryCard extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: height * 0.02,
+              height: height * 0.015,
             ),
             Text(
               title,
               style: Theme.of(context)
                   .textTheme
-                  .headline3
+                  .headline2
                   ?.copyWith(color: CustomColors.primaryWhiteColor),
             ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: Text(
                 content,
-                style: Theme.of(context).textTheme.headline2?.copyWith(
+                style: Theme.of(context).textTheme.headline1?.copyWith(
                     color: CustomColors.primaryGreyColor.withOpacity(0.7),
                     fontWeight: FontWeight.normal),
                 textAlign: TextAlign.center,

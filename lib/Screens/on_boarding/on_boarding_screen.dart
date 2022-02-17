@@ -130,7 +130,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       ? Row(
                           children: [
                             SizedBox(
-                              width: width * 0.57,
+                              width: width * 0.55,
                             ),
                             InkWell(
                               onTap: () {

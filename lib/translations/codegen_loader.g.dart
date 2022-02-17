@@ -110,7 +110,9 @@ class CodegenLoader extends AssetLoader{
   "logged_out": "تم تسجيل الخروج!",
   "send_message": "إرسال رسالة",
   "sender": "الراسل",
-  "your_message": "اكتب رسالتك هنا!"
+  "your_message": "اكتب رسالتك هنا!",
+  "logged_in": "تم تسجيل الدخول!",
+  "search_for_donor": "ابحث عن متبرع"
 };
 static const Map<String,dynamic> en_US = {
   "app_name": "Save Life!",
@@ -208,7 +210,9 @@ static const Map<String,dynamic> en_US = {
   "logged_out": "Logged out!",
   "send_message": "Send Message",
   "sender": "Sender",
-  "your_message": "Write your message here!"
+  "your_message": "Write your message here!",
+  "logged_in": "Logged In Successfully!",
+  "search_for_donor": "Search for donor"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar_EG": ar_EG, "en_US": en_US};
 }

@@ -1,3 +1,4 @@
+import 'package:blood_donation/Screens/find_donors/find_donors_screen.dart';
 import 'package:blood_donation/Screens/home/Drawer.dart';
 import 'package:blood_donation/Screens/home/home_category_card.dart';
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
@@ -112,11 +113,19 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                               const SizedBox(
                                 height: 30,
                               ),
-                              HomeCategoryCard(
-                                image: Images.bloodDropImage,
-                                backgroundColor: CustomColors.primaryRedColor,
-                                title: LocaleKeys.find_donors.tr(),
-                                content: LocaleKeys.sub_find_donors.tr(),
+                              InkWell(
+                                onTap: () {
+                                  Functions.navigatorPush(
+                                    context: context,
+                                    screen: FindDonorsScreen(),
+                                  );
+                                },
+                                child: HomeCategoryCard(
+                                  image: Images.bloodDropImage,
+                                  backgroundColor: CustomColors.primaryRedColor,
+                                  title: LocaleKeys.find_donors.tr(),
+                                  content: LocaleKeys.sub_find_donors.tr(),
+                                ),
                               ),
                               InkWell(
                                 onTap: () {

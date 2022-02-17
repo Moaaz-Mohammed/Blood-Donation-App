@@ -95,5 +95,6 @@
   "send_message": "Send Message",
   "sender": "Sender",
   "your_message": "Write your message here!",
-  "logged_in": "Logged In Successfully!"
+  "logged_in": "Logged In Successfully!",
+  "search_for_donor": "Search for donor"
 }
