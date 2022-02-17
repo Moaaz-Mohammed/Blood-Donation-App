@@ -97,5 +97,13 @@
   "your_message": "Write your message here!",
   "logged_in": "Logged In Successfully!",
   "search_for_donor": "Search for donor",
-  "history": "Your donations history"
+  "history": "Your donations history",
+  "added_successfully": "Added Successfully!",
+  "add_new_donation": "Add your new donation data",
+  "donation_time": "Donation Time",
+  "donation_date": "Donation Date",
+  "donation_address": "Donation Address",
+  "notes": "Notes",
+  "pick_date": "Pick Date",
+  "pick_time": "Pick Time"
 }

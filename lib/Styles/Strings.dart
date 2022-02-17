@@ -24,4 +24,13 @@ class Strings {
   static const String patientStatus = 'patientStatus';
   static const String patientNeededBlood = 'patientNeededBlood';
   static const String patientRegisteredTime = 'patientRegisteredTime';
+
+  // Firebase User Donations History Collection Strings
+  static const String userDonationsHistoryCollection =
+      'userDonationsHistoryCollection';
+  static const String donationAddress = 'donationAddress';
+  static const String donationTime = 'donationTime';
+  static const String donationDate = 'donationDate';
+  static const String PatientName = 'PatientName';
+  static const String donationNotes = 'donationNotes';
 }

@@ -86,7 +86,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                '${LocaleKeys.hello.tr()}${userData![Strings.userName]}',
+                                '${LocaleKeys.hello.tr()} ${userData![Strings.userName]}',
                                 style: Theme.of(context).textTheme.headline4,
                               ),
                               const SizedBox(

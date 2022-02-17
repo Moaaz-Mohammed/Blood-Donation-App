@@ -97,5 +97,13 @@
   "your_message": "اكتب رسالتك هنا!",
   "logged_in": "تم تسجيل الدخول!",
   "search_for_donor": "ابحث عن متبرع",
-  "history": "تاريخ تبرعاتك"
+  "history": "تاريخ تبرعاتك",
+  "added_successfully": "تمت الإضافة بنجاح!",
+  "add_new_donation": "أضف بيانات تبرعك الجديد",
+  "donation_time": "وقت التبرع",
+  "donation_date": "تاريخ التبرع",
+  "donation_address": "مكان التبرع",
+  "notes": "ملاحظات",
+  "pick_date": "أختر التاريخ",
+  "pick_time": "أختر الوقت"
 }

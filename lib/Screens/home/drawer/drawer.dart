@@ -1,6 +1,6 @@
 import 'package:blood_donation/Screens/blood_donation_benefits.dart';
 import 'package:blood_donation/Screens/contact_us.dart';
-import 'package:blood_donation/Screens/history.dart';
+import 'package:blood_donation/Screens/donation_history/history.dart';
 import 'package:blood_donation/Screens/need_donation.dart';
 import 'package:blood_donation/Screens/settings/settings.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
@@ -37,7 +37,7 @@ class CustomDrawer extends StatelessWidget {
           ],
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             DrawerHead(userData: userData),
             DrawerListCard(

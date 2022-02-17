@@ -113,7 +113,15 @@ class CodegenLoader extends AssetLoader{
   "your_message": "اكتب رسالتك هنا!",
   "logged_in": "تم تسجيل الدخول!",
   "search_for_donor": "ابحث عن متبرع",
-  "history": "تاريخ تبرعاتك"
+  "history": "تاريخ تبرعاتك",
+  "added_successfully": "تمت الإضافة بنجاح!",
+  "add_new_donation": "أضف بيانات تبرعك الجديد",
+  "donation_time": "وقت التبرع",
+  "donation_date": "تاريخ التبرع",
+  "donation_address": "مكان التبرع",
+  "notes": "ملاحظات",
+  "pick_date": "أختر التاريخ",
+  "pick_time": "أختر الوقت"
 };
 static const Map<String,dynamic> en_US = {
   "app_name": "Save Life!",
@@ -214,7 +222,15 @@ static const Map<String,dynamic> en_US = {
   "your_message": "Write your message here!",
   "logged_in": "Logged In Successfully!",
   "search_for_donor": "Search for donor",
-  "history": "Your donations history"
+  "history": "Your donations history",
+  "added_successfully": "Added Successfully!",
+  "add_new_donation": "Add your new donation data",
+  "donation_time": "Donation Time",
+  "donation_date": "Donation Date",
+  "donation_address": "Donation Address",
+  "notes": "Notes",
+  "pick_date": "Pick Date",
+  "pick_time": "Pick Time"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar_EG": ar_EG, "en_US": en_US};
 }

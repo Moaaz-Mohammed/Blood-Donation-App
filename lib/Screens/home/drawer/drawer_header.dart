@@ -37,12 +37,6 @@ class DrawerHead extends StatelessWidget {
               userData[Strings.userName],
               style: Theme.of(context).textTheme.headline4,
             ),
-            Text(
-              userData[Strings.userBloodType],
-              style: Theme.of(context).textTheme.headline1?.copyWith(
-                    color: CustomColors.primaryDarkColor.withOpacity(0.5),
-                  ),
-            ),
           ],
         ),
       ),

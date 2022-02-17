@@ -100,5 +100,13 @@ abstract class  LocaleKeys {
   static const logged_in = 'logged_in';
   static const search_for_donor = 'search_for_donor';
   static const history = 'history';
+  static const added_successfully = 'added_successfully';
+  static const add_new_donation = 'add_new_donation';
+  static const donation_time = 'donation_time';
+  static const donation_date = 'donation_date';
+  static const donation_address = 'donation_address';
+  static const notes = 'notes';
+  static const pick_date = 'pick_date';
+  static const pick_time = 'pick_time';
 
 }
