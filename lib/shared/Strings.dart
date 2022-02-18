@@ -33,4 +33,11 @@ class Strings {
   static const String donationDate = 'donationDate';
   static const String PatientName = 'PatientName';
   static const String donationNotes = 'donationNotes';
+
+  // Firebase Mail Collection
+  static const String mailCollection = 'mailCollection';
+  static const String mailSender = 'mailSender';
+  static const String mailContent = 'mailContent';
+  static const String mailSenderPhone = 'senderPhone';
+  static const String mailTime = 'mailTime';
 }

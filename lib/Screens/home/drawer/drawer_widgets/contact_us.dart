@@ -1,9 +1,12 @@
+import 'package:blood_donation/shared/Functions.dart';
+import 'package:blood_donation/shared/Strings.dart';
 import 'package:blood_donation/shared/components.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../Styles/CustomColors.dart';
+import '../../../../UsableWidgets/custom_button.dart';
 import '../../../../translations/locale_keys.g.dart';
 import '../../new_home_screen.dart';
 
@@ -92,41 +95,22 @@ class _MailState extends State<Mail> {
                     height: 40,
                   ),
                   //Submit Button
-                  Container(
-                    height: 60,
-                    width: 300,
-                    decoration: BoxDecoration(
-                      color: CustomColors.primaryRedColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: TextButton(
-                      onPressed: () {
-                        final firestoreInstance = FirebaseFirestore.instance;
-                        firestoreInstance.collection("Mail").add({
-                          "sender": senderController.text,
-                          "message": messageController.text,
-                          "phone": phoneController.text,
-                          "date": DateTime.now().toLocal(),
-                        }).then(
-                          (value) => showDialog(
-                            context: context,
-                            builder: (context) => CustomDialog(
-                              title: LocaleKeys.sent.tr(),
-                              description1:
-                                  'تم إرسال رسالتك بنجاح وسيتم التواصل معك بكل سرور',
-                            ),
-                          ).then((value) =>
-                              navigateTo(context, const NewHomeScreen())),
-                        );
-                      },
-                      child: const Text(
-                        'إرســــال',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22,
-                            color: Colors.white),
-                      ),
-                    ),
+                  CustomButton(
+                    onTap: () {
+                      final firestore = FirebaseFirestore.instance;
+                      firestore.collection(Strings.mailCollection).add({
+                        Strings.mailSender: senderController.text,
+                        Strings.mailContent: messageController.text,
+                        Strings.mailSenderPhone: phoneController.text,
+                        Strings.mailTime: DateTime.now().toLocal(),
+                      }).then(
+                        (value) =>
+                            Functions.showToastMsg(title: LocaleKeys.sent.tr())
+                                .then((value) =>
+                                    navigateTo(context, const NewHomeScreen())),
+                      );
+                    },
+                    title: LocaleKeys.submit.tr(),
                   ),
                 ],
               ),

@@ -17,11 +17,12 @@ class ArrowBox extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Theme.of(context).appBarTheme.backgroundColor,
+          color: Theme.of(context).appBarTheme.titleTextStyle?.color,
         ),
         height: size.height * 0.05,
         width: size.width * 0.11,
-        child: Icon(icon, size: 30, color: Theme.of(context).primaryColor),
+        child: Icon(icon,
+            size: 30, color: Theme.of(context).scaffoldBackgroundColor),
       ),
     );
   }

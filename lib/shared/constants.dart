@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../Styles/CustomColors.dart';
 
 class Constants {
-
   /// constants app Border Radius
   static BorderRadius primaryBorderRadius = BorderRadius.circular(10.0);
   static BorderRadius primaryBorderRadiusBottom = const BorderRadius.only(
@@ -25,6 +24,4 @@ class Constants {
     color: CustomColors.primaryGreyColor,
     borderRadius: primaryBorderRadiusBottom,
   );
-
-
 }
