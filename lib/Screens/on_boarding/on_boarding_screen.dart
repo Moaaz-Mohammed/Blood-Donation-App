@@ -1,15 +1,14 @@
 import 'package:blood_donation/Screens/on_boarding/choose_language.dart';
 import 'package:blood_donation/Screens/on_boarding/continue_button.dart';
+import 'package:blood_donation/Screens/on_boarding/on_boarding_card.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../Styles/CustomColors.dart';
-import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../services/cache_shared_preferences.dart';
 import '../../shared/Functions.dart';
 import '../../shared/Images.dart';
-import '../../shared/constants.dart';
 import '../../translations/locale_keys.g.dart';
 import 'boarding_model.dart';
 
@@ -56,7 +55,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
@@ -88,10 +86,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 }
               },
               itemBuilder: (context, index) {
-                return buildBoardingItem(
+                return OnBoardingCard(
                   model: boarding[index],
-                  height: height,
-                  width: width * 0.7,
                 );
               },
               itemCount: boarding.length,
@@ -154,38 +150,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ),
             ),
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildBoardingItem({
-    required BoardingModel model,
-    required height,
-    required width,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: height * 0.31,
-            width: double.infinity,
-            child: ClipRRect(
-              borderRadius: Constants.primaryBorderRadius,
-              child: Image(
-                image: AssetImage(model.image),
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
-          const CustomSizedBoxHeight(),
-          const CustomSizedBoxHeight(),
-          Text(model.title, style: Theme.of(context).textTheme.headline5),
-          const CustomSizedBoxHeight(),
-          Text(model.body, style: Theme.of(context).textTheme.headline2),
         ],
       ),
     );
