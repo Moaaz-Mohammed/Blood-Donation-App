@@ -16,7 +16,7 @@ class EditProfileScreen extends StatefulWidget {
     Key? key,
     required this.userData,
   }) : super(key: key);
-  final userData;
+  final dynamic userData;
 
   @override
   State<EditProfileScreen> createState() => _EditProfileScreenState();
@@ -46,7 +46,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   }
 
   final Store _store = Store();
-  var _image;
+  dynamic _image;
 
   @override
   Widget build(BuildContext context) {

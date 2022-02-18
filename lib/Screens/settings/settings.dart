@@ -16,7 +16,7 @@ class SettingsScreen extends StatelessWidget {
     Key? key,
     required this.userData,
   }) : super(key: key);
-  final userData;
+  final dynamic userData;
 
   @override
   Widget build(BuildContext context) {

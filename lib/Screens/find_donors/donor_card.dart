@@ -39,7 +39,7 @@ class DonorCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.location_on,
                       size: 30,
                       color: CustomColors.primaryRedColor,
@@ -55,7 +55,7 @@ class DonorCard extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.bloodtype,
                       size: 30,
                       color: CustomColors.primaryRedColor,
@@ -71,8 +71,8 @@ class DonorCard extends StatelessWidget {
                 ),
               ],
             ),
-            CustomSizedBoxHeight(),
-            CustomSizedBoxHeight(),
+            const CustomSizedBoxHeight(),
+            const CustomSizedBoxHeight(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -84,24 +84,24 @@ class DonorCard extends StatelessWidget {
                   ),
                   onPressed: () async {
                     await launch(
-                        'https://wa.me/+2${donorPhone}?text= السلام عليكم ورحمة الله وبركاته');
+                        'https://wa.me/+2$donorPhone?text= السلام عليكم ورحمة الله وبركاته');
                   },
                 ),
                 FloatingActionButton(
                   elevation: 1,
-                  child: Icon(
+                  child: const Icon(
                     Icons.phone,
                     size: 30,
                     color: CustomColors.primaryDarkColor,
                   ),
                   onPressed: () async {
-                    await launch('tel:${donorPhone}');
+                    await launch('tel:$donorPhone');
                   },
                 ),
               ],
             ),
-            CustomSizedBoxHeight(),
-            CustomSizedBoxHeight(),
+            const CustomSizedBoxHeight(),
+            const CustomSizedBoxHeight(),
           ],
         ),
       ),

@@ -7,14 +7,14 @@ navigateTo(BuildContext context, Widget widget) {
 }
 
 class CustomDialog extends StatelessWidget {
-  final String? title, description1, description2, buttonText;
-
   CustomDialog({
+    Key? key,
     this.title,
     this.buttonText,
     this.description1,
     this.description2,
-  });
+  }) : super(key: key);
+  final String? title, description1, description2, buttonText;
   @override
   Widget build(BuildContext context) {
     return Dialog(

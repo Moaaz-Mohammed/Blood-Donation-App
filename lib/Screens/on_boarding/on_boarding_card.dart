@@ -9,7 +9,7 @@ class OnBoardingCard extends StatelessWidget {
     Key? key,
     BoardingModel? this.model,
   }) : super(key: key);
-  final model;
+  final dynamic model;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;

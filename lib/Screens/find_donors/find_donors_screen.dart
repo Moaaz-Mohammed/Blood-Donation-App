@@ -110,11 +110,11 @@ class _FindDonorsScreenState extends State<FindDonorsScreen> {
               const CustomSizedBoxHeight(),
               _snapshotResultsList != null && _searchResultList.isNotEmpty
                   ? SingleChildScrollView(
-                      physics: ScrollPhysics(),
+                      physics: const ScrollPhysics(),
                       child: SizedBox(
                         height: height,
                         child: ListView.separated(
-                          physics: ScrollPhysics(),
+                          physics: const ScrollPhysics(),
                           itemBuilder: (context, index) {
                             var donorData = _searchResultList[index];
                             return DonorCard(

@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import '../../shared/constants.dart';
 import '../CustomColors.dart';
 
-ThemeData DarkTheme = ThemeData(
+ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: CustomColors.primaryDarkColor,
     primaryColor: CustomColors.primaryRedColor,
     appBarTheme: const AppBarTheme(

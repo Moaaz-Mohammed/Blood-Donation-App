@@ -20,7 +20,7 @@ class Patient extends StatefulWidget {
 }
 
 class _PatientState extends State<Patient> {
-  String? BloodType;
+  String? bloodType;
   var formKey = GlobalKey<FormState>();
 
   @override
@@ -132,7 +132,7 @@ class _PatientState extends State<Patient> {
                                 alignment: Alignment.center,
                                 iconSize: 30,
                                 iconEnabledColor: CustomColors.primaryDarkColor,
-                                value: BloodType,
+                                value: bloodType,
                                 hint: Text(
                                   LocaleKeys.choose_blood_type.tr(),
                                   style: const TextStyle(color: Colors.grey),
@@ -261,7 +261,7 @@ class _PatientState extends State<Patient> {
                                 ],
                                 onChanged: (value) {
                                   setState(() {
-                                    BloodType = value as String?;
+                                    bloodType = value as String?;
                                   });
                                 },
                               ),
@@ -337,7 +337,7 @@ class _PatientState extends State<Patient> {
                         Strings.patientPhone: phoneController.text,
                         Strings.patientAnotherPhone:
                             anotherphoneController.text,
-                        Strings.patientBloodType: BloodType.toString(),
+                        Strings.patientBloodType: bloodType.toString(),
                         Strings.patientAge: ageController.text,
                         Strings.patientAddress: hospitalController.text,
                         Strings.patientNeededBlood: bloodamountController.text,

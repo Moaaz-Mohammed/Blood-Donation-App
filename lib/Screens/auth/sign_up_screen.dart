@@ -1,4 +1,5 @@
 import 'package:blood_donation/UsableWidgets/custom_sized_box_height.dart';
+import 'package:blood_donation/UsableWidgets/custom_sized_box_width.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -36,14 +37,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController userEmailController = TextEditingController();
   TextEditingController userLocationController = TextEditingController();
   TextEditingController userPasswordController = TextEditingController();
-  TextEditingController userDayofBirthController = TextEditingController();
-  TextEditingController userMonthofBirthController = TextEditingController();
-  TextEditingController userYearofBirthController = TextEditingController();
-  TextEditingController userDayofLastDonationController =
-      TextEditingController();
-  TextEditingController userMonthofLastDonationController =
-      TextEditingController();
-  TextEditingController userYearofLastDonationController =
+  TextEditingController userBirthDateController = TextEditingController();
+  TextEditingController userLastDonationDateController =
       TextEditingController();
 
   @override
@@ -115,7 +110,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Container(
                   height: 80,
                   width: double.infinity,
-                  decoration: Constants.primaryBoxDecorationContainer,
+                  decoration: AppCubit.get(context).isDark
+                      ? const BoxDecoration(
+                          color: CustomColors.primaryDarkColor)
+                      : Constants.primaryBoxDecorationContainer,
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -234,10 +232,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 const CustomSizedBoxHeight(),
+                const Divider(
+                  thickness: 0.85,
+                ),
                 // Blood Types
                 Container(
                   height: 80,
-                  decoration: Constants.primaryBoxDecorationContainer,
+                  decoration: AppCubit.get(context).isDark
+                      ? const BoxDecoration(
+                          color: CustomColors.primaryDarkColor)
+                      : Constants.primaryBoxDecorationContainer,
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Row(
                     children: [
@@ -382,6 +386,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ],
                   ),
                 ),
+                const Divider(
+                  thickness: 0.85,
+                ),
                 const CustomSizedBoxHeight(),
                 // Phone
                 TextFormField(
@@ -399,7 +406,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Container(
                   height: 120,
                   width: double.infinity,
-                  decoration: Constants.primaryBoxDecorationContainer,
+                  decoration: AppCubit.get(context).isDark
+                      ? const BoxDecoration(
+                          color: CustomColors.primaryDarkColor)
+                      : Constants.primaryBoxDecorationContainer,
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -411,41 +421,31 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               color: CustomColors.primaryRedColor,
                             ),
                       ),
-                      const CustomSizedBoxHeight(),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: TextFormField(
-                              style: Theme.of(context).textTheme.headline2,
-                              controller: userDayofBirthController,
-                              keyboardType: TextInputType.number,
-                              decoration: InputDecoration(
-                                hintText: LocaleKeys.day.tr(),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: TextFormField(
-                              style: Theme.of(context).textTheme.headline2,
-                              controller: userMonthofBirthController,
-                              keyboardType: TextInputType.number,
-                              decoration: InputDecoration(
-                                hintText: LocaleKeys.month.tr(),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: TextFormField(
-                              style: Theme.of(context).textTheme.headline2,
-                              controller: userYearofBirthController,
-                              keyboardType: TextInputType.number,
-                              decoration: InputDecoration(
-                                hintText: LocaleKeys.year.tr(),
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
+                      const CustomSizedBoxWidth(),
+                      TextFormField(
+                        style: Theme.of(context).textTheme.headline2,
+                        controller: userBirthDateController,
+                        decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.date_range),
+                          hintStyle: Theme.of(context).textTheme.headline2,
+                          hintText: LocaleKeys.date_of_birth.tr(),
+                        ),
+                        onTap: () {
+                          showDatePicker(
+                                  context: context,
+                                  initialDate: DateTime.now(),
+                                  lastDate: DateTime(2050),
+                                  firstDate: DateTime(2000))
+                              .then((value) {
+                            userBirthDateController.text =
+                                DateFormat.yMd().format(value!);
+                          });
+                        },
+                        validator: (value) {
+                          value == null ? LocaleKeys.required.tr() : null;
+                          return null;
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -454,7 +454,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Container(
                   height: 120,
                   width: double.infinity,
-                  decoration: Constants.primaryBoxDecorationContainer,
+                  decoration: AppCubit.get(context).isDark
+                      ? const BoxDecoration(
+                          color: CustomColors.primaryDarkColor)
+                      : Constants.primaryBoxDecorationContainer,
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -467,42 +470,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ),
                       ),
                       const CustomSizedBoxHeight(),
-                      Center(
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: TextFormField(
-                                style: Theme.of(context).textTheme.headline2,
-                                controller: userDayofLastDonationController,
-                                keyboardType: TextInputType.number,
-                                decoration: InputDecoration(
-                                  hintText: LocaleKeys.day.tr(),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: TextFormField(
-                                style: Theme.of(context).textTheme.headline2,
-                                controller: userMonthofLastDonationController,
-                                keyboardType: TextInputType.number,
-                                decoration: InputDecoration(
-                                  hintText: LocaleKeys.month.tr(),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: TextFormField(
-                                style: Theme.of(context).textTheme.headline2,
-                                controller: userYearofLastDonationController,
-                                keyboardType: TextInputType.number,
-                                decoration: InputDecoration(
-                                  hintText: LocaleKeys.year.tr(),
-                                ),
-                              ),
-                            ),
-                          ],
+                      TextFormField(
+                        style: Theme.of(context).textTheme.headline2,
+                        controller: userLastDonationDateController,
+                        decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.date_range),
+                          hintStyle: Theme.of(context).textTheme.headline2,
+                          hintText: LocaleKeys.last_donation_date.tr(),
                         ),
-                      )
+                        onTap: () {
+                          showDatePicker(
+                                  context: context,
+                                  initialDate: DateTime.now(),
+                                  lastDate: DateTime(2050),
+                                  firstDate: DateTime(2000))
+                              .then((value) {
+                            userLastDonationDateController.text =
+                                DateFormat.yMd().format(value!);
+                          });
+                        },
+                        validator: (value) {
+                          value == null ? LocaleKeys.required.tr() : null;
+                          return null;
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -543,10 +534,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               userPhone: userPhoneController.text,
                               userEmail: userEmailController.text,
                               userAddress: userLocationController.text,
-                              userDateofBirth:
-                                  '${userDayofBirthController.text}/${userMonthofBirthController.text}/${userYearofBirthController.text}',
-                              userLastDonation:
-                                  '${userDayofLastDonationController.text}/${userMonthofLastDonationController.text}/${userYearofLastDonationController.text}',
+                              userDateofBirth: userBirthDateController.text,
+                              userLastDonation: userBirthDateController.text,
                               userBloodType: bloodType.toString(),
                               userStatus: Status.toString(),
                             ),

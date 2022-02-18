@@ -53,8 +53,8 @@ class MyApp extends StatelessWidget {
     this.isDark,
   }) : super(key: key);
 
-  final onBoarding;
-  final isDark;
+  final dynamic onBoarding;
+  final dynamic isDark;
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +78,8 @@ class MyApp extends StatelessWidget {
               home: MainSlashScreen(
                 onBoarding: onBoarding,
               ),
-              theme: LightTheme,
-              darkTheme: DarkTheme,
+              theme: lightTheme,
+              darkTheme: darkTheme,
               themeMode: AppCubit.get(context).isDark
                   ? ThemeMode.dark
                   : ThemeMode.light,
