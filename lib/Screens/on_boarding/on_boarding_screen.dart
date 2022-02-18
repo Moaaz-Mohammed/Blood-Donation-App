@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../Styles/CustomColors.dart';
-import '../../Styles/Images.dart';
 import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../services/cache_shared_preferences.dart';
 import '../../shared/Functions.dart';
+import '../../shared/Images.dart';
 import '../../shared/constants.dart';
 import '../../translations/locale_keys.g.dart';
 import 'boarding_model.dart';

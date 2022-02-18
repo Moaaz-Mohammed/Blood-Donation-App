@@ -1,11 +1,11 @@
-import 'package:blood_donation/Screens/patient_page.dart';
+import 'package:blood_donation/Screens/home/drawer/drawer_widgets/patient_page.dart';
+import 'package:blood_donation/shared/Functions.dart';
+import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../Styles/Strings.dart';
-import '../shared/Functions.dart';
-import '../translations/locale_keys.g.dart';
+import '../../../../shared/Strings.dart';
 
 class NeedDonation extends StatefulWidget {
   const NeedDonation({Key? key}) : super(key: key);

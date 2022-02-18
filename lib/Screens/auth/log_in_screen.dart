@@ -5,11 +5,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../Styles/CustomColors.dart';
-import '../../Styles/Images.dart';
 import '../../UsableWidgets/custom_button.dart';
 import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../services/auth.dart';
 import '../../shared/Functions.dart';
+import '../../shared/Images.dart';
 import '../../shared/constants.dart';
 
 class LogInScreen extends StatefulWidget {

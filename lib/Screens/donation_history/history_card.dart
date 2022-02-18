@@ -1,7 +1,11 @@
 import 'package:blood_donation/Styles/CustomColors.dart';
 import 'package:blood_donation/UsableWidgets/custom_sized_box_width.dart';
 import 'package:blood_donation/shared/constants.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../../services/store.dart';
+import '../../translations/locale_keys.g.dart';
 
 class HistoryCard extends StatelessWidget {
   const HistoryCard({
@@ -20,68 +24,88 @@ class HistoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5),
-      padding: Constants.primaryPadding,
-      decoration: BoxDecoration(
-        borderRadius: Constants.primaryBorderRadius,
-        color: CustomColors.primaryGreyColor.withOpacity(0.7),
-      ),
-      child: Row(
-        children: [
-          RotatedBox(
-            quarterTurns: -45,
-            child: Column(
+    return Dismissible(
+      onDismissed: (DismissDirection direction) {
+        if (direction == DismissDirection.horizontal) {
+          Store()
+              .DeleteProductFromCart(
+                  PatientName: name, title: LocaleKeys.deleted.tr())
+              .then((value) {
+            build(context);
+          });
+        } else {
+          Store()
+              .DeleteProductFromCart(
+                  PatientName: name, title: LocaleKeys.deleted.tr())
+              .then((value) {
+            build(context);
+          });
+        }
+      },
+      key: Key(name!),
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 5),
+        padding: Constants.primaryPadding,
+        decoration: BoxDecoration(
+          borderRadius: Constants.primaryBorderRadius,
+          color: CustomColors.primaryGreyColor.withOpacity(0.7),
+        ),
+        child: Row(
+          children: [
+            RotatedBox(
+              quarterTurns: -45,
+              child: Column(
+                children: [
+                  Text(
+                    date!,
+                    style: Theme.of(context).textTheme.headline1,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    time!,
+                    style: Theme.of(context).textTheme.headline1,
+                  ),
+                ],
+              ),
+            ),
+            const CustomSizedBoxWidth(),
+            const CustomSizedBoxWidth(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  date!,
-                  style: Theme.of(context).textTheme.headline1,
-                ),
-                const SizedBox(
-                  height: 10,
+                  name!,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline2
+                      ?.copyWith(color: CustomColors.primaryRedColor),
                 ),
                 Text(
-                  time!,
-                  style: Theme.of(context).textTheme.headline1,
+                  address!,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline1
+                      ?.copyWith(color: CustomColors.primaryRedColor),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                SizedBox(
+                  width: width * 0.7,
+                  child: Text(
+                    notes!,
+                    style: Theme.of(context).textTheme.headline1?.copyWith(
+                          color: CustomColors.primaryDarkColor.withOpacity(0.5),
+                        ),
+                  ),
                 ),
               ],
             ),
-          ),
-          const CustomSizedBoxWidth(),
-          const CustomSizedBoxWidth(),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                name!,
-                style: Theme.of(context)
-                    .textTheme
-                    .headline2
-                    ?.copyWith(color: CustomColors.primaryRedColor),
-              ),
-              Text(
-                address!,
-                style: Theme.of(context)
-                    .textTheme
-                    .headline1
-                    ?.copyWith(color: CustomColors.primaryRedColor),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              SizedBox(
-                width: width * 0.7,
-                child: Text(
-                  notes!,
-                  style: Theme.of(context).textTheme.headline1?.copyWith(
-                        color: CustomColors.primaryDarkColor.withOpacity(0.5),
-                      ),
-                ),
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

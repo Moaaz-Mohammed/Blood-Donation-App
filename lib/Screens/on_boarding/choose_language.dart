@@ -2,9 +2,9 @@ import 'package:blood_donation/Screens/auth/log_in_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../Styles/Images.dart';
 import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../shared/Functions.dart';
+import '../../shared/Images.dart';
 import '../../translations/locale_keys.g.dart';
 
 class ChooseLanguageScreen extends StatelessWidget {

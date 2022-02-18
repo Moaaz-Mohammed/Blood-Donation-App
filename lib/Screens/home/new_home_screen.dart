@@ -11,9 +11,9 @@ import 'package:flutter/scheduler.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../Styles/CustomColors.dart';
-import '../../Styles/Images.dart';
-import '../../Styles/Strings.dart';
 import '../../shared/Functions.dart';
+import '../../shared/Images.dart';
+import '../../shared/Strings.dart';
 import '../../translations/locale_keys.g.dart';
 import 'drawer/drawer.dart';
 

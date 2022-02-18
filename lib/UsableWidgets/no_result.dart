@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Styles/Images.dart';
+import '../shared/Images.dart';
 import '../shared/constants.dart';
 
 class WidgetNoResult extends StatelessWidget {

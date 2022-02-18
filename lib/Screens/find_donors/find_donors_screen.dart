@@ -1,4 +1,3 @@
-import 'package:blood_donation/Styles/Strings.dart';
 import 'package:blood_donation/UsableWidgets/custom_sized_box_height.dart';
 import 'package:blood_donation/UsableWidgets/loading.dart';
 import 'package:blood_donation/UsableWidgets/no_result.dart';
@@ -9,6 +8,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../model/user_model.dart';
+import '../../shared/Strings.dart';
 import 'donor_card.dart';
 
 class FindDonorsScreen extends StatefulWidget {

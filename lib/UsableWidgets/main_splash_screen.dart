@@ -5,11 +5,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-import 'Screens/auth/log_in_screen.dart';
-import 'Screens/home/new_home_screen.dart';
-import 'Screens/on_boarding/on_boarding_screen.dart';
-import 'Styles/CustomColors.dart';
-import 'Styles/Images.dart';
+import '../Screens/auth/log_in_screen.dart';
+import '../Screens/home/new_home_screen.dart';
+import '../Screens/on_boarding/on_boarding_screen.dart';
+import '../Styles/CustomColors.dart';
+import '../shared/Images.dart';
 
 class MainSlashScreen extends StatefulWidget {
   const MainSlashScreen({

@@ -105,5 +105,7 @@
   "donation_address": "Donation Address",
   "notes": "Notes",
   "pick_date": "Pick Date",
-  "pick_time": "Pick Time"
+  "pick_time": "Pick Time",
+  "edited_successfully": "Edited Successfully!",
+  "deleted": "Deleted Successfully!"
 }

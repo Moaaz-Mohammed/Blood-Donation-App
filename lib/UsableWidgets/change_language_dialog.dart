@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../Styles/CustomColors.dart';
-import '../Styles/Images.dart';
+import '../shared/Images.dart';
 import 'custom_sized_box_height.dart';
 import 'custom_sized_box_width.dart';
 

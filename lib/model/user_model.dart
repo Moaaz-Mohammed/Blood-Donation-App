@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../Styles/Strings.dart';
+import '../shared/Strings.dart';
 
 class UserModel {
   String? userId;

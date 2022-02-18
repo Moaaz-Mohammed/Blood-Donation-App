@@ -3,7 +3,7 @@ import 'package:blood_donation/shared/Functions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Styles/CustomColors.dart';
-import '../../../Styles/Strings.dart';
+import '../../../shared/Strings.dart';
 
 class DrawerHead extends StatelessWidget {
   const DrawerHead({

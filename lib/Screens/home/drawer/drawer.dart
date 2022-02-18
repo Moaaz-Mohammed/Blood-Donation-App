@@ -1,7 +1,6 @@
-import 'package:blood_donation/Screens/blood_donation_benefits.dart';
-import 'package:blood_donation/Screens/contact_us.dart';
 import 'package:blood_donation/Screens/donation_history/history.dart';
-import 'package:blood_donation/Screens/need_donation.dart';
+import 'package:blood_donation/Screens/home/drawer/drawer_widgets/blood_donation_benefits.dart';
+import 'package:blood_donation/Screens/home/drawer/drawer_widgets/contact_us.dart';
 import 'package:blood_donation/Screens/settings/settings.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -13,6 +12,7 @@ import '../../../shared/Functions.dart';
 import '../new_home_screen.dart';
 import 'drawer_header.dart';
 import 'drawer_list_card.dart';
+import 'drawer_widgets/need_donation.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({

@@ -2,11 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Styles/CustomColors.dart';
-import '../../../Styles/Strings.dart';
 import '../../../UsableWidgets/custom_button.dart';
 import '../../../UsableWidgets/custom_sized_box_height.dart';
 import '../../../services/store.dart';
 import '../../../shared/Functions.dart';
+import '../../../shared/Strings.dart';
 import '../../../shared/constants.dart';
 import '../../../translations/locale_keys.g.dart';
 import '../../home/new_home_screen.dart';

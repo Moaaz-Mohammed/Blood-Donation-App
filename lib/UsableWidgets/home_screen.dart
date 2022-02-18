@@ -6,14 +6,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-import '../../Styles/Images.dart';
-import '../../Styles/Strings.dart';
 import '../../UsableWidgets/change_language_dialog.dart';
 import '../../UsableWidgets/loading.dart';
 import '../../translations/locale_keys.g.dart';
 import '../Screens/home/drawer/drawer.dart';
 import '../Screens/home/need_donation_body.dart';
 import '../Screens/home/next_donation_date.dart';
+import '../shared/Images.dart';
+import '../shared/Strings.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

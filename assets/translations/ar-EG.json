@@ -105,5 +105,7 @@
   "donation_address": "مكان التبرع",
   "notes": "ملاحظات",
   "pick_date": "أختر التاريخ",
-  "pick_time": "أختر الوقت"
+  "pick_time": "أختر الوقت",
+  "edited_successfully": "تم التعديل بنجاح!",
+  "deleted": "تم الحذف بنجاح!"
 }

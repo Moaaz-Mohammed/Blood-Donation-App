@@ -1,4 +1,4 @@
-import 'package:blood_donation/main_splash_screen.dart';
+import 'package:blood_donation/UsableWidgets/main_splash_screen.dart';
 import 'package:blood_donation/services/cache_shared_preferences.dart';
 import 'package:blood_donation/state_management/bloc/Cubit.dart';
 import 'package:blood_donation/state_management/bloc/States.dart';
@@ -29,7 +29,7 @@ Future<void> main() async {
 
   bool onBoarding = CacheSharedPreferences.getData(key: 'onBoarding') ?? false;
   bool isDark =
-      CacheSharedPreferences.getData(key: 'isDark') == null ? false : true;
+      CacheSharedPreferences.getData(key: 'isDark') == null ? true : false;
   runApp(
     EasyLocalization(
         child: MyApp(

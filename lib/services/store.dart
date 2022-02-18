@@ -4,10 +4,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../Screens/home/new_home_screen.dart';
-import '../Styles/Strings.dart';
 import '../model/user_donations_model.dart';
 import '../model/user_model.dart';
 import '../shared/Functions.dart';
+import '../shared/Strings.dart';
 
 class Store {
   User? user = FirebaseAuth.instance.currentUser;
@@ -80,9 +80,24 @@ class Store {
           screen: const NewHomeScreen(),
         );
         Functions.showToastMsg(
-          title: 'تم تعديل بياناتك بنجاح',
+          title: LocaleKeys.edited_successfully.tr(),
         );
       },
     );
+  }
+
+  Future DeleteProductFromCart({
+    required title,
+    required PatientName,
+  }) async {
+    FirebaseFirestore.instance
+        .collection(Strings.usersCollection)
+        .doc(user!.uid)
+        .collection(Strings.userDonationsHistoryCollection)
+        .doc(PatientName)
+        .delete()
+        .then((value) {
+      Functions.showToastMsg(title: title);
+    });
   }
 }

@@ -7,8 +7,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../Styles/Strings.dart';
 import '../../UsableWidgets/loading.dart';
+import '../../shared/Strings.dart';
 
 class DonationsHistory extends StatelessWidget {
   const DonationsHistory({Key? key}) : super(key: key);
