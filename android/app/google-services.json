@@ -1,33 +1,70 @@
 {
   "project_info": {
-    "project_number": "332559488400",
-    "project_id": "blood-donation-center-870cb",
-    "storage_bucket": "blood-donation-center-870cb.appspot.com"
+    "project_number": "235901324007",
+    "project_id": "blood-donation-02",
+    "storage_bucket": "blood-donation-02.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:332559488400:android:80a6a4806b961952e38f15",
+        "mobilesdk_app_id": "1:235901324007:android:9924c862608b1303c2b042",
         "android_client_info": {
           "package_name": "com.moaaz.blood_donation"
         }
       },
       "oauth_client": [
         {
-          "client_id": "332559488400-m0kps1k0cn9e2i44j546u4jgn7ookbau.apps.googleusercontent.com",
+          "client_id": "235901324007-r5v927mhancctpr1fdmsfo6fgve33h1e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moaaz.blood_donation",
+            "certificate_hash": "3189452a181c49f8e122d22d5d37ec3876169b7c"
+          }
+        },
+        {
+          "client_id": "235901324007-85jql3alu145lktec0kcebtsj2v99s9h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDhsjmIhRTCTqqD0m3qBqW7IiMEfQSDuHI"
+          "current_key": "AIzaSyCE0ngNDH62LRSw7355efLcVXh7daR4PTY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "332559488400-m0kps1k0cn9e2i44j546u4jgn7ookbau.apps.googleusercontent.com",
+              "client_id": "235901324007-85jql3alu145lktec0kcebtsj2v99s9h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235901324007:android:97b370d1c895ed22c2b042",
+        "android_client_info": {
+          "package_name": "com.moaaz.blood_donation_center.blood_donation_ad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235901324007-85jql3alu145lktec0kcebtsj2v99s9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE0ngNDH62LRSw7355efLcVXh7daR4PTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235901324007-85jql3alu145lktec0kcebtsj2v99s9h.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

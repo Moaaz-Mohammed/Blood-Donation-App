@@ -29,7 +29,7 @@ class _DonationBenefitsScreenState extends State<DonationBenefitsScreen> {
                     '1- ${LocaleKeys.importance_of_donating.tr()}',
                     style: Theme.of(context)
                         .textTheme
-                        .headline4
+                        .headline3
                         ?.copyWith(color: CustomColors.primaryRedColor),
                   ),
                   children: [
@@ -79,7 +79,7 @@ class _DonationBenefitsScreenState extends State<DonationBenefitsScreen> {
                     '2- ${LocaleKeys.how_to_donate.tr()}',
                     style: Theme.of(context)
                         .textTheme
-                        .headline4
+                        .headline3
                         ?.copyWith(color: CustomColors.primaryRedColor),
                   ),
                   children: [
@@ -98,7 +98,7 @@ class _DonationBenefitsScreenState extends State<DonationBenefitsScreen> {
                     '3- ${LocaleKeys.why_not_donating.tr()}',
                     style: Theme.of(context)
                         .textTheme
-                        .headline4
+                        .headline3
                         ?.copyWith(color: CustomColors.primaryRedColor),
                   ),
                   children: [
@@ -113,10 +113,10 @@ class _DonationBenefitsScreenState extends State<DonationBenefitsScreen> {
                 ),
                 ExpansionTile(
                   title: Text(
-                    '4- ${LocaleKeys.when_redonate.tr()}',
+                    '3- ${LocaleKeys.when_redonate.tr()}',
                     style: Theme.of(context)
                         .textTheme
-                        .headline4
+                        .headline3
                         ?.copyWith(color: CustomColors.primaryRedColor),
                   ),
                   expandedAlignment: Alignment.centerRight,
@@ -136,7 +136,7 @@ class _DonationBenefitsScreenState extends State<DonationBenefitsScreen> {
                     '5- ${LocaleKeys.amount_of_blood_in_single_donate.tr()}',
                     style: Theme.of(context)
                         .textTheme
-                        .headline4
+                        .headline3
                         ?.copyWith(color: CustomColors.primaryRedColor),
                   ),
                   children: [
