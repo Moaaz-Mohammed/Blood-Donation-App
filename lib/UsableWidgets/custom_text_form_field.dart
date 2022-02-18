@@ -14,7 +14,7 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.icon,
     this.maxLine = 1,
-  });
+  }) : super(key: key);
 
   final hint;
   final controller;

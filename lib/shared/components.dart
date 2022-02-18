@@ -9,7 +9,7 @@ navigateTo(BuildContext context, Widget widget) {
 class CustomDialog extends StatelessWidget {
   final String? title, description1, description2, buttonText;
 
-  const CustomDialog({
+  CustomDialog({
     this.title,
     this.buttonText,
     this.description1,

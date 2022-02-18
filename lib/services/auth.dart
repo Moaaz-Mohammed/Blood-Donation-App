@@ -55,14 +55,14 @@ class Auth {
         (value) {
           Functions.navigatorPushAndRemove(
             context: context,
-            screen: NewHomeScreen(),
+            screen: const NewHomeScreen(),
           );
           Functions.showToastMsg(
-            title: 'تم تسجيل الدخول',
+            title: LocaleKeys.logged_in.tr(),
           );
         },
       );
-      return null;
+      return;
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
       Functions.showToastMsg(
@@ -82,7 +82,7 @@ class Auth {
       return await _auth.signOut().then((value) {
         Functions.navigatorPushAndRemove(
           context: context,
-          screen: LogInScreen(),
+          screen: const LogInScreen(),
         );
         Functions.showToastMsg(
           title: LocaleKeys.logged_out.tr(),

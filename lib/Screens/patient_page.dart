@@ -20,7 +20,7 @@ class Patient extends StatefulWidget {
 }
 
 class _PatientState extends State<Patient> {
-  var BloodType;
+  String? BloodType;
   var formKey = GlobalKey<FormState>();
 
   @override
@@ -125,7 +125,7 @@ class _PatientState extends State<Patient> {
                                       color: CustomColors.primaryRedColor,
                                     ),
                               ),
-                              CustomSizedBoxWidth(),
+                              const CustomSizedBoxWidth(),
                               DropdownButton(
                                 dropdownColor:
                                     Theme.of(context).scaffoldBackgroundColor,
@@ -261,7 +261,7 @@ class _PatientState extends State<Patient> {
                                 ],
                                 onChanged: (value) {
                                   setState(() {
-                                    BloodType = value;
+                                    BloodType = value as String?;
                                   });
                                 },
                               ),

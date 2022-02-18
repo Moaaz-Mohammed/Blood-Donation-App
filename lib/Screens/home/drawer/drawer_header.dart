@@ -30,7 +30,7 @@ class DrawerHead extends StatelessWidget {
               size: 75,
               color: CustomColors.primaryRedColor,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(

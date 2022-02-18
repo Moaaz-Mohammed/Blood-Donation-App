@@ -15,8 +15,7 @@ class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({
     Key? key,
     required this.userData,
-  });
-
+  }) : super(key: key);
   final userData;
 
   @override
@@ -28,7 +27,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   TextEditingController userAgeController = TextEditingController();
   TextEditingController userPhoneController = TextEditingController();
   TextEditingController userLocationController = TextEditingController();
-  var userImageUrl;
+  String? userImageUrl;
 
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
 
@@ -65,7 +64,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           key: _globalKey,
           child: Column(
             children: [
-              CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
               Container(
                 width: width * 0.30,
                 height: width * 0.30,
@@ -76,7 +75,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     width: 2,
                   ),
                 ),
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   backgroundColor: CustomColors.primaryWhiteColor,
                   radius: double.infinity,
                   child: Icon(
@@ -86,15 +85,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   ),
                 ),
               ),
-              CustomSizedBoxHeight(),
-              CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: LocaleKeys.name.tr(),
                 ),
                 controller: userNameController,
               ),
-              CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: LocaleKeys.date_of_birth.tr(),
@@ -102,7 +101,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 controller: userAgeController,
                 keyboardType: TextInputType.number,
               ),
-              CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: LocaleKeys.phone.tr(),
@@ -110,15 +109,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 controller: userPhoneController,
                 keyboardType: TextInputType.number,
               ),
-              CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: LocaleKeys.address.tr(),
                 ),
                 controller: userLocationController,
               ),
-              CustomSizedBoxHeight(),
-              CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
               CustomButton(
                 title: LocaleKeys.save_changes.tr(),
                 onTap: () async {

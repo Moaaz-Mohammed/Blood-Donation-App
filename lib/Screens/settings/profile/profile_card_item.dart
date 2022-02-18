@@ -9,7 +9,7 @@ class ProfileCardItem extends StatelessWidget {
     Key? key,
     required this.title,
     required this.subTitle,
-  });
+  }) : super(key: key);
   final title;
   final subTitle;
 
@@ -24,7 +24,7 @@ class ProfileCardItem extends StatelessWidget {
                   .textTheme
                   .headline2
                   ?.copyWith(color: CustomColors.primaryRedColor)),
-          CustomSizedBoxWidth(),
+          const CustomSizedBoxWidth(),
           Expanded(
             child: Center(
               child:

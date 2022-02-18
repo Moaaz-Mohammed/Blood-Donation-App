@@ -12,16 +12,16 @@ class HistoryCard extends StatelessWidget {
     required this.address,
     required this.notes,
   }) : super(key: key);
-  final name;
-  final date;
-  final time;
-  final address;
-  final notes;
+  final String? name;
+  final String? date;
+  final String? time;
+  final String? address;
+  final String? notes;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       padding: Constants.primaryPadding,
       decoration: BoxDecoration(
         borderRadius: Constants.primaryBorderRadius,
@@ -34,34 +34,34 @@ class HistoryCard extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  date,
+                  date!,
                   style: Theme.of(context).textTheme.headline1,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 Text(
-                  time,
+                  time!,
                   style: Theme.of(context).textTheme.headline1,
                 ),
               ],
             ),
           ),
-          CustomSizedBoxWidth(),
-          CustomSizedBoxWidth(),
+          const CustomSizedBoxWidth(),
+          const CustomSizedBoxWidth(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                name,
+                name!,
                 style: Theme.of(context)
                     .textTheme
                     .headline2
                     ?.copyWith(color: CustomColors.primaryRedColor),
               ),
               Text(
-                address,
+                address!,
                 style: Theme.of(context)
                     .textTheme
                     .headline1
@@ -70,10 +70,10 @@ class HistoryCard extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Container(
+              SizedBox(
                 width: width * 0.7,
                 child: Text(
-                  notes,
+                  notes!,
                   style: Theme.of(context).textTheme.headline1?.copyWith(
                         color: CustomColors.primaryDarkColor.withOpacity(0.5),
                       ),

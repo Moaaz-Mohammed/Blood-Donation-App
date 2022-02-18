@@ -28,7 +28,7 @@ class SettingsScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -78,10 +78,10 @@ class SettingsScreen extends StatelessWidget {
                     CircleAvatar(
                       backgroundColor: Theme.of(context).primaryColor,
                       radius: size.width * 0.06,
-                      child: Icon(Icons.language,
+                      child: const Icon(Icons.language,
                           color: CustomColors.primaryWhiteColor),
                     ),
-                    CustomSizedBoxWidth(),
+                    const CustomSizedBoxWidth(),
                     InkWell(
                       onTap: () {
                         change_language_dialog(context);
@@ -105,10 +105,10 @@ class SettingsScreen extends StatelessWidget {
                         CircleAvatar(
                           radius: size.width * 0.06,
                           backgroundColor: Theme.of(context).primaryColor,
-                          child: Icon(Icons.dark_mode,
+                          child: const Icon(Icons.dark_mode,
                               color: CustomColors.primaryWhiteColor),
                         ),
-                        CustomSizedBoxWidth(),
+                        const CustomSizedBoxWidth(),
                         Text(
                           LocaleKeys.change_app_mode.tr(),
                           style: Theme.of(context).textTheme.headline4,
@@ -132,10 +132,10 @@ class SettingsScreen extends StatelessWidget {
                     CircleAvatar(
                       radius: size.width * 0.06,
                       backgroundColor: Theme.of(context).primaryColor,
-                      child: Icon(Icons.privacy_tip,
+                      child: const Icon(Icons.privacy_tip,
                           color: CustomColors.primaryWhiteColor),
                     ),
-                    CustomSizedBoxWidth(),
+                    const CustomSizedBoxWidth(),
                     Text(
                       LocaleKeys.privacy_policy.tr(),
                       style: Theme.of(context).textTheme.headline4,

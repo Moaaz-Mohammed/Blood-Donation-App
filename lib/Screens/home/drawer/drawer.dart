@@ -29,7 +29,7 @@ class CustomDrawer extends StatelessWidget {
         decoration: BoxDecoration(
           color: Theme.of(context).scaffoldBackgroundColor,
           borderRadius: BorderRadius.circular(10),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
                 color: CustomColors.primaryRedColor,
                 blurRadius: 10.0,
@@ -46,7 +46,7 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Functions.navigatorPush(
                   context: context,
-                  screen: NewHomeScreen(),
+                  screen: const NewHomeScreen(),
                 );
               },
             ),
@@ -57,7 +57,7 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Functions.navigatorPush(
                   context: context,
-                  screen: NeedDonation(),
+                  screen: const NeedDonation(),
                 );
               },
             ),
@@ -68,7 +68,7 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Functions.navigatorPush(
                   context: context,
-                  screen: DonationsHistory(),
+                  screen: const DonationsHistory(),
                 );
               },
             ),
@@ -79,7 +79,7 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Functions.navigatorPush(
                   context: context,
-                  screen: DonationBenefitsScreen(),
+                  screen: const DonationBenefitsScreen(),
                 );
               },
             ),
@@ -90,7 +90,7 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Functions.navigatorPush(
                   context: context,
-                  screen: Mail(),
+                  screen: const Mail(),
                 );
               },
             ),

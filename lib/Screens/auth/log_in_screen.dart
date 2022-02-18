@@ -48,9 +48,9 @@ class _LogInScreenState extends State<LogInScreen> {
                       ),
                     ),
                   ),
-                  CustomSizedBoxHeight(),
-                  CustomSizedBoxHeight(),
-                  CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
                   TextFormField(
                     style: Theme.of(context).textTheme.headline3,
                     decoration: InputDecoration(
@@ -60,7 +60,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                   ),
-                  CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
                   TextFormField(
                     style: Theme.of(context).textTheme.displayMedium,
                     decoration: InputDecoration(
@@ -82,11 +82,11 @@ class _LogInScreenState extends State<LogInScreen> {
                     keyboardType: TextInputType.text,
                     obscureText: AppCubit.get(context).isVisible,
                   ),
-                  CustomSizedBoxHeight(),
-                  CustomSizedBoxHeight(),
-                  CustomSizedBoxHeight(),
-                  CustomSizedBoxHeight(),
-                  CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
                   CustomButton(
                     title: LocaleKeys.login.tr(),
                     onTap: () async {
@@ -99,7 +99,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       }
                     },
                   ),
-                  CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
                   CustomButton(
                     title: LocaleKeys.register.tr(),
                     onTap: () {

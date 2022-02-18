@@ -3,11 +3,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../Styles/Strings.dart';
 
 class UserDonationsModel {
-  var donationAddress;
-  var donationTime;
-  var donationDate;
-  var PatientName;
-  var donationNotes;
+  String? donationAddress;
+  String? donationTime;
+  String? donationDate;
+  String? PatientName;
+  String? donationNotes;
 
   UserDonationsModel({
     required this.donationAddress,

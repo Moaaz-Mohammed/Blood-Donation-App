@@ -15,14 +15,13 @@ class ProfileBodyWidget extends StatelessWidget {
   const ProfileBodyWidget({
     Key? key,
     required this.userData,
-  });
+  }) : super(key: key);
 
   final userData;
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return userData != null
         ? SafeArea(
             child: Container(
@@ -34,7 +33,7 @@ class ProfileBodyWidget extends StatelessWidget {
                     height: width * 0.25,
                     child: Stack(
                       children: [
-                        Center(
+                        const Center(
                           child: CircleAvatar(
                             backgroundColor: CustomColors.primaryWhiteColor,
                             radius: double.infinity,
@@ -63,9 +62,9 @@ class ProfileBodyWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                  CustomSizedBoxHeight(),
-                  CustomSizedBoxHeight(),
-                  CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
                   ProfileCardItem(
                     title: LocaleKeys.name.tr(),
                     subTitle: userData[Strings.userName],

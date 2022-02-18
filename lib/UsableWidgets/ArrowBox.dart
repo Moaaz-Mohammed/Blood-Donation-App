@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../Styles/CustomColors.dart';
 
 class ArrowBox extends StatelessWidget {
   ArrowBox({
@@ -7,7 +6,7 @@ class ArrowBox extends StatelessWidget {
     required this.onPressed,
     required this.icon,
   }) : super(key: key);
-  final onPressed;
+  final Function() onPressed;
   IconData icon = Icons.chevron_right;
 
   @override
@@ -18,12 +17,11 @@ class ArrowBox extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-           color: Theme.of(context).appBarTheme.backgroundColor,
+          color: Theme.of(context).appBarTheme.backgroundColor,
         ),
         height: size.height * 0.05,
         width: size.width * 0.11,
-        child: Icon(icon,
-            size: 30, color: Theme.of(context).primaryColor),
+        child: Icon(icon, size: 30, color: Theme.of(context).primaryColor),
       ),
     );
   }

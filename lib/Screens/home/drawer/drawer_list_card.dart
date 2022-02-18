@@ -8,16 +8,16 @@ class DrawerListCard extends StatelessWidget {
     required this.title,
     required this.onTap,
   }) : super(key: key);
-  final icon;
-  final title;
-  final onTap;
+  final IconData? icon;
+  final String? title;
+  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         decoration: BoxDecoration(
           border: Border.symmetric(
             vertical: BorderSide(
@@ -35,7 +35,7 @@ class DrawerListCard extends StatelessWidget {
               width: width * 0.1,
             ),
             Text(
-              title,
+              title!,
               style: Theme.of(context).textTheme.headline3,
             )
           ],

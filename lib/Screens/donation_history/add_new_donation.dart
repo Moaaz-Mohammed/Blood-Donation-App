@@ -9,7 +9,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class AddNewDonation extends StatefulWidget {
-  AddNewDonation({Key? key}) : super(key: key);
+  const AddNewDonation({Key? key}) : super(key: key);
 
   @override
   State<AddNewDonation> createState() => _AddNewDonationState();
@@ -38,20 +38,21 @@ class _AddNewDonationState extends State<AddNewDonation> {
                 style: Theme.of(context).textTheme.headline2,
                 controller: patientNameController,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: const Icon(Icons.person),
                   hintStyle: Theme.of(context).textTheme.headline2,
                   hintText: LocaleKeys.patient_name.tr(),
                 ),
                 validator: (value) {
                   value == null ? LocaleKeys.required.tr() : null;
+                  return null;
                 },
               ),
-              CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
               TextFormField(
                 style: Theme.of(context).textTheme.headline2,
                 controller: donationTimeController,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.watch_later),
+                  prefixIcon: const Icon(Icons.watch_later),
                   hintStyle: Theme.of(context).textTheme.headline2,
                   hintText: LocaleKeys.donation_time.tr(),
                 ),
@@ -66,14 +67,15 @@ class _AddNewDonationState extends State<AddNewDonation> {
                 },
                 validator: (value) {
                   value == null ? LocaleKeys.required.tr() : null;
+                  return null;
                 },
               ),
-              CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
               TextFormField(
                 style: Theme.of(context).textTheme.headline2,
                 controller: donationDateController,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.date_range),
+                  prefixIcon: const Icon(Icons.date_range),
                   hintStyle: Theme.of(context).textTheme.headline2,
                   hintText: LocaleKeys.donation_date.tr(),
                 ),
@@ -90,36 +92,39 @@ class _AddNewDonationState extends State<AddNewDonation> {
                 },
                 validator: (value) {
                   value == null ? LocaleKeys.required.tr() : null;
+                  return null;
                 },
               ),
-              CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
               TextFormField(
                 style: Theme.of(context).textTheme.headline2,
                 controller: donationAddressController,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.location_on),
+                  prefixIcon: const Icon(Icons.location_on),
                   hintStyle: Theme.of(context).textTheme.headline2,
                   hintText: LocaleKeys.donation_address.tr(),
                 ),
                 validator: (value) {
                   value == null ? LocaleKeys.required.tr() : null;
+                  return null;
                 },
               ),
-              CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
               TextFormField(
                 style: Theme.of(context).textTheme.headline2,
                 controller: donationNotesController,
                 maxLines: 3,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.notes),
+                  prefixIcon: const Icon(Icons.notes),
                   hintStyle: Theme.of(context).textTheme.headline2,
                   hintText: LocaleKeys.notes.tr(),
                 ),
                 validator: (value) {
                   value == null ? LocaleKeys.required.tr() : null;
+                  return null;
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               CustomButton(

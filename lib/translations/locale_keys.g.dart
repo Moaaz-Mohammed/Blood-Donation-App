@@ -1,6 +1,8 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class  LocaleKeys {
+// ignore_for_file: constant_identifier_names
+
+abstract class LocaleKeys {
   static const app_name = 'app_name';
   static const home = 'home';
   static const settings = 'settings';
@@ -73,7 +75,8 @@ abstract class  LocaleKeys {
   static const reasons_prevent_donating = 'reasons_prevent_donating';
   static const when_redonate = 'when_redonate';
   static const when_can_redonate = 'when_can_redonate';
-  static const amount_of_blood_in_single_donate = 'amount_of_blood_in_single_donate';
+  static const amount_of_blood_in_single_donate =
+      'amount_of_blood_in_single_donate';
   static const amount_of_blood = 'amount_of_blood';
   static const find_hospital = 'find_hospital';
   static const sub_find_hospital = 'sub_find_hospital';
@@ -108,5 +111,4 @@ abstract class  LocaleKeys {
   static const notes = 'notes';
   static const pick_date = 'pick_date';
   static const pick_time = 'pick_time';
-
 }

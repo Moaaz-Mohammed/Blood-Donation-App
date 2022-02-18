@@ -28,11 +28,11 @@ class _FindDonorsScreenState extends State<FindDonorsScreen> {
                   hintText: LocaleKeys.search_for_donor.tr(),
                   suffixIcon: IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.search),
+                    icon: const Icon(Icons.search),
                   ),
                 ),
               ),
-              CustomSizedBoxHeight(),
+              const CustomSizedBoxHeight(),
             ],
           ),
         ),

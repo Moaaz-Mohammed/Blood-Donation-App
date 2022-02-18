@@ -11,7 +11,7 @@ class CustomDialogDoYouWant extends StatelessWidget {
     Key? key,
     required this.onTapYes,
     required this.title,
-  });
+  }) : super(key: key);
 
   final onTapYes;
   final title;
@@ -39,7 +39,7 @@ class CustomDialogDoYouWant extends StatelessWidget {
               borderColor: Colors.green,
             ),
           ),
-          CustomSizedBoxWidth(),
+          const CustomSizedBoxWidth(),
           Expanded(
             child: CustomButton(
               height: 40.0,

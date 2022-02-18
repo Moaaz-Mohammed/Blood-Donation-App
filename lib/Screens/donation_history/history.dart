@@ -65,12 +65,12 @@ class DonationsHistory extends StatelessWidget {
             builder: (BuildContext context) {
               return Padding(
                 padding: MediaQuery.of(context).viewInsets,
-                child: AddNewDonation(),
+                child: const AddNewDonation(),
               );
             },
           );
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

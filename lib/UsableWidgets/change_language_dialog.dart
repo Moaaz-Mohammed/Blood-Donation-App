@@ -43,7 +43,7 @@ void change_language_dialog(context) {
                   width: 30,
                   height: 30,
                 ),
-                CustomSizedBoxWidth(),
+                const CustomSizedBoxWidth(),
                 Text(
                   'English - UK',
                   style: Theme.of(context).textTheme.headline2,
@@ -51,7 +51,7 @@ void change_language_dialog(context) {
               ],
             ),
           ),
-          CustomSizedBoxHeight(),
+          const CustomSizedBoxHeight(),
           InkWell(
             onTap: () async {
               await context.setLocale(const Locale('ar', 'EG')).then((value) {
@@ -65,7 +65,7 @@ void change_language_dialog(context) {
                   width: 30,
                   height: 30,
                 ),
-                CustomSizedBoxWidth(),
+                const CustomSizedBoxWidth(),
                 Text(
                   'العربية - EG',
                   style: Theme.of(context).textTheme.headline2,

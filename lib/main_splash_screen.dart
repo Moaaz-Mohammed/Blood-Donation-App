@@ -15,7 +15,7 @@ class MainSlashScreen extends StatefulWidget {
   const MainSlashScreen({
     Key? key,
     required this.onBoarding,
-  });
+  }) : super(key: key);
 
   final onBoarding;
 

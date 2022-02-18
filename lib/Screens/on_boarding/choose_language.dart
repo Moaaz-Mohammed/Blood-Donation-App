@@ -1,6 +1,7 @@
 import 'package:blood_donation/Screens/auth/log_in_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 import '../../Styles/Images.dart';
 import '../../UsableWidgets/custom_sized_box_height.dart';
 import '../../shared/Functions.dart';
@@ -55,7 +56,7 @@ class ChooseLanguageScreen extends StatelessWidget {
                     width: 100,
                     height: 100,
                   ),
-                  CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
                   Text(
                     'العربية - EG',
                     style: Theme.of(context).textTheme.headline2,
@@ -63,9 +64,9 @@ class ChooseLanguageScreen extends StatelessWidget {
                 ],
               ),
             ),
-            CustomSizedBoxHeight(),
-            CustomSizedBoxHeight(),
-            CustomSizedBoxHeight(),
+            const CustomSizedBoxHeight(),
+            const CustomSizedBoxHeight(),
+            const CustomSizedBoxHeight(),
             InkWell(
               onTap: () async {
                 await context.setLocale(const Locale('en', 'US')).then(
@@ -84,7 +85,7 @@ class ChooseLanguageScreen extends StatelessWidget {
                     width: 100,
                     height: 100,
                   ),
-                  CustomSizedBoxHeight(),
+                  const CustomSizedBoxHeight(),
                   Text(
                     'English - UK',
                     style: Theme.of(context).textTheme.headline2,

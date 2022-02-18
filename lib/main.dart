@@ -47,11 +47,11 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({
+  const MyApp({
     Key? key,
     required this.onBoarding,
     this.isDark,
-  });
+  }) : super(key: key);
 
   final onBoarding;
   final isDark;

@@ -12,14 +12,14 @@ class CustomButton extends StatelessWidget {
     this.height = 60.0,
     this.backgroundColor = CustomColors.primaryRedColor,
     this.borderColor = CustomColors.primaryRedColor,
-  });
+  }) : super(key: key);
 
-  final onTap;
-  final title;
-  final height;
-  final titleColor;
-  final backgroundColor;
-  final borderColor;
+  final Function onTap;
+  final String title;
+  final double height;
+  final Color titleColor;
+  final Color backgroundColor;
+  final Color borderColor;
 
   @override
   Widget build(BuildContext context) {

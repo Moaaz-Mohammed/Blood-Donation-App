@@ -27,9 +27,9 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final Auth _auth = Auth();
   final Store _store = Store();
-  var bloodType;
-  var Status;
-  var ShareData;
+  String? bloodType;
+  String? Status;
+  String? ShareData;
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
   TextEditingController userNameController = TextEditingController();
   TextEditingController userPhoneController = TextEditingController();
@@ -74,7 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   controller: userNameController,
                   keyboardType: TextInputType.text,
                 ),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 // E-Mail
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
@@ -86,7 +86,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.emailAddress,
                   controller: userEmailController,
                 ),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 // Password
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
@@ -110,7 +110,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.text,
                   obscureText: AppCubit.get(context).isVisible,
                 ),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 // Do You Suffer any Diseases?
                 Container(
                   height: 80,
@@ -226,14 +226,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ],
                         onChanged: (value) {
                           setState(() {
-                            Status = value;
+                            Status = value as String?;
                           });
                         },
                       )
                     ],
                   ),
                 ),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 // Blood Types
                 Container(
                   height: 80,
@@ -375,14 +375,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ],
                         onChanged: (value) {
                           setState(() {
-                            bloodType = value;
+                            bloodType = value as String?;
                           });
                         },
                       ),
                     ],
                   ),
                 ),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 // Phone
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
@@ -394,7 +394,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.number,
                   controller: userPhoneController,
                 ),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 // Date of Birth
                 Container(
                   height: 120,
@@ -411,7 +411,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               color: CustomColors.primaryRedColor,
                             ),
                       ),
-                      CustomSizedBoxHeight(),
+                      const CustomSizedBoxHeight(),
                       Row(
                         children: [
                           Expanded(
@@ -449,7 +449,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ],
                   ),
                 ),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 // Last Donation Date
                 Container(
                   height: 120,
@@ -466,7 +466,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               color: CustomColors.primaryRedColor,
                             ),
                       ),
-                      CustomSizedBoxHeight(),
+                      const CustomSizedBoxHeight(),
                       Center(
                         child: Row(
                           children: [
@@ -506,7 +506,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ],
                   ),
                 ),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 // Address
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
@@ -517,7 +517,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   controller: userLocationController,
                 ),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 CustomButton(
                   title: LocaleKeys.register.tr(),
                   onTap: () async {

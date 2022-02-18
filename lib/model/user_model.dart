@@ -3,15 +3,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../Styles/Strings.dart';
 
 class UserModel {
-  var userId;
-  var userName;
-  var userDateofBirth;
-  var userLastDonation;
-  var userBloodType;
-  var userEmail;
-  var userAddress;
-  var userPhone;
-  var userStatus;
+  String? userId;
+  String? userName;
+  String? userDateofBirth;
+  String? userLastDonation;
+  String? userBloodType;
+  String? userEmail;
+  String? userAddress;
+  String? userPhone;
+  String? userStatus;
 
   UserModel({
     required this.userId,

@@ -77,7 +77,7 @@ class Store {
       (value) {
         Functions.navigatorPushAndRemove(
           context: context,
-          screen: NewHomeScreen(),
+          screen: const NewHomeScreen(),
         );
         Functions.showToastMsg(
           title: 'تم تعديل بياناتك بنجاح',
