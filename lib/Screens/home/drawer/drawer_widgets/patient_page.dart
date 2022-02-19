@@ -275,9 +275,11 @@ class _PatientState extends State<Patient> {
                         const SizedBox(
                           height: 10,
                         ),
-                        Divider(
-                          thickness: 1,
-                        ),
+                        AppCubit.get(context).isDark
+                            ? Divider(
+                                thickness: 1,
+                              )
+                            : SizedBox(),
                         // Age
                         TextFormField(
                           validator: (value) {
