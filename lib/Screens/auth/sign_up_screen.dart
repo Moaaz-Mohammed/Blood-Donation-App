@@ -61,7 +61,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // Name
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryDarkColor,
+                        color: CustomColors.primaryRedColor,
                       ),
                   decoration: InputDecoration(
                     labelText: LocaleKeys.name.tr(),
@@ -73,7 +73,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // E-Mail
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryDarkColor,
+                        color: CustomColors.primaryRedColor,
                       ),
                   decoration: InputDecoration(
                     labelText: LocaleKeys.email.tr(),
@@ -85,7 +85,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // Password
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryDarkColor,
+                        color: CustomColors.primaryRedColor,
                       ),
                   decoration: InputDecoration(
                     labelText: LocaleKeys.password.tr(),
@@ -130,7 +130,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         dropdownColor:
                             Theme.of(context).scaffoldBackgroundColor,
                         iconSize: 25,
-                        iconEnabledColor: CustomColors.primaryDarkColor,
+                        iconEnabledColor: CustomColors.primaryRedColor,
                         value: Status,
                         hint: Text(
                           LocaleKeys.choose.tr(),
@@ -145,7 +145,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -159,7 +159,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -173,7 +173,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -187,7 +187,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -201,7 +201,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -215,7 +215,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -257,7 +257,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             Theme.of(context).scaffoldBackgroundColor,
                         alignment: Alignment.center,
                         iconSize: 30,
-                        iconEnabledColor: CustomColors.primaryDarkColor,
+                        iconEnabledColor: CustomColors.primaryRedColor,
                         value: bloodType,
                         hint: Text(
                           LocaleKeys.choose_blood_type.tr(),
@@ -272,7 +272,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -286,7 +286,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -300,7 +300,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -314,7 +314,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -328,7 +328,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -342,7 +342,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -356,7 +356,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -370,7 +370,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     .textTheme
                                     .headline2
                                     ?.copyWith(
-                                      color: CustomColors.primaryDarkColor,
+                                      color: CustomColors.primaryRedColor,
                                     ),
                               ),
                             ),
@@ -393,7 +393,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // Phone
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryDarkColor,
+                        color: CustomColors.primaryRedColor,
                       ),
                   decoration: InputDecoration(
                     labelText: LocaleKeys.phone.tr(),
@@ -435,7 +435,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   context: context,
                                   initialDate: DateTime.now(),
                                   lastDate: DateTime(2050),
-                                  firstDate: DateTime(2000))
+                                  firstDate: DateTime(1900))
                               .then((value) {
                             userBirthDateController.text =
                                 DateFormat.yMd().format(value!);
@@ -501,7 +501,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // Address
                 TextFormField(
                   style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryDarkColor,
+                        color: CustomColors.primaryRedColor,
                       ),
                   decoration: InputDecoration(
                     labelText: LocaleKeys.address.tr(),
