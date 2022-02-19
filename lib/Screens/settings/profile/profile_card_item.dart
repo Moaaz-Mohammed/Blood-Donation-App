@@ -10,8 +10,8 @@ class ProfileCardItem extends StatelessWidget {
     required this.title,
     required this.subTitle,
   }) : super(key: key);
-  final title;
-  final subTitle;
+  final String title;
+  final String subTitle;
 
   @override
   Widget build(BuildContext context) {

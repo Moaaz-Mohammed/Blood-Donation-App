@@ -13,8 +13,8 @@ class CustomDialogDoYouWant extends StatelessWidget {
     required this.title,
   }) : super(key: key);
 
-  final onTapYes;
-  final title;
+  final Function onTapYes;
+  final String title;
 
   @override
   Widget build(BuildContext context) {

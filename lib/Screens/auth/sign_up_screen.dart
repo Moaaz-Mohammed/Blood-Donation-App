@@ -233,10 +233,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 const CustomSizedBoxHeight(),
                 AppCubit.get(context).isDark
-                    ? Divider(
+                    ? const Divider(
                         thickness: 1,
                       )
-                    : SizedBox(),
+                    : const SizedBox(),
                 // Blood Types
                 Container(
                   height: 80,
@@ -389,10 +389,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 AppCubit.get(context).isDark
-                    ? Divider(
-                  thickness: 1,
-                )
-                    : SizedBox(),
+                    ? const Divider(
+                        thickness: 1,
+                      )
+                    : const SizedBox(),
                 const CustomSizedBoxHeight(),
                 // Phone
                 TextFormField(

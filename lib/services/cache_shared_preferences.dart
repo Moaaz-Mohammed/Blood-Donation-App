@@ -1,11 +1,9 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class CacheSharedPreferences
-{
-  static var sharedPreferences;
+class CacheSharedPreferences {
+  static dynamic sharedPreferences;
 
-  static init() async
-  {
+  static init() async {
     sharedPreferences = await SharedPreferences.getInstance();
   }
 
@@ -28,21 +26,14 @@ class CacheSharedPreferences
 
   static Future<bool> removeData({
     required String key,
-  }) async
-  {
+  }) async {
     return await sharedPreferences.remove(key);
   }
 
-  static Future<bool> putBoolean
-      (
-      {
-        String? key,
-        bool? value,
-      }
-      ) async {
-    return await sharedPreferences.setBool(key, value
-    );
+  static Future<bool> putBoolean({
+    String? key,
+    bool? value,
+  }) async {
+    return await sharedPreferences.setBool(key, value);
   }
-
-
 }

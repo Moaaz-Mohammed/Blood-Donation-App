@@ -8,7 +8,7 @@ class IconCircleAvatar extends StatelessWidget {
     this.iconColor,
     required this.function,
   }) : super(key: key);
-  final child;
+  final Widget child;
   final Color? iconColor;
   final Function()? function;
   @override

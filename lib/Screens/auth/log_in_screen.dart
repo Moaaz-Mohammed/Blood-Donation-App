@@ -44,7 +44,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     child: ClipRRect(
                       borderRadius: Constants.primaryBorderRadius,
                       child: Image.asset(
-                        Images.LogoImage,
+                        Images.logoImage,
                       ),
                     ),
                   ),

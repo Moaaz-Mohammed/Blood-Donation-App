@@ -1,7 +1,7 @@
 class Images {
   // Images
-  static const String BloodTypesImage = 'assets/images/blood-types.png';
-  static const String LogoImage = 'assets/images/logo.png';
+  static const String bloodTypesImage = 'assets/images/blood-types.png';
+  static const String logoImage = 'assets/images/logo.png';
   static const String addUserImage = 'assets/images/add_user_photo.png';
   static const String egFlag = 'assets/images/eg-flag.png';
   static const String ukFlag = 'assets/images/uk-flag.png';

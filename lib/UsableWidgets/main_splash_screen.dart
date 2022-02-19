@@ -17,7 +17,7 @@ class MainSlashScreen extends StatefulWidget {
     required this.onBoarding,
   }) : super(key: key);
 
-  final onBoarding;
+  final dynamic onBoarding;
 
   @override
   State<MainSlashScreen> createState() => _MainSlashScreenState();
@@ -56,7 +56,7 @@ class _MainSlashScreenState extends State<MainSlashScreen> {
       backgroundColor: CustomColors.primaryRedColor,
       body: Center(
         child: Image.asset(
-          Images.LogoImage,
+          Images.logoImage,
           width: width * 0.5,
         ),
       ),

@@ -16,12 +16,12 @@ class CustomTextFormField extends StatelessWidget {
     this.maxLine = 1,
   }) : super(key: key);
 
-  final hint;
-  final controller;
-  final keyboardType;
-  final obscureText;
-  final icon;
-  final maxLine;
+  final String hint;
+  final TextEditingController controller;
+  final dynamic keyboardType;
+  final bool obscureText;
+  final IconData? icon;
+  final int maxLine;
 
   @override
   Widget build(BuildContext context) {
