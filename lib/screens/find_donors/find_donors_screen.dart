@@ -3,11 +3,11 @@ import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../usable_widgets/loading.dart';
-import '../../usable_widgets/no_result.dart';
-import '../../usable_widgets/custom_sized_box_height.dart';
+
 import '../../model/user_model.dart';
 import '../../shared/strings.dart';
+import '../../usable_widgets/custom_sized_box_height.dart';
+import '../../usable_widgets/no_result.dart';
 import 'donor_card.dart';
 
 class FindDonorsScreen extends StatefulWidget {
@@ -107,11 +107,12 @@ class _FindDonorsScreenState extends State<FindDonorsScreen> {
                 ),
               ),
               const CustomSizedBoxHeight(),
-              _snapshotResultsList != null && _searchResultList.isNotEmpty
-                  ? SingleChildScrollView(
+              _searchController != null && _searchController.text.isEmpty
+                  ? const WidgetNoResult()
+                  : SingleChildScrollView(
                       physics: const ScrollPhysics(),
                       child: SizedBox(
-                        height: height,
+                        height: height * 0.7,
                         child: ListView.separated(
                           physics: const ScrollPhysics(),
                           itemBuilder: (context, index) {
@@ -130,9 +131,6 @@ class _FindDonorsScreenState extends State<FindDonorsScreen> {
                         ),
                       ),
                     )
-                  : _snapshotResultsList == null && _searchResultList.isEmpty
-                      ? const WidgetNoResult()
-                      : const Loading(),
             ],
           ),
         ),
