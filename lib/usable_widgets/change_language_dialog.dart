@@ -6,7 +6,7 @@ import '../shared/images.dart';
 import 'custom_sized_box_height.dart';
 import 'custom_sized_box_width.dart';
 
-void change_language_dialog(context) {
+void changeLanguageDialog(context) {
   showDialog(
     context: context,
     builder: (BuildContext context) => AlertDialog(

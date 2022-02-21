@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              change_language_dialog(context);
+              changeLanguageDialog(context);
             },
             icon: const Icon(Icons.language),
           ),

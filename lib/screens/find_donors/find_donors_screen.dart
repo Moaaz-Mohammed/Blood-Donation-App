@@ -108,7 +108,14 @@ class _FindDonorsScreenState extends State<FindDonorsScreen> {
               ),
               const CustomSizedBoxHeight(),
               _searchController != null && _searchController.text.isEmpty
-                  ? const WidgetNoResult()
+                  ? Column(
+                      children: [
+                        SizedBox(
+                          height: height * 0.15,
+                        ),
+                        const WidgetNoResult(),
+                      ],
+                    )
                   : SingleChildScrollView(
                       physics: const ScrollPhysics(),
                       child: SizedBox(

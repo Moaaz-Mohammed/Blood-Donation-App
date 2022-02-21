@@ -31,7 +31,7 @@ class Strings {
   static const String donationAddress = 'donationAddress';
   static const String donationTime = 'donationTime';
   static const String donationDate = 'donationDate';
-  static const String PatientName = 'PatientName';
+  static const String hPatientName = 'PatientName';
   static const String donationNotes = 'donationNotes';
 
   // Firebase Mail Collection

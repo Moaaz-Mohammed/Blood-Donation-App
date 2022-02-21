@@ -6,8 +6,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../usable_widgets/loading.dart';
+
 import '../../shared/strings.dart';
+import '../../usable_widgets/loading.dart';
 
 class DonationsHistory extends StatelessWidget {
   const DonationsHistory({Key? key}) : super(key: key);
@@ -43,7 +44,7 @@ class DonationsHistory extends StatelessWidget {
                     Map<String, dynamic> data =
                         document.data() as Map<String, dynamic>;
                     return HistoryCard(
-                        name: data[Strings.PatientName],
+                        name: data[Strings.hPatientName],
                         time: data[Strings.donationTime],
                         date: data[Strings.donationDate],
                         address: data[Strings.donationAddress],

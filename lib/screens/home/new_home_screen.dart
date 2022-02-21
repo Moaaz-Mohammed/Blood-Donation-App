@@ -60,7 +60,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var mapUrl =
+    String mapUrl =
         'https://www.google.com/maps/search/hospital/@30.7540542,30.3489529,8.29z';
     return Scaffold(
       appBar: AppBar(
@@ -76,7 +76,8 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
           : SafeArea(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding:
+                      const EdgeInsets.only(left: 20.0, right: 20, top: 10),
                   child: Column(
                     children: [
                       Row(

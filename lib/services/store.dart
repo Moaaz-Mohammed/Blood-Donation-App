@@ -31,16 +31,16 @@ class Store {
   }
 
   Future addDonation(UserDonationsModel donationsModel) async {
-    var DonationDoc = fireStore
+    var donationDoc = fireStore
         .collection(Strings.usersCollection)
         .doc(user?.uid)
         .collection(Strings.userDonationsHistoryCollection)
         .doc(donationsModel.PatientName);
-    DonationDoc.get().then(
+    donationDoc.get().then(
       (value) {
-        DonationDoc.set(
+        donationDoc.set(
           {
-            Strings.PatientName: donationsModel.PatientName,
+            Strings.hPatientName: donationsModel.PatientName,
             Strings.donationAddress: donationsModel.donationAddress,
             Strings.donationTime: donationsModel.donationTime,
             Strings.donationDate: donationsModel.donationDate,

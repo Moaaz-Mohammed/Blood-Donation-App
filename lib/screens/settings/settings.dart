@@ -84,7 +84,7 @@ class SettingsScreen extends StatelessWidget {
                     const CustomSizedBoxWidth(),
                     InkWell(
                       onTap: () {
-                        change_language_dialog(context);
+                        changeLanguageDialog(context);
                       },
                       onDoubleTap: () async {},
                       child: Text(

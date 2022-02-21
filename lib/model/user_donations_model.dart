@@ -18,5 +18,5 @@ class UserDonationsModel {
   });
 
   UserDonationsModel.fromSnapshot(DocumentSnapshot snapshot)
-      : PatientName = snapshot[Strings.PatientName];
+      : PatientName = snapshot[Strings.hPatientName];
 }
