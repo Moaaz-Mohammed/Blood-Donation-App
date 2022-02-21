@@ -7,7 +7,6 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
 
 import '../../Styles/custom_colors.dart';
-import '../../usable_widgets/custom_button.dart';
 import '../../model/user_model.dart';
 import '../../services/auth.dart';
 import '../../services/store.dart';
@@ -16,6 +15,7 @@ import '../../shared/functions.dart';
 import '../../state_management/bloc/cubit.dart';
 import '../../state_management/provider/model_hud.dart';
 import '../../translations/locale_keys.g.dart';
+import '../../usable_widgets/custom_button.dart';
 import '../home/new_home_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -539,7 +539,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               userEmail: userEmailController.text,
                               userAddress: userLocationController.text,
                               userDateofBirth: userBirthDateController.text,
-                              userLastDonation: userBirthDateController.text,
+                              userLastDonation:
+                                  userLastDonationDateController.text,
                               userBloodType: bloodType.toString(),
                               userStatus: Status.toString(),
                             ),
