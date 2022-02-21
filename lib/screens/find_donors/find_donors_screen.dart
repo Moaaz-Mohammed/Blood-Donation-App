@@ -99,7 +99,7 @@ class _FindDonorsScreenState extends State<FindDonorsScreen> {
               TextFormField(
                 controller: _searchController,
                 decoration: InputDecoration(
-                  hintText: LocaleKeys.search_for_donor.tr(),
+                  hintText: LocaleKeys.search_by.tr(),
                   suffixIcon: IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.search),

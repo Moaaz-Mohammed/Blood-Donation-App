@@ -107,5 +107,6 @@
   "pick_date": "Pick Date",
   "pick_time": "Pick Time",
   "edited_successfully": "Edited Successfully!",
-  "deleted": "Deleted Successfully!"
+  "deleted": "Deleted Successfully!",
+  "search_by": "Search by blood type (example :-B)"
 }
