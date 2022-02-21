@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../Screens/auth/log_in_screen.dart';
 import '../Screens/home/new_home_screen.dart';
-import '../shared/Functions.dart';
+import '../shared/functions.dart';
 import '../translations/locale_keys.g.dart';
 
 class Auth {

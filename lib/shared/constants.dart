@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Styles/CustomColors.dart';
+import '../Styles/custom_colors.dart';
 
 class Constants {
   /// constants app Border Radius

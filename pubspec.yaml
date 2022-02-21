@@ -11,21 +11,24 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cached_network_image: ^3.0.0
-  shared_preferences:
-  flutter_bloc: 7.0.1
-  modal_progress_hud_nsn: ^0.1.0-nullsafety-1
+  #Styles
   fluttertoast:
   cupertino_icons: ^1.0.2
   page_transition:
   image_picker: ^0.8.4+4
+  cached_network_image: ^3.0.0
+  smooth_page_indicator: ^1.0.0+2
+  im_stepper: ^0.1.3
+
+  # Utilities
+  shared_preferences:
   url_launcher:
+  flutter_bloc: 7.0.1
+  modal_progress_hud_nsn: ^0.1.0-nullsafety-1
+
 
   #Localization
   easy_localization: ^3.0.0
-
-  smooth_page_indicator: ^1.0.0+2
-  im_stepper: ^0.1.3
 
   # firebase dependencies
   firebase_core: ^1.11.0

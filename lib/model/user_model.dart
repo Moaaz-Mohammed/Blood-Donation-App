@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../shared/Strings.dart';
+import '../shared/strings.dart';
 
 class UserModel {
   String? userId;
@@ -26,5 +26,5 @@ class UserModel {
   });
 
   UserModel.fromSnapshot(DocumentSnapshot snapshot)
-      : userName = snapshot[Strings.userName];
+      : userBloodType = snapshot[Strings.userBloodType];
 }

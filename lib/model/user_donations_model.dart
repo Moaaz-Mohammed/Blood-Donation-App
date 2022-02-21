@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../shared/Strings.dart';
+import '../shared/strings.dart';
 
 class UserDonationsModel {
   String? donationAddress;

@@ -6,8 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../Screens/home/new_home_screen.dart';
 import '../model/user_donations_model.dart';
 import '../model/user_model.dart';
-import '../shared/Functions.dart';
-import '../shared/Strings.dart';
+import '../shared/functions.dart';
+import '../shared/strings.dart';
 
 class Store {
   User? user = FirebaseAuth.instance.currentUser;
