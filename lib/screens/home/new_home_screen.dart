@@ -60,8 +60,8 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    String mapUrl =
-        'https://www.google.com/maps/search/hospital/@30.7540542,30.3489529,8.29z';
+    double height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -104,15 +104,15 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: height * 0.01,
                       ),
                       Row(
                         children: [
                           Column(
                             children: [
-                              const SizedBox(
-                                height: 30,
+                              SizedBox(
+                                height: height * 0.03,
                               ),
                               InkWell(
                                 onTap: () {
@@ -148,10 +148,10 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                             children: [
                               InkWell(
                                 onTap: () async {
-                                  if (await canLaunch(mapUrl)) {
-                                    await launch(mapUrl);
+                                  if (await canLaunch(Strings.mapUrl)) {
+                                    await launch(Strings.mapUrl);
                                   } else {
-                                    throw 'could not open $mapUrl';
+                                    throw 'could not open ${Strings.mapUrl}';
                                   }
                                 },
                                 child: HomeCategoryCard(

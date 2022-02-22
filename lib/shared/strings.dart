@@ -1,4 +1,7 @@
 class Strings {
+  static const String mapUrl =
+      'https://www.google.com/maps/search/hospital/@30.7540542,30.3489529,8.29z';
+
   /// Firebase User collection Strings
   static const String usersCollection = 'usersCollection';
   static const String userId = 'UserId';

@@ -427,11 +427,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       const CustomSizedBoxWidth(),
                       TextFormField(
-                        style: Theme.of(context).textTheme.headline2,
+                        style: Theme.of(context).textTheme.headline2?.copyWith(
+                              color: CustomColors.primaryRedColor,
+                            ),
                         controller: userBirthDateController,
                         decoration: InputDecoration(
                           prefixIcon: const Icon(Icons.date_range),
-                          hintStyle: Theme.of(context).textTheme.headline2,
+                          hintStyle:
+                              Theme.of(context).textTheme.headline2?.copyWith(
+                                    color: CustomColors.primaryRedColor,
+                                  ),
                           hintText: LocaleKeys.date_of_birth.tr(),
                         ),
                         onTap: () {
@@ -479,7 +484,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         controller: userLastDonationDateController,
                         decoration: InputDecoration(
                           prefixIcon: const Icon(Icons.date_range),
-                          hintStyle: Theme.of(context).textTheme.headline2,
+                          hintStyle:
+                              Theme.of(context).textTheme.headline2?.copyWith(
+                                    color: CustomColors.primaryRedColor,
+                                  ),
                           hintText: LocaleKeys.last_donation_date.tr(),
                         ),
                         onTap: () {
