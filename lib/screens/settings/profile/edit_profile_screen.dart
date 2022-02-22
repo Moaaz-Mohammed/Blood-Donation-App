@@ -1,14 +1,15 @@
+import 'package:blood_donation/state_management/bloc/cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Styles/custom_colors.dart';
-import '../../../usable_widgets/custom_button.dart';
-import '../../../usable_widgets/custom_sized_box_height.dart';
 import '../../../services/store.dart';
 import '../../../shared/constants.dart';
 import '../../../shared/functions.dart';
 import '../../../shared/strings.dart';
 import '../../../translations/locale_keys.g.dart';
+import '../../../usable_widgets/custom_button.dart';
+import '../../../usable_widgets/custom_sized_box_height.dart';
 import '../../home/new_home_screen.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -24,9 +25,10 @@ class EditProfileScreen extends StatefulWidget {
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
   TextEditingController userNameController = TextEditingController();
-  TextEditingController userAgeController = TextEditingController();
+  TextEditingController userBirthDateController = TextEditingController();
   TextEditingController userPhoneController = TextEditingController();
-  TextEditingController userLocationController = TextEditingController();
+  TextEditingController userAddressController = TextEditingController();
+  TextEditingController userBloodTypeController = TextEditingController();
   String? userImageUrl;
 
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
@@ -40,9 +42,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
   void data() {
     userNameController.text = widget.userData[Strings.userName];
-    userAgeController.text = widget.userData[Strings.userDateofBirth];
+    userBirthDateController.text = widget.userData[Strings.userDateofBirth];
     userPhoneController.text = widget.userData[Strings.userPhone];
-    userLocationController.text = widget.userData[Strings.userAddress];
+    userAddressController.text = widget.userData[Strings.userAddress];
+    userBloodTypeController.text = widget.userData[Strings.userBloodType];
   }
 
   final Store _store = Store();
@@ -71,12 +74,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: CustomColors.primaryRedColor,
+                    color: CustomColors.primaryRedColor.withOpacity(0.5),
                     width: 2,
                   ),
                 ),
-                child: const CircleAvatar(
-                  backgroundColor: CustomColors.primaryWhiteColor,
+                child: CircleAvatar(
+                  backgroundColor: AppCubit.get(context).isDark
+                      ? CustomColors.primaryDarkColor
+                      : CustomColors.primaryWhiteColor,
                   radius: double.infinity,
                   child: Icon(
                     Icons.account_circle,
@@ -88,22 +93,64 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               const CustomSizedBoxHeight(),
               const CustomSizedBoxHeight(),
               TextFormField(
+                style: Theme.of(context).textTheme.headline2?.copyWith(
+                    color: AppCubit.get(context).isDark
+                        ? CustomColors.primaryGreyColor
+                        : CustomColors.primaryRedColor),
                 decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.person),
                   hintText: LocaleKeys.name.tr(),
+                  hintStyle: Theme.of(context).textTheme.headline2?.copyWith(
+                        color: AppCubit.get(context).isDark
+                            ? CustomColors.primaryGreyColor
+                            : CustomColors.primaryRedColor,
+                      ),
                 ),
                 controller: userNameController,
               ),
               const CustomSizedBoxHeight(),
               TextFormField(
+                style: Theme.of(context).textTheme.headline2?.copyWith(
+                    color: AppCubit.get(context).isDark
+                        ? CustomColors.primaryGreyColor
+                        : CustomColors.primaryRedColor),
+                controller: userBirthDateController,
                 decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.date_range),
+                  hintStyle: Theme.of(context).textTheme.headline2?.copyWith(
+                      color: AppCubit.get(context).isDark
+                          ? CustomColors.primaryGreyColor
+                          : CustomColors.primaryRedColor),
                   hintText: LocaleKeys.date_of_birth.tr(),
                 ),
-                controller: userAgeController,
-                keyboardType: TextInputType.number,
+                onTap: () {
+                  showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          lastDate: DateTime(2050),
+                          firstDate: DateTime(1900))
+                      .then((value) {
+                    userBirthDateController.text =
+                        DateFormat.yMd().format(value!);
+                  });
+                },
+                validator: (value) {
+                  value == null ? LocaleKeys.required.tr() : null;
+                  return null;
+                },
               ),
               const CustomSizedBoxHeight(),
               TextFormField(
+                style: Theme.of(context).textTheme.headline2?.copyWith(
+                    color: AppCubit.get(context).isDark
+                        ? CustomColors.primaryGreyColor
+                        : CustomColors.primaryRedColor),
                 decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.phone),
+                  hintStyle: Theme.of(context).textTheme.headline2?.copyWith(
+                      color: AppCubit.get(context).isDark
+                          ? CustomColors.primaryGreyColor
+                          : CustomColors.primaryRedColor),
                   hintText: LocaleKeys.phone.tr(),
                 ),
                 controller: userPhoneController,
@@ -111,10 +158,35 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               ),
               const CustomSizedBoxHeight(),
               TextFormField(
+                style: Theme.of(context).textTheme.headline2?.copyWith(
+                    color: AppCubit.get(context).isDark
+                        ? CustomColors.primaryGreyColor
+                        : CustomColors.primaryRedColor),
                 decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.location_on),
+                  hintStyle: Theme.of(context).textTheme.headline2?.copyWith(
+                      color: AppCubit.get(context).isDark
+                          ? CustomColors.primaryGreyColor
+                          : CustomColors.primaryRedColor),
                   hintText: LocaleKeys.address.tr(),
                 ),
-                controller: userLocationController,
+                controller: userAddressController,
+              ),
+              const CustomSizedBoxHeight(),
+              TextFormField(
+                style: Theme.of(context).textTheme.headline2?.copyWith(
+                    color: AppCubit.get(context).isDark
+                        ? CustomColors.primaryGreyColor
+                        : CustomColors.primaryRedColor),
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.bloodtype),
+                  hintStyle: Theme.of(context).textTheme.headline2?.copyWith(
+                      color: AppCubit.get(context).isDark
+                          ? CustomColors.primaryGreyColor
+                          : CustomColors.primaryRedColor),
+                  hintText: LocaleKeys.phone.tr(),
+                ),
+                controller: userBloodTypeController,
               ),
               const CustomSizedBoxHeight(),
               const CustomSizedBoxHeight(),
@@ -126,9 +198,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             widget.userData[Strings.userName] &&
                         userPhoneController.text ==
                             widget.userData[Strings.userPhone] &&
-                        userAgeController.text ==
+                        userBirthDateController.text ==
                             widget.userData[Strings.userDateofBirth] &&
-                        userLocationController.text ==
+                        userBloodTypeController.text ==
+                            widget.userData[Strings.userBloodType] &&
+                        userAddressController.text ==
                             widget.userData[Strings.userAddress] &&
                         _image == null) {
                       Functions.navigatorPushAndRemove(
@@ -145,8 +219,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         context: context,
                         userId: widget.userData[Strings.userId],
                         userName: userNameController.text,
-                        userLocation: userLocationController.text,
-                        userDateofBirth: userAgeController.text,
+                        userLocation: userAddressController.text,
+                        userDateofBirth: userBirthDateController.text,
                         userPhone: userPhoneController.text,
                       );
                     }
@@ -156,8 +230,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       userPhone: userPhoneController.text,
                       userId: widget.userData[Strings.userId],
                       userName: userNameController.text,
-                      userLocation: userLocationController.text,
-                      userDateofBirth: userAgeController.text,
+                      userLocation: userAddressController.text,
+                      userDateofBirth: userBirthDateController.text,
                     );
                   }
                 },

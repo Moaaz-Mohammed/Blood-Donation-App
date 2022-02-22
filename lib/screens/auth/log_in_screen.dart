@@ -1,8 +1,10 @@
 import 'package:blood_donation/Screens/auth/sign_up_screen.dart';
 import 'package:blood_donation/state_management/bloc/cubit.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
+import 'package:blood_donation/usable_widgets/custom_sized_box_width.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 import '../../Styles/custom_colors.dart';
 import '../../services/auth.dart';
 import '../../shared/constants.dart';
@@ -28,30 +30,39 @@ class _LogInScreenState extends State<LogInScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
+        child: SingleChildScrollView(
+          child: Container(
             padding: Constants.primaryPadding,
+            height: height,
+            width: width,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft,
+                colors: [
+                  CustomColors.primaryRedColor,
+                  CustomColors.primaryWhiteColor,
+                ],
+              ),
+            ),
             child: Form(
               key: _globalKey,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width: width * 0.5,
-                    child: ClipRRect(
-                      borderRadius: Constants.primaryBorderRadius,
-                      child: Image.asset(
-                        Images.logoImage,
-                      ),
-                    ),
+                  Image.asset(
+                    Images.logoImage,
+                    height: height * 0.25,
                   ),
-                  const CustomSizedBoxHeight(),
-                  const CustomSizedBoxHeight(),
-                  const CustomSizedBoxHeight(),
+                  SizedBox(
+                    height: height * 0.05,
+                  ),
                   TextFormField(
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.headline2,
                     decoration: InputDecoration(
                       prefixIcon: const Icon(Icons.mail),
                       labelText: LocaleKeys.email.tr(),
@@ -61,7 +72,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                   const CustomSizedBoxHeight(),
                   TextFormField(
-                    style: Theme.of(context).textTheme.displayMedium,
+                    style: Theme.of(context).textTheme.headline2,
                     decoration: InputDecoration(
                       prefixIcon: const Icon(Icons.lock),
                       labelText: LocaleKeys.password.tr(),
@@ -81,11 +92,22 @@ class _LogInScreenState extends State<LogInScreen> {
                     keyboardType: TextInputType.text,
                     obscureText: AppCubit.get(context).isVisible,
                   ),
-                  const CustomSizedBoxHeight(),
-                  const CustomSizedBoxHeight(),
-                  const CustomSizedBoxHeight(),
-                  const CustomSizedBoxHeight(),
-                  const CustomSizedBoxHeight(),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  InkWell(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        LocaleKeys.forgot_password.tr(),
+                        style: Theme.of(context).textTheme.headline1,
+                      ),
+                    ),
+                    onTap: () {},
+                  ),
+                  SizedBox(
+                    height: height * 0.05,
+                  ),
                   CustomButton(
                     title: LocaleKeys.login.tr(),
                     onTap: () async {
@@ -99,17 +121,30 @@ class _LogInScreenState extends State<LogInScreen> {
                     },
                   ),
                   const CustomSizedBoxHeight(),
-                  CustomButton(
-                    title: LocaleKeys.register.tr(),
+                  const CustomSizedBoxHeight(),
+                  InkWell(
+                    child: Row(
+                      children: [
+                        Text(
+                          LocaleKeys.dont_have_acc.tr(),
+                          style: Theme.of(context).textTheme.headline2,
+                        ),
+                        CustomSizedBoxWidth(),
+                        Text(
+                          LocaleKeys.register_now.tr(),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline2
+                              ?.copyWith(color: CustomColors.primaryRedColor),
+                        ),
+                      ],
+                    ),
                     onTap: () {
                       Functions.navigatorPush(
                         context: context,
                         screen: const SignUpScreen(),
                       );
                     },
-                    titleColor: CustomColors.primaryRedColor,
-                    backgroundColor: CustomColors.primaryWhiteColor,
-                    borderColor: CustomColors.primaryRedColor,
                   ),
                 ],
               ),

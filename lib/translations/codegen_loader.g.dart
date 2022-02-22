@@ -124,7 +124,11 @@ class CodegenLoader extends AssetLoader{
   "pick_time": "أختر الوقت",
   "edited_successfully": "تم التعديل بنجاح!",
   "deleted": "تم الحذف بنجاح!",
-  "search_by": "ابحث بفصيلة الدم (مثال : -B )"
+  "search_by": "ابحث بفصيلة الدم (مثال : -B )",
+  "dont_have_acc": "لا تمتلك حساب؟",
+  "register_now": "سجل الأن!",
+  "forgot_password": "هل نسيت كلمة المرور؟",
+  "reset_password": "إعادة تعيين كلمة المرور"
 };
 static const Map<String,dynamic> en_US = {
   "app_name": "Save Life!",
@@ -236,7 +240,11 @@ static const Map<String,dynamic> en_US = {
   "pick_time": "Pick Time",
   "edited_successfully": "Edited Successfully!",
   "deleted": "Deleted Successfully!",
-  "search_by": "Search by blood type (example :-B)"
+  "search_by": "Search by blood type (example :-B)",
+  "dont_have_acc": "Don't have an account?",
+  "register_now": "Register now!",
+  "forgot_password": "Forgot your password?",
+  "reset_password": "Reset Password"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar_EG": ar_EG, "en_US": en_US};
 }

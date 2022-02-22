@@ -19,6 +19,8 @@ dependencies:
   cached_network_image: ^3.0.0
   smooth_page_indicator: ^1.0.0+2
   im_stepper: ^0.1.3
+  flutter_switch: ^0.3.2
+
 
   # Utilities
   shared_preferences:

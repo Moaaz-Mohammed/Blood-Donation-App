@@ -1,6 +1,7 @@
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
 import '../../Styles/custom_colors.dart';
 import '../../shared/functions.dart';
@@ -115,13 +116,30 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Switch(
-                      activeColor: Colors.red,
-                      value: AppCubit.get(context).isDark,
-                      onChanged: (value) {
-                        AppCubit.get(context).changeAppMode();
-                      },
-                    ),
+                    FlutterSwitch(
+                        activeColor:
+                            CustomColors.primaryGreyColor.withOpacity(0.2),
+                        inactiveColor: CustomColors.primaryRedColor,
+                        inactiveIcon: const Icon(
+                          Icons.light_mode,
+                          color: Colors.amber,
+                        ),
+                        activeToggleColor: Colors.grey,
+                        activeIcon: const Icon(
+                          Icons.dark_mode,
+                          color: CustomColors.primaryWhiteColor,
+                        ),
+                        value: AppCubit.get(context).isDark,
+                        onToggle: (value) {
+                          AppCubit.get(context).changeAppMode();
+                        }),
+                    // Switch(
+                    //   activeColor: Colors.red,
+                    //   value: AppCubit.get(context).isDark,
+                    //   onChanged: (value) {
+                    //     AppCubit.get(context).changeAppMode();
+                    //   },
+                    // ),
                   ],
                 ),
                 SizedBox(

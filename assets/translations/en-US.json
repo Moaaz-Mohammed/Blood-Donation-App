@@ -108,5 +108,9 @@
   "pick_time": "Pick Time",
   "edited_successfully": "Edited Successfully!",
   "deleted": "Deleted Successfully!",
-  "search_by": "Search by blood type (example :-B)"
+  "search_by": "Search by blood type (example :-B)",
+  "dont_have_acc": "Don't have an account?",
+  "register_now": "Register now!",
+  "forgot_password": "Forgot your password?",
+  "reset_password": "Reset Password"
 }

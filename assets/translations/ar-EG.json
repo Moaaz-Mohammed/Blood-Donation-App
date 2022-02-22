@@ -108,5 +108,9 @@
   "pick_time": "أختر الوقت",
   "edited_successfully": "تم التعديل بنجاح!",
   "deleted": "تم الحذف بنجاح!",
-  "search_by": "ابحث بفصيلة الدم (مثال : -B )"
+  "search_by": "ابحث بفصيلة الدم (مثال : -B )",
+  "dont_have_acc": "لا تمتلك حساب؟",
+  "register_now": "سجل الأن!",
+  "forgot_password": "هل نسيت كلمة المرور؟",
+  "reset_password": "إعادة تعيين كلمة المرور"
 }

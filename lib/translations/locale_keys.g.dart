@@ -111,5 +111,9 @@ abstract class  LocaleKeys {
   static const edited_successfully = 'edited_successfully';
   static const deleted = 'deleted';
   static const search_by = 'search_by';
+  static const dont_have_acc = 'dont_have_acc';
+  static const register_now = 'register_now';
+  static const forgot_password = 'forgot_password';
+  static const reset_password = 'reset_password';
 
 }
