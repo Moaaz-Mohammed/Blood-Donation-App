@@ -1,16 +1,14 @@
 import 'package:blood_donation/Screens/settings/profile/edit_profile_screen.dart';
-import 'package:blood_donation/Screens/settings/profile/profile_card_item.dart';
 import 'package:blood_donation/shared/functions.dart';
 import 'package:blood_donation/state_management/bloc/cubit.dart';
 import 'package:blood_donation/usable_widgets/custom_sized_box_height.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Styles/custom_colors.dart';
 import '../../../shared/constants.dart';
 import '../../../shared/strings.dart';
-import '../../../translations/locale_keys.g.dart';
 import '../../../usable_widgets/loading.dart';
+import 'profile_card_item.dart';
 
 class ProfileBodyWidget extends StatelessWidget {
   const ProfileBodyWidget({
@@ -71,7 +69,6 @@ class ProfileBodyWidget extends StatelessWidget {
                   const CustomSizedBoxHeight(),
                   ProfileCardItem(
                     icon: Icons.person,
-                    title: LocaleKeys.name.tr(),
                     subTitle: userData[Strings.userName],
                   ),
                   const Divider(
@@ -80,7 +77,6 @@ class ProfileBodyWidget extends StatelessWidget {
                   ),
                   ProfileCardItem(
                     icon: Icons.cake,
-                    title: LocaleKeys.date_of_birth.tr(),
                     subTitle: userData[Strings.userDateofBirth],
                   ),
                   const Divider(
@@ -89,7 +85,6 @@ class ProfileBodyWidget extends StatelessWidget {
                   ),
                   ProfileCardItem(
                     icon: Icons.location_on,
-                    title: LocaleKeys.address.tr(),
                     subTitle: userData[Strings.userAddress],
                   ),
                   const Divider(
@@ -98,7 +93,6 @@ class ProfileBodyWidget extends StatelessWidget {
                   ),
                   ProfileCardItem(
                     icon: Icons.phone,
-                    title: LocaleKeys.phone.tr(),
                     subTitle: userData[Strings.userPhone],
                   ),
                   const Divider(
@@ -107,7 +101,6 @@ class ProfileBodyWidget extends StatelessWidget {
                   ),
                   ProfileCardItem(
                     icon: Icons.mail,
-                    title: LocaleKeys.email.tr(),
                     subTitle: userData[Strings.userEmail],
                   ),
                   const Divider(
@@ -116,7 +109,6 @@ class ProfileBodyWidget extends StatelessWidget {
                   ),
                   ProfileCardItem(
                     icon: Icons.bloodtype,
-                    title: LocaleKeys.blood_type.tr(),
                     subTitle: userData[Strings.userBloodType],
                   ),
                 ],

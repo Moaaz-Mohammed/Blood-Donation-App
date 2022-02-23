@@ -7,11 +7,9 @@ import '../../../usable_widgets/custom_sized_box_width.dart';
 class ProfileCardItem extends StatelessWidget {
   const ProfileCardItem({
     Key? key,
-    required this.title,
     required this.subTitle,
     required this.icon,
   }) : super(key: key);
-  final String title;
   final String subTitle;
   final IconData icon;
 
@@ -25,11 +23,6 @@ class ProfileCardItem extends StatelessWidget {
             icon,
             color: CustomColors.primaryRedColor,
           ),
-          Text(title,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline2
-                  ?.copyWith(color: CustomColors.primaryRedColor)),
           const CustomSizedBoxWidth(),
           Expanded(
             child: Center(

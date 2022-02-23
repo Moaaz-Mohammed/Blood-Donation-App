@@ -112,5 +112,7 @@
   "dont_have_acc": "Don't have an account?",
   "register_now": "Register now!",
   "forgot_password": "Forgot your password?",
-  "reset_password": "Reset Password"
+  "reset_password": "Reset Password",
+  "reset_password_content": "Enter an email address you use to sign in.",
+  "check_your_email": "Check your email to reset your password."
 }

@@ -115,5 +115,7 @@ abstract class  LocaleKeys {
   static const register_now = 'register_now';
   static const forgot_password = 'forgot_password';
   static const reset_password = 'reset_password';
+  static const reset_password_content = 'reset_password_content';
+  static const check_your_email = 'check_your_email';
 
 }

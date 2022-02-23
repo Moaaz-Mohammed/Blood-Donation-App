@@ -1,4 +1,5 @@
 import 'package:blood_donation/Screens/auth/sign_up_screen.dart';
+import 'package:blood_donation/screens/auth/reset_password.dart';
 import 'package:blood_donation/state_management/bloc/cubit.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:blood_donation/usable_widgets/custom_sized_box_width.dart';
@@ -92,7 +93,12 @@ class _LogInScreenState extends State<LogInScreen> {
                         style: Theme.of(context).textTheme.headline1,
                       ),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      Functions.navigatorPush(
+                        context: context,
+                        screen: ResetPasswordScreen(),
+                      );
+                    },
                   ),
                   SizedBox(
                     height: height * 0.05,
