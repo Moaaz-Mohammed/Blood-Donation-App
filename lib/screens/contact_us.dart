@@ -4,10 +4,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../Styles/custom_colors.dart';
-import '../../../../translations/locale_keys.g.dart';
-import '../../../../usable_widgets/custom_button.dart';
-import '../../new_home_screen.dart';
+import '../Styles/custom_colors.dart';
+import '../translations/locale_keys.g.dart';
+import '../usable_widgets/custom_button.dart';
+import 'home/new_home_screen.dart';
 
 class Mail extends StatefulWidget {
   const Mail({Key? key}) : super(key: key);

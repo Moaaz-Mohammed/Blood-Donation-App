@@ -8,8 +8,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../shared/strings.dart';
-import '../../../../translations/locale_keys.g.dart';
+import '../shared/strings.dart';
+import '../translations/locale_keys.g.dart';
 
 class Patient extends StatefulWidget {
   const Patient({Key? key}) : super(key: key);

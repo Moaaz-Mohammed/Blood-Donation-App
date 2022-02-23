@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../Styles/custom_colors.dart';
-import '../../../../translations/locale_keys.g.dart';
+import '../Styles/custom_colors.dart';
+import '../translations/locale_keys.g.dart';
 
 class DonationBenefitsScreen extends StatefulWidget {
   const DonationBenefitsScreen({Key? key}) : super(key: key);
