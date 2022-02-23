@@ -96,7 +96,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     onTap: () {
                       Functions.navigatorPush(
                         context: context,
-                        screen: ResetPasswordScreen(),
+                        screen: const ResetPasswordScreen(),
                       );
                     },
                   ),

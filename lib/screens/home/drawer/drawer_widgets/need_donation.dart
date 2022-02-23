@@ -1,5 +1,6 @@
 import 'package:blood_donation/Screens/home/drawer/drawer_widgets/patient_page.dart';
 import 'package:blood_donation/shared/functions.dart';
+import 'package:blood_donation/styles/custom_colors.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -61,10 +62,11 @@ class _NeedDonationState extends State<NeedDonation> {
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Text(data[Strings.patientName],
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .headline2),
+                                    Text(
+                                      data[Strings.patientName],
+                                      style:
+                                          Theme.of(context).textTheme.headline2,
+                                    ),
                                   ],
                                 ),
                                 const SizedBox(
@@ -79,7 +81,11 @@ class _NeedDonationState extends State<NeedDonation> {
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Text(data[Strings.patientAddress]),
+                                    Text(
+                                      data[Strings.patientAddress],
+                                      style:
+                                          Theme.of(context).textTheme.headline2,
+                                    ),
                                   ],
                                 ),
                                 const SizedBox(
@@ -94,7 +100,11 @@ class _NeedDonationState extends State<NeedDonation> {
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Text(data[Strings.patientBloodType]),
+                                    Text(
+                                      data[Strings.patientBloodType],
+                                      style:
+                                          Theme.of(context).textTheme.headline2,
+                                    ),
                                   ],
                                 ),
                                 const SizedBox(
@@ -109,7 +119,11 @@ class _NeedDonationState extends State<NeedDonation> {
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Text(data[Strings.patientPhone]),
+                                    Text(
+                                      data[Strings.patientPhone],
+                                      style:
+                                          Theme.of(context).textTheme.headline2,
+                                    ),
                                   ],
                                 ),
                                 const SizedBox(
@@ -124,7 +138,11 @@ class _NeedDonationState extends State<NeedDonation> {
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Text(data[Strings.patientAge]),
+                                    Text(
+                                      data[Strings.patientAge],
+                                      style:
+                                          Theme.of(context).textTheme.headline2,
+                                    ),
                                   ],
                                 ),
                                 const SizedBox(
@@ -149,8 +167,16 @@ class _NeedDonationState extends State<NeedDonation> {
                                               BorderRadius.circular(10)),
                                       child: Padding(
                                         padding: const EdgeInsets.all(15.0),
-                                        child:
-                                            Text(data[Strings.patientStatus]),
+                                        child: Text(
+                                          data[Strings.patientStatus],
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .headline2
+                                              ?.copyWith(
+                                                color: CustomColors
+                                                    .primaryRedColor,
+                                              ),
+                                        ),
                                       ),
                                     ),
                                   ],

@@ -1,14 +1,15 @@
 import 'package:blood_donation/Screens/home/new_home_screen.dart';
 import 'package:blood_donation/Styles/custom_colors.dart';
-import 'package:blood_donation/usable_widgets/custom_button.dart';
-import 'package:blood_donation/usable_widgets/custom_sized_box_width.dart';
 import 'package:blood_donation/shared/constants.dart';
 import 'package:blood_donation/shared/controllers.dart';
 import 'package:blood_donation/shared/functions.dart';
 import 'package:blood_donation/state_management/bloc/cubit.dart';
+import 'package:blood_donation/usable_widgets/custom_button.dart';
+import 'package:blood_donation/usable_widgets/custom_sized_box_width.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../shared/strings.dart';
 import '../../../../translations/locale_keys.g.dart';
 
@@ -49,6 +50,7 @@ class _PatientState extends State<Patient> {
                           },
                           controller: nameController,
                           keyboardType: TextInputType.text,
+                          style: Theme.of(context).textTheme.headline2,
                           decoration: InputDecoration(
                             labelText: LocaleKeys.patient_name.tr(),
                           ),
@@ -67,6 +69,7 @@ class _PatientState extends State<Patient> {
                           },
                           controller: statusController,
                           keyboardType: TextInputType.text,
+                          style: Theme.of(context).textTheme.headline2,
                           decoration: InputDecoration(
                             labelText: LocaleKeys.status_of_patient.tr(),
                           ),
@@ -85,6 +88,7 @@ class _PatientState extends State<Patient> {
                           },
                           controller: phoneController,
                           keyboardType: TextInputType.phone,
+                          style: Theme.of(context).textTheme.headline2,
                           decoration: InputDecoration(
                             labelText: LocaleKeys.phone.tr(),
                           ),
@@ -102,6 +106,7 @@ class _PatientState extends State<Patient> {
                           },
                           controller: anotherphoneController,
                           keyboardType: TextInputType.phone,
+                          style: Theme.of(context).textTheme.headline2,
                           decoration: InputDecoration(
                             labelText: LocaleKeys.another_phone.tr(),
                           ),
@@ -113,9 +118,9 @@ class _PatientState extends State<Patient> {
                         Container(
                           height: 80,
                           decoration: AppCubit.get(context).isDark
-                              ? const BoxDecoration(
-                                  color: CustomColors.primaryDarkColor)
-                              : Constants.primaryBoxDecorationContainer,
+                              ? Constants.primaryBoxDecorationContainer
+                              : const BoxDecoration(
+                                  color: CustomColors.primaryDarkColor),
                           padding: const EdgeInsets.symmetric(horizontal: 19),
                           child: Row(
                             children: [
@@ -128,6 +133,7 @@ class _PatientState extends State<Patient> {
                                       color: CustomColors.primaryRedColor,
                                     ),
                               ),
+                              const CustomSizedBoxWidth(),
                               const CustomSizedBoxWidth(),
                               DropdownButton(
                                 dropdownColor:
@@ -289,6 +295,7 @@ class _PatientState extends State<Patient> {
                           },
                           controller: ageController,
                           keyboardType: TextInputType.number,
+                          style: Theme.of(context).textTheme.headline2,
                           decoration: InputDecoration(
                             labelText: LocaleKeys.age.tr(),
                           ),
@@ -306,6 +313,7 @@ class _PatientState extends State<Patient> {
                           },
                           controller: hospitalController,
                           keyboardType: TextInputType.text,
+                          style: Theme.of(context).textTheme.headline2,
                           decoration: InputDecoration(
                             labelText: LocaleKeys.hospital.tr(),
                           ),
@@ -323,6 +331,7 @@ class _PatientState extends State<Patient> {
                           },
                           controller: bloodamountController,
                           keyboardType: TextInputType.number,
+                          style: Theme.of(context).textTheme.headline2,
                           decoration: InputDecoration(
                             labelText: LocaleKeys.needed_blood.tr(),
                           ),
