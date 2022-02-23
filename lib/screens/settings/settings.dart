@@ -79,8 +79,10 @@ class SettingsScreen extends StatelessWidget {
                     CircleAvatar(
                       backgroundColor: Theme.of(context).primaryColor,
                       radius: size.width * 0.06,
-                      child: const Icon(Icons.language,
-                          color: CustomColors.primaryWhiteColor),
+                      child: Icon(
+                        Icons.language,
+                        color: Theme.of(context).scaffoldBackgroundColor,
+                      ),
                     ),
                     const CustomSizedBoxWidth(),
                     InkWell(
@@ -106,8 +108,10 @@ class SettingsScreen extends StatelessWidget {
                         CircleAvatar(
                           radius: size.width * 0.06,
                           backgroundColor: Theme.of(context).primaryColor,
-                          child: const Icon(Icons.dark_mode,
-                              color: CustomColors.primaryWhiteColor),
+                          child: Icon(
+                            Icons.dark_mode,
+                            color: Theme.of(context).scaffoldBackgroundColor,
+                          ),
                         ),
                         const CustomSizedBoxWidth(),
                         Text(
@@ -117,21 +121,22 @@ class SettingsScreen extends StatelessWidget {
                       ],
                     ),
                     FlutterSwitch(
-                        activeColor: CustomColors.primaryGreyColor,
-                        inactiveColor: CustomColors.primaryRedColor,
-                        inactiveIcon: const Icon(
-                          Icons.light_mode,
-                          color: Colors.amber,
-                        ),
-                        activeToggleColor: Colors.grey,
-                        activeIcon: const Icon(
-                          Icons.dark_mode,
-                          color: CustomColors.primaryWhiteColor,
-                        ),
-                        value: AppCubit.get(context).isDark,
-                        onToggle: (value) {
-                          AppCubit.get(context).changeAppMode();
-                        }),
+                      activeColor: CustomColors.primaryGreyColor,
+                      inactiveColor: CustomColors.primaryRedColor,
+                      inactiveIcon: const Icon(
+                        Icons.light_mode,
+                        color: Colors.amber,
+                      ),
+                      activeToggleColor: Colors.grey,
+                      activeIcon: const Icon(
+                        Icons.dark_mode,
+                        color: CustomColors.primaryWhiteColor,
+                      ),
+                      value: AppCubit.get(context).isDark,
+                      onToggle: (value) {
+                        AppCubit.get(context).changeAppMode();
+                      },
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -142,8 +147,10 @@ class SettingsScreen extends StatelessWidget {
                     CircleAvatar(
                       radius: size.width * 0.06,
                       backgroundColor: Theme.of(context).primaryColor,
-                      child: const Icon(Icons.privacy_tip,
-                          color: CustomColors.primaryWhiteColor),
+                      child: Icon(
+                        Icons.privacy_tip,
+                        color: Theme.of(context).scaffoldBackgroundColor,
+                      ),
                     ),
                     const CustomSizedBoxWidth(),
                     Text(

@@ -107,14 +107,16 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 ),
                 onTap: () {
                   showDatePicker(
-                          context: context,
-                          initialDate: DateTime.now(),
-                          lastDate: DateTime(2050),
-                          firstDate: DateTime(1900))
-                      .then((value) {
-                    userBirthDateController.text =
-                        DateFormat.yMd().format(value!);
-                  });
+                    context: context,
+                    initialDate: DateTime.now(),
+                    lastDate: DateTime(2050),
+                    firstDate: DateTime(1900),
+                  ).then(
+                    (value) {
+                      userBirthDateController.text =
+                          DateFormat.yMd().format(value!);
+                    },
+                  );
                 },
                 validator: (value) {
                   value == null ? LocaleKeys.required.tr() : null;

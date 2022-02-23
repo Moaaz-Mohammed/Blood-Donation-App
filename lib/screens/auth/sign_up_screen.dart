@@ -60,9 +60,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               children: [
                 // Name
                 TextFormField(
-                  style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryRedColor,
-                      ),
+                  style: Theme.of(context).textTheme.headline2,
                   decoration: InputDecoration(
                     labelText: LocaleKeys.name.tr(),
                   ),
@@ -72,9 +70,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const CustomSizedBoxHeight(),
                 // E-Mail
                 TextFormField(
-                  style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryRedColor,
-                      ),
+                  style: Theme.of(context).textTheme.headline2,
                   decoration: InputDecoration(
                     labelText: LocaleKeys.email.tr(),
                   ),
@@ -84,9 +80,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const CustomSizedBoxHeight(),
                 // Password
                 TextFormField(
-                  style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryRedColor,
-                      ),
+                  style: Theme.of(context).textTheme.headline2,
                   decoration: InputDecoration(
                     labelText: LocaleKeys.password.tr(),
                     suffixIcon: InkWell(
@@ -110,10 +104,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Container(
                   height: 80,
                   width: double.infinity,
-                  decoration: AppCubit.get(context).isDark
-                      ? Constants.primaryBoxDecorationContainer
-                      : const BoxDecoration(
-                          color: CustomColors.primaryDarkColor),
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -139,85 +129,44 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         items: [
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                LocaleKeys.no_chronic_diseases.tr(),
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text(LocaleKeys.no_chronic_diseases.tr(),
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: LocaleKeys.no_chronic_diseases.tr(),
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                LocaleKeys.anemia_diseases.tr(),
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text(LocaleKeys.anemia_diseases.tr(),
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: LocaleKeys.anemia_diseases.tr(),
                           ),
                           DropdownMenuItem(
                             child: Center(
                               child: Text(
-                                LocaleKeys.genetic_blood_diseases.tr(),
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                                  LocaleKeys.genetic_blood_diseases.tr(),
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: LocaleKeys.genetic_blood_diseases.tr(),
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                LocaleKeys.hepatitis.tr(),
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text(LocaleKeys.hepatitis.tr(),
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: LocaleKeys.hepatitis.tr(),
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                LocaleKeys.aids.tr(),
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text(LocaleKeys.aids.tr(),
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: LocaleKeys.aids.tr(),
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                LocaleKeys.cancer.tr(),
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text(LocaleKeys.cancer.tr(),
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: LocaleKeys.cancer.tr(),
                           ),
@@ -235,15 +184,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 AppCubit.get(context).isDark
                     ? const SizedBox()
                     : const Divider(
-                        thickness: 1,
+                        thickness: 0.45,
                       ),
                 // Blood Types
                 Container(
                   height: 80,
-                  decoration: AppCubit.get(context).isDark
-                      ? Constants.primaryBoxDecorationContainer
-                      : const BoxDecoration(
-                          color: CustomColors.primaryDarkColor),
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Row(
                     children: [
@@ -268,113 +213,57 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         items: [
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                "+O",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text("+O",
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: '+O',
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                '-O',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text('-O',
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: '-O',
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                "+A",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text("+A",
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: '+A',
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                "-A",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text("-A",
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: '-A',
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                "+B",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text("+B",
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: '+B',
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                "-B",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text("-B",
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: '-B',
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                "+AB",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text("+AB",
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: '+AB',
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(
-                                "-AB",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    ?.copyWith(
-                                      color: CustomColors.primaryRedColor,
-                                    ),
-                              ),
+                              child: Text("-AB",
+                                  style: Theme.of(context).textTheme.headline2),
                             ),
                             value: '-AB',
                           ),
@@ -391,14 +280,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 AppCubit.get(context).isDark
                     ? const SizedBox()
                     : const Divider(
-                        thickness: 1,
+                        thickness: 0.45,
                       ),
                 const CustomSizedBoxHeight(),
                 // Phone
                 TextFormField(
-                  style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryRedColor,
-                      ),
+                  style: Theme.of(context).textTheme.headline2,
                   decoration: InputDecoration(
                     labelText: LocaleKeys.phone.tr(),
                   ),
@@ -410,10 +297,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Container(
                   height: 120,
                   width: double.infinity,
-                  decoration: AppCubit.get(context).isDark
-                      ? Constants.primaryBoxDecorationContainer
-                      : const BoxDecoration(
-                          color: CustomColors.primaryDarkColor),
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -427,9 +310,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       const CustomSizedBoxWidth(),
                       TextFormField(
-                        style: Theme.of(context).textTheme.headline2?.copyWith(
-                              color: CustomColors.primaryRedColor,
-                            ),
+                        style: Theme.of(context).textTheme.headline2,
                         controller: userBirthDateController,
                         decoration: InputDecoration(
                           prefixIcon: const Icon(Icons.date_range),
@@ -463,10 +344,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Container(
                   height: 120,
                   width: double.infinity,
-                  decoration: AppCubit.get(context).isDark
-                      ? Constants.primaryBoxDecorationContainer
-                      : const BoxDecoration(
-                          color: CustomColors.primaryDarkColor),
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -512,9 +389,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const CustomSizedBoxHeight(),
                 // Address
                 TextFormField(
-                  style: Theme.of(context).textTheme.headline2?.copyWith(
-                        color: CustomColors.primaryRedColor,
-                      ),
+                  style: Theme.of(context).textTheme.headline2,
                   decoration: InputDecoration(
                     labelText: LocaleKeys.address.tr(),
                   ),

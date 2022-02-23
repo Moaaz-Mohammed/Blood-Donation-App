@@ -72,9 +72,6 @@ ThemeData lightTheme = ThemeData(
     prefixIconColor: CustomColors.primaryRedColor,
     disabledBorder: UnderlineInputBorder(
       borderRadius: Constants.primaryBorderRadius,
-      borderSide: const BorderSide(
-        color: CustomColors.primaryGreyColor,
-      ),
     ),
     focusColor: CustomColors.primaryRedColor,
     suffixIconColor: CustomColors.primaryRedColor,
@@ -88,9 +85,7 @@ ThemeData lightTheme = ThemeData(
     ),
     enabledBorder: UnderlineInputBorder(
       borderRadius: Constants.primaryBorderRadius,
-      borderSide: const BorderSide(
-        color: CustomColors.primaryGreyColor,
-      ),
+      borderSide: const BorderSide(),
     ),
     focusedBorder: UnderlineInputBorder(
       borderRadius: Constants.primaryBorderRadius,
@@ -98,8 +93,6 @@ ThemeData lightTheme = ThemeData(
         color: CustomColors.primaryRedColor,
       ),
     ),
-    filled: true,
-    fillColor: CustomColors.primaryGreyColor,
     contentPadding:
         const EdgeInsets.symmetric(vertical: 22.0, horizontal: 20.0),
   ),

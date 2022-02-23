@@ -1,6 +1,5 @@
 import 'package:blood_donation/Screens/settings/profile/edit_profile_screen.dart';
 import 'package:blood_donation/shared/functions.dart';
-import 'package:blood_donation/state_management/bloc/cubit.dart';
 import 'package:blood_donation/usable_widgets/custom_sized_box_height.dart';
 import 'package:flutter/material.dart';
 
@@ -35,13 +34,11 @@ class ProfileBodyWidget extends StatelessWidget {
                       children: [
                         Center(
                           child: CircleAvatar(
-                            backgroundColor: AppCubit.get(context).isDark
-                                ? CustomColors.primaryDarkColor
-                                : CustomColors.primaryWhiteColor,
+                            backgroundColor: Colors.transparent,
                             radius: double.infinity,
                             child: Icon(
                               Icons.account_circle,
-                              size: height * 0.12,
+                              size: height * 0.1,
                               color: CustomColors.primaryRedColor,
                             ),
                           ),

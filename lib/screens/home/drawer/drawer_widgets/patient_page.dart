@@ -1,9 +1,7 @@
 import 'package:blood_donation/Screens/home/new_home_screen.dart';
 import 'package:blood_donation/Styles/custom_colors.dart';
-import 'package:blood_donation/shared/constants.dart';
 import 'package:blood_donation/shared/controllers.dart';
 import 'package:blood_donation/shared/functions.dart';
-import 'package:blood_donation/state_management/bloc/cubit.dart';
 import 'package:blood_donation/usable_widgets/custom_button.dart';
 import 'package:blood_donation/usable_widgets/custom_sized_box_width.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -117,10 +115,9 @@ class _PatientState extends State<Patient> {
                         //Blood type
                         Container(
                           height: 80,
-                          decoration: AppCubit.get(context).isDark
-                              ? Constants.primaryBoxDecorationContainer
-                              : const BoxDecoration(
-                                  color: CustomColors.primaryDarkColor),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).scaffoldBackgroundColor,
+                          ),
                           padding: const EdgeInsets.symmetric(horizontal: 19),
                           child: Row(
                             children: [
@@ -280,11 +277,9 @@ class _PatientState extends State<Patient> {
                         const SizedBox(
                           height: 10,
                         ),
-                        AppCubit.get(context).isDark
-                            ? const Divider(
-                                thickness: 1,
-                              )
-                            : const SizedBox(),
+                        const Divider(
+                          thickness: 0.45,
+                        ),
                         // Age
                         TextFormField(
                           validator: (value) {
