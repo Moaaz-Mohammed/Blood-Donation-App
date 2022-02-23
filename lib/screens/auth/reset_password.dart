@@ -54,6 +54,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 TextFormField(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
+                  style: Theme.of(context).textTheme.headline2,
                   decoration: InputDecoration(
                     hintText: LocaleKeys.email.tr(),
                   ),
