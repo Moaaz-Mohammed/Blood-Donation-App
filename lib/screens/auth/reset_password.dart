@@ -52,7 +52,6 @@ class ResetPasswordScreen extends StatelessWidget {
                 const CustomSizedBoxHeight(),
                 const CustomSizedBoxHeight(),
                 TextFormField(
-
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   style: Theme.of(context).textTheme.headline2,

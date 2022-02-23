@@ -1,6 +1,6 @@
 import 'package:blood_donation/Styles/custom_colors.dart';
-import 'package:blood_donation/usable_widgets/custom_sized_box_width.dart';
 import 'package:blood_donation/shared/constants.dart';
+import 'package:blood_donation/usable_widgets/custom_sized_box_widthts.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -28,15 +28,13 @@ class HistoryCard extends StatelessWidget {
       onDismissed: (DismissDirection direction) {
         if (direction == DismissDirection.horizontal) {
           Store()
-              .deleteHistory(
-                  patientName: name, title: LocaleKeys.deleted.tr())
+              .deleteHistory(patientName: name, title: LocaleKeys.deleted.tr())
               .then((value) {
             build(context);
           });
         } else {
           Store()
-              .deleteHistory(
-                  patientName: name, title: LocaleKeys.deleted.tr())
+              .deleteHistory(patientName: name, title: LocaleKeys.deleted.tr())
               .then((value) {
             build(context);
           });
