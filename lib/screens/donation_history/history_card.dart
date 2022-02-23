@@ -1,6 +1,6 @@
 import 'package:blood_donation/Styles/custom_colors.dart';
 import 'package:blood_donation/shared/constants.dart';
-import 'package:blood_donation/usable_widgets/custom_sized_box_widthts.dart';
+import 'package:blood_donation/usable_widgets/custom_sized_box_width.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
