@@ -57,7 +57,7 @@ class ResetPasswordScreen extends StatelessWidget {
                   keyboardType: TextInputType.emailAddress,
                   style: Theme.of(context).textTheme.headline2,
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.mail),
+                    prefixIcon: const Icon(Icons.mail),
                     hintText: LocaleKeys.email.tr(),
                   ),
                 ),

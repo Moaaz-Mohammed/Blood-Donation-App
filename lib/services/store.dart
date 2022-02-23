@@ -86,15 +86,15 @@ class Store {
     );
   }
 
-  Future DeleteProductFromCart({
+  Future deleteHistory({
     required title,
-    required PatientName,
+    required patientName,
   }) async {
     FirebaseFirestore.instance
         .collection(Strings.usersCollection)
         .doc(user!.uid)
         .collection(Strings.userDonationsHistoryCollection)
-        .doc(PatientName)
+        .doc(patientName)
         .delete()
         .then((value) {
       Functions.showToastMsg(title: title);

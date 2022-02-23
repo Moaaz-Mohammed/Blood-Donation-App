@@ -28,15 +28,15 @@ class HistoryCard extends StatelessWidget {
       onDismissed: (DismissDirection direction) {
         if (direction == DismissDirection.horizontal) {
           Store()
-              .DeleteProductFromCart(
-                  PatientName: name, title: LocaleKeys.deleted.tr())
+              .deleteHistory(
+                  patientName: name, title: LocaleKeys.deleted.tr())
               .then((value) {
             build(context);
           });
         } else {
           Store()
-              .DeleteProductFromCart(
-                  PatientName: name, title: LocaleKeys.deleted.tr())
+              .deleteHistory(
+                  patientName: name, title: LocaleKeys.deleted.tr())
               .then((value) {
             build(context);
           });

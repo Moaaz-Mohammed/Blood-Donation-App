@@ -28,9 +28,9 @@ ThemeData darkTheme = ThemeData(
     titleSpacing: 20.0,
   ),
   iconTheme: const IconThemeData(color: CustomColors.primaryGreyColor),
-  primaryIconTheme: IconThemeData(color: CustomColors.primaryDarkMColor),
+  primaryIconTheme: const IconThemeData(color: CustomColors.primaryDarkMColor),
   splashColor: CustomColors.primaryRedColor,
-  textTheme: TextTheme(
+  textTheme: const TextTheme(
     headline1: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.bold,
