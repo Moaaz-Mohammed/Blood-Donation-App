@@ -1,7 +1,7 @@
 import 'package:blood_donation/Styles/custom_colors.dart';
-import 'package:blood_donation/usable_widgets/custom_sized_box_height.dart';
 import 'package:blood_donation/shared/constants.dart';
 import 'package:blood_donation/shared/images.dart';
+import 'package:blood_donation/usable_widgets/custom_sized_box_height.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -46,10 +46,7 @@ class DonorCard extends StatelessWidget {
                     ),
                     Text(
                       donorAddress,
-                      style: Theme.of(context).textTheme.headline2?.copyWith(
-                            color:
-                                CustomColors.primaryDarkColor.withOpacity(0.5),
-                          ),
+                      style: Theme.of(context).textTheme.headline2,
                     ),
                   ],
                 ),
@@ -62,10 +59,7 @@ class DonorCard extends StatelessWidget {
                     ),
                     Text(
                       donorBloodType,
-                      style: Theme.of(context).textTheme.headline2?.copyWith(
-                            color:
-                                CustomColors.primaryDarkColor.withOpacity(0.5),
-                          ),
+                      style: Theme.of(context).textTheme.headline2,
                     ),
                   ],
                 ),
@@ -76,27 +70,33 @@ class DonorCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                FloatingActionButton(
-                  elevation: 1,
-                  child: Image.asset(
-                    Images.whatsappImage,
-                    height: 35,
-                  ),
-                  onPressed: () async {
+                InkWell(
+                  onTap: () async {
                     await launch(
                         'https://wa.me/+2$donorPhone?text= السلام عليكم ورحمة الله وبركاته');
                   },
-                ),
-                FloatingActionButton(
-                  elevation: 1,
-                  child: const Icon(
-                    Icons.phone,
-                    size: 30,
-                    color: CustomColors.primaryDarkColor,
+                  child: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                    child: Image.asset(
+                      Images.whatsappImage,
+                      height: 35,
+                    ),
                   ),
-                  onPressed: () async {
+                ),
+                InkWell(
+                  onTap: () async {
                     await launch('tel:$donorPhone');
                   },
+                  child: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                    child: const Icon(
+                      Icons.phone,
+                      size: 30,
+                      color: CustomColors.primaryRedColor,
+                    ),
+                  ),
                 ),
               ],
             ),

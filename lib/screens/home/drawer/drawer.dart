@@ -1,6 +1,4 @@
 import 'package:blood_donation/Screens/donation_history/history.dart';
-import 'package:blood_donation/Screens/home/drawer/drawer_widgets/blood_donation_benefits.dart';
-import 'package:blood_donation/Screens/home/drawer/drawer_widgets/contact_us.dart';
 import 'package:blood_donation/Screens/settings/settings.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -9,6 +7,8 @@ import 'package:flutter/material.dart';
 import '../../../Styles/custom_colors.dart';
 import '../../../services/auth.dart';
 import '../../../shared/functions.dart';
+import '../../blood_donation_benefits.dart';
+import '../../contact_us.dart';
 import '../../need_donation.dart';
 import '../new_home_screen.dart';
 import 'drawer_header.dart';

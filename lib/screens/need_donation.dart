@@ -1,4 +1,4 @@
-import 'package:blood_donation/Screens/home/drawer/drawer_widgets/patient_page.dart';
+import 'package:blood_donation/screens/patient_page.dart';
 import 'package:blood_donation/shared/functions.dart';
 import 'package:blood_donation/styles/custom_colors.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
