@@ -111,9 +111,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 80,
                   width: double.infinity,
                   decoration: AppCubit.get(context).isDark
-                      ? const BoxDecoration(
-                          color: CustomColors.primaryDarkColor)
-                      : Constants.primaryBoxDecorationContainer,
+                      ? Constants.primaryBoxDecorationContainer
+                      : const BoxDecoration(
+                          color: CustomColors.primaryDarkColor),
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -233,17 +233,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 const CustomSizedBoxHeight(),
                 AppCubit.get(context).isDark
-                    ? const Divider(
+                    ? const SizedBox()
+                    : const Divider(
                         thickness: 1,
-                      )
-                    : const SizedBox(),
+                      ),
                 // Blood Types
                 Container(
                   height: 80,
                   decoration: AppCubit.get(context).isDark
-                      ? const BoxDecoration(
-                          color: CustomColors.primaryDarkColor)
-                      : Constants.primaryBoxDecorationContainer,
+                      ? Constants.primaryBoxDecorationContainer
+                      : const BoxDecoration(
+                          color: CustomColors.primaryDarkColor),
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Row(
                     children: [
@@ -389,10 +389,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 AppCubit.get(context).isDark
-                    ? const Divider(
+                    ? const SizedBox()
+                    : const Divider(
                         thickness: 1,
-                      )
-                    : const SizedBox(),
+                      ),
                 const CustomSizedBoxHeight(),
                 // Phone
                 TextFormField(
@@ -411,9 +411,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 120,
                   width: double.infinity,
                   decoration: AppCubit.get(context).isDark
-                      ? const BoxDecoration(
-                          color: CustomColors.primaryDarkColor)
-                      : Constants.primaryBoxDecorationContainer,
+                      ? Constants.primaryBoxDecorationContainer
+                      : const BoxDecoration(
+                          color: CustomColors.primaryDarkColor),
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -464,9 +464,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 120,
                   width: double.infinity,
                   decoration: AppCubit.get(context).isDark
-                      ? const BoxDecoration(
-                          color: CustomColors.primaryDarkColor)
-                      : Constants.primaryBoxDecorationContainer,
+                      ? Constants.primaryBoxDecorationContainer
+                      : const BoxDecoration(
+                          color: CustomColors.primaryDarkColor),
                   padding: const EdgeInsets.symmetric(horizontal: 19),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

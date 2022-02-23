@@ -132,13 +132,6 @@ class SettingsScreen extends StatelessWidget {
                         onToggle: (value) {
                           AppCubit.get(context).changeAppMode();
                         }),
-                    // Switch(
-                    //   activeColor: Colors.red,
-                    //   value: AppCubit.get(context).isDark,
-                    //   onChanged: (value) {
-                    //     AppCubit.get(context).changeAppMode();
-                    //   },
-                    // ),
                   ],
                 ),
                 SizedBox(
