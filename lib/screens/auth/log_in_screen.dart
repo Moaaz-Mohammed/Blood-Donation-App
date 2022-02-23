@@ -29,25 +29,12 @@ class _LogInScreenState extends State<LogInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
+        child: Center(
+          child: SingleChildScrollView(
             padding: Constants.primaryPadding,
-            height: height,
-            width: width,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.bottomRight,
-                end: Alignment.topLeft,
-                colors: [
-                  CustomColors.primaryRedColor,
-                  CustomColors.primaryWhiteColor,
-                ],
-              ),
-            ),
             child: Form(
               key: _globalKey,
               child: Column(
@@ -83,16 +70,18 @@ class _LogInScreenState extends State<LogInScreen> {
                                 !AppCubit.get(context).isVisible;
                           });
                         },
-                        child: Icon(AppCubit.get(context).isVisible
-                            ? Icons.visibility
-                            : Icons.visibility_off),
+                        child: Icon(
+                          AppCubit.get(context).isVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                        ),
                       ),
                     ),
                     controller: passwordController,
                     keyboardType: TextInputType.text,
                     obscureText: AppCubit.get(context).isVisible,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   InkWell(
@@ -129,7 +118,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           LocaleKeys.dont_have_acc.tr(),
                           style: Theme.of(context).textTheme.headline2,
                         ),
-                        CustomSizedBoxWidth(),
+                        const CustomSizedBoxWidth(),
                         Text(
                           LocaleKeys.register_now.tr(),
                           style: Theme.of(context)

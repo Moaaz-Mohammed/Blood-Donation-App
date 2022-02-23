@@ -68,27 +68,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           child: Column(
             children: [
               const CustomSizedBoxHeight(),
-              Container(
-                width: width * 0.30,
-                height: width * 0.30,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: CustomColors.primaryRedColor.withOpacity(0.5),
-                    width: 2,
-                  ),
-                ),
-                child: CircleAvatar(
-                  backgroundColor: AppCubit.get(context).isDark
-                      ? CustomColors.primaryDarkColor
-                      : CustomColors.primaryWhiteColor,
-                  radius: double.infinity,
-                  child: Icon(
-                    Icons.account_circle,
-                    size: 100,
-                    color: CustomColors.primaryRedColor,
-                  ),
-                ),
+              const Icon(
+                Icons.account_circle,
+                size: 100,
+                color: CustomColors.primaryRedColor,
               ),
               const CustomSizedBoxHeight(),
               const CustomSizedBoxHeight(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../shared/constants.dart';
 import '../../../styles/custom_colors.dart';
 import '../../../usable_widgets/custom_sized_box_width.dart';
@@ -8,9 +9,11 @@ class ProfileCardItem extends StatelessWidget {
     Key? key,
     required this.title,
     required this.subTitle,
+    required this.icon,
   }) : super(key: key);
   final String title;
   final String subTitle;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +21,10 @@ class ProfileCardItem extends StatelessWidget {
       padding: Constants.primaryPadding,
       child: Row(
         children: [
+          Icon(
+            icon,
+            color: CustomColors.primaryRedColor,
+          ),
           Text(title,
               style: Theme.of(context)
                   .textTheme

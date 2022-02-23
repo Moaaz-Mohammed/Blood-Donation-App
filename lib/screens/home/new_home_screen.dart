@@ -34,7 +34,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
     super.initState();
 
     /// this fuc to wait app for build and do timer to avoid un save operations
-    SchedulerBinding.instance!.addPostFrameCallback(
+    SchedulerBinding.instance.addPostFrameCallback(
       (_) {
         /// get user id from auth
         User? userAuth = FirebaseAuth.instance.currentUser;

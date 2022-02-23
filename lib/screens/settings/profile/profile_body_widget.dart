@@ -23,6 +23,7 @@ class ProfileBodyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return userData != null
         ? SafeArea(
             child: Container(
@@ -42,7 +43,7 @@ class ProfileBodyWidget extends StatelessWidget {
                             radius: double.infinity,
                             child: Icon(
                               Icons.account_circle,
-                              size: 100,
+                              size: height * 0.12,
                               color: CustomColors.primaryRedColor,
                             ),
                           ),
@@ -69,6 +70,7 @@ class ProfileBodyWidget extends StatelessWidget {
                   const CustomSizedBoxHeight(),
                   const CustomSizedBoxHeight(),
                   ProfileCardItem(
+                    icon: Icons.person,
                     title: LocaleKeys.name.tr(),
                     subTitle: userData[Strings.userName],
                   ),
@@ -77,6 +79,7 @@ class ProfileBodyWidget extends StatelessWidget {
                     endIndent: 10.0,
                   ),
                   ProfileCardItem(
+                    icon: Icons.cake,
                     title: LocaleKeys.date_of_birth.tr(),
                     subTitle: userData[Strings.userDateofBirth],
                   ),
@@ -85,6 +88,7 @@ class ProfileBodyWidget extends StatelessWidget {
                     endIndent: 10.0,
                   ),
                   ProfileCardItem(
+                    icon: Icons.location_on,
                     title: LocaleKeys.address.tr(),
                     subTitle: userData[Strings.userAddress],
                   ),
@@ -93,6 +97,7 @@ class ProfileBodyWidget extends StatelessWidget {
                     endIndent: 10.0,
                   ),
                   ProfileCardItem(
+                    icon: Icons.phone,
                     title: LocaleKeys.phone.tr(),
                     subTitle: userData[Strings.userPhone],
                   ),
@@ -101,6 +106,7 @@ class ProfileBodyWidget extends StatelessWidget {
                     endIndent: 10.0,
                   ),
                   ProfileCardItem(
+                    icon: Icons.mail,
                     title: LocaleKeys.email.tr(),
                     subTitle: userData[Strings.userEmail],
                   ),
@@ -109,6 +115,7 @@ class ProfileBodyWidget extends StatelessWidget {
                     endIndent: 10.0,
                   ),
                   ProfileCardItem(
+                    icon: Icons.bloodtype,
                     title: LocaleKeys.blood_type.tr(),
                     subTitle: userData[Strings.userBloodType],
                   ),
