@@ -1,6 +1,7 @@
 import 'package:blood_donation/screens/auth/log_in_screen.dart';
 import 'package:blood_donation/shared/constants.dart';
 import 'package:blood_donation/shared/functions.dart';
+import 'package:blood_donation/shared/images.dart';
 import 'package:blood_donation/styles/custom_colors.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:blood_donation/usable_widgets/custom_button.dart';
@@ -30,17 +31,17 @@ class ResetPasswordScreen extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                Image.network(
-                  'https://www.dallascollege.edu/resources/online-services/PublishingImages/reset-password-400x400.png',
+                Image.asset(
+                  Images.resetPasswordImage,
                   width: width * 0.6,
                 ),
-                CustomSizedBoxHeight(),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 Text(
                   LocaleKeys.reset_password.tr(),
                   style: Theme.of(context).textTheme.headline3,
                 ),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 Text(
                   LocaleKeys.reset_password_content.tr(),
                   style: Theme.of(context).textTheme.headline1?.copyWith(
@@ -49,7 +50,9 @@ class ResetPasswordScreen extends StatelessWidget {
                             : CustomColors.primaryDarkColor.withOpacity(0.5),
                       ),
                 ),
-                CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
+                const CustomSizedBoxHeight(),
                 TextFormField(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
@@ -76,7 +79,7 @@ class ResetPasswordScreen extends StatelessWidget {
                           }).then((value) {
                             Functions.navigatorPush(
                               context: context,
-                              screen: LogInScreen(),
+                              screen: const LogInScreen(),
                             );
                           });
                         });

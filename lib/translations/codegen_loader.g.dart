@@ -130,7 +130,8 @@ class CodegenLoader extends AssetLoader{
   "forgot_password": "هل نسيت كلمة المرور؟",
   "reset_password": "إعادة تعيين كلمة المرور",
   "reset_password_content": "ادخل البريد الإلكتروني المستخدم في تسجيل الدخول.",
-  "check_your_email": "برجاء زيارة بريدك الإلكتروني لإسترجاع كلمة المرور."
+  "check_your_email": "برجاء زيارة بريدك الإلكتروني لإسترجاع كلمة المرور.",
+  "logging_in": "جاري تسجيل الدخول"
 };
 static const Map<String,dynamic> en_US = {
   "app_name": "Save Life!",
@@ -248,7 +249,8 @@ static const Map<String,dynamic> en_US = {
   "forgot_password": "Forgot your password?",
   "reset_password": "Reset Password",
   "reset_password_content": "Enter an email address you use to sign in.",
-  "check_your_email": "Check your email to reset your password."
+  "check_your_email": "Check your email to reset your password.",
+  "logging_in": "Logging In"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar_EG": ar_EG, "en_US": en_US};
 }

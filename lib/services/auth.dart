@@ -44,7 +44,7 @@ class Auth {
   }) async {
     Functions.dialogLoading(
       context: context,
-      title: 'جاري تسجيل الدخول',
+      title: LocaleKeys.logging_in.tr(),
     );
     try {
       await FirebaseAuth.instance

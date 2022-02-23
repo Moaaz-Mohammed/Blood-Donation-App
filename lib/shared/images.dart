@@ -15,4 +15,5 @@ class Images {
   static const String successImage = 'assets/images/success.gif';
   static const String noResultImage = 'assets/images/no_result.png';
   static const String whatsappImage = 'assets/images/whatsapp.png';
+  static const String resetPasswordImage = 'assets/images/reset_password.png';
 }

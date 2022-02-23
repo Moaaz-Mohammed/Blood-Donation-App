@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../services/cache_shared_preferences.dart';
@@ -8,8 +7,7 @@ class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppInitialState());
   static AppCubit get(context) => BlocProvider.of(context);
 
-  bool isDark = false;
-  ThemeMode appMode = ThemeMode.light;
+  bool isDark = true;
 
   void changeAppMode({bool? fromShared}) {
     if (fromShared != null) {

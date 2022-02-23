@@ -117,8 +117,7 @@ class SettingsScreen extends StatelessWidget {
                       ],
                     ),
                     FlutterSwitch(
-                        activeColor:
-                            CustomColors.primaryGreyColor.withOpacity(0.2),
+                        activeColor: CustomColors.primaryGreyColor,
                         inactiveColor: CustomColors.primaryRedColor,
                         inactiveIcon: const Icon(
                           Icons.light_mode,
