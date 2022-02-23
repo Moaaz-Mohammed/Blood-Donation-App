@@ -44,10 +44,9 @@ class ResetPasswordScreen extends StatelessWidget {
                 Text(
                   LocaleKeys.reset_password_content.tr(),
                   style: Theme.of(context).textTheme.headline1?.copyWith(
-                        color: AppCubit.get(context).isDark
-                            ? CustomColors.primaryRedColor
-                            : CustomColors.primaryDarkColor.withOpacity(0.5),
-                      ),
+                      color: AppCubit.get(context).isDark
+                          ? CustomColors.primaryDarkColor.withOpacity(0.5)
+                          : CustomColors.primaryRedColor),
                 ),
                 const CustomSizedBoxHeight(),
                 const CustomSizedBoxHeight(),
