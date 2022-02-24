@@ -12,7 +12,7 @@ ThemeData lightTheme = ThemeData(
     backwardsCompatibility: false,
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: CustomColors.primaryWhiteColor,
-      statusBarIconBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.light,
     ),
     iconTheme: IconThemeData(
       color: CustomColors.primaryRedColor,
