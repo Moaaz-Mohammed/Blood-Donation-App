@@ -36,6 +36,7 @@ class _LogInScreenState extends State<LogInScreen> {
         child: Center(
           child: SingleChildScrollView(
             padding: Constants.primaryPadding,
+            physics: BouncingScrollPhysics(),
             child: Form(
               key: _globalKey,
               child: Column(
@@ -44,10 +45,10 @@ class _LogInScreenState extends State<LogInScreen> {
                 children: [
                   Image.asset(
                     Images.logoImage,
-                    height: height * 0.25,
+                    height: height * 0.2,
                   ),
                   SizedBox(
-                    height: height * 0.05,
+                    height: height * 0.06,
                   ),
                   TextFormField(
                     style: Theme.of(context).textTheme.headline2,
@@ -83,7 +84,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     obscureText: AppCubit.get(context).isVisible,
                   ),
                   const SizedBox(
-                    height: 5,
+                    height: 10,
                   ),
                   InkWell(
                     child: Align(

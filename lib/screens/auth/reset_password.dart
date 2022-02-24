@@ -12,14 +12,19 @@ import 'package:flutter/material.dart';
 
 import '../../state_management/bloc/cubit.dart';
 
-class ResetPasswordScreen extends StatelessWidget {
+class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({Key? key}) : super(key: key);
 
+  @override
+  State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
+}
+
+class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
+  TextEditingController emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    TextEditingController emailController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         title: Text(LocaleKeys.reset_password.tr()),

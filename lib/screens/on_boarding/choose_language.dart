@@ -21,6 +21,7 @@ class ChooseLanguageScreen extends StatelessWidget {
               LocaleKeys.choose_app_language.tr(),
               style: Theme.of(context).textTheme.headline6,
             ),
+            const CustomSizedBoxHeight(),
             Text(
               'اختر اللغة التي تفضلها',
               style: Theme.of(context)
@@ -36,62 +37,69 @@ class ChooseLanguageScreen extends StatelessWidget {
                   ?.copyWith(color: Colors.red),
             ),
             const SizedBox(
-              height: 30,
+              height: 50,
             ),
-            InkWell(
-              onTap: () async {
-                await context.setLocale(const Locale('ar', 'EG')).then(
-                  (value) {
-                    Functions.navigatorPushAndRemove(
-                      context: context,
-                      screen: const LogInScreen(),
-                    );
-                  },
-                );
-              },
-              child: Column(
-                children: [
-                  Image.asset(
-                    Images.egFlag,
-                    width: 100,
-                    height: 100,
+            Row(
+              children: [
+                Expanded(
+                  child: InkWell(
+                    onTap: () async {
+                      await context.setLocale(const Locale('en', 'US')).then(
+                            (value) {
+                          Functions.navigatorPushAndRemove(
+                            context: context,
+                            screen: const LogInScreen(),
+                          );
+                        },
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          Images.ukFlag,
+                          width: 100,
+                          height: 100,
+                        ),
+                        const CustomSizedBoxHeight(),
+                        const CustomSizedBoxHeight(),
+                        Text(
+                          'English - UK',
+                          style: Theme.of(context).textTheme.headline2,
+                        ),
+                      ],
+                    ),
                   ),
-                  const CustomSizedBoxHeight(),
-                  Text(
-                    'العربية - EG',
-                    style: Theme.of(context).textTheme.headline2,
+                ),
+                Expanded(
+                  child: InkWell(
+                    onTap: () async {
+                      await context.setLocale(const Locale('ar', 'EG')).then(
+                        (value) {
+                          Functions.navigatorPushAndRemove(
+                            context: context,
+                            screen: const LogInScreen(),
+                          );
+                        },
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          Images.egFlag,
+                          width: 100,
+                          height: 100,
+                        ),
+                        const CustomSizedBoxHeight(),
+                        const CustomSizedBoxHeight(),
+                        Text(
+                          'العربية - EG',
+                          style: Theme.of(context).textTheme.headline2,
+                        ),
+                      ],
+                    ),
                   ),
-                ],
-              ),
-            ),
-            const CustomSizedBoxHeight(),
-            const CustomSizedBoxHeight(),
-            const CustomSizedBoxHeight(),
-            InkWell(
-              onTap: () async {
-                await context.setLocale(const Locale('en', 'US')).then(
-                  (value) {
-                    Functions.navigatorPushAndRemove(
-                      context: context,
-                      screen: const LogInScreen(),
-                    );
-                  },
-                );
-              },
-              child: Column(
-                children: [
-                  Image.asset(
-                    Images.ukFlag,
-                    width: 100,
-                    height: 100,
-                  ),
-                  const CustomSizedBoxHeight(),
-                  Text(
-                    'English - UK',
-                    style: Theme.of(context).textTheme.headline2,
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),

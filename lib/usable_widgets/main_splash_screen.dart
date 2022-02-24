@@ -29,7 +29,7 @@ class _MainSlashScreenState extends State<MainSlashScreen> {
     super.initState();
 
     /// this fuc to wait app for build and do timer to avoid un save operations
-    SchedulerBinding.instance.addPostFrameCallback(
+    SchedulerBinding.instance!.addPostFrameCallback(
       (_) {
         User? userAuth = FirebaseAuth.instance.currentUser;
         Timer(

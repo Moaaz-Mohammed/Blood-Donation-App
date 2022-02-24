@@ -126,6 +126,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           LocaleKeys.choose.tr(),
                           style: const TextStyle(color: Colors.grey),
                         ),
+                        borderRadius: Constants.primaryBorderRadius,
                         items: [
                           DropdownMenuItem(
                             child: Center(
@@ -206,6 +207,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         iconSize: 30,
                         iconEnabledColor: CustomColors.primaryRedColor,
                         value: bloodType,
+                        borderRadius: Constants.primaryBorderRadius,
                         hint: Text(
                           LocaleKeys.choose_blood_type.tr(),
                           style: const TextStyle(color: Colors.grey),

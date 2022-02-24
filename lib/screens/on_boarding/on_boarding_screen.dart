@@ -94,60 +94,51 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: SizedBox(
-              height: 30,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SmoothPageIndicator(
-                    controller: boardController,
-                    effect: CustomizableEffect(
-                      spacing: 5.0,
-                      dotDecoration: DotDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        verticalOffset: -5.0,
-                        color: CustomColors.primaryGreyColor,
-                        rotationAngle: 75.0,
-                        width: width * 0.05,
-                        height: 10,
-                      ),
-                      activeDotDecoration: DotDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: CustomColors.primaryRedColor,
-                        rotationAngle: 75.0,
-                        width: width * 0.05,
-                        height: 10,
-                      ),
+            padding: const EdgeInsets.all(30.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SmoothPageIndicator(
+                  controller: boardController,
+                  effect: CustomizableEffect(
+                    spacing: 5.0,
+                    dotDecoration: DotDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      verticalOffset: -5.0,
+                      color: CustomColors.primaryGreyColor,
+                      rotationAngle: 75.0,
+                      width: width * 0.05,
+                      height: 10,
                     ),
-                    count: boarding.length,
+                    activeDotDecoration: DotDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: CustomColors.primaryRedColor,
+                      rotationAngle: 75.0,
+                      width: width * 0.05,
+                      height: 10,
+                    ),
                   ),
-                  isLast
-                      ? Row(
-                          children: [
-                            SizedBox(
-                              width: width * 0.55,
-                            ),
-                            InkWell(
-                              onTap: () {
-                                if (isLast) {
-                                  submit();
-                                } else {
-                                  boardController.nextPage(
-                                    duration: const Duration(
-                                      milliseconds: 1000,
-                                    ),
-                                    curve: Curves.fastLinearToSlowEaseIn,
-                                  );
-                                }
-                              },
-                              child: const ContinueButton(),
-                            ),
-                          ],
-                        )
-                      : const Text('')
-                ],
-              ),
+                  count: boarding.length,
+                ),
+                InkWell(
+                  borderRadius: BorderRadius.circular(
+                    50.0,
+                  ),
+                  onTap: () {
+                    if (isLast) {
+                      submit();
+                    } else {
+                      boardController.nextPage(
+                        duration: const Duration(
+                          milliseconds: 1000,
+                        ),
+                        curve: Curves.fastLinearToSlowEaseIn,
+                      );
+                    }
+                  },
+                  child: const ContinueButton(),
+                ),
+              ],
             ),
           ),
         ],

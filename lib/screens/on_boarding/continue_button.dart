@@ -8,17 +8,18 @@ class ContinueButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return Container(
-      height: 35,
-      width: width * 0.2,
       decoration: BoxDecoration(
         color: CustomColors.primaryRedColor,
-        borderRadius: Constants.primaryBorderRadius,
+        shape: BoxShape.circle,
       ),
-      child: const Icon(
-        Icons.arrow_forward_ios,
-        color: CustomColors.primaryWhiteColor,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Icon(
+          Icons.arrow_forward_ios,
+          size: 15.0,
+          color: CustomColors.primaryWhiteColor,
+        ),
       ),
     );
   }

@@ -32,17 +32,18 @@ Future<void> main() async {
       CacheSharedPreferences.getData(key: 'isDark') == null ? true : false;
   runApp(
     EasyLocalization(
-        child: MyApp(
-          onBoarding: onBoarding,
-          isDark: isDark,
-        ),
-        supportedLocales: const [
-          Locale('en', 'US'),
-          Locale('ar', 'EG'),
-        ],
-        fallbackLocale: const Locale('ar', 'EG'),
-        assetLoader: const CodegenLoader(),
-        path: 'assets/translations'),
+      child: MyApp(
+        onBoarding: onBoarding,
+        isDark: isDark,
+      ),
+      supportedLocales: const [
+        Locale('en', 'US'),
+        Locale('ar', 'EG'),
+      ],
+      fallbackLocale: const Locale('ar', 'EG'),
+      assetLoader: const CodegenLoader(),
+      path: 'assets/translations',
+    ),
   );
 }
 

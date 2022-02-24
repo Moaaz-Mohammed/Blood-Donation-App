@@ -2,7 +2,7 @@ name: blood_donation
 description: An app to connect volunteers and patients
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.0.0
+version: 1.0.0+2
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -15,28 +15,28 @@ dependencies:
   fluttertoast:
   cupertino_icons: ^1.0.2
   page_transition:
-  image_picker: ^0.8.4+4
-  cached_network_image: ^3.0.0
-  smooth_page_indicator: ^1.0.0+2
-  im_stepper: ^0.1.3
-  flutter_switch: ^0.3.2
+  image_picker:
+  cached_network_image:
+  smooth_page_indicator:
+  im_stepper:
+  flutter_switch:
   flutter_svg:
 
 
   # Utilities
   shared_preferences:
   url_launcher:
-  flutter_bloc: 7.0.1
-  modal_progress_hud_nsn: ^0.1.0-nullsafety-1
+  flutter_bloc:
+  modal_progress_hud_nsn:
 
   #Localization
-  easy_localization: ^3.0.0
+  easy_localization:
 
   # firebase dependencies
-  firebase_core: ^1.11.0
-  cloud_firestore: ^3.1.6
-  firebase_storage: ^10.2.5
-  firebase_auth: ^3.3.5
+  firebase_core:
+  cloud_firestore:
+  firebase_storage:
+  firebase_auth:
 
 dev_dependencies:
   flutter_test:
