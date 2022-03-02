@@ -168,7 +168,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       color: AppCubit.get(context).isDark
                           ? CustomColors.primaryGreyColor
                           : CustomColors.primaryRedColor),
-                  hintText: LocaleKeys.phone.tr(),
+                  hintText: LocaleKeys.blood_type.tr(),
                 ),
                 controller: userBloodTypeController,
               ),

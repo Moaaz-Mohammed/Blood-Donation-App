@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../Styles/custom_colors.dart';
-import '../../shared/constants.dart';
 
 class ContinueButton extends StatelessWidget {
   const ContinueButton({Key? key}) : super(key: key);

@@ -341,6 +341,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ],
                   ),
                 ),
+                AppCubit.get(context).isDark
+                    ? const SizedBox()
+                    : const Divider(
+                        thickness: 0.45,
+                      ),
+                AppCubit.get(context).isDark
+                    ? const SizedBox()
+                    : const Divider(
+                        thickness: 0.45,
+                      ),
                 const CustomSizedBoxHeight(),
                 // Last Donation Date
                 Container(
