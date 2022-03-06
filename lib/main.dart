@@ -28,8 +28,7 @@ Future<void> main() async {
   );
 
   bool onBoarding = CacheSharedPreferences.getData(key: 'onBoarding') ?? false;
-  bool isDark =
-      CacheSharedPreferences.getData(key: 'isDark') == null ? true : false;
+  bool isDark = CacheSharedPreferences.getData(key: 'isDark') ?? false;
   runApp(
     EasyLocalization(
       child: MyApp(

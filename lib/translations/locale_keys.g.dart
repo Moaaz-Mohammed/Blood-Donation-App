@@ -118,5 +118,6 @@ abstract class  LocaleKeys {
   static const reset_password_content = 'reset_password_content';
   static const check_your_email = 'check_your_email';
   static const logging_in = 'logging_in';
+  static const view_more = 'view_more';
 
 }

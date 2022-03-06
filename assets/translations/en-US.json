@@ -115,5 +115,6 @@
   "reset_password": "Reset Password",
   "reset_password_content": "Enter an email address you use to sign in.",
   "check_your_email": "Check your email to reset your password.",
-  "logging_in": "Logging In"
+  "logging_in": "Logging In",
+  "view_more": "View details"
 }
