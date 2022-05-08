@@ -8,7 +8,7 @@
 - Contact me easily inside the app.
 - Multi-Language.
 - Dark and Light Moods.
-
+<hr>
 <h3> Content </h3>
 - Splash screen
 - Sign in screen
@@ -19,4 +19,4 @@
 --- Find Hospitals
 --- Settings
 --- Profile
-* 
+<hr>
