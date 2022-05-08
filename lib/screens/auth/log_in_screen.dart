@@ -57,6 +57,12 @@ class _LogInScreenState extends State<LogInScreen> {
                       labelText: LocaleKeys.email.tr(),
                     ),
                     controller: emailController,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'required';
+                      }
+                      return null;
+                    },
                     keyboardType: TextInputType.emailAddress,
                   ),
                   const CustomSizedBoxHeight(),
@@ -67,10 +73,12 @@ class _LogInScreenState extends State<LogInScreen> {
                       labelText: LocaleKeys.password.tr(),
                       suffixIcon: InkWell(
                         onTap: () {
-                          setState(() {
-                            AppCubit.get(context).isVisible =
-                                !AppCubit.get(context).isVisible;
-                          });
+                          setState(
+                            () {
+                              AppCubit.get(context).isVisible =
+                                  !AppCubit.get(context).isVisible;
+                            },
+                          );
                         },
                         child: Icon(
                           AppCubit.get(context).isVisible
@@ -80,6 +88,12 @@ class _LogInScreenState extends State<LogInScreen> {
                       ),
                     ),
                     controller: passwordController,
+                    validator: (value){
+                      if  (value!.isEmpty){
+                        return 'required';
+                      }
+                      return null;
+                    },
                     keyboardType: TextInputType.text,
                     obscureText: AppCubit.get(context).isVisible,
                   ),

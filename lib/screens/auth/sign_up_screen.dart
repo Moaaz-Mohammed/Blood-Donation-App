@@ -65,6 +65,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     labelText: LocaleKeys.name.tr(),
                   ),
                   controller: userNameController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'required';
+                    }
+                    return null;
+                  },
                   keyboardType: TextInputType.text,
                 ),
                 const CustomSizedBoxHeight(),
@@ -76,6 +82,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   keyboardType: TextInputType.emailAddress,
                   controller: userEmailController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'required';
+                    }
+                    return null;
+                  },
                 ),
                 const CustomSizedBoxHeight(),
                 // Password
@@ -85,10 +97,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     labelText: LocaleKeys.password.tr(),
                     suffixIcon: InkWell(
                       onTap: () {
-                        setState(() {
-                          AppCubit.get(context).isVisible =
-                              !AppCubit.get(context).isVisible;
-                        });
+                        setState(
+                          () {
+                            AppCubit.get(context).isVisible =
+                                !AppCubit.get(context).isVisible;
+                          },
+                        );
                       },
                       child: Icon(AppCubit.get(context).isVisible
                           ? Icons.visibility
@@ -96,6 +110,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   controller: userPasswordController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'required';
+                    }
+                    return null;
+                  },
                   keyboardType: TextInputType.text,
                   obscureText: AppCubit.get(context).isVisible,
                 ),
@@ -130,15 +150,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         items: [
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(LocaleKeys.no_chronic_diseases.tr(),
-                                  style: Theme.of(context).textTheme.headline2),
+                              child: Text(
+                                LocaleKeys.no_chronic_diseases.tr(),
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
                             ),
                             value: LocaleKeys.no_chronic_diseases.tr(),
                           ),
                           DropdownMenuItem(
                             child: Center(
-                              child: Text(LocaleKeys.anemia_diseases.tr(),
-                                  style: Theme.of(context).textTheme.headline2),
+                              child: Text(
+                                LocaleKeys.anemia_diseases.tr(),
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
                             ),
                             value: LocaleKeys.anemia_diseases.tr(),
                           ),
@@ -173,9 +197,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                         ],
                         onChanged: (value) {
-                          setState(() {
-                            Status = value as String?;
-                          });
+                          setState(
+                            () {
+                              Status = value as String?;
+                            },
+                          );
                         },
                       )
                     ],
@@ -293,6 +319,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   keyboardType: TextInputType.number,
                   controller: userPhoneController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'required';
+                    }
+                    return null;
+                  },
                 ),
                 const CustomSizedBoxHeight(),
                 // Date of Birth
@@ -328,13 +360,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   initialDate: DateTime.now(),
                                   lastDate: DateTime(2050),
                                   firstDate: DateTime(1900))
-                              .then((value) {
-                            userBirthDateController.text =
-                                DateFormat.yMd().format(value!);
-                          });
+                              .then(
+                            (value) {
+                              userBirthDateController.text =
+                                  DateFormat.yMd().format(value!);
+                            },
+                          );
                         },
                         validator: (value) {
-                          value == null ? LocaleKeys.required.tr() : null;
+                          if (value!.isEmpty) {
+                            return 'required';
+                          }
                           return null;
                         },
                       ),
@@ -385,13 +421,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   initialDate: DateTime.now(),
                                   lastDate: DateTime(2050),
                                   firstDate: DateTime(2000))
-                              .then((value) {
-                            userLastDonationDateController.text =
-                                DateFormat.yMd().format(value!);
-                          });
+                              .then(
+                            (value) {
+                              userLastDonationDateController.text =
+                                  DateFormat.yMd().format(value!);
+                            },
+                          );
                         },
                         validator: (value) {
-                          value == null ? LocaleKeys.required.tr() : null;
+                          if (value!.isEmpty) {
+                            return 'required';
+                          }
                           return null;
                         },
                       ),
@@ -406,53 +446,63 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     labelText: LocaleKeys.address.tr(),
                   ),
                   controller: userLocationController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'required';
+                    }
+                    return null;
+                  },
                 ),
                 const CustomSizedBoxHeight(),
                 CustomButton(
                   title: LocaleKeys.register.tr(),
                   onTap: () async {
                     if (_globalKey.currentState!.validate()) {
-                      Functions.dialogLoading(
-                        context: context,
-                        title: LocaleKeys.registering.tr(),
-                      );
-                      await _auth
-                          .signUpWithEmailAndPassword(
-                        userEmailController.text,
-                        userPasswordController.text,
-                        context,
-                      )
-                          .then(
-                        (value) {
-                          User? userAuth = FirebaseAuth.instance.currentUser;
-                          _store
-                              .addUser(
-                            UserModel(
-                              userId: userAuth!.uid,
-                              userName: userNameController.text,
-                              userPhone: userPhoneController.text,
-                              userEmail: userEmailController.text,
-                              userAddress: userLocationController.text,
-                              userDateofBirth: userBirthDateController.text,
-                              userLastDonation:
-                                  userLastDonationDateController.text,
-                              userBloodType: bloodType.toString(),
-                              userStatus: Status.toString(),
-                            ),
-                          )
-                              .then(
-                            (value) {
-                              Functions.navigatorPushAndRemove(
-                                context: context,
-                                screen: const NewHomeScreen(),
-                              );
-                              Functions.showToastMsg(
-                                title: LocaleKeys.registered.tr(),
-                              );
-                            },
-                          );
-                        },
-                      );
+                      if (Status==null || ShareData==null ){
+                        Functions.showToastMsg(title: 'please complete data',);
+                      } else {
+                        Functions.dialogLoading(
+                          context: context,
+                          title: LocaleKeys.registering.tr(),
+                        );
+                        await _auth
+                            .signUpWithEmailAndPassword(
+                          userEmailController.text,
+                          userPasswordController.text,
+                          context,
+                        )
+                            .then(
+                              (value) {
+                            User? userAuth = FirebaseAuth.instance.currentUser;
+                            _store
+                                .addUser(
+                              UserModel(
+                                userId: userAuth!.uid,
+                                userName: userNameController.text,
+                                userPhone: userPhoneController.text,
+                                userEmail: userEmailController.text,
+                                userAddress: userLocationController.text,
+                                userDateofBirth: userBirthDateController.text,
+                                userLastDonation:
+                                userLastDonationDateController.text,
+                                userBloodType: bloodType.toString(),
+                                userStatus: Status.toString(),
+                              ),
+                            )
+                                .then(
+                                  (value) {
+                                Functions.navigatorPushAndRemove(
+                                  context: context,
+                                  screen: const NewHomeScreen(),
+                                );
+                                Functions.showToastMsg(
+                                  title: LocaleKeys.registered.tr(),
+                                );
+                              },
+                            );
+                          },
+                        );
+                      }
                     }
                   },
                 ),
