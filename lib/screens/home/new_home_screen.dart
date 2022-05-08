@@ -2,6 +2,7 @@ import 'package:blood_donation/Screens/find_donors/find_donors_screen.dart';
 import 'package:blood_donation/Screens/home/home_category_card.dart';
 import 'package:blood_donation/Screens/settings/profile/profile_screen.dart';
 import 'package:blood_donation/Screens/settings/settings.dart';
+import 'package:blood_donation/styles/custom_colors.dart';
 import 'package:blood_donation/usable_widgets/loading.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -10,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../Styles/custom_colors.dart';
 import '../../shared/functions.dart';
 import '../../shared/images.dart';
 import '../../shared/strings.dart';
@@ -26,7 +26,6 @@ class NewHomeScreen extends StatefulWidget {
 
 class _NewHomeScreenState extends State<NewHomeScreen> {
   String uid = '';
-
   Map<String, dynamic>? userData;
 
   @override
@@ -61,7 +60,6 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -79,6 +77,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                   padding:
                       const EdgeInsets.only(left: 20.0, right: 20, top: 10),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,6 +104,16 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                         ],
                       ),
                       SizedBox(
+                        height: height * 0.01,
+                      ),
+                      Divider(
+                        color: CustomColors.primaryRedColor,
+                      ),
+                      Text(
+                        'بحاجه لتبرعك!',
+                        style: Theme.of(context).textTheme.headline3,
+                      ),
+                      Container(
                         height: height * 0.01,
                       ),
                       Row(

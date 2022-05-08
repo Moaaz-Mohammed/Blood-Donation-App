@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../Styles/custom_colors.dart';
 import '../../../shared/constants.dart';
 import '../../../shared/strings.dart';
+import '../../../usable_widgets/custom_divider.dart';
 import '../../../usable_widgets/loading.dart';
 import 'profile_card_item.dart';
 
@@ -68,42 +69,27 @@ class ProfileBodyWidget extends StatelessWidget {
                     icon: Icons.person,
                     subTitle: userData[Strings.userName],
                   ),
-                  const Divider(
-                    indent: 10.0,
-                    endIndent: 10.0,
-                  ),
+                  const CustomDivider(),
                   ProfileCardItem(
                     icon: Icons.cake,
                     subTitle: userData[Strings.userDateofBirth],
                   ),
-                  const Divider(
-                    indent: 10.0,
-                    endIndent: 10.0,
-                  ),
+                  const CustomDivider(),
                   ProfileCardItem(
                     icon: Icons.location_on,
                     subTitle: userData[Strings.userAddress],
                   ),
-                  const Divider(
-                    indent: 10.0,
-                    endIndent: 10.0,
-                  ),
+                  const CustomDivider(),
                   ProfileCardItem(
                     icon: Icons.phone,
                     subTitle: userData[Strings.userPhone],
                   ),
-                  const Divider(
-                    indent: 10.0,
-                    endIndent: 10.0,
-                  ),
+                  const CustomDivider(),
                   ProfileCardItem(
                     icon: Icons.mail,
                     subTitle: userData[Strings.userEmail],
                   ),
-                  const Divider(
-                    indent: 10.0,
-                    endIndent: 10.0,
-                  ),
+                  const CustomDivider(),
                   ProfileCardItem(
                     icon: Icons.bloodtype,
                     subTitle: userData[Strings.userBloodType],

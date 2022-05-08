@@ -1,5 +1,5 @@
-import 'package:blood_donation/Screens/donation_history/history.dart';
 import 'package:blood_donation/Screens/settings/settings.dart';
+import 'package:blood_donation/screens/settings/profile/donation_history/history.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -31,9 +31,13 @@ class CustomDrawer extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           boxShadow: const [
             BoxShadow(
-                color: CustomColors.primaryRedColor,
-                blurRadius: 10.0,
-                offset: Offset(0.0, 10.0))
+              color: CustomColors.primaryRedColor,
+              blurRadius: 10.0,
+              offset: Offset(
+                0.0,
+                10.0,
+              ),
+            ),
           ],
         ),
         child: Column(

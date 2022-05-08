@@ -1,11 +1,10 @@
 import 'package:blood_donation/Styles/custom_colors.dart';
+import 'package:blood_donation/services/store.dart';
 import 'package:blood_donation/shared/constants.dart';
+import 'package:blood_donation/translations/locale_keys.g.dart';
 import 'package:blood_donation/usable_widgets/custom_sized_box_width.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
-import '../../services/store.dart';
-import '../../translations/locale_keys.g.dart';
 
 class HistoryCard extends StatelessWidget {
   const HistoryCard({

@@ -1,14 +1,13 @@
-import 'package:blood_donation/Screens/donation_history/add_new_donation.dart';
-import 'package:blood_donation/Screens/donation_history/history_card.dart';
+import 'package:blood_donation/screens/settings/profile/donation_history/add_new_donation.dart';
+import 'package:blood_donation/screens/settings/profile/donation_history/history_card.dart';
 import 'package:blood_donation/shared/constants.dart';
+import 'package:blood_donation/shared/strings.dart';
 import 'package:blood_donation/translations/locale_keys.g.dart';
+import 'package:blood_donation/usable_widgets/loading.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import '../../shared/strings.dart';
-import '../../usable_widgets/loading.dart';
 
 class DonationsHistory extends StatelessWidget {
   const DonationsHistory({Key? key}) : super(key: key);
