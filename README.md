@@ -21,4 +21,4 @@ It's developed by me to help people who need blood donors and connect to them ea
 * Categories ( Find Donors - Find Hospitals - Settings - Profile ).
 
 ## Screenshot
-<img src="https://github.com/Moaaz-Mohammed/Moaaz-Mohammed/blob/main/photo_2022-05-07_20-22-53%20(2).jpg" width=270 height=480>
+<img src="https://i.ibb.co/pW9ZGWF/blood-donation-app.png">
