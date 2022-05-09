@@ -21,14 +21,3 @@ It's developed by me to help people who need blood donors and connect to them ea
 * Register Screen
 * Home Screen
 ** Categories
-<p><a href="https://play.google.com/store/apps/details?id=com.moaaz.blood_donation" target="_blank"><img alt="Google Play" src="https://img.shields.io/badge/Get%20it%20on%20google%20play-blue.svg?style=for-the-badge&logo=google-play"/></a><p>
-<hr>
-### Blood Donation App
-This application is managing people who need blood donation.
-* I made this app using:
-* Firebase (Authentication, Firestore 'DB').
-* Bloc as State Management.
-* Supports localization (Arabic - English).
-* Supports Light Mood and Dark Mood.
-<p><a href="https://play.google.com/store/apps/details?id=com.moaaz.blood_donation" target="_blank"><img alt="Google Play" src="https://img.shields.io/badge/Get%20it%20on%20google%20play-blue.svg?style=for-the-badge&logo=google-play"/></a><p>
-<hr>
